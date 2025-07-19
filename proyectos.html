@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es-PE" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos y obras de desarrollo en Ivochote - Conoce las inversiones públicas y proyectos de infraestructura de nuestra municipalidad">
+    <meta name="keywords" content="proyectos municipales, obras publicas, infraestructura, desarrollo, ivochote, inversiones">
+    <meta name="author" content="Tu nombre - Ingeniero en Sistemas">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Proyectos y Obras - Municipalidad de Ivochote">
+    <meta property="og:description" content="Conoce los proyectos de desarrollo e infraestructura de Ivochote">
+    <meta property="og:image" content="/assets/img/proyectos-og.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.netlify.app/proyectos.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "GovernmentOrganization",
+        "name": "Municipalidad del Centro Poblado de Ivochote",
+        "description": "Proyectos de desarrollo municipal de Ivochote",
+        "url": "https://municipalidad-ivochote.netlify.app/proyectos.html"
+    }
+    </script>
+    
+    <title>Proyectos y Obras - Municipalidad de Ivochote</title>
+</head>
+<body class="font-sans antialiased bg-white dark:bg-gray-900 transition-colors duration-300" x-data="{ darkMode: false }" x-init="darkMode = localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)" :class="{ 'dark': darkMode }">
+    
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-municipal-600 text-white px-4 py-2 rounded-md z-50">
+        Saltar al contenido principal
+    </a>
+    
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-900 shadow-md relative z-40" x-data="{ mobileMenuOpen: false }">
+        <!-- Government Bar -->
+        <div class="bg-peru-red text-white py-2">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center space-x-4">
+                        <span class="font-medium">🇵🇪 Gobierno del Perú</span>
+                        <span class="hidden md:inline">Plataforma digital única del Estado Peruano</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button 
+                            @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)" 
+                            class="p-1 rounded hover:bg-white/20 transition-colors"
+                            aria-label="Cambiar modo oscuro"
+                        >
+                            <span x-show="!darkMode">🌙</span>
+                            <span x-show="darkMode">☀️</span>
+                        </button>
+                        <a href="/transparencia.html" class="hover:underline hidden sm:inline">Transparencia</a>
+                        <a href="/contacto.html" class="hover:underline">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Header -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-4">
+                    <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-12 w-12" loading="eager">
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                            <a href="/">Municipalidad de Ivochote</a>
+                        </h1>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Centro Poblado - Región Lima</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-6">
+                    <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Inicio</a>
+                    <a href="/autoridades.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Autoridades</a>
+                    <a href="/servicios.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Servicios</a>
+                    <a href="/proyectos.html" class="text-municipal-600 font-medium border-b-2 border-municipal-600">Proyectos</a>
+                    <a href="/noticias.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Noticias</a>
+                    <a href="/galeria.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Galería</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button 
+                    @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    aria-label="Abrir menú de navegación"
+                >
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <nav x-show="mobileMenuOpen" x-transition class="lg:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Inicio</a>
+                    <a href="/autoridades.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Autoridades</a>
+                    <a href="/servicios.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Servicios</a>
+                    <a href="/proyectos.html" class="text-municipal-600 font-medium px-3 py-2 rounded-md bg-municipal-50 dark:bg-municipal-900/20">Proyectos</a>
+                    <a href="/noticias.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Noticias</a>
+                    <a href="/galeria.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Galería</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="bg-gradient-to-r from-municipal-600 to-municipal-800 text-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Proyectos y Obras</h2>
+                    <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                        Construyendo el futuro de Ivochote con proyectos de desarrollo sostenible e infraestructura moderna
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-50 dark:bg-gray-800 py-4" aria-label="Breadcrumb">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm">
+                    <li><a href="/" class="text-municipal-600 hover:text-municipal-700">Inicio</a></li>
+                    <li class="text-gray-500">/</li>
+                    <li class="text-gray-900 dark:text-white font-medium">Proyectos</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Project Statistics -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Inversión en Desarrollo</h3>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Números que reflejan nuestro compromiso con el progreso de Ivochote
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Stat 1 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-municipal-100 dark:bg-municipal-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-municipal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-municipal-600 mb-2">25</div>
+                        <div class="text-gray-600 dark:text-gray-300">Proyectos Ejecutados</div>
+                    </div>
+                    
+                    <!-- Stat 2 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-success-100 dark:bg-success-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-success-600 mb-2">S/. 2.5M</div>
+                        <div class="text-gray-600 dark:text-gray-300">Inversión Total</div>
+                    </div>
+                    
+                    <!-- Stat 3 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-warning-100 dark:bg-warning-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-warning-600 mb-2">12</div>
+                        <div class="text-gray-600 dark:text-gray-300">En Ejecución</div>
+                    </div>
+                    
+                    <!-- Stat 4 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-purple-600 mb-2">8,500</div>
+                        <div class="text-gray-600 dark:text-gray-300">Beneficiarios</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Slider -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Proyectos Destacados</h3>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Conoce nuestros proyectos más importantes que están transformando Ivochote
+                    </p>
+                </div>
+                
+                <div class="swiper featured-projects-swiper" data-aos="fade-up" data-aos-delay="200">
+                    <div class="swiper-wrapper">
+                        <!-- Project Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden">
+                                <img src="/assets/img/proyecto-centro-salud.jpg" alt="Centro de Salud" class="w-full h-64 object-cover">
+                                <div class="p-8">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="bg-success-100 dark:bg-success-900/30 text-success-700 dark:text-success-300 px-3 py-1 rounded-full text-sm font-medium">Completado</span>
+                                        <span class="text-gray-500 dark:text-gray-400 text-sm">2024</span>
+                                    </div>
+                                    <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Centro de Salud Comunitario</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                                        Moderno centro de salud equipado con tecnología de última generación para brindar atención médica integral a más de 2,000 familias de Ivochote.
+                                    </p>
+                                    <div class="grid grid-cols-2 gap-4 mb-6">
+                                        <div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Inversión</span>
+                                            <p class="font-semibold text-gray-900 dark:text-white">S/. 850,000</p>
+                                        </div>
+                                        <div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Beneficiarios</span>
+                                            <p class="font-semibold text-gray-900 dark:text-white">2,000 familias</p>
+                                        </div>
+                                    </div>
+                                    <button onclick="openProjectModal('centro-salud')" class="bg-municipal-600 text-white px-6 py-3 rounded-lg hover:bg-municipal-700 transition-colors w-full">
+                                        Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden">
+                                <img src="/assets/img/proyecto-parque.jpg" alt="Parque Recreativo" class="w-full h-64 object-cover">
+                                <div class="p-8">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="bg-warning-100 dark:bg-warning-900/30 text-warning-700 dark:text-warning-300 px-3 py-1 rounded-full text-sm font-medium">En Ejecución</span>
+                                        <span class="text-gray-500 dark:text-gray-400 text-sm">2025</span>
+                                    </div>
+                                    <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Parque Recreativo Central</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                                        Espacio recreativo familiar con juegos infantiles, áreas verdes, senderos peatonales y zonas deportivas para promover la vida saludable.
+                                    </p>
+                                    <div class="grid grid-cols-2 gap-4 mb-6">
+                                        <div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Inversión</span>
+                                            <p class="font-semibold text-gray-900 dark:text-white">S/. 420,000</p>
+                                        </div>
+                                        <div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Avance</span>
+                                            <p class="font-semibold text-gray-900 dark:text-white">65%</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-4">
+                                        <div class="bg-warning-600 h-2 rounded-full" style="width: 65%"></div>
+                                    </div>
+                                    <button onclick="openProjectModal('parque-central')" class="bg-municipal-600 text-white px-6 py-3 rounded-lg hover:bg-municipal-700 transition-colors w-full">
+                                        Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden">
+                                <img src="/assets/img/proyecto-agua.jpg" alt="Sistema de Agua" class="w-full h-64 object-cover">
+                                <div class="p-8">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium">Planificado</span>
+                                        <span class="text-gray-500 dark:text-gray-400 text-sm">2025</span>
+                                    </div>
+                                    <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Mejora del Sistema de Agua Potable</h4>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                                        Modernización integral del sistema de distribución de agua potable para garantizar servicio las 24 horas a toda la población.
+                                    </p>
+                                    <div class="grid grid-cols-2 gap-4 mb-6">
+                                        <div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Inversión</span>
+                                            <p class="font-semibold text-gray-900 dark:text-white">S/. 1,200,000</p>
+                                        </div>
+                                        <div>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">Inicio</span>
+                                            <p class="font-semibold text-gray-900 dark:text-white">Q2 2025</p>
+                                        </div>
+                                    </div>
+                                    <button onclick="openProjectModal('sistema-agua')" class="bg-municipal-600 text-white px-6 py-3 rounded-lg hover:bg-municipal-700 transition-colors w-full">
+                                        Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Categories -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Categorías de Proyectos</h3>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Nuestros proyectos abarcan diferentes áreas de desarrollo municipal
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Infrastructure Category -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-municipal-100 dark:bg-municipal-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-municipal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center">Infraestructura</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-center mb-4">
+                            Construcción y mejora de edificios públicos, calles y servicios básicos
+                        </p>
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-municipal-600">8</span>
+                            <span class="text-gray-500 dark:text-gray-400 ml-2">proyectos</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Health Category -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center">Salud</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-center mb-4">
+                            Centros de salud, programas preventivos y mejora de servicios médicos
+                        </p>
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-red-600">5</span>
+                            <span class="text-gray-500 dark:text-gray-400 ml-2">proyectos</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Category -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center">Educación</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-center mb-4">
+                            Mejora de instituciones educativas y programas de capacitación
+                        </p>
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-blue-600">4</span>
+                            <span class="text-gray-500 dark:text-gray-400 ml-2">proyectos</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Environment Category -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center">Medio Ambiente</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-center mb-4">
+                            Proyectos de sostenibilidad, áreas verdes y gestión ambiental
+                        </p>
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-green-600">6</span>
+                            <span class="text-gray-500 dark:text-gray-400 ml-2">proyectos</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Technology Category -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center">Tecnología</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-center mb-4">
+                            Digitalización de servicios, conectividad y gobierno electrónico
+                        </p>
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-purple-600">3</span>
+                            <span class="text-gray-500 dark:text-gray-400 ml-2">proyectos</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Recreation Category -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-center">Recreación</h4>
+                        <p class="text-gray-600 dark:text-gray-300 text-center mb-4">
+                            Parques, espacios deportivos y centros comunitarios de esparcimiento
+                        </p>
+                        <div class="text-center">
+                            <span class="text-2xl font-bold text-yellow-600">7</span>
+                            <span class="text-gray-500 dark:text-gray-400 ml-2">proyectos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Cronograma de Proyectos 2025</h3>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Calendario de ejecución de nuestros principales proyectos programados para este año
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative">
+                        <!-- Timeline line -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300 dark:bg-gray-600"></div>
+                        
+                        <!-- Timeline items -->
+                        <div class="space-y-12">
+                            <!-- Q1 2025 -->
+                            <div class="relative flex items-center" data-aos="fade-right">
+                                <div class="flex-1 text-right pr-8">
+                                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+                                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Q1 2025</h4>
+                                        <h5 class="text-municipal-600 font-medium mb-2">Inicio de Obras Viales</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                            Mejoramiento de calles principales y construcción de nuevas veredas
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="w-4 h-4 bg-municipal-600 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                                <div class="flex-1 pl-8"></div>
+                            </div>
+                            
+                            <!-- Q2 2025 -->
+                            <div class="relative flex items-center" data-aos="fade-left">
+                                <div class="flex-1 pr-8"></div>
+                                <div class="w-4 h-4 bg-success-600 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                                <div class="flex-1 text-left pl-8">
+                                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+                                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Q2 2025</h4>
+                                        <h5 class="text-success-600 font-medium mb-2">Sistema de Agua Potable</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                            Inicio de la modernización del sistema de distribución de agua
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Q3 2025 -->
+                            <div class="relative flex items-center" data-aos="fade-right">
+                                <div class="flex-1 text-right pr-8">
+                                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+                                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Q3 2025</h4>
+                                        <h5 class="text-warning-600 font-medium mb-2">Centro Educativo</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                            Construcción del nuevo centro educativo inicial
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="w-4 h-4 bg-warning-600 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                                <div class="flex-1 pl-8"></div>
+                            </div>
+                            
+                            <!-- Q4 2025 -->
+                            <div class="relative flex items-center" data-aos="fade-left">
+                                <div class="flex-1 pr-8"></div>
+                                <div class="w-4 h-4 bg-purple-600 rounded-full border-4 border-white dark:border-gray-900 z-10"></div>
+                                <div class="flex-1 text-left pl-8">
+                                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+                                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Q4 2025</h4>
+                                        <h5 class="text-purple-600 font-medium mb-2">Plataforma Digital</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 text-sm">
+                                            Lanzamiento de la plataforma digital municipal completa
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-municipal-600 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                    <h3 class="text-3xl font-bold mb-4">¿Tienes una Propuesta de Proyecto?</h3>
+                    <p class="text-xl text-blue-100 mb-8">
+                        Tu participación es fundamental para el desarrollo de Ivochote. Comparte tus ideas y propuestas con nosotros
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/contacto.html" class="bg-white text-municipal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Enviar Propuesta
+                        </a>
+                        <a href="/transparencia.html" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-municipal-600 transition-colors">
+                            Ver Presupuesto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Footer Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-10 w-10">
+                        <h4 class="text-xl font-bold">Municipalidad de Ivochote</h4>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Comprometidos con el desarrollo sostenible y el bienestar de nuestros ciudadanos.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/municipalidadivochote" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/municipalidadivochote" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Footer Column 2 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="/autoridades.html" class="text-gray-300 hover:text-white transition-colors">Autoridades</a></li>
+                        <li><a href="/servicios.html" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="/transparencia.html" class="text-gray-300 hover:text-white transition-colors">Transparencia</a></li>
+                        <li><a href="/noticias.html" class="text-gray-300 hover:text-white transition-colors">Noticias</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 3 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📍 Plaza Principal de Ivochote</li>
+                        <li>📞 +51-XXX-XXXXXX</li>
+                        <li>✉️ contacto@municipalidad-ivochote.gob.pe</li>
+                        <li>🕒 Lun - Vie: 8:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 4 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ubicación</h4>
+                    <div class="bg-gray-800 rounded-lg p-3">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0!2d-76.8!3d-12.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA0JzAwLjAiUyA3NsKwNDgnMDAuMCJX!5e0!3m2!1ses!2spe!4v1625097600000!5m2!1ses!2spe" 
+                            width="100%" 
+                            height="120" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de la Municipalidad de Ivochote">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2025 Municipalidad del Centro Poblado de Ivochote. Todos los derechos reservados.
+                </p>
+                <p class="text-gray-400 text-sm mt-2">
+                    Desarrollado por 
+                    <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" class="text-municipal-400 hover:text-municipal-300 transition-colors">
+                        @tu_usuario
+                    </a>
+                    - Ingeniero en Sistemas
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" onclick="closeProjectModal()">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white dark:bg-gray-900 rounded-xl max-w-4xl w-full max-h-[80vh] overflow-y-auto" onclick="event.stopPropagation()">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 id="project-modal-title" class="text-3xl font-bold text-gray-900 dark:text-white"></h3>
+                        <button onclick="closeProjectModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="project-modal-content" class="text-gray-600 dark:text-gray-300">
+                        <!-- Content will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <div id="whatsapp-button" class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20necesito%20información%20sobre%20proyectos%20municipales" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all transform hover:scale-110"
+           aria-label="Contactar por WhatsApp">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/darkmode.js"></script>
+    <script src="/js/whatsapp.js"></script>
+    <script src="/js/interacciones.js"></script>
+    
+    <!-- Project Modal Functions -->
+    <script>
+        function openProjectModal(projectId) {
+            const modal = document.getElementById('project-modal');
+            const title = document.getElementById('project-modal-title');
+            const content = document.getElementById('project-modal-content');
+            
+            const projectData = {
+                'centro-salud': {
+                    title: 'Centro de Salud Comunitario',
+                    content: `
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <img src="/assets/img/proyecto-centro-salud-detail.jpg" alt="Centro de Salud" class="w-full rounded-lg mb-4">
+                                <h4 class="text-xl font-semibold mb-4">Características del Proyecto</h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>Área construida: 800 m²</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>8 consultorios especializados</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>Laboratorio clínico equipado</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>Farmacia comunitaria</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">✓</span>
+                                        <span>Sala de emergencias</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4">Detalles del Proyecto</h4>
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Inversión Total</h5>
+                                        <p class="text-2xl font-bold text-green-600">S/. 850,000</p>
+                                    </div>
+                                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Beneficiarios</h5>
+                                        <p class="text-2xl font-bold text-blue-600">2,000 familias</p>
+                                    </div>
+                                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Estado</h5>
+                                        <p class="text-lg font-bold text-green-600">Completado</p>
+                                    </div>
+                                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Inauguración</h5>
+                                        <p class="text-lg font-bold">Julio 2024</p>
+                                    </div>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-4">Impacto en la Comunidad</h4>
+                                <p class="mb-4">Este centro de salud representa un hito importante para Ivochote, proporcionando acceso a servicios médicos de calidad sin necesidad de trasladarse a la ciudad.</p>
+                                <p>Los servicios incluyen medicina general, pediatría, ginecología, odontología y programas de prevención comunitaria.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                'parque-central': {
+                    title: 'Parque Recreativo Central',
+                    content: `
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <img src="/assets/img/proyecto-parque-detail.jpg" alt="Parque Central" class="w-full rounded-lg mb-4">
+                                <div class="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg">
+                                    <h5 class="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Avance del Proyecto</h5>
+                                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+                                        <div class="bg-yellow-600 h-4 rounded-full" style="width: 65%"></div>
+                                    </div>
+                                    <p class="text-sm text-yellow-700 dark:text-yellow-300 mt-2">65% completado - Fecha estimada: Diciembre 2025</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4">Características del Parque</h4>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2">🏃</span>
+                                        <span>Senderos peatonales de 2 km</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2">🌳</span>
+                                        <span>200 árboles nativos plantados</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-red-500 mr-2">🏀</span>
+                                        <span>Cancha multiusos</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-purple-500 mr-2">🎠</span>
+                                        <span>Área de juegos infantiles</span>
+                                    </li>
+                                </ul>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Inversión</h5>
+                                        <p class="text-xl font-bold text-green-600">S/. 420,000</p>
+                                    </div>
+                                    <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                        <h5 class="font-semibold">Área Total</h5>
+                                        <p class="text-xl font-bold text-blue-600">5,200 m²</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+            
+            if (projectData[projectId]) {
+                title.textContent = projectData[projectId].title;
+                content.innerHTML = projectData[projectId].content;
+                modal.classList.remove('hidden');
+            }
+        }
+        
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+    </script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        const swiper = new Swiper('.featured-projects-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+    </script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

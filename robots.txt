@@ -1,0 +1,75 @@
+# robots.txt para Municipalidad de Ivochote
+# Sitio web: https://municipalidad-ivochote.netlify.app
+# Desarrollado por: @tu_usuario
+
+User-agent: *
+Allow: /
+
+# Páginas principales permitidas
+Allow: /index.html
+Allow: /servicios.html
+Allow: /autoridades.html
+Allow: /proyectos.html
+Allow: /noticias.html
+Allow: /galeria.html
+Allow: /transparencia.html
+Allow: /contacto.html
+
+# Directorios de activos permitidos
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /components/
+
+# Archivos específicos permitidos
+Allow: /manifest.json
+Allow: /favicon.ico
+Allow: /sitemap.xml
+
+# Bloquear área administrativa
+Disallow: /login.html
+Disallow: /admin/
+Disallow: /panel/
+Disallow: /dashboard/
+
+# Bloquear archivos de desarrollo
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+Disallow: /netlify.toml
+
+# Bloquear archivos temporales
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /*.tmp
+Disallow: /*.log
+
+# Bloquear archivos de backup
+Disallow: /*.bak
+Disallow: /*.backup
+Disallow: /*~
+
+# Permitir específicamente para bots gubernamentales
+User-agent: googlebot
+Allow: /transparencia.html
+Allow: /assets/pdf/
+
+User-agent: bingbot
+Allow: /transparencia.html
+Allow: /assets/pdf/
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://municipalidad-ivochote.netlify.app/sitemap.xml
+
+# Host preferido
+Host: municipalidad-ivochote.netlify.app
+
+# Información adicional
+# Contacto: contacto@municipalidad-ivochote.pe
+# Última actualización: 2025-01-01

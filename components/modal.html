@@ -1,0 +1,154 @@
+<!-- Modal Base Template -->
+<div id="modal-base" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm opacity-0 invisible transition-all duration-300">
+    <div class="modal-content bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-hidden transform scale-95 transition-transform duration-300">
+        <!-- Header -->
+        <div class="modal-header flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+            <h3 class="modal-title text-xl font-semibold text-gray-900 dark:text-white">Título del Modal</h3>
+            <button data-modal-close class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Body -->
+        <div class="modal-body p-6 overflow-y-auto">
+            <p class="text-gray-600 dark:text-gray-300">Contenido del modal...</p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="modal-footer flex justify-end space-x-3 p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700">
+            <button data-modal-close class="btn-secondary px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">
+                Cancelar
+            </button>
+            <button class="btn-primary px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                Confirmar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Información de Servicio -->
+<div id="modal-servicio" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm opacity-0 invisible transition-all duration-300">
+    <div class="modal-content bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
+        <!-- Header -->
+        <div class="modal-header flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700 bg-blue-50 dark:bg-blue-900">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                    <i class="fas fa-building text-white"></i>
+                </div>
+                <h3 class="modal-title text-xl font-semibold text-gray-900 dark:text-white">Información del Servicio</h3>
+            </div>
+            <button data-modal-close class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Body -->
+        <div class="modal-body p-6 overflow-y-auto">
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Descripción</h4>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Información detallada sobre el servicio municipal seleccionado.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Requisitos</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                        <li>DNI original y copia</li>
+                        <li>Recibo de agua, luz o teléfono</li>
+                        <li>Formulario de solicitud</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Costo</h4>
+                    <div class="bg-green-50 dark:bg-green-900 p-4 rounded-lg">
+                        <span class="text-2xl font-bold text-green-600 dark:text-green-400">S/. 25.00</span>
+                        <span class="text-gray-600 dark:text-gray-300 ml-2">Pago único</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Tiempo de Tramitación</h4>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-clock text-blue-600"></i>
+                        <span class="text-gray-600 dark:text-gray-300">3 a 5 días hábiles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="modal-footer flex justify-between items-center p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700">
+            <button data-modal-close class="btn-secondary px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">
+                Cerrar
+            </button>
+            <div class="flex space-x-3">
+                <a href="./contacto.html" class="btn-outline px-4 py-2 text-sm font-medium border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg transition-colors">
+                    Más Información
+                </a>
+                <button class="btn-primary px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                    Iniciar Trámite
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Confirmación -->
+<div id="modal-confirmacion" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm opacity-0 invisible transition-all duration-300">
+    <div class="modal-content bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-md w-full overflow-hidden">
+        <!-- Header -->
+        <div class="modal-header p-6 text-center">
+            <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-exclamation-triangle text-yellow-600 dark:text-yellow-400 text-2xl"></i>
+            </div>
+            <h3 class="modal-title text-xl font-semibold text-gray-900 dark:text-white">Confirmar Acción</h3>
+        </div>
+        
+        <!-- Body -->
+        <div class="modal-body px-6 pb-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                ¿Estás seguro de que deseas realizar esta acción? Esta operación no se puede deshacer.
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="modal-footer flex justify-center space-x-3 p-6 border-t border-gray-200 dark:border-gray-700">
+            <button data-modal-close class="btn-secondary px-6 py-2 text-sm font-medium text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">
+                Cancelar
+            </button>
+            <button class="btn-primary px-6 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors">
+                Confirmar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Éxito -->
+<div id="modal-exito" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm opacity-0 invisible transition-all duration-300">
+    <div class="modal-content bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-md w-full overflow-hidden">
+        <!-- Header -->
+        <div class="modal-header p-6 text-center">
+            <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-green-600 dark:text-green-400 text-2xl"></i>
+            </div>
+            <h3 class="modal-title text-xl font-semibold text-gray-900 dark:text-white">¡Éxito!</h3>
+        </div>
+        
+        <!-- Body -->
+        <div class="modal-body px-6 pb-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+                Tu solicitud ha sido enviada correctamente. Recibirás una confirmación en tu correo electrónico.
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="modal-footer flex justify-center p-6">
+            <button data-modal-close class="btn-primary px-6 py-2 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors">
+                Continuar
+            </button>
+        </div>
+    </div>
+</div>

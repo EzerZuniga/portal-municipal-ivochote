@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es-PE" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce a las autoridades de la Municipalidad de Ivochote - Alcalde, regidores y funcionarios comprometidos con el desarrollo de nuestro centro poblado">
+    <meta name="keywords" content="autoridades, alcalde, regidores, municipalidad ivochote, funcionarios, gobierno local">
+    <meta name="author" content="Tu nombre - Ingeniero en Sistemas">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Autoridades - Municipalidad de Ivochote">
+    <meta property="og:description" content="Conoce a las autoridades de la Municipalidad de Ivochote">
+    <meta property="og:image" content="/assets/img/autoridades-og.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.netlify.app/autoridades.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "GovernmentOrganization",
+        "name": "Municipalidad del Centro Poblado de Ivochote",
+        "description": "Autoridades del gobierno local de Ivochote",
+        "url": "https://municipalidad-ivochote.netlify.app/autoridades.html"
+    }
+    </script>
+    
+    <title>Autoridades - Municipalidad de Ivochote</title>
+</head>
+<body class="font-sans antialiased bg-white dark:bg-gray-900 transition-colors duration-300" x-data="{ darkMode: false }" x-init="darkMode = localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)" :class="{ 'dark': darkMode }">
+    
+    <!-- Skip to main content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-municipal-600 text-white px-4 py-2 rounded-md z-50">
+        Saltar al contenido principal
+    </a>
+    
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-900 shadow-md relative z-40" x-data="{ mobileMenuOpen: false }">
+        <!-- Government Bar -->
+        <div class="bg-peru-red text-white py-2">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center space-x-4">
+                        <span class="font-medium">🇵🇪 Gobierno del Perú</span>
+                        <span class="hidden md:inline">Plataforma digital única del Estado Peruano</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button 
+                            @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)" 
+                            class="p-1 rounded hover:bg-white/20 transition-colors"
+                            aria-label="Cambiar modo oscuro"
+                        >
+                            <span x-show="!darkMode">🌙</span>
+                            <span x-show="darkMode">☀️</span>
+                        </button>
+                        <a href="/transparencia.html" class="hover:underline hidden sm:inline">Transparencia</a>
+                        <a href="/contacto.html" class="hover:underline">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Header -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-4">
+                    <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-12 w-12" loading="eager">
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                            <a href="/">Municipalidad de Ivochote</a>
+                        </h1>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Centro Poblado - Región Lima</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-6">
+                    <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Inicio</a>
+                    <a href="/autoridades.html" class="text-municipal-600 font-medium border-b-2 border-municipal-600">Autoridades</a>
+                    <a href="/servicios.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Servicios</a>
+                    <a href="/proyectos.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Proyectos</a>
+                    <a href="/noticias.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Noticias</a>
+                    <a href="/galeria.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Galería</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button 
+                    @click="mobileMenuOpen = !mobileMenuOpen"
+                    class="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    aria-label="Abrir menú de navegación"
+                >
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <nav x-show="mobileMenuOpen" x-transition class="lg:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Inicio</a>
+                    <a href="/autoridades.html" class="text-municipal-600 font-medium px-3 py-2 rounded-md bg-municipal-50 dark:bg-municipal-900/20">Autoridades</a>
+                    <a href="/servicios.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Servicios</a>
+                    <a href="/proyectos.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Proyectos</a>
+                    <a href="/noticias.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Noticias</a>
+                    <a href="/galeria.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Galería</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="bg-gradient-to-r from-municipal-600 to-municipal-800 text-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Nuestras Autoridades</h2>
+                    <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                        Conoce a los líderes comprometidos con el desarrollo y progreso del Centro Poblado de Ivochote
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-50 dark:bg-gray-800 py-4" aria-label="Breadcrumb">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm">
+                    <li><a href="/" class="text-municipal-600 hover:text-municipal-700">Inicio</a></li>
+                    <li class="text-gray-500">/</li>
+                    <li class="text-gray-900 dark:text-white font-medium">Autoridades</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Mayor Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Alcalde</h3>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                            Líder principal de nuestra municipalidad, elegido democráticamente por los ciudadanos de Ivochote
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="md:flex">
+                            <div class="md:w-1/3">
+                                <img src="/assets/img/alcalde.jpg" alt="Alcalde de Ivochote" class="w-full h-80 md:h-full object-cover">
+                            </div>
+                            <div class="md:w-2/3 p-8">
+                                <div class="mb-4">
+                                    <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                                        [Nombre del Alcalde]
+                                    </h4>
+                                    <p class="text-lg text-municipal-600 font-semibold">Alcalde del Centro Poblado de Ivochote</p>
+                                    <p class="text-gray-600 dark:text-gray-300">Período: 2023 - 2026</p>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <h5 class="font-semibold text-gray-900 dark:text-white mb-2">Mensaje del Alcalde</h5>
+                                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                            "Es un honor servir a los ciudadanos de Ivochote. Nuestro compromiso es trabajar incansablemente 
+                                            por el desarrollo sostenible de nuestro centro poblado, mejorando la calidad de vida de todas las 
+                                            familias y construyendo un futuro próspero para las nuevas generaciones."
+                                        </p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h5 class="font-semibold text-gray-900 dark:text-white mb-2">Formación Académica</h5>
+                                        <ul class="text-gray-600 dark:text-gray-300 space-y-1">
+                                            <li>• Licenciado en Administración Pública</li>
+                                            <li>• Especialización en Gestión Municipal</li>
+                                            <li>• Diplomado en Desarrollo Local</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="flex flex-wrap gap-4 pt-4">
+                                        <a href="mailto:alcalde@municipalidad-ivochote.gob.pe" class="flex items-center text-municipal-600 hover:text-municipal-700">
+                                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                            </svg>
+                                            Contactar
+                                        </a>
+                                        <span class="text-gray-600 dark:text-gray-300">📞 +51-XXX-XXXXXX</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Council Members Section -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Consejo Municipal</h3>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                            Regidores comprometidos con la representación ciudadana y la toma de decisiones democráticas
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Regidor 1 -->
+                        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                            <img src="/assets/img/regidor-1.jpg" alt="Regidor" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                    [Nombre Regidor 1]
+                                </h4>
+                                <p class="text-municipal-600 font-medium mb-2">Regidor</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                                    Especialista en desarrollo económico local y promoción de la pequeña empresa.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    regidor1@municipalidad-ivochote.gob.pe
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Regidor 2 -->
+                        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                            <img src="/assets/img/regidor-2.jpg" alt="Regidor" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                    [Nombre Regidor 2]
+                                </h4>
+                                <p class="text-municipal-600 font-medium mb-2">Regidora</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                                    Experta en programas sociales y desarrollo comunitario sostenible.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    regidor2@municipalidad-ivochote.gob.pe
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Regidor 3 -->
+                        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                            <img src="/assets/img/regidor-3.jpg" alt="Regidor" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                                    [Nombre Regidor 3]
+                                </h4>
+                                <p class="text-municipal-600 font-medium mb-2">Regidor</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                                    Especialista en infraestructura urbana y servicios públicos municipales.
+                                </p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    regidor3@municipalidad-ivochote.gob.pe
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizational Chart -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Organigrama Municipal</h3>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                            Estructura organizacional de la Municipalidad del Centro Poblado de Ivochote
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8" data-aos="fade-up" data-aos-delay="200">
+                        <!-- Organigrama visual -->
+                        <div class="flex flex-col items-center space-y-8">
+                            <!-- Alcalde -->
+                            <div class="bg-municipal-100 dark:bg-municipal-900/30 border-2 border-municipal-300 rounded-lg p-4 text-center">
+                                <div class="font-bold text-gray-900 dark:text-white">ALCALDE</div>
+                                <div class="text-sm text-municipal-600">Máxima Autoridad Ejecutiva</div>
+                            </div>
+                            
+                            <!-- Línea conectora -->
+                            <div class="w-px h-8 bg-gray-300"></div>
+                            
+                            <!-- Segundo nivel -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
+                                <!-- Consejo Municipal -->
+                                <div class="bg-success-100 dark:bg-success-900/30 border-2 border-success-300 rounded-lg p-4 text-center">
+                                    <div class="font-bold text-gray-900 dark:text-white">CONSEJO MUNICIPAL</div>
+                                    <div class="text-sm text-success-600">Órgano Normativo</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-300 mt-2">Regidores</div>
+                                </div>
+                                
+                                <!-- Gerencia Municipal -->
+                                <div class="bg-warning-100 dark:bg-warning-900/30 border-2 border-warning-300 rounded-lg p-4 text-center">
+                                    <div class="font-bold text-gray-900 dark:text-white">GERENCIA MUNICIPAL</div>
+                                    <div class="text-sm text-warning-600">Órgano Ejecutivo</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-300 mt-2">Administración</div>
+                                </div>
+                                
+                                <!-- Secretaría General -->
+                                <div class="bg-purple-100 dark:bg-purple-900/30 border-2 border-purple-300 rounded-lg p-4 text-center">
+                                    <div class="font-bold text-gray-900 dark:text-white">SECRETARÍA GENERAL</div>
+                                    <div class="text-sm text-purple-600">Órgano de Apoyo</div>
+                                    <div class="text-xs text-gray-600 dark:text-gray-300 mt-2">Documentación</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Líneas conectoras -->
+                            <div class="w-px h-8 bg-gray-300"></div>
+                            
+                            <!-- Tercer nivel - Áreas operativas -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+                                <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 rounded-lg p-3 text-center">
+                                    <div class="font-semibold text-gray-900 dark:text-white text-sm">Servicios Públicos</div>
+                                </div>
+                                <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 rounded-lg p-3 text-center">
+                                    <div class="font-semibold text-gray-900 dark:text-white text-sm">Desarrollo Social</div>
+                                </div>
+                                <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 rounded-lg p-3 text-center">
+                                    <div class="font-semibold text-gray-900 dark:text-white text-sm">Obras Públicas</div>
+                                </div>
+                                <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 rounded-lg p-3 text-center">
+                                    <div class="font-semibold text-gray-900 dark:text-white text-sm">Administración</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Officials -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Funcionarios Principales</h3>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                            Equipo técnico y administrativo comprometido con la excelencia en el servicio público
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Gerente Municipal -->
+                        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex items-center space-x-4">
+                                <img src="/assets/img/gerente-municipal.jpg" alt="Gerente Municipal" class="w-16 h-16 rounded-full object-cover">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                        [Nombre Gerente Municipal]
+                                    </h4>
+                                    <p class="text-municipal-600 font-medium">Gerente Municipal</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Administración y Gestión Pública</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mt-4 text-sm">
+                                Responsable de la administración general y la implementación de políticas municipales.
+                            </p>
+                        </div>
+                        
+                        <!-- Secretario General -->
+                        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="flex items-center space-x-4">
+                                <img src="/assets/img/secretario-general.jpg" alt="Secretario General" class="w-16 h-16 rounded-full object-cover">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                        [Nombre Secretario General]
+                                    </h4>
+                                    <p class="text-municipal-600 font-medium">Secretario General</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Documentación y Archivo</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mt-4 text-sm">
+                                Encargado de la gestión documentaria y coordinación de sesiones del consejo municipal.
+                            </p>
+                        </div>
+                        
+                        <!-- Tesorero -->
+                        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="flex items-center space-x-4">
+                                <img src="/assets/img/tesorero.jpg" alt="Tesorero" class="w-16 h-16 rounded-full object-cover">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                        [Nombre Tesorero]
+                                    </h4>
+                                    <p class="text-municipal-600 font-medium">Tesorero Municipal</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Gestión Financiera</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mt-4 text-sm">
+                                Responsable de la administración financiera y recaudación de tributos municipales.
+                            </p>
+                        </div>
+                        
+                        <!-- Responsable de Obras -->
+                        <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="flex items-center space-x-4">
+                                <img src="/assets/img/responsable-obras.jpg" alt="Responsable de Obras" class="w-16 h-16 rounded-full object-cover">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                        [Nombre Responsable de Obras]
+                                    </h4>
+                                    <p class="text-municipal-600 font-medium">Responsable de Obras Públicas</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Infraestructura y Desarrollo</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-300 mt-4 text-sm">
+                                Encargado de la planificación y ejecución de proyectos de infraestructura municipal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="bg-municipal-50 dark:bg-municipal-900/20 rounded-2xl p-8" data-aos="fade-up">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                            ¿Necesitas contactar con nuestras autoridades?
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            Estamos comprometidos con la transparencia y la comunicación directa con nuestros ciudadanos.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="/contacto.html" class="bg-municipal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-municipal-700 transition-colors">
+                                Solicitar Audiencia
+                            </a>
+                            <a href="mailto:contacto@municipalidad-ivochote.gob.pe" class="border-2 border-municipal-600 text-municipal-600 px-8 py-3 rounded-lg font-semibold hover:bg-municipal-600 hover:text-white transition-colors">
+                                Enviar Consulta
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Footer Column 1 -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-10 w-10">
+                        <h4 class="text-xl font-bold">Municipalidad de Ivochote</h4>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Comprometidos con el desarrollo sostenible y el bienestar de nuestros ciudadanos.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/municipalidadivochote" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/municipalidadivochote" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Footer Column 2 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="/servicios.html" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="/proyectos.html" class="text-gray-300 hover:text-white transition-colors">Proyectos</a></li>
+                        <li><a href="/transparencia.html" class="text-gray-300 hover:text-white transition-colors">Transparencia</a></li>
+                        <li><a href="/noticias.html" class="text-gray-300 hover:text-white transition-colors">Noticias</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 3 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📍 Plaza Principal de Ivochote</li>
+                        <li>📞 +51-XXX-XXXXXX</li>
+                        <li>✉️ contacto@municipalidad-ivochote.gob.pe</li>
+                        <li>🕒 Lun - Vie: 8:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 4 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Ubicación</h4>
+                    <div class="bg-gray-800 rounded-lg p-3">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0!2d-76.8!3d-12.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA0JzAwLjAiUyA3NsKwNDgnMDAuMCJX!5e0!3m2!1ses!2spe!4v1625097600000!5m2!1ses!2spe" 
+                            width="100%" 
+                            height="120" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de la Municipalidad de Ivochote">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2025 Municipalidad del Centro Poblado de Ivochote. Todos los derechos reservados.
+                </p>
+                <p class="text-gray-400 text-sm mt-2">
+                    Desarrollado por 
+                    <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" class="text-municipal-400 hover:text-municipal-300 transition-colors">
+                        @tu_usuario
+                    </a>
+                    - Ingeniero en Sistemas
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div id="whatsapp-button" class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20necesito%20información%20sobre%20las%20autoridades%20municipales" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all transform hover:scale-110"
+           aria-label="Contactar por WhatsApp">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/darkmode.js"></script>
+    <script src="/js/whatsapp.js"></script>
+    <script src="/js/interacciones.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

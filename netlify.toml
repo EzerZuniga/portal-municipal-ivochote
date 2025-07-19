@@ -1,0 +1,114 @@
+[build]
+  # Directorio de publicación
+  publish = "."
+  
+  # Comando de construcción
+  command = "npm run build"
+  
+  # Directorio base para comandos de construcción
+  base = "."
+
+[build.environment]
+  # Variables de entorno
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+  SITE_NAME = "Municipalidad de Ivochote"
+  SITE_URL = "https://municipalidad-ivochote.netlify.app"
+
+# Configuración de headers para seguridad y rendimiento
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Seguridad
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    
+    # Cache para activos estáticos
+    Cache-Control = "public, max-age=31536000"
+    
+    # Headers específicos para el gobierno
+    X-Powered-By = "Municipalidad de Ivochote"
+    X-Developer = "@tu_usuario"
+
+# Headers específicos para archivos HTML
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com https://www.googletagmanager.com https://connect.facebook.net;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://api.municipalidad-ivochote.pe https://www.google-analytics.com https://vitals.vercel-insights.com;
+      frame-src 'self' https://www.google.com https://www.facebook.com https://www.youtube.com;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self' https://formspree.io;
+    """
+
+# Headers para archivos CSS
+[[headers]]
+  for = "/css/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/css; charset=utf-8"
+
+# Headers para archivos JavaScript
+[[headers]]
+  for = "/js/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "application/javascript; charset=utf-8"
+
+# Headers para imágenes
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Headers para archivos PDF
+[[headers]]
+  for = "/assets/pdf/*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "application/pdf"
+
+# Headers para fuentes
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Access-Control-Allow-Origin = "*"
+
+# Headers para el manifest.json
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+    Cache-Control = "public, max-age=86400"
+
+# Headers para el service worker
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Redirecciones
+[[redirects]]
+  from = "/admin"
+  to = "/login.html"
+  status = 301
+
+[[redirects]]
+  from = "/administracion"
+  to = "/login.html"
+  status = 301
+
+[[redirects]]
+  from = "/panel
