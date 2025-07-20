@@ -1,776 +1,228 @@
 <!DOCTYPE html>
-<html lang="es-PE" dir="ltr">
+<html lang="es-PE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galería de fotos y videos de la Municipalidad de Ivochote - Eventos, proyectos y actividades del centro poblado">
-    <meta name="keywords" content="galeria, fotos, videos, eventos, actividades, ivochote, municipalidad">
-    <meta name="author" content="Tu nombre - Ingeniero en Sistemas">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Galería de Fotos y Videos - Municipalidad de Ivochote">
-    <meta property="og:description" content="Conoce los eventos y actividades de Ivochote a través de nuestra galería multimedia">
-    <meta property="og:image" content="/assets/img/galeria-og.jpg">
-    <meta property="og:url" content="https://municipalidad-ivochote.netlify.app/galeria.html">
-    <meta property="og:type" content="website">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="manifest" href="/manifest.json">
-    
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/css/output.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ImageGallery",
-        "name": "Galería Municipalidad de Ivochote",
-        "description": "Galería de fotos y videos de eventos y actividades municipales",
-        "url": "https://municipalidad-ivochote.netlify.app/galeria.html"
-    }
-    </script>
-    
-    <title>Galería de Fotos y Videos - Municipalidad de Ivochote</title>
+    <title>Galería - Municipalidad de Ivochote</title>
+    <!-- Meta tags, favicon y CSS igual que en index.html -->
+    <!-- ... -->
 </head>
-<body class="font-sans antialiased bg-white dark:bg-gray-900 transition-colors duration-300" x-data="{ darkMode: false }" x-init="darkMode = localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)" :class="{ 'dark': darkMode }">
-    
-    <!-- Skip to main content -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-municipal-600 text-white px-4 py-2 rounded-md z-50">
-        Saltar al contenido principal
-    </a>
-    
-    <!-- Header -->
-    <header class="bg-white dark:bg-gray-900 shadow-md relative z-40" x-data="{ mobileMenuOpen: false }">
-        <!-- Government Bar -->
-        <div class="bg-peru-red text-white py-2">
-            <div class="container mx-auto px-4">
-                <div class="flex items-center justify-between text-sm">
-                    <div class="flex items-center space-x-4">
-                        <span class="font-medium">🇵🇪 Gobierno del Perú</span>
-                        <span class="hidden md:inline">Plataforma digital única del Estado Peruano</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <button 
-                            @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)" 
-                            class="p-1 rounded hover:bg-white/20 transition-colors"
-                            aria-label="Cambiar modo oscuro"
-                        >
-                            <span x-show="!darkMode">🌙</span>
-                            <span x-show="darkMode">☀️</span>
-                        </button>
-                        <a href="/transparencia.html" class="hover:underline hidden sm:inline">Transparencia</a>
-                        <a href="/contacto.html" class="hover:underline">Contacto</a>
-                    </div>
-                </div>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500">
+        <!-- Igual que en index.html -->
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container">
+        <!-- Se cargará dinámicamente desde components/header.html -->
+    </div>
+
+    <!-- Page Header -->
+    <section class="relative py-20 bg-blue-600 text-white">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <img src="/assets/img/galeria/banner.jpg" alt="Galería de Ivochote" class="absolute inset-0 w-full h-full object-cover z-0">
+        <div class="container px-6 mx-auto relative z-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Galería Multimedia</h1>
+                <p class="text-xl max-w-3xl mx-auto">Imágenes y videos que muestran la belleza y actividades de nuestro centro poblado</p>
             </div>
         </div>
-        
-        <!-- Main Header -->
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo and Title -->
-                <div class="flex items-center space-x-4">
-                    <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-12 w-12" loading="eager">
-                    <div>
-                        <h1 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                            <a href="/">Municipalidad de Ivochote</a>
-                        </h1>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Centro Poblado - Región Lima</p>
-                    </div>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-6">
-                    <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Inicio</a>
-                    <a href="/autoridades.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Autoridades</a>
-                    <a href="/servicios.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Servicios</a>
-                    <a href="/proyectos.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Proyectos</a>
-                    <a href="/noticias.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Noticias</a>
-                    <a href="/galeria.html" class="text-municipal-600 font-medium border-b-2 border-municipal-600">Galería</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button 
-                    @click="mobileMenuOpen = !mobileMenuOpen"
-                    class="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    aria-label="Abrir menú de navegación"
-                >
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <nav x-show="mobileMenuOpen" x-transition class="lg:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Inicio</a>
-                    <a href="/autoridades.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Autoridades</a>
-                    <a href="/servicios.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Servicios</a>
-                    <a href="/proyectos.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Proyectos</a>
-                    <a href="/noticias.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Noticias</a>
-                    <a href="/galeria.html" class="text-municipal-600 font-medium px-3 py-2 rounded-md bg-municipal-50 dark:bg-municipal-900/20">Galería</a>
-                </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-4">
+        <div class="container px-6 mx-auto">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-home mr-2"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Galería</span>
+                        </div>
+                    </li>
+                </ol>
             </nav>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Page Header -->
-        <section class="bg-gradient-to-r from-municipal-600 to-municipal-800 text-white py-16">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Galería Multimedia</h2>
-                    <p class="text-xl text-blue-100 max-w-2xl mx-auto">
-                        Descubre los momentos más importantes de Ivochote a través de fotos y videos de nuestros eventos y proyectos
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Breadcrumb -->
-        <nav class="bg-gray-50 dark:bg-gray-800 py-4" aria-label="Breadcrumb">
-            <div class="container mx-auto px-4">
-                <ol class="flex items-center space-x-2 text-sm">
-                    <li><a href="/" class="text-municipal-600 hover:text-municipal-700">Inicio</a></li>
-                    <li class="text-gray-500">/</li>
-                    <li class="text-gray-900 dark:text-white font-medium">Galería</li>
-                </ol>
-            </div>
-        </nav>
-
-        <!-- Gallery Navigation -->
-        <section class="py-8 bg-gray-50 dark:bg-gray-800">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
-                    <button 
-                        onclick="filterGallery('all')" 
-                        class="gallery-filter-btn active bg-municipal-600 text-white px-6 py-2 rounded-full hover:bg-municipal-700 transition-colors"
-                        data-filter="all"
-                    >
-                        Todos
-                    </button>
-                    <button 
-                        onclick="filterGallery('eventos')" 
-                        class="gallery-filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full hover:bg-municipal-600 hover:text-white transition-colors"
-                        data-filter="eventos"
-                    >
-                        Eventos
-                    </button>
-                    <button 
-                        onclick="filterGallery('proyectos')" 
-                        class="gallery-filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full hover:bg-municipal-600 hover:text-white transition-colors"
-                        data-filter="proyectos"
-                    >
-                        Proyectos
-                    </button>
-                    <button 
-                        onclick="filterGallery('salud')" 
-                        class="gallery-filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full hover:bg-municipal-600 hover:text-white transition-colors"
-                        data-filter="salud"
-                    >
-                        Salud
-                    </button>
-                    <button 
-                        onclick="filterGallery('educacion')" 
-                        class="gallery-filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full hover:bg-municipal-600 hover:text-white transition-colors"
-                        data-filter="educacion"
-                    >
-                        Educación
-                    </button>
-                    <button 
-                        onclick="filterGallery('videos')" 
-                        class="gallery-filter-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-6 py-2 rounded-full hover:bg-municipal-600 hover:text-white transition-colors"
-                        data-filter="videos"
-                    >
-                        Videos
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Gallery Slider -->
-        <section class="py-16">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Momentos Destacados</h3>
-                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Los eventos y logros más importantes de nuestra comunidad
-                    </p>
-                </div>
-                
-                <div class="swiper featured-gallery-swiper" data-aos="fade-up" data-aos-delay="200">
-                    <div class="swiper-wrapper">
-                        <!-- Featured Image 1 -->
-                        <div class="swiper-slide">
-                            <div class="relative rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/img/gallery-featured-1.jpg" alt="Inauguración Centro de Salud" class="w-full h-96 object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6 text-white">
-                                    <h4 class="text-2xl font-bold mb-2">Inauguración Centro de Salud</h4>
-                                    <p class="text-gray-200 mb-3">Momentos de la inauguración del moderno centro de salud comunitario</p>
-                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm">Julio 2025</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Featured Image 2 -->
-                        <div class="swiper-slide">
-                            <div class="relative rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/img/gallery-featured-2.jpg" alt="Aniversario de Ivochote" class="w-full h-96 object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6 text-white">
-                                    <h4 class="text-2xl font-bold mb-2">45° Aniversario de Ivochote</h4>
-                                    <p class="text-gray-200 mb-3">Celebración del aniversario de nuestro querido centro poblado</p>
-                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm">Julio 2025</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Featured Image 3 -->
-                        <div class="swiper-slide">
-                            <div class="relative rounded-2xl overflow-hidden shadow-xl">
-                                <img src="/assets/img/gallery-featured-3.jpg" alt="Proyecto de Vías" class="w-full h-96 object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6 text-white">
-                                    <h4 class="text-2xl font-bold mb-2">Mejoramiento de Vías</h4>
-                                    <p class="text-gray-200 mb-3">Avances en el proyecto de mejoramiento de calles principales</p>
-                                    <span class="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm">Julio 2025</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation buttons -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Main Gallery Grid -->
-        <section class="py-16 bg-gray-50 dark:bg-gray-800">
-            <div class="container mx-auto px-4">
-                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    
-                    <!-- Gallery Item 1 - Eventos -->
-                    <div class="gallery-item" data-category="eventos" data-aos="fade-up" data-aos-delay="100">
-                        <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                            <img src="/assets/img/gallery-evento-1.jpg" alt="Festival Cultural" class="w-full h-64 object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button onclick="openLightbox('/assets/img/gallery-evento-1.jpg', 'Festival Cultural Ivochote')" class="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <h4 class="text-white font-semibold">Festival Cultural</h4>
-                                <p class="text-gray-200 text-sm">Evento comunitario 2025</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 2 - Proyectos -->
-                    <div class="gallery-item" data-category="proyectos" data-aos="fade-up" data-aos-delay="200">
-                        <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                            <img src="/assets/img/gallery-proyecto-1.jpg" alt="Construcción Parque" class="w-full h-64 object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button onclick="openLightbox('/assets/img/gallery-proyecto-1.jpg', 'Construcción del Parque Central')" class="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <h4 class="text-white font-semibold">Parque Central</h4>
-                                <p class="text-gray-200 text-sm">Proyecto en construcción</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 3 - Salud -->
-                    <div class="gallery-item" data-category="salud" data-aos="fade-up" data-aos-delay="300">
-                        <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                            <img src="/assets/img/gallery-salud-1.jpg" alt="Campaña de Vacunación" class="w-full h-64 object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button onclick="openLightbox('/assets/img/gallery-salud-1.jpg', 'Campaña de Vacunación Infantil')" class="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <h4 class="text-white font-semibold">Campaña de Vacunación</h4>
-                                <p class="text-gray-200 text-sm">Programa de salud infantil</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 4 - Videos -->
-                    <div class="gallery-item" data-category="videos" data-aos="fade-up" data-aos-delay="400">
-                        <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                            <img src="/assets/img/gallery-video-1.jpg" alt="Video Institucional" class="w-full h-64 object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button onclick="openVideoModal('https://www.youtube.com/embed/VIDEO_ID_1')" class="bg-red-600 text-white p-3 rounded-full">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="absolute top-4 right-4">
-                                <span class="bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">VIDEO</span>
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <h4 class="text-white font-semibold">Video Institucional</h4>
-                                <p class="text-gray-200 text-sm">Presentación de Ivochote</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 5 - Educación -->
-                    <div class="gallery-item" data-category="educacion" data-aos="fade-up" data-aos-delay="500">
-                        <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                            <img src="/assets/img/gallery-educacion-1.jpg" alt="Programa Educativo" class="w-full h-64 object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button onclick="openLightbox('/assets/img/gallery-educacion-1.jpg', 'Programa de Alfabetización Digital')" class="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <h4 class="text-white font-semibold">Alfabetización Digital</h4>
-                                <p class="text-gray-200 text-sm">Programa educativo</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 6 - Eventos -->
-                    <div class="gallery-item" data-category="eventos" data-aos="fade-up" data-aos-delay="600">
-                        <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                            <img src="/assets/img/gallery-evento-2.jpg" alt="Ceremonia Inaugural" class="w-full h-64 object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button onclick="openLightbox('/assets/img/gallery-evento-2.jpg', 'Ceremonia de Inauguración')" class="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <h4 class="text-white font-semibold">Ceremonia Inaugural</h4>
-                                <p class="text-gray-200 text-sm">Centro de salud</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 7 - Proyectos -->
-                    <div class="gallery-item" data-category="proyectos" data-aos="fade-up" data-aos-delay="700">
-                        <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                            <img src="/assets/img/gallery-proyecto-2.jpg" alt="Obras Viales" class="w-full h-64 object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button onclick="openLightbox('/assets/img/gallery-proyecto-2.jpg', 'Mejoramiento de Vías Principales')" class="bg-white/20 backdrop-blur-sm text-white p-3 rounded-full">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <h4 class="text-white font-semibold">Obras Viales</h4>
-                                <p class="text-gray-200 text-sm">Mejoramiento de calles</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gallery Item 8 - Videos -->
-                    <div class="gallery-item" data-category="videos" data-aos="fade-up" data-aos-delay="800">
-                        <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
-                            <img src="/assets/img/gallery-video-2.jpg" alt="Sesión del Concejo" class="w-full h-64 object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <button onclick="openVideoModal('https://www.youtube.com/embed/VIDEO_ID_2')" class="bg-red-600 text-white p-3 rounded-full">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="absolute top-4 right-4">
-                                <span class="bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">VIDEO</span>
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                <h4 class="text-white font-semibold">Sesión del Concejo</h4>
-                                <p class="text-gray-200 text-sm">Transmisión en vivo</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- More gallery items would continue here... -->
-
-                </div>
-                
-                <!-- Load More Button -->
-                <div class="text-center mt-12" data-aos="fade-up">
-                    <button id="load-more-gallery" class="bg-municipal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-municipal-700 transition-colors">
-                        Cargar más imágenes
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Statistics Section -->
-        <section class="py-16">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Nuestra Galería en Números</h3>
-                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Registramos cada momento importante de nuestro centro poblado
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Stat 1 -->
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-16 h-16 bg-municipal-100 dark:bg-municipal-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-municipal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="text-3xl font-bold text-municipal-600 mb-2">850+</div>
-                        <div class="text-gray-600 dark:text-gray-300">Fotografías</div>
-                    </div>
-                    
-                    <!-- Stat 2 -->
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="text-3xl font-bold text-red-600 mb-2">45</div>
-                        <div class="text-gray-600 dark:text-gray-300">Videos</div>
-                    </div>
-                    
-                    <!-- Stat 3 -->
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div class="text-3xl font-bold text-green-600 mb-2">125</div>
-                        <div class="text-gray-600 dark:text-gray-300">Eventos</div>
-                    </div>
-                    
-                    <!-- Stat 4 -->
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <div class="text-3xl font-bold text-purple-600 mb-2">3</div>
-                        <div class="text-gray-600 dark:text-gray-300">Años documentando</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Share Gallery Section -->
-        <section class="py-16 bg-municipal-600 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <div class="max-w-4xl mx-auto" data-aos="fade-up">
-                    <h3 class="text-3xl font-bold mb-4">¿Tienes Fotos de Eventos?</h3>
-                    <p class="text-xl text-blue-100 mb-8">
-                        Comparte tus fotos de eventos municipales con nosotros y ayúdanos a documentar la historia de Ivochote
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="/contacto.html" class="bg-white text-municipal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                            Enviar Fotos
-                        </a>
-                        <a href="mailto:galeria@municipalidad-ivochote.gob.pe" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-municipal-600 transition-colors">
-                            📧 Contactar
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Footer Column 1 -->
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-10 w-10">
-                        <h4 class="text-xl font-bold">Municipalidad de Ivochote</h4>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        Comprometidos con el desarrollo sostenible y el bienestar de nuestros ciudadanos.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/municipalidadivochote" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.youtube.com/municipalidadivochote" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" aria-label="YouTube">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Footer Column 2 -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
-                        <li><a href="/autoridades.html" class="text-gray-300 hover:text-white transition-colors">Autoridades</a></li>
-                        <li><a href="/servicios.html" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
-                        <li><a href="/proyectos.html" class="text-gray-300 hover:text-white transition-colors">Proyectos</a></li>
-                        <li><a href="/noticias.html" class="text-gray-300 hover:text-white transition-colors">Noticias</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Footer Column 3 -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>📍 Plaza Principal de Ivochote</li>
-                        <li>📞 +51-XXX-XXXXXX</li>
-                        <li>✉️ contacto@municipalidad-ivochote.gob.pe</li>
-                        <li>🕒 Lun - Vie: 8:00 AM - 5:00 PM</li>
-                    </ul>
-                </div>
-                
-                <!-- Footer Column 4 -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Ubicación</h4>
-                    <div class="bg-gray-800 rounded-lg p-3">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.0!2d-76.8!3d-12.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA0JzAwLjAiUyA3NsKwNDgnMDAuMCJX!5e0!3m2!1ses!2spe!4v1625097600000!5m2!1ses!2spe" 
-                            width="100%" 
-                            height="120" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Ubicación de la Municipalidad de Ivochote">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-300">
-                    © 2025 Municipalidad del Centro Poblado de Ivochote. Todos los derechos reservados.
-                </p>
-                <p class="text-gray-400 text-sm mt-2">
-                    Desarrollado por 
-                    <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" class="text-municipal-400 hover:text-municipal-300 transition-colors">
-                        @tu_usuario
-                    </a>
-                    - Ingeniero en Sistemas
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center" onclick="closeLightbox()">
-        <div class="relative max-w-5xl max-h-[90vh] mx-4">
-            <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-            <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain" onclick="event.stopPropagation()">
-            <div id="lightbox-caption" class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white p-4 text-center">
-                <!-- Caption will be inserted here -->
-            </div>
-        </div>
     </div>
 
-    <!-- Video Modal -->
-    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center" onclick="closeVideoModal()">
-        <div class="relative max-w-4xl w-full mx-4">
-            <button onclick="closeVideoModal()" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-            <div class="relative w-full h-0 pb-[56.25%]" onclick="event.stopPropagation()">
-                <iframe id="video-iframe" src="" class="absolute top-0 left-0 w-full h-full" frameborder="0" allowfullscreen></iframe>
+    <!-- Gallery Section -->
+    <section class="py-16 bg-white">
+        <div class="container px-6 mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Nuestra Galería</h2>
+                    <p class="text-lg text-gray-600">Momentos capturados de la vida en Ivochote</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium">Todas</button>
+                    <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition duration-200">Eventos</button>
+                    <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition duration-200">Naturaleza</button>
+                    <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition duration-200">Proyectos</button>
+                    <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition duration-200">Cultura</button>
+                </div>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Photo 1 -->
+                <a href="/assets/img/galeria/foto1.jpg" class="group relative block overflow-hidden rounded-xl shadow-lg" data-fancybox="gallery" data-caption="Fiesta Patronal de Ivochote 2025">
+                    <img src="/assets/img/galeria/foto1-thumb.jpg" alt="Fiesta Patronal" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white text-sm">Fiesta Patronal 2025</p>
+                    </div>
+                </a>
+
+                <!-- Photo 2 -->
+                <a href="/assets/img/galeria/foto2.jpg" class="group relative block overflow-hidden rounded-xl shadow-lg" data-fancybox="gallery" data-caption="Catarata de Ivochote">
+                    <img src="/assets/img/galeria/foto2-thumb.jpg" alt="Catarata" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white text-sm">Catarata de Ivochote</p>
+                    </div>
+                </a>
+
+                <!-- Photo 3 -->
+                <a href="/assets/img/galeria/foto3.jpg" class="group relative block overflow-hidden rounded-xl shadow-lg" data-fancybox="gallery" data-caption="Inauguración del Centro de Salud">
+                    <img src="/assets/img/galeria/foto3-thumb.jpg" alt="Centro de Salud" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white text-sm">Inauguración Centro de Salud</p>
+                    </div>
+                </a>
+
+                <!-- Photo 4 -->
+                <a href="/assets/img/galeria/foto4.jpg" class="group relative block overflow-hidden rounded-xl shadow-lg" data-fancybox="gallery" data-caption="Taller de Artesanías">
+                    <img src="/assets/img/galeria/foto4-thumb.jpg" alt="Taller de Artesanías" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white text-sm">Taller de Artesanías</p>
+                    </div>
+                </a>
+
+                <!-- Photo 5 -->
+                <a href="/assets/img/galeria/foto5.jpg" class="group relative block overflow-hidden rounded-xl shadow-lg" data-fancybox="gallery" data-caption="Vista Panorámica de Ivochote">
+                    <img src="/assets/img/galeria/foto5-thumb.jpg" alt="Vista Panorámica" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white text-sm">Vista Panorámica</p>
+                    </div>
+                </a>
+
+                <!-- Photo 6 -->
+                <a href="/assets/img/galeria/foto6.jpg" class="group relative block overflow-hidden rounded-xl shadow-lg" data-fancybox="gallery" data-caption="Campaña de Salud">
+                    <img src="/assets/img/galeria/foto6-thumb.jpg" alt="Campaña de Salud" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white text-sm">Campaña de Salud</p>
+                    </div>
+                </a>
+
+                <!-- Photo 7 -->
+                <a href="/assets/img/galeria/foto7.jpg" class="group relative block overflow-hidden rounded-xl shadow-lg" data-fancybox="gallery" data-caption="Río Ivochote">
+                    <img src="/assets/img/galeria/foto7-thumb.jpg" alt="Río Ivochote" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white text-sm">Río Ivochote</p>
+                    </div>
+                </a>
+
+                <!-- Photo 8 -->
+                <a href="/assets/img/galeria/foto8.jpg" class="group relative block overflow-hidden rounded-xl shadow-lg" data-fancybox="gallery" data-caption="Feria Agropecuaria">
+                    <img src="/assets/img/galeria/foto8-thumb.jpg" alt="Feria Agropecuaria" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p class="text-white text-sm">Feria Agropecuaria</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-lg transition duration-300 inline-flex items-center">
+                    Cargar más fotos <i class="fas fa-sync-alt ml-2"></i>
+                </button>
             </div>
         </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container px-6 mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Videos de Ivochote</h2>
+                <p class="text-lg text-gray-600">Conoce más sobre nuestro centro poblado a través de estos videos</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="relative pt-[56.25%] overflow-hidden">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Documental: Vida en Ivochote</h3>
+                        <p class="text-gray-600">Conoce las costumbres y tradiciones de nuestros pobladores.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative pt-[56.25%] overflow-hidden">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Atractivos Turísticos</h3>
+                        <p class="text-gray-600">Recorrido por los principales lugares para visitar en Ivochote.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-container">
+        <!-- Se cargará dinámicamente desde components/footer.html -->
     </div>
 
-    <!-- WhatsApp Floating Button -->
-    <div id="whatsapp-button" class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20me%20interesa%20la%20galería%20de%20fotos%20municipales" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all transform hover:scale-110"
-           aria-label="Contactar por WhatsApp">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
-            </svg>
-        </a>
-    </div>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible hover:bg-blue-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            // Options
+        });
+    </script>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/darkmode.js"></script>
-    <script src="/js/whatsapp.js"></script>
-    <script src="/js/interacciones.js"></script>
-    
-    <!-- Gallery Functionality -->
-    <script>
-        // Gallery Filter Function
-        function filterGallery(category) {
-            const items = document.querySelectorAll('.gallery-item');
-            const buttons = document.querySelectorAll('.gallery-filter-btn');
-            
-            // Update button states
-            buttons.forEach(btn => {
-                btn.classList.remove('active', 'bg-municipal-600', 'text-white');
-                btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-            });
-            
-            const activeBtn = document.querySelector(`[data-filter="${category}"]`);
-            activeBtn.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
-            activeBtn.classList.add('active', 'bg-municipal-600', 'text-white');
-            
-            // Filter items
-            items.forEach(item => {
-                if (category === 'all' || item.dataset.category === category) {
-                    item.style.display = 'block';
-                    item.style.animation = 'fadeIn 0.5s ease-in-out';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Lightbox Functions
-        function openLightbox(imageSrc, caption) {
-            const modal = document.getElementById('lightbox-modal');
-            const image = document.getElementById('lightbox-image');
-            const captionElement = document.getElementById('lightbox-caption');
-            
-            image.src = imageSrc;
-            image.alt = caption;
-            captionElement.textContent = caption;
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            const modal = document.getElementById('lightbox-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Video Modal Functions
-        function openVideoModal(videoSrc) {
-            const modal = document.getElementById('video-modal');
-            const iframe = document.getElementById('video-iframe');
-            
-            iframe.src = videoSrc + '?autoplay=1';
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeVideoModal() {
-            const modal = document.getElementById('video-modal');
-            const iframe = document.getElementById('video-iframe');
-            
-            iframe.src = '';
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-                closeVideoModal();
-            }
-        });
-
-        // Load More Functionality
-        document.getElementById('load-more-gallery').addEventListener('click', function() {
-            // Simulate loading more images
-            alert('Cargando más imágenes... (Esta funcionalidad se implementaría con una base de datos)');
-        });
-    </script>
-    
-    <!-- Initialize Swiper -->
-    <script>
-        const featuredSwiper = new Swiper('.featured-gallery-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                }
-            }
-        });
-    </script>
-    
-    <!-- Initialize AOS -->
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
-    </script>
+    <!-- Igual que en index.html -->
+    <!-- ... -->
 </body>
 </html>

@@ -1,580 +1,476 @@
 <!DOCTYPE html>
-<html lang="es-PE" dir="ltr">
+<html lang="es-PE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Municipalidad Del Centro Poblado De Ivochote - Gobierno local comprometido con el desarrollo y bienestar de nuestros pobladores de ivochote">
-    <meta name="keywords" content="municipalidad, ivochote, peru, gobierno, servicios municipales, centro poblado">
-    <meta name="author" content="Ezer Benito Zuniga Chura - Estudiante De Ingenieria Informatica De Sistemas">
+    <meta name="description" content="Municipalidad del Centro Poblado de Ivochote - Gobierno local comprometido con el desarrollo y bienestar de nuestros pobladores">
+    <meta name="keywords" content="municipalidad, ivochote, cusco, peru, gobierno local, servicios municipales">
+    <meta name="author" content="Municipalidad de Ivochote">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="Spanish">
-    <meta name="revisit-after" content="7 days">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Municipalidad Del Centro Poblado De Ivochote - Inicio">
-    <meta property="og:description" content="Sitio web oficial de la Municipalidad Del Centro Poblado De Ivochote, Perú">
-    <meta property="og:image" content="/assets/img/og-image.jpg">
-    <meta property="og:url" content="https://municipalidad-ivochote.netlify.app">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_PE">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://web.facebook.com/profile.php?id=100088871240104&locale=es_LA">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/">
     <meta property="og:title" content="Municipalidad del Centro Poblado de Ivochote">
-    <meta property="og:description" content="Sitio web oficial de la Municipalidad del Centro Poblado de Ivochote, Perú">
-    <meta property="og:image" content="https://muniivochote.gob.pe/images/social-banner.jpg">
+    <meta property="og:description" content="Sitio web oficial de la Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:image" content="https://municipalidad-ivochote.gob.pe/assets/img/social-banner.jpg">
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://municipalidad-ivochote.gob.pe/">
+    <meta property="twitter:title" content="Municipalidad del Centro Poblado de Ivochote">
+    <meta property="twitter:description" content="Sitio web oficial de la Municipalidad del Centro Poblado de Ivochote">
+    <meta property="twitter:image" content="https://municipalidad-ivochote.gob.pe/assets/img/social-banner.jpg">
+
+    <title>Municipalidad de Ivochote - Inicio</title>
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://maps.googleapis.com">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/css/output.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="/assets/css/output.css" as="style">
+    <link rel="preload" href="/assets/js/main.js" as="script">
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "GovernmentOrganization",
-        "name": "Municipalidad del Centro Poblado de Ivochote",
-        "description": "Gobierno local del Centro Poblado de Ivochote, Perú",
-        "url": "https://municipalidad-ivochote.netlify.app",
-        "logo": "/assets/img/logo-municipalidad.png",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Plaza Principal de Ivochote",
-            "addressLocality": "Ivochote",
-            "addressCountry": "PE"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+51-XXX-XXXXXX",
-            "contactType": "customer service",
-            "availableLanguage": "Spanish"
-        },
-        "sameAs": [
-            "https://web.facebook.com/profile.php?id=100088871240104&locale=es_LA",
-            "https://www.youtube.com/municipalidadivochote"
-        ]
-    }
-    </script>
-    
-    <title>Municipalidad de Ivochote - Inicio</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/output.css">
 </head>
-<body class="font-sans antialiased bg-white dark:bg-gray-900 transition-colors duration-300" x-data="{ darkMode: false }" x-init="darkMode = localStorage.getItem('darkMode') === 'true' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)" :class="{ 'dark': darkMode }">
-    
-    <!-- Skip to main content -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-municipal-600 text-white px-4 py-2 rounded-md z-50">
-        Saltar al contenido principal
-    </a>
-    
-    <!-- Header -->
-    <header class="bg-white dark:bg-gray-900 shadow-md relative z-40" x-data="{ mobileMenuOpen: false }">
-        <!-- Government Bar -->
-        <div class="bg-peru-red text-white py-2">
-            <div class="container mx-auto px-4">
-                <div class="flex items-center justify-between text-sm">
-                    <div class="flex items-center space-x-4">
-                        <span class="font-medium">🇵🇪 Gobierno del Perú</span>
-                        <span class="hidden md:inline">Plataforma digital única del Estado Peruano</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <button 
-                            @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)" 
-                            class="p-1 rounded hover:bg-white/20 transition-colors"
-                            aria-label="Cambiar modo oscuro"
-                        >
-                            <span x-show="!darkMode">🌙</span>
-                            <span x-show="darkMode">☀️</span>
-                        </button>
-                        <a href="/transparencia.html" class="hover:underline hidden sm:inline">Transparencia</a>
-                        <a href="/contacto.html" class="hover:underline">Contacto</a>
-                    </div>
-                </div>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500">
+        <div class="text-center">
+            <div class="w-24 h-24 mx-auto mb-6">
+                <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="animate-pulse w-full h-full object-contain">
+            </div>
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Municipalidad de Ivochote</h2>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 bg-blue-600 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-red-600 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                <div class="w-3 h-3 bg-yellow-600 rounded-full animate-bounce" style="animation-delay: 0.3s"></div>
             </div>
         </div>
-        
-        <!-- Main Header -->
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <!-- Logo and Title -->
-                <div class="flex items-center space-x-4">
-                    <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-12 w-12" loading="eager">
-                    <div>
-                        <h1 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                            Municipalidad de Ivochote
-                        </h1>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Centro Poblado - Región cusco</p>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container">
+        <!-- Se cargará dinámicamente desde components/header.html -->
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen max-h-[800px] overflow-hidden">
+        <!-- Swiper Slider -->
+        <div class="swiper hero-slider h-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide relative h-full">
+                    <div class="absolute inset-0 bg-black/40 z-10"></div>
+                    <img src="/assets/img/hero-bg-1.jpg" alt="Ivochote" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 z-20 flex items-center">
+                        <div class="container px-6 mx-auto">
+                            <div class="max-w-2xl" data-aos="fade-up" data-aos-delay="300">
+                                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Bienvenidos a Ivochote</h1>
+                                <p class="text-xl md:text-2xl text-white mb-8">Trabajando juntos por el desarrollo sostenible de nuestro centro poblado</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="/servicios/" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300">Servicios Municipales</a>
+                                    <a href="/transparencia/" class="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-medium rounded-lg transition duration-300">Portal de Transparencia</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Desktop Navigation -->
-                <nav class="hidden lg:flex items-center space-x-6">
-                    <a href="/" class="text-municipal-600 font-medium border-b-2 border-municipal-600">Inicio</a>
-                    <a href="/autoridades.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Autoridades</a>
-                    <a href="/servicios.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Servicios</a>
-                    <a href="/proyectos.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Proyectos</a>
-                    <a href="/noticias.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Noticias</a>
-                    <a href="/galeria.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">Galería</a>
-                    <a href="/login.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 transition-colors">login</a>
-                </nav>
-                
-                <!-- Mobile Menu Button -->
-                <button 
-                    @click="mobileMenuOpen = !mobileMenuOpen"
-                    class="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    aria-label="Abrir menú de navegación"
-                >
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            
-            <!-- Mobile Menu -->
-            <nav x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" class="lg:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700 pt-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="/" class="text-municipal-600 font-medium px-3 py-2 rounded-md bg-municipal-50 dark:bg-municipal-900/20">Inicio</a>
-                    <a href="/autoridades.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Autoridades</a>
-                    <a href="/servicios.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Servicios</a>
-                    <a href="/proyectos.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Proyectos</a>
-                    <a href="/noticias.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Noticias</a>
-                    <a href="/galeria.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">Galería</a>
-                    <a href="/login.html" class="text-gray-700 dark:text-gray-300 hover:text-municipal-600 px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800">login</a>
+                <div class="swiper-slide relative h-full">
+                    <div class="absolute inset-0 bg-black/40 z-10"></div>
+                    <img src="/assets/img/hero-bg-2.jpg" alt="Proyectos" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 z-20 flex items-center">
+                        <div class="container px-6 mx-auto">
+                            <div class="max-w-2xl" data-aos="fade-up" data-aos-delay="300">
+                                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Nuevos Proyectos 2025</h1>
+                                <p class="text-xl md:text-2xl text-white mb-8">Conoce las obras que transformarán nuestra comunidad</p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="/proyectos/" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300">Ver Proyectos</a>
+                                    <a href="/noticias/" class="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-medium rounded-lg transition duration-300">Últimas Noticias</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </nav>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next text-white"></div>
+            <div class="swiper-button-prev text-white"></div>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="relative bg-gradient-to-r from-municipal-600 to-municipal-800 text-white py-20 lg:py-32 overflow-hidden">
-            <div class="absolute inset-0 bg-black/20"></div>
-            <div class="absolute inset-0 bg-[url('/assets/img/hero-pattern.svg')] opacity-10"></div>
-            
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-                    <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                        Bienvenidos a
-                        <span class="text-yellow-300">Ivochote</span>
-                    </h2>
-                    <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                        Trabajamos juntos por el desarrollo sostenible y el bienestar de nuestros ciudadanos en el Centro Poblado de Ivochote
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <a href="/servicios.html" class="bg-white text-municipal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 shadow-lg">
-                            Ver Servicios
-                        </a>
-                        <a href="/noticias.html" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-municipal-600 transition-colors">
-                            Últimas Noticias
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                </svg>
-            </div>
-        </section>
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+            <a href="#quick-access" class="text-white">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
 
-        <!-- Quick Access Section -->
-        <section class="py-16 bg-gray-50 dark:bg-gray-800">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Acceso Rápido</h3>
-                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Encuentra rápidamente los servicios y información que necesitas
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Service Card 1 -->
-                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 text-center" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-16 h-16 bg-municipal-100 dark:bg-municipal-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-municipal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Trámites en Línea</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Realiza tus gestiones desde casa</p>
-                        <a href="/servicios.html" class="text-municipal-600 hover:text-municipal-700 font-medium text-sm">Ver más →</a>
-                    </div>
-                    
-                    <!-- Service Card 2 -->
-                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 text-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-16 h-16 bg-success-100 dark:bg-success-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Pagos</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Paga tus tributos de forma segura</p>
-                        <a href="/servicios.html#pagos" class="text-success-600 hover:text-success-700 font-medium text-sm">Ver más →</a>
-                    </div>
-                    
-                    <!-- Service Card 3 -->
-                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 text-center" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-16 h-16 bg-warning-100 dark:bg-warning-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Horarios</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Consulta nuestros horarios de atención</p>
-                        <a href="/contacto.html" class="text-warning-600 hover:text-warning-700 font-medium text-sm">Ver más →</a>
-                    </div>
-                    
-                    <!-- Service Card 4 -->
-                    <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6 text-center" data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Consultas</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">¿Tienes preguntas? Te ayudamos</p>
-                        <a href="/contacto.html" class="text-purple-600 hover:text-purple-700 font-medium text-sm">Ver más →</a>
-                    </div>
-                </div>
+    <!-- Quick Access Section -->
+    <section id="quick-access" class="py-16 bg-white">
+        <div class="container px-6 mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Acceso Rápido</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Accede a los servicios más solicitados de manera rápida y sencilla</p>
             </div>
-        </section>
 
-        <!-- Latest News Section -->
-        <section class="py-16">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Últimas Noticias</h3>
-                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Mantente informado sobre las últimas actividades y proyectos de nuestra municipalidad
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- News Article 1 -->
-                    <article class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
-                        <img src="/assets/img/news-1.jpg" alt="Inauguración de nueva obra" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                                <time datetime="2025-07-15">15 de Julio, 2025</time>
-                                <span class="mx-2">•</span>
-                                <span>Proyectos</span>
-                            </div>
-                            <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                                Inauguración del nuevo centro de salud comunitario
-                            </h4>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                El alcalde inauguró las nuevas instalaciones del centro de salud que beneficiará a más de 500 familias...
-                            </p>
-                            <a href="/noticias.html" class="text-municipal-600 hover:text-municipal-700 font-medium">Leer más →</a>
-                        </div>
-                    </article>
-                    
-                    <!-- News Article 2 -->
-                    <article class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
-                        <img src="/assets/img/news-2.jpg" alt="Programa social" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                                <time datetime="2025-07-12">12 de Julio, 2025</time>
-                                <span class="mx-2">•</span>
-                                <span>Programas Sociales</span>
-                            </div>
-                            <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                                Nuevo programa de apoyo alimentario para familias vulnerables
-                            </h4>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                Se inicia el programa municipal "Juntos por la Alimentación" que beneficiará a familias en situación vulnerable...
-                            </p>
-                            <a href="/noticias.html" class="text-municipal-600 hover:text-municipal-700 font-medium">Leer más →</a>
-                        </div>
-                    </article>
-                    
-                    <!-- News Article 3 -->
-                    <article class="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="300">
-                        <img src="/assets/img/news-3.jpg" alt="Limpieza pública" class="w-full h-48 object-cover" loading="lazy">
-                        <div class="p-6">
-                            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                                <time datetime="2025-07-10">10 de Julio, 2025</time>
-                                <span class="mx-2">•</span>
-                                <span>Servicios</span>
-                            </div>
-                            <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                                Mejoras en el sistema de recolección de residuos sólidos
-                            </h4>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4">
-                                Se implementan nuevos horarios y rutas para mejorar la eficiencia del servicio de limpieza pública...
-                            </p>
-                            <a href="/noticias.html" class="text-municipal-600 hover:text-municipal-700 font-medium">Leer más →</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <a href="/noticias.html" class="bg-municipal-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-municipal-700 transition-colors">
-                        Ver todas las noticias
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Overview -->
-        <section class="py-16 bg-gray-50 dark:bg-gray-800">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Nuestros Servicios</h3>
-                    <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Ofrecemos una amplia gama de servicios para mejorar la calidad de vida de nuestros ciudadanos
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-12 h-12 bg-municipal-100 dark:bg-municipal-900/30 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-municipal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Licencias y Permisos</h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Gestiona licencias de funcionamiento, permisos de construcción y otros documentos oficiales
-                        </p>
-                        <a href="/servicios.html" class="text-municipal-600 hover:text-municipal-700 font-medium">Solicitar →</a>
-                    </div>
-                    
-                    <!-- Service 2 -->
-                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-12 h-12 bg-success-100 dark:bg-success-900/30 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Salud y Bienestar</h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Programas de salud preventiva, campañas de vacunación y apoyo a poblaciones vulnerables
-                        </p>
-                        <a href="/servicios.html" class="text-success-600 hover:text-success-700 font-medium">Ver programas →</a>
-                    </div>
-                    
-                    <!-- Service 3 -->
-                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-12 h-12 bg-warning-100 dark:bg-warning-900/30 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                            </svg>
-                        </div>
-                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Limpieza Pública</h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            Servicio de recolección de residuos, mantenimiento de espacios públicos y áreas verdes
-                        </p>
-                        <a href="/servicios.html" class="text-warning-600 hover:text-warning-700 font-medium">Conocer horarios →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact CTA -->
-        <section class="py-16 bg-municipal-600 text-white">
-            <div class="container mx-auto px-4 text-center" data-aos="fade-up">
-                <h3 class="text-3xl font-bold mb-4">¿Necesitas más información?</h3>
-                <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                    Estamos aquí para ayudarte. Contáctanos y resolveremos todas tus dudas sobre nuestros servicios
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="/contacto.html" class="bg-white text-municipal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                        Contactar Ahora
-                    </a>
-                    <a href="tel:+51-XXX-XXXXXX" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-municipal-600 transition-colors">
-                        📞 Llamar
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Footer Column 1 -->
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="/assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-10 w-10">
-                        <h4 class="text-xl font-bold">Municipalidad de Ivochote</h4>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        Comprometidos con el desarrollo sostenible y el bienestar de nuestros ciudadanos.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://web.facebook.com/profile.php?id=100088871240104&locale=es_LA" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.youtube.com/municipalidadivochote" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors" aria-label="YouTube">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6 text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-file-alt text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Trámites en Línea</h3>
+                        <p class="text-gray-600 mb-4">Realiza tus gestiones desde la comodidad de tu hogar</p>
+                        <a href="/servicios/tramites.html" class="text-blue-600 font-medium inline-flex items-center">
+                            Acceder <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
-                
-                <!-- Footer Column 2 -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
-                    <ul class="space-y-2">
-                        <li><a href="/autoridades.html" class="text-gray-300 hover:text-white transition-colors">Autoridades</a></li>
-                        <li><a href="/servicios.html" class="text-gray-300 hover:text-white transition-colors">Servicios</a></li>
-                        <li><a href="/proyectos.html" class="text-gray-300 hover:text-white transition-colors">Proyectos</a></li>
-                        <li><a href="/transparencia.html" class="text-gray-300 hover:text-white transition-colors">Transparencia</a></li>
-                        <li><a href="/noticias.html" class="text-gray-300 hover:text-white transition-colors">Noticias</a></li>
-                    </ul>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-credit-card text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Pagos en Línea</h3>
+                        <p class="text-gray-600 mb-4">Paga tus arbitrios y servicios de forma segura</p>
+                        <a href="/servicios/pagos.html" class="text-green-600 font-medium inline-flex items-center">
+                            Pagar ahora <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                <!-- Footer Column 3 -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>📍 Plaza Principal de Ivochote</li>
-                        <li>📞 +51-XXX-XXXXXX</li>
-                        <li>✉️ contacto@municipalidad-ivochote.gob.pe</li>
-                        <li>🕒 Lun - Vie: 8:00 AM - 5:00 PM</li>
-                    </ul>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6 text-center">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hard-hat text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Proyectos</h3>
+                        <p class="text-gray-600 mb-4">Conoce las obras en ejecución y planificadas</p>
+                        <a href="/proyectos/" class="text-orange-600 font-medium inline-flex items-center">
+                            Ver proyectos <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
-                
-                <!-- Footer Column 4 -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Ubicación del centro poblado de ivochote</h4>
-                    <div class="bg-gray-800 rounded-lg p-3">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9509804069436!2d-72.65515949999999!3d-12.831152799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915e6355f90d69c3%3A0xf0f4de775cd754c1!2sCentro%20Poblado%20de%20Ivochote!5e0!3m2!1ses!2spe!4v1721321000000!5m2!1ses!2spe" 
-                            width="100%" 
-                            height="120" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Ubicación de la Municipalidad de Ivochote">
-                        </iframe>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-6 text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calendar-alt text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Horarios</h3>
+                        <p class="text-gray-600 mb-4">Consulta nuestros horarios de atención</p>
+                        <a href="/contacto.html" class="text-purple-600 font-medium inline-flex items-center">
+                            Ver horarios <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-                <p class="text-gray-300">
-                    © 2025 Municipalidad del Centro Poblado de Ivochote. Todos los derechos reservados.
-                </p>
-                <p class="text-gray-400 text-sm mt-2">
-                    Desarrollado por 
-                    <a href="https://www.instagram.com/ezerzuniga.oficial16/" target="_blank" rel="noopener noreferrer" class="text-municipal-400 hover:text-municipal-300 transition-colors">
-                        Ezer Zuniga
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container px-6 mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Últimas Noticias</h2>
+                    <p class="text-lg text-gray-600">Mantente informado sobre las actividades de la municipalidad</p>
+                </div>
+                <a href="/noticias/" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300 inline-flex items-center">
+                    Ver todas <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/noticias/news-1.jpg" alt="Noticia 1" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Obras</div>
+                    </div>
+                    <div class="p-6">
+                        <time class="text-gray-500 text-sm">20 de Julio, 2025</time>
+                        <h3 class="text-xl font-semibold text-gray-800 my-3">Inauguración del nuevo centro de salud comunitario</h3>
+                        <p class="text-gray-600 mb-4">Se inauguraron las nuevas instalaciones que beneficiarán a más de 500 familias de nuestro centro poblado con servicios de salud de calidad.</p>
+                        <a href="/noticias/detalle-noticia.html?id=1" class="text-blue-600 font-medium inline-flex items-center">
+                            Leer más <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/noticias/news-2.jpg" alt="Noticia 2" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Social</div>
+                    </div>
+                    <div class="p-6">
+                        <time class="text-gray-500 text-sm">18 de Julio, 2025</time>
+                        <h3 class="text-xl font-semibold text-gray-800 my-3">Programa de apoyo alimentario para familias vulnerables</h3>
+                        <p class="text-gray-600 mb-4">Inicia el programa municipal que beneficiará a 120 familias en situación vulnerable con canastas básicas de alimentos durante 3 meses.</p>
+                        <a href="/noticias/detalle-noticia.html?id=2" class="text-green-600 font-medium inline-flex items-center">
+                            Leer más <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/noticias/news-3.jpg" alt="Noticia 3" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        <div class="absolute top-4 left-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">Servicios</div>
+                    </div>
+                    <div class="p-6">
+                        <time class="text-gray-500 text-sm">15 de Julio, 2025</time>
+                        <h3 class="text-xl font-semibold text-gray-800 my-3">Mejoras en el sistema de recolección de residuos</h3>
+                        <p class="text-gray-600 mb-4">Se implementan nuevos horarios y rutas para mejorar el servicio de limpieza pública en todo el centro poblado.</p>
+                        <a href="/noticias/detalle-noticia.html?id=3" class="text-yellow-600 font-medium inline-flex items-center">
+                            Leer más <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container px-6 mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestros Servicios</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Ofrecemos diversos servicios municipales para mejorar la calidad de vida de nuestros ciudadanos</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-blue-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Licencias y Permisos</h3>
+                    <p class="text-gray-600 mb-4">Gestiona tus licencias de funcionamiento, permisos de construcción y otros trámites relacionados con propiedades y negocios.</p>
+                    <a href="/servicios/" class="text-blue-600 font-medium inline-flex items-center">
+                        Solicitar <i class="fas fa-arrow-right ml-2"></i>
                     </a>
-                    - Ingeniero informatico y de Sistemas
-                </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-green-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-heartbeat text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Salud y Bienestar</h3>
+                    <p class="text-gray-600 mb-4">Programas de salud preventiva, campañas de vacunación y apoyo a poblaciones vulnerables de nuestra comunidad.</p>
+                    <a href="/servicios/" class="text-green-600 font-medium inline-flex items-center">
+                        Ver programas <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-red-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-trash-alt text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Limpieza Pública</h3>
+                    <p class="text-gray-600 mb-4">Servicio de recolección de residuos sólidos, mantenimiento de áreas verdes y limpieza de espacios públicos.</p>
+                    <a href="/servicios/" class="text-red-600 font-medium inline-flex items-center">
+                        Conocer horario <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="/servicios/" class="px-8 py-3 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-lg transition duration-300 inline-flex items-center">
+                    Ver todos los servicios <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- WhatsApp Floating Button -->
-    <div id="whatsapp-button" class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/51XXXXXXXXX?text=Hola%2C%20necesito%20información%20sobre%20los%20servicios%20municipales" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all transform hover:scale-110"
-           aria-label="Contactar por WhatsApp">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
-            </svg>
-        </a>
-    </div>
-
-    <!-- Chatbot Widget -->
-    <div id="chatbot-widget" class="fixed bottom-6 left-6 z-50" x-data="{ open: false }">
-        <button @click="open = !open" class="bg-municipal-600 hover:bg-municipal-700 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all" aria-label="Abrir chat de ayuda">
-            <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
-            <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-        </button>
-        
-        <div x-show="open" x-transition class="absolute bottom-16 left-0 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
-            <div class="p-4 border-b border-gray-200 dark:border-gray-700">
-                <h4 class="font-semibold text-gray-900 dark:text-white">Asistente Municipal</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-300">¿En qué puedo ayudarte?</p>
-            </div>
-            <div class="p-4 max-h-60 overflow-y-auto">
-                <div class="space-y-3">
-                    <button class="w-full text-left p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors text-sm">
-                        📋 ¿Cómo puedo solicitar una licencia?
-                    </button>
-                    <button class="w-full text-left p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors text-sm">
-                        💰 ¿Dónde puedo pagar mis tributos?
-                    </button>
-                    <button class="w-full text-left p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors text-sm">
-                        🕒 ¿Cuáles son los horarios de atención?
-                    </button>
-                    <button class="w-full text-left p-3 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors text-sm">
-                        📞 ¿Cómo puedo contactar con la municipalidad?
-                    </button>
+    <!-- Stats Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container px-6 mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">25+</div>
+                    <div class="text-lg">Proyectos ejecutados</div>
+                </div>
+                <div class="p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">1,200+</div>
+                    <div class="text-lg">Familias beneficiadas</div>
+                </div>
+                <div class="p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">15+</div>
+                    <div class="text-lg">Servicios municipales</div>
+                </div>
+                <div class="p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">100%</div>
+                    <div class="text-lg">Compromiso con la comunidad</div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container px-6 mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ubicación</h2>
+                <p class="text-lg text-gray-600">Encuéntranos en el Centro Poblado de Ivochote</p>
+            </div>
+
+            <div class="rounded-xl overflow-hidden shadow-lg" data-aos="fade-up">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15490.234567890123!2d-72.6551594!3d-12.8311528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915e6355f90d69c3%3A0xf0f4de775cd754c1!2sIvochote%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1721321000000!5m2!1ses!2spe" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full">
+                </iframe>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Dirección</h3>
+                    </div>
+                    <p class="text-gray-600">Plaza de Armas de Ivochote, Distrito de Echarate, Provincia de La Convención, Cusco</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-phone-alt text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Teléfono</h3>
+                    </div>
+                    <p class="text-gray-600">+51 984 123 456</p>
+                    <p class="text-gray-600">+51 84 123456 (Oficina)</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-clock text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Horario</h3>
+                    </div>
+                    <p class="text-gray-600">Lunes a Viernes: 8:00 AM - 5:00 PM</p>
+                    <p class="text-gray-600">Sábados: 9:00 AM - 1:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-container">
+        <!-- Se cargará dinámicamente desde components/footer.html -->
     </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible hover:bg-blue-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/darkmode.js"></script>
-    <script src="/js/chatbot.js"></script>
-    <script src="/js/whatsapp.js"></script>
-    <script src="/js/interacciones.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/swiper-config.js"></script>
+    <script src="/assets/js/form-validation.js"></script>
+    <script src="/assets/js/animacion.js"></script>
     
-    <!-- Initialize AOS -->
     <script>
+        // Initialize AOS
         AOS.init({
             duration: 800,
-            easing: 'ease-in-out',
             once: true,
             offset: 100
         });
-    </script>
 
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                        console.log('ServiceWorker registration successful');
-                    })
-                    .catch(function(err) {
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
+        // Load components
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header
+            fetch('/components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                    initMobileMenu();
+                });
+
+            // Load footer
+            fetch('/components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+
+            // Initialize Swiper
+            const heroSwiper = new Swiper('.hero-slider', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
             });
+
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('opacity-0', 'invisible');
+                setTimeout(() => {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 500);
+            }, 1000);
+
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        function initMobileMenu() {
+            const toggleButton = document.getElementById('navbar-toggle');
+            const menu = document.getElementById('navbar-menu');
+            
+            if (toggleButton && menu) {
+                toggleButton.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                    toggleButton.classList.toggle('active');
+                });
+            }
         }
     </script>
 </body>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Municipales - Municipalidad de Ivochote</title>
+    <!-- Meta tags, favicon y CSS igual que en index.html -->
+    <!-- ... -->
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500">
+        <!-- Igual que en index.html -->
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container">
+        <!-- Se cargará dinámicamente desde components/header.html -->
+    </div>
+
+    <!-- Page Header -->
+    <section class="relative py-20 bg-blue-600 text-white">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="container px-6 mx-auto relative z-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Servicios Municipales</h1>
+                <p class="text-xl max-w-3xl mx-auto">Conoce y accede a todos los servicios que ofrece la municipalidad para los ciudadanos de Ivochote</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-4">
+        <div class="container px-6 mx-auto">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-home mr-2"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Servicios</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Services Categories -->
+    <section class="py-16 bg-white">
+        <div class="container px-6 mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Categorías de Servicios</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Selecciona la categoría del servicio que necesitas</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <a href="/servicios/tramites.html" class="group bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-blue-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-200 transition duration-200">
+                        <i class="fas fa-file-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition duration-200">Trámites Municipales</h3>
+                    <p class="text-gray-600 mb-4">Licencias, permisos, autorizaciones y otros trámites administrativos</p>
+                    <div class="text-blue-600 font-medium inline-flex items-center group-hover:text-blue-800 transition duration-200">
+                        Ver servicios <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                    </div>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="/servicios/pagos.html" class="group bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-green-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-200 transition duration-200">
+                        <i class="fas fa-credit-card text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-green-600 transition duration-200">Pagos en Línea</h3>
+                    <p class="text-gray-600 mb-4">Paga tus arbitrios, impuestos y otros servicios municipales de forma segura</p>
+                    <div class="text-green-600 font-medium inline-flex items-center group-hover:text-green-800 transition duration-200">
+                        Pagar ahora <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                    </div>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="/servicios/salud.html" class="group bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-red-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-red-200 transition duration-200">
+                        <i class="fas fa-heartbeat text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-red-600 transition duration-200">Salud y Bienestar</h3>
+                    <p class="text-gray-600 mb-4">Programas de salud, campañas médicas y apoyo a poblaciones vulnerables</p>
+                    <div class="text-red-600 font-medium inline-flex items-center group-hover:text-red-800 transition duration-200">
+                        Ver programas <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                    </div>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="/servicios/educacion.html" class="group bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-yellow-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-200 transition duration-200">
+                        <i class="fas fa-graduation-cap text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-yellow-600 transition duration-200">Educación y Cultura</h3>
+                    <p class="text-gray-600 mb-4">Programas educativos, talleres culturales y actividades para la comunidad</p>
+                    <div class="text-yellow-600 font-medium inline-flex items-center group-hover:text-yellow-800 transition duration-200">
+                        Conocer más <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                    </div>
+                </a>
+
+                <!-- Category 5 -->
+                <a href="/servicios/limpieza.html" class="group bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-purple-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-200 transition duration-200">
+                        <i class="fas fa-trash-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-purple-600 transition duration-200">Limpieza Pública</h3>
+                    <p class="text-gray-600 mb-4">Servicios de recolección de residuos, barrido de calles y mantenimiento</p>
+                    <div class="text-purple-600 font-medium inline-flex items-center group-hover:text-purple-800 transition duration-200">
+                        Ver horarios <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                    </div>
+                </a>
+
+                <!-- Category 6 -->
+                <a href="/servicios/seguridad.html" class="group bg-gray-50 rounded-xl p-8 border border-gray-200 hover:border-indigo-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-200 transition duration-200">
+                        <i class="fas fa-shield-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-indigo-600 transition duration-200">Seguridad Ciudadana</h3>
+                    <p class="text-gray-600 mb-4">Programas de prevención, serenazgo y protección a la comunidad</p>
+                    <div class="text-indigo-600 font-medium inline-flex items-center group-hover:text-indigo-800 transition duration-200">
+                        Más información <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-200"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Services -->
+    <section class="py-16 bg-gray-50">
+        <div class="container px-6 mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Servicios en Línea</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Realiza tus trámites y pagos desde la comodidad de tu hogar</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="bg-blue-600 text-white p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-4">Accede a nuestros servicios digitales</h3>
+                        <p class="mb-6">Ahorra tiempo realizando tus trámites municipales en línea sin hacer colas.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>Procesos 100% digitales</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>Pagos seguros con múltiples opciones</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3"></i>
+                                <span>Seguimiento en tiempo real</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-8 md:p-12">
+                        <div class="mb-6">
+                            <label for="service-type" class="block text-sm font-medium text-gray-700 mb-2">Tipo de servicio</label>
+                            <select id="service-type" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                                <option value="">Seleccione una opción</option>
+                                <option value="pagos">Pagos en línea</option>
+                                <option value="tramites">Trámites municipales</option>
+                                <option value="consultas">Consultas y reclamos</option>
+                                <option value="reservas">Reservas de espacios</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="document" class="block text-sm font-medium text-gray-700 mb-2">N° de Documento</label>
+                            <input type="text" id="document" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ingrese su DNI">
+                        </div>
+                        <button class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300">
+                            Continuar <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-container">
+        <!-- Se cargará dinámicamente desde components/footer.html -->
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible hover:bg-blue-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- Igual que en index.html -->
+    <!-- ... -->
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Municipalidad de Ivochote</title>
+    <!-- Meta tags, favicon y CSS igual que en index.html -->
+    <!-- ... -->
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500">
+        <!-- Igual que en index.html -->
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container">
+        <!-- Se cargará dinámicamente desde components/header.html -->
+    </div>
+
+    <!-- Page Header -->
+    <section class="relative py-20 bg-blue-600 text-white">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="container px-6 mx-auto relative z-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Nuestros Proyectos</h1>
+                <p class="text-xl max-w-3xl mx-auto">Conoce las obras y proyectos que estamos ejecutando para el desarrollo de Ivochote</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-100 py-4">
+        <div class="container px-6 mx-auto">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-home mr-2"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Proyectos</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Projects Filter -->
+    <section class="py-8 bg-white">
+        <div class="container px-6 mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-semibold text-gray-800">Filtrar proyectos</h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium">Todos</button>
+                    <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition duration-200">En ejecución</button>
+                    <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition duration-200">Planificados</button>
+                    <button class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition duration-200">Terminados</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container px-6 mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/proyectos/proyecto1.jpg" alt="Proyecto 1" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">En ejecución</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Mejoramiento de la red de agua potable</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Infraestructura</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Sector: Centro Poblado de Ivochote</p>
+                        <p class="text-gray-700 mb-4">Ampliación y mejoramiento del sistema de agua potable para 150 familias del centro poblado.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Inversión:</p>
+                                <p class="font-medium">S/ 1,250,000.00</p>
+                            </div>
+                            <a href="/proyectos/detalle.html?id=1" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                Ver más <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/proyectos/proyecto2.jpg" alt="Proyecto 2" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">Planificado</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Construcción de centro comunitario</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Social</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Sector: Zona urbana de Ivochote</p>
+                        <p class="text-gray-700 mb-4">Nuevo espacio para actividades comunitarias, talleres y reuniones vecinales.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Inversión:</p>
+                                <p class="font-medium">S/ 850,000.00</p>
+                            </div>
+                            <a href="/proyectos/detalle.html?id=2" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                Ver más <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/proyectos/proyecto3.jpg" alt="Proyecto 3" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Terminado</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Mejoramiento de vías urbanas</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Infraestructura</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Sector: Calles principales</p>
+                        <p class="text-gray-700 mb-4">Pavimentación de 2 km de vías urbanas con sistema de drenaje pluvial.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Inversión:</p>
+                                <p class="font-medium">S/ 2,100,000.00</p>
+                            </div>
+                            <a href="/proyectos/detalle.html?id=3" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                Ver más <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/proyectos/proyecto4.jpg" alt="Proyecto 4" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Terminado</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Instalación de alumbrado público</h3>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">Energía</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Sector: Todo el centro poblado</p>
+                        <p class="text-gray-700 mb-4">Instalación de 120 luminarias LED solares en calles y espacios públicos.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Inversión:</p>
+                                <p class="font-medium">S/ 320,000.00</p>
+                            </div>
+                            <a href="/proyectos/detalle.html?id=4" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                Ver más <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/proyectos/proyecto5.jpg" alt="Proyecto 5" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">En ejecución</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Construcción de parque infantil</h3>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-2 py-1 rounded">Recreación</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Sector: Plaza Principal</p>
+                        <p class="text-gray-700 mb-4">Área de juegos infantiles con equipamiento moderno y seguro.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Inversión:</p>
+                                <p class="font-medium">S/ 180,000.00</p>
+                            </div>
+                            <a href="/proyectos/detalle.html?id=5" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                Ver más <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/assets/img/proyectos/proyecto6.jpg" alt="Proyecto 6" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">Planificado</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Mejoramiento del sistema de riego</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Agrícola</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Sector: Zonas agrícolas</p>
+                        <p class="text-gray-700 mb-4">Modernización del sistema de riego para 50 hectáreas de cultivos.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Inversión:</p>
+                                <p class="font-medium">S/ 1,750,000.00</p>
+                            </div>
+                            <a href="/proyectos/detalle.html?id=6" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                                Ver más <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="px-4 py-2 rounded-l-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">1</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">2</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">3</a>
+                    <a href="#" class="px-4 py-2 rounded-r-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Stats -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container px-6 mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Proyectos en Números</h2>
+                <p class="text-xl max-w-3xl mx-auto">Impacto de nuestras obras en la comunidad</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/10 rounded-xl p-8 text-center backdrop-blur-sm">
+                    <div class="text-5xl font-bold mb-2">25+</div>
+                    <div class="text-xl">Proyectos ejecutados</div>
+                </div>
+                <div class="bg-white/10 rounded-xl p-8 text-center backdrop-blur-sm">
+                    <div class="text-5xl font-bold mb-2">S/ 8.5M</div>
+                    <div class="text-xl">Invertidos en obras</div>
+                </div>
+                <div class="bg-white/10 rounded-xl p-8 text-center backdrop-blur-sm">
+                    <div class="text-5xl font-bold mb-2">1,500+</div>
+                    <div class="text-xl">Familias beneficiadas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-container">
+        <!-- Se cargará dinámicamente desde components/footer.html -->
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 opacity-0 invisible hover:bg-blue-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- Igual que en index.html -->
+    <!-- ... -->
+</body>
+</html>

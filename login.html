@@ -1,387 +1,93 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Tu Instagram @tu_usuario">
-    <meta name="description" content="Portal de acceso administrativo - Municipalidad de Ivochote">
-    <meta name="keywords" content="login, administración, municipalidad, ivochote, acceso">
-    <meta name="robots" content="noindex, nofollow">
-    <meta property="og:title" content="Acceso Administrativo - Municipalidad de Ivochote">
-    <meta property="og:description" content="Portal de acceso para administradores de la Municipalidad de Ivochote">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://municipalidad-ivochote.netlify.app/login.html">
-    <meta property="og:image" content="./assets/img/logo-municipalidad.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Acceso Administrativo - Municipalidad de Ivochote">
-    <meta name="twitter:description" content="Portal de acceso para administradores">
-    <title>Acceso Administrativo - Municipalidad de Ivochote</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="./manifest.json">
-    <link href="./css/output.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Acceso - Municipalidad de Ivochote</title>
+    <!-- Meta tags, favicon y CSS igual que en index.html -->
+    <!-- ... -->
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
-    <!-- Header con navegación mínima -->
-    <header class="bg-white dark:bg-gray-800 shadow-lg">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <img src="./assets/img/escudo-peru.png" alt="Escudo del Perú" class="h-12 w-12">
-                    <div>
-                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">Municipalidad de Ivochote</h1>
-                        <p class="text-sm text-gray-600 dark:text-gray-300">Portal Administrativo</p>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500">
+        <!-- Igual que en index.html -->
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container">
+        <!-- Se cargará dinámicamente desde components/header.html -->
+    </div>
+
+    <!-- Login Section -->
+    <section class="min-h-screen flex items-center justify-center py-16 bg-gray-50">
+        <div class="container px-6 mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <div class="md:w-1/2 lg:w-2/5 mb-12 md:mb-0 md:pr-12" data-aos="fade-right">
+                    <img src="/assets/img/login.svg" alt="Acceso al sistema" class="w-full max-w-md mx-auto">
+                    <div class="mt-8 text-center md:text-left">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">Sistema de Gestión Municipal</h2>
+                        <p class="text-lg text-gray-600">Acceso exclusivo para personal autorizado de la Municipalidad de Ivochote</p>
                     </div>
                 </div>
-                <div class="flex items-center space-x-3">
-                    <button data-dark-mode-toggle class="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors" aria-label="Alternar modo oscuro">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block"></i>
-                    </button>
-                    <a href="./index.html" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center space-x-2 transition-colors">
-                        <i class="fas fa-home"></i>
-                        <span class="hidden sm:inline">Volver al inicio</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Contenido principal -->
-    <main class="flex items-center justify-center min-h-screen py-12" x-data="loginApp()">
-        <div class="max-w-md w-full mx-4">
-            <!-- Formulario de login -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700">
-                <!-- Logo y título -->
-                <div class="text-center mb-8">
-                    <div class="mx-auto h-20 w-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                        <i class="fas fa-user-shield text-white text-2xl"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Acceso Administrativo</h2>
-                    <p class="text-gray-600 dark:text-gray-300 mt-2">Ingrese sus credenciales para continuar</p>
-                </div>
-
-                <!-- Alertas -->
-                <div x-show="showAlert" x-transition class="mb-4" x-cloak>
-                    <div :class="alertType === 'error' ? 'bg-red-100 border border-red-400 text-red-700' : 'bg-green-100 border border-green-400 text-green-700'" class="px-4 py-3 rounded-lg">
-                        <div class="flex items-center">
-                            <i :class="alertType === 'error' ? 'fas fa-exclamation-circle' : 'fas fa-check-circle'" class="mr-2"></i>
-                            <span x-text="alertMessage"></span>
+                <div class="md:w-1/2 lg:w-1/3" data-aos="fade-left">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="text-center mb-8">
+                            <img src="/assets/img/escudo-peru.png" alt="Escudo" class="h-16 mx-auto mb-4">
+                            <h3 class="text-2xl font-bold text-gray-800">Iniciar Sesión</h3>
+                            <p class="text-gray-600">Ingresa tus credenciales para acceder</p>
+                        </div>
+                        <form id="login-form" class="space-y-6">
+                            <div>
+                                <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Usuario</label>
+                                <input type="text" id="username" name="username" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ingresa tu usuario">
+                            </div>
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
+                                <input type="password" id="password" name="password" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ingresa tu contraseña">
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                    <label for="remember-me" class="ml-2 block text-sm text-gray-700">Recordarme</label>
+                                </div>
+                                <div class="text-sm">
+                                    <a href="#" class="font-medium text-blue-600 hover:text-blue-500">¿Olvidaste tu contraseña?</a>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300">
+                                    Ingresar <i class="fas fa-sign-in-alt ml-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="mt-6">
+                            <div class="relative">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-gray-300"></div>
+                                </div>
+                                <div class="relative flex justify-center text-sm">
+                                    <span class="px-2 bg-white text-gray-500">¿No tienes una cuenta?</span>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <a href="/registro.html" class="w-full inline-flex justify-center px-6 py-3 border border-gray-300 shadow-sm text-sm font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50">
+                                    Solicitar acceso
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Formulario -->
-                <form @submit.prevent="handleLogin" class="space-y-6">
-                    <!-- Campo de usuario -->
-                    <div>
-                        <label for="username" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            <i class="fas fa-user mr-2 text-blue-600"></i>Usuario
-                        </label>
-                        <input 
-                            type="text" 
-                            id="username" 
-                            x-model="form.username"
-                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-all duration-200"
-                            :class="errors.username ? 'border-red-500 focus:ring-red-500' : ''"
-                            placeholder="Ingrese su usuario"
-                            required
-                            autocomplete="username"
-                        >
-                        <div x-show="errors.username" x-text="errors.username" class="text-red-600 text-sm mt-1" x-cloak></div>
-                    </div>
-
-                    <!-- Campo de contraseña -->
-                    <div>
-                        <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            <i class="fas fa-lock mr-2 text-blue-600"></i>Contraseña
-                        </label>
-                        <div class="relative">
-                            <input 
-                                :type="showPassword ? 'text' : 'password'" 
-                                id="password" 
-                                x-model="form.password"
-                                class="w-full px-4 py-3 pr-12 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-all duration-200"
-                                :class="errors.password ? 'border-red-500 focus:ring-red-500' : ''"
-                                placeholder="Ingrese su contraseña"
-                                required
-                                autocomplete="current-password"
-                            >
-                            <button 
-                                type="button" 
-                                @click="showPassword = !showPassword"
-                                class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 dark:text-gray-300 hover:text-blue-600 transition-colors"
-                            >
-                                <i :class="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
-                            </button>
-                        </div>
-                        <div x-show="errors.password" x-text="errors.password" class="text-red-600 text-sm mt-1" x-cloak></div>
-                    </div>
-
-                    <!-- Opciones adicionales -->
-                    <div class="flex items-center justify-between">
-                        <label class="flex items-center">
-                            <input type="checkbox" x-model="form.remember" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600">
-                            <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Recordarme</span>
-                        </label>
-                        <button type="button" @click="showForgotPassword = true" class="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
-                            ¿Olvidó su contraseña?
-                        </button>
-                    </div>
-
-                    <!-- Botón de envío -->
-                    <button 
-                        type="submit" 
-                        :disabled="loading || !form.username || !form.password"
-                        class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-400 disabled:to-gray-500 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none"
-                    >
-                        <span x-show="!loading" class="flex items-center">
-                            <i class="fas fa-sign-in-alt mr-2"></i>Iniciar Sesión
-                        </span>
-                        <span x-show="loading" class="flex items-center" x-cloak>
-                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            Verificando...
-                        </span>
-                    </button>
-                </form>
-
-                <!-- Información de contacto -->
-                <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-600 text-center">
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                        ¿Problemas para acceder? 
-                        <a href="./contacto.html" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">Contacte con soporte</a>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Información de seguridad -->
-            <div class="mt-6 bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4">
-                <div class="flex items-start">
-                    <i class="fas fa-shield-alt text-yellow-600 dark:text-yellow-400 mt-1 mr-3"></i>
-                    <div>
-                        <h3 class="text-sm font-medium text-yellow-800 dark:text-yellow-200">Conexión Segura</h3>
-                        <p class="text-sm text-yellow-700 dark:text-yellow-300 mt-1">Sus datos están protegidos con cifrado SSL de extremo a extremo</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instrucciones de acceso -->
-            <div class="mt-4 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 rounded-lg p-4">
-                <div class="flex items-start">
-                    <i class="fas fa-info-circle text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
-                    <div>
-                        <h3 class="text-sm font-medium text-blue-800 dark:text-blue-200">Acceso Demo</h3>
-                        <p class="text-sm text-blue-700 dark:text-blue-300 mt-1">
-                            Usuario: <code class="bg-blue-100 dark:bg-blue-800 px-1 rounded">admin</code> | 
-                            Contraseña: <code class="bg-blue-100 dark:bg-blue-800 px-1 rounded">admin123</code>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Modal de recuperación de contraseña -->
-        <div x-show="showForgotPassword" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm" x-cloak>
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-md w-full p-6">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Recuperar Contraseña</h3>
-                    <button @click="showForgotPassword = false" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                
-                <p class="text-gray-600 dark:text-gray-300 mb-4">
-                    Ingrese su correo electrónico y le enviaremos instrucciones para restablecer su contraseña.
-                </p>
-                
-                <form @submit.prevent="handleForgotPassword">
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            Correo Electrónico
-                        </label>
-                        <input 
-                            type="email" 
-                            x-model="forgotEmail"
-                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                            placeholder="su-email@ejemplo.com"
-                            required
-                        >
-                    </div>
-                    
-                    <div class="flex space-x-3">
-                        <button 
-                            type="button" 
-                            @click="showForgotPassword = false"
-                            class="flex-1 py-2 px-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-                        >
-                            Cancelar
-                        </button>
-                        <button 
-                            type="submit"
-                            class="flex-1 py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
-                        >
-                            Enviar
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </main>
+    <!-- Footer Component -->
+    <div id="footer-container">
+        <!-- Se cargará dinámicamente desde components/footer.html -->
+    </div>
 
     <!-- Scripts -->
-    <script src="./js/main.js"></script>
-    <script src="./js/darkmode.js"></script>
-    <script>
-        function loginApp() {
-            return {
-                form: {
-                    username: '',
-                    password: '',
-                    remember: false
-                },
-                showPassword: false,
-                loading: false,
-                showAlert: false,
-                alertType: 'error',
-                alertMessage: '',
-                errors: {},
-                showForgotPassword: false,
-                forgotEmail: '',
-
-                init() {
-                    // Verificar si ya está autenticado
-                    if (localStorage.getItem('auth_token')) {
-                        this.showAlert = true;
-                        this.alertType = 'success';
-                        this.alertMessage = 'Ya tienes una sesión activa. Redirigiendo...';
-                        setTimeout(() => {
-                            window.location.href = './index.html';
-                        }, 2000);
-                    }
-                },
-
-                handleLogin() {
-                    this.clearErrors();
-                    
-                    if (!this.validateForm()) {
-                        return;
-                    }
-
-                    this.loading = true;
-                    this.showAlert = false;
-
-                    // Simulación de autenticación
-                    setTimeout(() => {
-                        if (this.form.username === 'admin' && this.form.password === 'admin123') {
-                            // Éxito - almacenar token de autenticación
-                            const authData = {
-                                token: 'demo_token_' + Date.now(),
-                                user: {
-                                    username: this.form.username,
-                                    role: 'admin',
-                                    fullName: 'Administrador Municipal',
-                                    email: 'admin@municipalidad-ivochote.pe',
-                                    loginTime: new Date().toISOString(),
-                                    permissions: ['read', 'write', 'admin']
-                                },
-                                expiresAt: new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString() // 8 horas
-                            };
-                            
-                            localStorage.setItem('auth_token', authData.token);
-                            localStorage.setItem('user_data', JSON.stringify(authData.user));
-                            
-                            if (this.form.remember) {
-                                localStorage.setItem('remember_user', this.form.username);
-                            }
-                            
-                            this.showAlert = true;
-                            this.alertType = 'success';
-                            this.alertMessage = '¡Acceso autorizado! Redirigiendo al panel administrativo...';
-                            
-                            // Registrar evento de login
-                            this.logSecurityEvent('successful_login');
-                            
-                            setTimeout(() => {
-                                window.location.href = './index.html?admin=true';
-                            }, 2000);
-                            
-                        } else {
-                            // Error de credenciales
-                            this.showAlert = true;
-                            this.alertType = 'error';
-                            this.alertMessage = 'Usuario o contraseña incorrectos. Verifique sus credenciales e intente nuevamente.';
-                            
-                            // Registrar intento fallido
-                            this.logSecurityEvent('failed_login_attempt');
-                            
-                            // Agregar shake effect al formulario
-                            this.$el.querySelector('form').classList.add('animate-pulse');
-                            setTimeout(() => {
-                                this.$el.querySelector('form').classList.remove('animate-pulse');
-                            }, 1000);
-                        }
-                        this.loading = false;
-                    }, 2000);
-                },
-
-                validateForm() {
-                    let isValid = true;
-
-                    if (!this.form.username || this.form.username.length < 3) {
-                        this.errors.username = 'El usuario debe tener al menos 3 caracteres';
-                        isValid = false;
-                    }
-
-                    if (!this.form.password || this.form.password.length < 6) {
-                        this.errors.password = 'La contraseña debe tener al menos 6 caracteres';
-                        isValid = false;
-                    }
-
-                    return isValid;
-                },
-
-                clearErrors() {
-                    this.errors = {};
-                },
-
-                handleForgotPassword() {
-                    if (!this.forgotEmail) {
-                        return;
-                    }
-
-                    // Simular envío de email
-                    setTimeout(() => {
-                        this.showForgotPassword = false;
-                        this.showAlert = true;
-                        this.alertType = 'success';
-                        this.alertMessage = 'Se han enviado las instrucciones de recuperación a su correo electrónico.';
-                        this.forgotEmail = '';
-                    }, 1000);
-                },
-
-                logSecurityEvent(eventType) {
-                    const securityLog = {
-                        timestamp: new Date().toISOString(),
-                        event: eventType,
-                        username: this.form.username,
-                        ip: 'xxx.xxx.xxx.xxx', // En producción obtener IP real
-                        userAgent: navigator.userAgent
-                    };
-                    
-                    // En producción, enviar al servidor
-                    console.log('Security Event:', securityLog);
-                    
-                    // Almacenar localmente para demo
-                    const logs = JSON.parse(localStorage.getItem('security_logs') || '[]');
-                    logs.push(securityLog);
-                    localStorage.setItem('security_logs', JSON.stringify(logs.slice(-50))); // Mantener últimos 50 eventos
-                }
-            }
-        }
-    </script>
+    <!-- Igual que en index.html -->
+    <!-- ... -->
 </body>
 </html>

@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Municipalidad de Ivochote</title>
+    <!-- Meta tags, favicon y CSS igual que en index.html -->
+    <!-- ... -->
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-100">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-500">
+        <!-- Igual que en index.html -->
+    </div>
+
+    <!-- Admin Layout -->
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="hidden md:flex md:flex-shrink-0">
+            <div class="flex flex-col w-64 bg-blue-800 text-white">
+                <div class="flex items-center justify-center h-16 px-4 bg-blue-900">
+                    <div class="flex items-center">
+                        <img src="/assets/img/escudo-peru.png" alt="Escudo" class="h-8 mr-2">
+                        <span class="font-semibold">Admin MDI</span>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
+                    <div class="px-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="mr-3">
+                                <img class="h-10 w-10 rounded-full object-cover" src="/assets/img/avatar-admin.jpg" alt="Admin">
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium">Juan Pérez</p>
+                                <p class="text-xs text-blue-200">Administrador</p>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="flex-1 px-2 space-y-1">
+                        <a href="/admin/dashboard.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-blue-700 text-white">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="/admin/noticias.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-newspaper mr-3"></i>
+                            Gestión de Noticias
+                        </a>
+                        <a href="/admin/proyectos.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-project-diagram mr-3"></i>
+                            Gestión de Proyectos
+                        </a>
+                        <a href="/admin/documentos.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-file-alt mr-3"></i>
+                            Documentos
+                        </a>
+                        <a href="/admin/usuarios.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-users mr-3"></i>
+                            Usuarios
+                        </a>
+                        <a href="/admin/configuracion.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-cog mr-3"></i>
+                            Configuración
+                        </a>
+                    </nav>
+                </div>
+                <div class="p-4 border-t border-blue-700">
+                    <a href="/logout.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                        <i class="fas fa-sign-out-alt mr-3"></i>
+                        Cerrar Sesión
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Sidebar -->
+        <div class="md:hidden fixed inset-0 z-40">
+            <div class="fixed inset-0 bg-gray-600 bg-opacity-75" id="mobile-sidebar-backdrop"></div>
+            <div class="relative flex flex-col w-full max-w-xs bg-blue-800 text-white" id="mobile-sidebar">
+                <div class="flex items-center justify-between h-16 px-4 bg-blue-900">
+                    <div class="flex items-center">
+                        <img src="/assets/img/escudo-peru.png" alt="Escudo" class="h-8 mr-2">
+                        <span class="font-semibold">Admin MDI</span>
+                    </div>
+                    <button class="text-white focus:outline-none" id="mobile-sidebar-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
+                    <div class="px-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="mr-3">
+                                <img class="h-10 w-10 rounded-full object-cover" src="/assets/img/avatar-admin.jpg" alt="Admin">
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium">Juan Pérez</p>
+                                <p class="text-xs text-blue-200">Administrador</p>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="flex-1 px-2 space-y-1">
+                        <a href="/admin/dashboard.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg bg-blue-700 text-white">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                        <a href="/admin/noticias.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-newspaper mr-3"></i>
+                            Gestión de Noticias
+                        </a>
+                        <a href="/admin/proyectos.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-project-diagram mr-3"></i>
+                            Gestión de Proyectos
+                        </a>
+                        <a href="/admin/documentos.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-file-alt mr-3"></i>
+                            Documentos
+                        </a>
+                        <a href="/admin/usuarios.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-users mr-3"></i>
+                            Usuarios
+                        </a>
+                        <a href="/admin/configuracion.html" class="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                            <i class="fas fa-cog mr-3"></i>
+                            Configuración
+                        </a>
+                    </nav>
+                </div>
+                <div class="p-4 border-t border-blue-700">
+                    <a href="/logout.html" class="flex items-center px-4 py-2 text-sm font-medium rounded-lg text-blue-200 hover:bg-blue-700 hover:text-white">
+                        <i class="fas fa-sign-out-alt mr-3"></i>
+                        Cerrar Sesión
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-col flex-1 overflow-hidden">
+            <!-- Top Navigation -->
+            <div class="bg-white border-b border-gray-200">
+                <div class="flex justify-between items-center px-6 py-3">
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden text-gray-500 focus:outline-none" id="mobile-sidebar-toggle">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <!-- Search and user menu -->
+                    <div class="flex items-center space-x-4">
+                        <div class="relative hidden md:block">
+                            <input type="text" placeholder="Buscar..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                        </div>
+                        <div class="relative">
+                            <button class="p-1 text-gray-400 hover:text-gray-500 focus:outline-none" id="user-menu-button">
+                                <i class="fas fa-bell text-xl"></i>
+                                <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+                            </button>
+                        </div>
+                        <div class="relative">
+                            <div class="flex items-center">
+                                <button class="flex items-center focus:outline-none" id="user-menu-button">
+                                    <img class="h-8 w-8 rounded-full" src="/assets/img/avatar-admin.jpg" alt="Admin">
+                                    <span class="ml-2 hidden md:block">Juan Pérez</span>
+                                    <i class="fas fa-chevron-down ml-1 text-gray-500 hidden md:block"></i>
+                                </button>
+                            </div>
+                            <!-- Dropdown menu -->
+                            <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" id="user-menu">
+                                <div class="py-1">
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Perfil</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Configuración</a>
+                                    <a href="/logout.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cerrar sesión</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="flex-1 overflow-auto p-6">
+                <div class="mb-6">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Panel de Control</h1>
+                    <p class="text-gray-600">Bienvenido al sistema de administración de la Municipalidad de Ivochote</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Noticias Publicadas</p>
+                                <p class="text-3xl font-bold text-gray-800 mt-1">24</p>
+                                <p class="text-xs text-green-600 mt-1">
+                                    <i class="fas fa-arrow-up mr-1"></i> 12% desde el mes pasado
+                                </p>
+                            </div>
+                            <div class="p-3 bg-blue-100 rounded-lg">
+                                <i class="fas fa-newspaper text-blue-600 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Proyectos Activos</p>
+                                <p class="text-3xl font-bold text-gray-800 mt-1">8</p>
+                                <p class="text-xs text-green-600 mt-1">
+                                    <i class="fas fa-arrow-up mr-1"></i> 2 nuevos este mes
+                                </p>
+                            </div>
+                            <div class="p-3 bg-green-100 rounded-lg">
+                                <i class="fas fa-project-diagram text-green-600 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Consultas Pendientes</p>
+                                <p class="text-3xl font-bold text-gray-800 mt-1">5</p>
+                                <p class="text-xs text-red-600 mt-1">
+                                    <i class="fas fa-arrow-down mr-1"></i> 3 sin responder
+                                </p>
+                            </div>
+                            <div class="p-3 bg-yellow-100 rounded-lg">
+                                <i class="fas fa-envelope text-yellow-600 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Visitas al Sitio</p>
+                                <p class="text-3xl font-bold text-gray-800 mt-1">1,245</p>
+                                <p class="text-xs text-green-600 mt-1">
+                                    <i class="fas fa-arrow-up mr-1"></i> 32% desde el mes pasado
+                                </p>
+                            </div>
+                            <div class="p-3 bg-purple-100 rounded-lg">
+                                <i class="fas fa-users text-purple-600 text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold text-gray-800">Actividad Reciente</h2>
+                            <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Ver todo</a>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 mr-4">
+                                    <img class="h-10 w-10 rounded-full" src="/assets/img/avatar1.jpg" alt="Usuario">
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">María López <span class="text-gray-500 font-normal">publicó una nueva noticia</span></p>
+                                    <p class="text-sm text-gray-500">Hace 2 horas</p>
+                                    <p class="mt-1 text-sm text-gray-700">"Inauguración del nuevo centro de salud comunitario"</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mr-4">
+                                    <img class="h-10 w-10 rounded-full" src="/assets/img/avatar2.jpg" alt="Usuario">
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Carlos Rojas <span class="text-gray-500 font-normal">actualizó un proyecto</span></p>
+                                    <p class="text-sm text-gray-500">Hace 5 horas</p>
+                                    <p class="mt-1 text-sm text-gray-700">"Mejoramiento de vías urbanas - Avance al 75%"</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mr-4">
+                                    <img class="h-10 w-10 rounded-full" src="/assets/img/avatar3.jpg" alt="Usuario">
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Luisa Torres <span class="text-gray-500 font-normal">subió un documento</span></p>
+                                    <p class="text-sm text-gray-500">Ayer a las 3:45 PM</p>
+                                    <p class="mt-1 text-sm text-gray-700">"Informe de gestión del primer semestre 2025"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold text-gray-800">Tareas Pendientes</h2>
+                            <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Ver todo</a>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-700">Revisar borrador de ordenanza</p>
+                                    <p class="text-xs text-gray-500">Vence hoy</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-700">Publicar convocatoria para taller</p>
+                                    <p class="text-xs text-gray-500">Vence en 2 días</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-700">Actualizar información de proyectos</p>
+                                    <p class="text-xs text-gray-500">Vence en 3 días</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-700">Responder consultas ciudadanas</p>
+                                    <p class="text-xs text-gray-500">5 pendientes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <input type="text" placeholder="Agregar nueva tarea..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent News -->
+                <div class="bg-white p-6 rounded-xl shadow mb-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-bold text-gray-800">Últimas Noticias</h2>
+                        <a href="/admin/noticias.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700">
+                            <i class="fas fa-plus mr-2"></i> Nueva Noticia
+                        </a>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Título</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Categoría</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Inauguración del nuevo centro de salud</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Obras</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">20/07/2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Publicado</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" class="text-blue-600 hover:text-blue-900 mr-3"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="text-red-600 hover:text-red-900"><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Programa de apoyo alimentario</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Social</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">18/07/2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Publicado</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" class="text-blue-600 hover:text-blue-900 mr-3"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="text-red-600 hover:text-red-900"><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Mejoras en recolección de residuos</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Servicios</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15/07/2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Publicado</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" class="text-blue-600 hover:text-blue-900 mr-3"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="text-red-600 hover:text-red-900"><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm font-medium text-gray-900">Talleres culturales gratuitos</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">Cultura</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12/07/2025</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Borrador</span>
+                                    </td>
+                                                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                        <a href="#" class="text-blue-600 hover:text-blue-900 mr-3"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="text-red-600 hover:text-red-900"><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

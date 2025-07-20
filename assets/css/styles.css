@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Personalizaciones adicionales */
+.tab-content {
+    @apply transition-all duration-300 ease-in-out;
+}
+
+.tab-button.active {
+    @apply border-blue-500 text-blue-600;
+}
+
+/* Estilos para el editor de texto */
+.ql-toolbar {
+    @apply rounded-t-lg border-gray-300;
+}
+
+.ql-container {
+    @apply rounded-b-lg border-gray-300 h-64;
+}
+
+/* Estilos para los modales */
+.modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-40;
+}
+
+.modal-content {
+    @apply bg-white rounded-lg shadow-xl max-w-4xl mx-auto my-12 relative;
+}
+
+/* Animaciones */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

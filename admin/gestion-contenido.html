@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Contenido - Municipalidad de Ivochote</title>
+    <link rel="stylesheet" href="/assets/css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-100">
+    <!-- Loading Screen (igual que en dashboard.html) -->
+    
+    <!-- Admin Layout (igual que en dashboard.html) -->
+    
+    <!-- Main Content -->
+    <div class="flex flex-col flex-1 overflow-hidden">
+        <!-- Top Navigation (igual que en dashboard.html) -->
+        
+        <!-- Main Content Area -->
+        <div class="flex-1 overflow-auto p-6">
+            <div class="mb-6">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Gestión de Contenido</h1>
+                <p class="text-gray-600">Administra todo el contenido del sitio web</p>
+            </div>
+
+            <!-- Content Tabs -->
+            <div class="mb-8 border-b border-gray-200">
+                <nav class="flex space-x-8">
+                    <button id="noticias-tab" class="tab-button py-4 px-1 border-b-2 font-medium text-sm border-blue-500 text-blue-600">
+                        Noticias
+                    </button>
+                    <button id="proyectos-tab" class="tab-button py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Proyectos
+                    </button>
+                    <button id="banners-tab" class="tab-button py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Banners
+                    </button>
+                    <button id="documentos-tab" class="tab-button py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Documentos
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Noticias Tab Content -->
+            <div id="noticias-content" class="tab-content">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">Gestión de Noticias</h2>
+                    <button id="nueva-noticia-btn" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700">
+                        <i class="fas fa-plus mr-2"></i> Nueva Noticia
+                    </button>
+                </div>
+
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Título</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Categoría</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fecha</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <!-- Las filas se cargarán dinámicamente con JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyectos Tab Content (oculto inicialmente) -->
+            <div id="proyectos-content" class="tab-content hidden">
+                <!-- Similar estructura a noticias pero para proyectos -->
+            </div>
+
+            <!-- Banners Tab Content (oculto inicialmente) -->
+            <div id="banners-content" class="tab-content hidden">
+                <!-- Gestión de banners del slider -->
+            </div>
+
+            <!-- Documentos Tab Content (oculto inicialmente) -->
+            <div id="documentos-content" class="tab-content hidden">
+                <!-- Gestión de documentos públicos -->
+            </div>
+
+            <!-- Modal para nueva noticia/proyecto -->
+            <div id="content-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+                <!-- Contenido del modal -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Manejo de tabs
+    const tabs = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remover clases activas
+            tabs.forEach(t => t.classList.remove('active', 'border-blue-500', 'text-blue-600'));
+            tabs.forEach(t => t.classList.add('border-transparent', 'text-gray-500'));
+            
+            // Agregar clases activas al tab seleccionado
+            this.classList.add('active', 'border-blue-500', 'text-blue-600');
+            this.classList.remove('border-transparent', 'text-gray-500');
+            
+            // Ocultar todos los contenidos
+            tabContents.forEach(content => content.classList.add('hidden'));
+            
+            // Mostrar el contenido correspondiente
+            const target = this.id.replace('-tab', '-content');
+            document.getElementById(target).classList.remove('hidden');
+        });
+    });
+    
+    // Manejo del botón nueva noticia
+    const nuevaNoticiaBtn = document.getElementById('nueva-noticia-btn');
+    const contentModal = document.getElementById('content-modal');
+    
+    if (nuevaNoticiaBtn && contentModal) {
+        nuevaNoticiaBtn.addEventListener('click', function() {
+            // Aquí podrías cargar un formulario dinámico para nueva noticia
+            contentModal.innerHTML = `
+                <div class="modal-overlay"></div>
+                <div class="modal-content fade-in">
+                    <div class="p-6">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Nueva Noticia</h3>
+                        
+                        <form id="noticia-form">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div>
+                                    <label for="titulo" class="block text-sm font-medium text-gray-700">Título</label>
+                                    <input type="text" id="titulo" name="titulo" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                
+                                <div>
+                                    <label for="categoria" class="block text-sm font-medium text-gray-700">Categoría</label>
+                                    <select id="categoria" name="categoria" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                        <option value="obras">Obras</option>
+                                        <option value="social">Social</option>
+                                        <option value="servicios">Servicios</option>
+                                        <option value="cultura">Cultura</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="imagen" class="block text-sm font-medium text-gray-700">Imagen principal</label>
+                                    <input type="file" id="imagen" name="imagen" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                </div>
+                                
+                                <div>
+                                    <label for="contenido" class="block text-sm font-medium text-gray-700">Contenido</label>
+                                    <div id="editor" class="mt-1"></div>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <input id="publicar" name="publicar" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                    <label for="publicar" class="ml-2 block text-sm text-gray-700">Publicar inmediatamente</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 flex justify-end space-x-3">
+                                <button type="button" id="cancelar-noticia" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    Cancelar
+                                </button>
+                                <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    Guardar Noticia
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+            
+            // Inicializar el editor de texto (Quill.js)
+            const quill = new Quill('#editor', {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['blockquote', 'code-block'],
+                        [{ 'header': 1 }, { 'header': 2 }],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        [{ 'script': 'sub'}, { 'script': 'super' }],
+                        [{ 'indent': '-1'}, { 'indent': '+1' }],
+                        [{ 'direction': 'rtl' }],
+                        [{ 'size': ['small', false, 'large', 'huge'] }],
+                        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                        [{ 'color': [] }, { 'background': [] }],
+                        [{ 'font': [] }],
+                        [{ 'align': [] }],
+                        ['clean'],
+                        ['link', 'image', 'video']
+                    ]
+                },
+                placeholder: 'Escribe el contenido de la noticia aquí...'
+            });
+            
+            // Mostrar modal
+            contentModal.classList.remove('hidden');
+            
+            // Manejar cancelar
+            document.getElementById('cancelar-noticia').addEventListener('click', function() {
+                contentModal.classList.add('hidden');
+            });
+            
+            // Manejar envío del formulario
+            document.getElementById('noticia-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Aquí iría la lógica para guardar la noticia
+                console.log('Noticia guardada');
+                contentModal.classList.add('hidden');
+                
+                // Mostrar notificación de éxito
+                mostrarNotificacion('Noticia guardada correctamente', 'success');
+            });
+        });
+    }
+    
+    // Función para mostrar notificaciones
+    function mostrarNotificacion(mensaje, tipo = 'success') {
+        const notificacion = document.createElement('div');
+        notificacion.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white font-medium ${
+            tipo === 'success' ? 'bg-green-500' : 'bg-red-500'
+        }`;
+        notificacion.textContent = mensaje;
+        document.body.appendChild(notificacion);
+        
+        setTimeout(() => {
+            notificacion.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+            setTimeout(() => {
+                notificacion.remove();
+            }, 300);
+        }, 3000);
+    }
+    
+    // Cargar noticias existentes
+    cargarNoticias();
+    
+    function cargarNoticias() {
+        // Aquí iría la llamada a la API para obtener las noticias
+        // Por ahora usaremos datos de ejemplo
+        const noticias = [
+            {
+                id: 1,
+                titulo: "Inauguración del nuevo centro de salud",
+                categoria: "Obras",
+                fecha: "20/07/2025",
+                estado: "Publicado"
+            },
+            {
+                id: 2,
+                titulo: "Programa de apoyo alimentario",
+                categoria: "Social",
+                fecha: "18/07/2025",
+                estado: "Publicado"
+            },
+            {
+                id: 3,
+                titulo: "Talleres culturales gratuitos",
+                categoria: "Cultura",
+                fecha: "12/07/2025",
+                estado: "Borrador"
+            }
+        ];
+        
+        const tbody = document.querySelector('#noticias-content table tbody');
+        tbody.innerHTML = '';
+        
+        noticias.forEach(noticia => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm font-medium text-gray-900">${noticia.titulo}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        noticia.categoria === 'Obras' ? 'bg-blue-100 text-blue-800' :
+                        noticia.categoria === 'Social' ? 'bg-green-100 text-green-800' :
+                        noticia.categoria === 'Cultura' ? 'bg-purple-100 text-purple-800' :
+                        'bg-yellow-100 text-yellow-800'
+                    }">${noticia.categoria}</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${noticia.fecha}</td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        noticia.estado === 'Publicado' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
+                    }">${noticia.estado}</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <button class="editar-noticia text-blue-600 hover:text-blue-900 mr-3" data-id="${noticia.id}">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="eliminar-noticia text-red-600 hover:text-red-900" data-id="${noticia.id}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+        
+        // Agregar eventos a los botones de editar y eliminar
+        document.querySelectorAll('.editar-noticia').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                // Lógica para editar noticia
+                console.log('Editar noticia ID:', id);
+            });
+        });
+        
+        document.querySelectorAll('.eliminar-noticia').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const id = this.getAttribute('data-id');
+                if (confirm('¿Estás seguro de eliminar esta noticia?')) {
+                    // Lógica para eliminar noticia
+                    console.log('Eliminar noticia ID:', id);
+                    mostrarNotificacion('Noticia eliminada correctamente', 'success');
+                }
+            });
+        });
+    }
+});
+    </script>
+</body>
+</html>
