@@ -1,0 +1,13 @@
+@import './tailwind.css';
+@import './styles.css';
+
+/* Additional global styles */
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

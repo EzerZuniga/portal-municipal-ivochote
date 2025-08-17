@@ -2,8 +2,10 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  root: './',
-  publicDir: 'assets',
+  base: '',
+  css: {
+    postcss: './postcss.config.js'
+  },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
