@@ -1,30 +1,35 @@
-# 🌐 Sitio Web Oficial – Municipalidad del Centro Poblado de Ivochote
+Sitio Web Oficial - Municipalidad del Centro Poblado de Ivochote
+https://img.shields.io/badge/estado-en%2520desarrollo-blue.svg
+https://img.shields.io/badge/licencia-MIT-green.svg
+https://img.shields.io/badge/tecnolog%C3%ADas-HTML5%2520%7C%2520CSS3%2520%7C%2520JavaScript-yellow.svg
+https://img.shields.io/badge/deploy-Netlify-success.svg
 
-[![Estado del Proyecto](https://img.shields.io/badge/estado-en%20desarrollo-blue.svg)]()  
-[![Licencia](https://img.shields.io/badge/licencia-MIT-green.svg)]()  
-[![Hecho con](https://img.shields.io/badge/Hecho%20con-HTML5%20%7C%20CSS3%20%7C%20JS-yellow.svg)]()  
-[![Despliegue en Netlify](https://img.shields.io/badge/deploy-Netlify-success.svg)]()  
+Descripción del Proyecto
+Este repositorio contiene el sitio web oficial de la Municipalidad del Centro Poblado de Ivochote, desarrollado con el objetivo de fortalecer la comunicación digital entre la municipalidad y la comunidad. La plataforma busca difundir información relevante sobre noticias, obras públicas, servicios municipales, actividades culturales y recursos turísticos de la zona.
 
-Este es el **repositorio oficial del sitio web de la Municipalidad del Centro Poblado de Ivochote**.  
-Su propósito es **fortalecer la comunicación digital entre la municipalidad y la comunidad**, difundiendo noticias, obras, servicios, actividades y recursos turísticos de la zona.  
+Características Principales
+Diseño Responsive - Adaptado para dispositivos móviles, tablets y computadoras
 
+Modo Oscuro - Alternativa visual para mejor experiencia de usuario
 
-## ✨ Características principales
+Navegación Intuitiva - Menús claros y estructura accesible
 
-✔️ **Diseño responsive:** adaptado a celulares, tablets y computadoras.  
-✔️ **Modo oscuro:** activable por el usuario para mejor experiencia visual.  
-✔️ **Navegación intuitiva:** menús claros y accesibles.  
-✔️ **Formularios validados:** datos seguros y verificados en tiempo real.  
-✔️ **Galerías de imágenes interactivas:** para mostrar el patrimonio local.  
-✔️ **Slider de noticias destacadas:** con la información más reciente.  
-✔️ **Mapa interactivo de obras:** permite visualizar avances en proyectos.  
-✔️ **Optimización SEO:** mayor visibilidad en buscadores.  
-✔️ **Accesibilidad web (WCAG):** pensado para todos los usuarios.  
-✔️ **Preparado para despliegue en Netlify.**  
+Formularios Validados - Verificación en tiempo real para datos seguros
 
+Galerías Interactivas - Exhibición del patrimonio cultural y natural
 
-## 📂 Estructura del proyecto
+Slider de Noticias - Destacados informativos actualizados
 
+Mapa Interactivo de Obras - Visualización georreferenciada de proyectos
+
+Optimización SEO - Mejor posicionamiento en motores de búsqueda
+
+Accesibilidad Web (WCAG) - Diseño inclusivo para todos los usuarios
+
+Despliegue en Netlify - Implementación continua y hosting optimizado
+
+Estructura del Proyecto
+text
 municipalidad-ivochote/
 ├── index.html                # Página principal
 ├── autoridades.html          # Información de las autoridades locales
@@ -54,40 +59,38 @@ municipalidad-ivochote/
 │
 ├── netlify.toml              # Configuración para despliegue en Netlify
 └── README.md                 # Documentación del proyecto
+Tecnologías Utilizadas
+HTML5 - Estructura semántica del sitio
 
-🚀 Tecnologías utilizadas
-HTML5 → Estructura semántica del sitio.
+CSS3 (Responsive + Dark Mode) - Estilos modernos y adaptables
 
-CSS3 (Responsive + Dark Mode) → Estilos modernos y adaptables.
+JavaScript (ES6+) - Interactividad, validaciones y efectos dinámicos
 
-JavaScript (ES6+) → Interactividad, validaciones y efectos dinámicos.
+Netlify - Hosting y despliegue continuo (CI/CD)
 
-Netlify → Hosting y despliegue continuo (CI/CD).
-
-📌 Instalación y uso
+Instalación y Uso
 Clonar el repositorio:
 
 bash
-Copiar código
 git clone https://github.com/usuario/municipalidad-ivochote.git
 Abrir el archivo index.html en un navegador web.
 
 (Opcional) Usar la extensión Live Server en VSCode para un entorno de desarrollo dinámico.
 
-🌍 Impacto del proyecto
+Impacto del Proyecto
 Este portal busca ser una plataforma oficial de información y servicios, con el fin de:
 
-Difundir noticias y comunicados oficiales.
+Difundir noticias y comunicados oficiales
 
-Transparentar las obras públicas y proyectos en ejecución.
+Transparentar las obras públicas y proyectos en ejecución
 
-Promover el turismo y la identidad cultural de Ivochote.
+Promover el turismo y la identidad cultural de Ivochote
 
-Facilitar el acceso a servicios municipales.
+Facilitar el acceso a servicios municipales
 
-Servir como un canal directo de comunicación con los ciudadanos.
+Servir como un canal directo de comunicación con los ciudadanos
 
-📜 Documentación
+Documentación
 Dentro de la carpeta /docs se encuentran:
 
 Reglamentos municipales
@@ -96,14 +99,18 @@ Normativas locales
 
 Documentación complementaria
 
-👨‍💻 Equipo de desarrollo
+Equipo de Desarrollo
 Este proyecto está impulsado por la Municipalidad del Centro Poblado de Ivochote, con el apoyo de desarrolladores locales comprometidos con la innovación digital y la mejora de los servicios en línea.
 
-📬 Contacto
-📍 Dirección: Municipalidad del Centro Poblado de Ivochote – Cusco, Perú
-☎️ Teléfono: (colocar número oficial)
-📧 Correo: (colocar correo institucional)
-🌐 Web: ivochote.pe (ejemplo, pendiente de dominio oficial)
+Contacto
+Dirección: Municipalidad del Centro Poblado de Ivochote - Cusco, Perú
 
-📄 Licencia
+Teléfono: (colocar número oficial)
+
+Correo: (colocar correo institucional)
+
+Web: ivochote.pe (ejemplo, pendiente de dominio oficial)
+
+Licencia
 Este proyecto está bajo la licencia MIT, lo que permite su uso, modificación y distribución con fines educativos e institucionales.
+
