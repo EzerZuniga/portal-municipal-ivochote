@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Servicios Municipales - Municipalidad del Centro Poblado de Ivochote - Accede a trámites, pagos en línea y servicios para la comunidad">
+    <meta name="keywords" content="servicios municipales, ivochote, trámites, pagos en línea, servicios comunidad, municipalidad">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Servicios Municipales - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Accede a trámites, pagos en línea y servicios municipales para la comunidad de Ivochote">
+    <meta property="og:image" content="/public/images/servicios/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/servicios">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Servicios Municipales - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando servicios...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <img src="/public/images/servicios/banner.jpg" 
+                 alt="Servicios Municipales de Ivochote - Atención al ciudadano y servicios comunitarios"
+                 class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Servicios Municipales</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Accede a todos los servicios, trámites y programas que ofrecemos para el bienestar de la comunidad de Ivochote
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Servicios</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Quick Access Stats -->
+        <section class="py-12 bg-white" aria-labelledby="stats-title">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">25+</div>
+                        <p class="text-gray-700 font-medium">Servicios Disponibles</p>
+                        <p class="text-gray-500 text-sm">Para la comunidad</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-3xl md:text-4xl font-bold text-green-600 mb-2">15</div>
+                        <p class="text-gray-700 font-medium">En Línea</p>
+                        <p class="text-gray-500 text-sm">Trámites digitales</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-600 mb-2">24/7</div>
+                        <p class="text-gray-700 font-medium">Atención</p>
+                        <p class="text-gray-500 text-sm">Plataforma digital</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-3xl md:text-4xl font-bold text-orange-600 mb-2">98%</div>
+                        <p class="text-gray-700 font-medium">Satisfacción</p>
+                        <p class="text-gray-500 text-sm">Usuarios satisfechos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Categories -->
+        <section class="py-16 bg-gray-50" aria-labelledby="categories-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="categories-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Categorías de Servicios</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Selecciona la categoría del servicio que necesitas acceder
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Trámites Municipales -->
+                    <a href="/src/pages/servicios/tramites.html" 
+                       class="service-category group bg-white rounded-2xl p-8 border border-gray-200 hover:border-blue-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
+                            <i class="fas fa-file-alt text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                            Trámites Municipales
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Licencias, permisos, autorizaciones y otros trámites administrativos necesarios para tu negocio o propiedad.
+                        </p>
+                        <div class="text-blue-600 font-semibold inline-flex items-center group-hover:text-blue-700 transition-colors duration-300">
+                            Ver servicios disponibles
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Pagos en Línea -->
+                    <a href="/src/pages/servicios/pagos.html" 
+                       class="service-category group bg-white rounded-2xl p-8 border border-gray-200 hover:border-green-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
+                            <i class="fas fa-credit-card text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors duration-300">
+                            Pagos en Línea
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Paga tus arbitrios, impuestos prediales, licencias y otros servicios municipales de forma segura y rápida.
+                        </p>
+                        <div class="text-green-600 font-semibold inline-flex items-center group-hover:text-green-700 transition-colors duration-300">
+                            Realizar pago
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Salud y Bienestar -->
+                    <a href="/src/pages/servicios/salud.html" 
+                       class="service-category group bg-white rounded-2xl p-8 border border-gray-200 hover:border-red-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors duration-300">
+                            <i class="fas fa-heartbeat text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition-colors duration-300">
+                            Salud y Bienestar
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Programas de salud preventiva, campañas médicas, vacunación y apoyo a poblaciones vulnerables.
+                        </p>
+                        <div class="text-red-600 font-semibold inline-flex items-center group-hover:text-red-700 transition-colors duration-300">
+                            Ver programas
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Educación y Cultura -->
+                    <a href="/src/pages/servicios/educacion.html" 
+                       class="service-category group bg-white rounded-2xl p-8 border border-gray-200 hover:border-yellow-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-yellow-200 transition-colors duration-300">
+                            <i class="fas fa-graduation-cap text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-yellow-600 transition-colors duration-300">
+                            Educación y Cultura
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Programas educativos, talleres culturales, biblioteca municipal y actividades para toda la familia.
+                        </p>
+                        <div class="text-yellow-600 font-semibold inline-flex items-center group-hover:text-yellow-700 transition-colors duration-300">
+                            Conocer más
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Limpieza Pública -->
+                    <a href="/src/pages/servicios/limpieza.html" 
+                       class="service-category group bg-white rounded-2xl p-8 border border-gray-200 hover:border-purple-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors duration-300">
+                            <i class="fas fa-trash-alt text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors duration-300">
+                            Limpieza Pública
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Servicios de recolección de residuos, barrido de calles, mantenimiento de áreas verdes y ornato.
+                        </p>
+                        <div class="text-purple-600 font-semibold inline-flex items-center group-hover:text-purple-700 transition-colors duration-300">
+                            Ver horarios
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Seguridad Ciudadana -->
+                    <a href="/src/pages/servicios/seguridad.html" 
+                       class="service-category group bg-white rounded-2xl p-8 border border-gray-200 hover:border-indigo-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-200 transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
+                            Seguridad Ciudadana
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Programas de prevención, serenazgo, alarmas comunitarias y protección para toda la población.
+                        </p>
+                        <div class="text-indigo-600 font-semibold inline-flex items-center group-hover:text-indigo-700 transition-colors duration-300">
+                            Más información
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online Services Portal -->
+        <section class="py-16 bg-white" aria-labelledby="online-services-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="online-services-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Portal de Servicios en Línea</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Realiza tus trámites y pagos de manera digital, rápida y segura desde cualquier dispositivo
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl shadow-2xl overflow-hidden max-w-6xl mx-auto" data-aos="fade-up">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Left Side - Information -->
+                        <div class="p-8 lg:p-12 text-white">
+                            <h3 class="text-2xl md:text-3xl font-bold mb-6">Acceso Rápido a Servicios Digitales</h3>
+                            <p class="text-blue-100 mb-8 leading-relaxed">
+                                Nuestra plataforma digital te permite realizar trámites y pagos las 24 horas del día, 
+                                los 7 días de la semana, sin necesidad de desplazarte a nuestras oficinas.
+                            </p>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-300 mr-4 text-xl"></i>
+                                    <span class="text-blue-100">Procesos 100% digitales y seguros</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-300 mr-4 text-xl"></i>
+                                    <span class="text-blue-100">Múltiples opciones de pago disponibles</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-300 mr-4 text-xl"></i>
+                                    <span class="text-blue-100">Seguimiento en tiempo real de tus trámites</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-300 mr-4 text-xl"></i>
+                                    <span class="text-blue-100">Notificaciones instantáneas por email y SMS</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                                <p class="text-sm text-blue-100">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    <strong>¿Primera vez usando nuestros servicios en línea?</strong> 
+                                    Regístrate en solo 2 minutos y accede a todos los beneficios.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Right Side - Service Access Form -->
+                        <div class="bg-white p-8 lg:p-12">
+                            <h4 class="text-xl font-bold text-gray-800 mb-6">Acceder a Servicios</h4>
+                            
+                            <form id="service-access-form" class="space-y-6">
+                                <!-- Service Type -->
+                                <div>
+                                    <label for="service-type" class="block text-sm font-medium text-gray-700 mb-2">
+                                        <i class="fas fa-list-alt mr-2 text-blue-500"></i>
+                                        Tipo de Servicio
+                                    </label>
+                                    <select id="service-type" 
+                                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors">
+                                        <option value="">Seleccione el servicio que necesita</option>
+                                        <option value="pagos">Pagos en Línea</option>
+                                        <option value="tramites">Trámites Municipales</option>
+                                        <option value="consultas">Consultas y Reclamos</option>
+                                        <option value="reservas">Reserva de Espacios Públicos</option>
+                                        <option value="certificados">Certificados y Constancias</option>
+                                    </select>
+                                </div>
+
+                                <!-- Document Number -->
+                                <div>
+                                    <label for="document-number" class="block text-sm font-medium text-gray-700 mb-2">
+                                        <i class="fas fa-id-card mr-2 text-blue-500"></i>
+                                        Número de Documento
+                                    </label>
+                                    <input type="text" 
+                                           id="document-number" 
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400"
+                                           placeholder="Ingrese su DNI o CE"
+                                           maxlength="12">
+                                </div>
+
+                                <!-- Service Specific Fields (Dynamic) -->
+                                <div id="service-specific-fields" class="hidden space-y-4">
+                                    <!-- Dynamic fields will be loaded here based on service type -->
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit" 
+                                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-200 flex items-center justify-center">
+                                    <i class="fas fa-arrow-right mr-3"></i>
+                                    Continuar al Servicio
+                                </button>
+                            </form>
+
+                            <!-- Alternative Access Methods -->
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <p class="text-sm text-gray-600 text-center mb-4">O accede mediante:</p>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <a href="/src/pages/login.html" 
+                                       class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-4 rounded-lg text-sm font-medium transition-colors text-center">
+                                        <i class="fas fa-user mr-2"></i>Cuenta Municipal
+                                    </a>
+                                    <a href="/src/pages/servicios/consultas.html" 
+                                       class="bg-green-100 hover:bg-green-200 text-green-700 py-2 px-4 rounded-lg text-sm font-medium transition-colors text-center">
+                                        <i class="fas fa-question-circle mr-2"></i>Consultas
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Services -->
+        <section class="py-16 bg-gray-50" aria-labelledby="popular-services-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="popular-services-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Servicios Más Solicitados</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Los servicios municipales más utilizados por nuestros ciudadanos
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Pago de Arbitrios -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-home text-blue-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Pago de Arbitrios</h4>
+                        <p class="text-sm text-gray-600 mb-4">Paga tus arbitrios de limpieza pública de manera rápida y segura.</p>
+                        <a href="/src/pages/servicios/pagos.html?service=arbitrios" class="text-blue-600 text-sm font-medium hover:text-blue-700">
+                            Pagar ahora →
+                        </a>
+                    </div>
+
+                    <!-- Licencia de Funcionamiento -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-store text-green-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Licencia de Funcionamiento</h4>
+                        <p class="text-sm text-gray-600 mb-4">Solicita o renueva la licencia para tu negocio o establecimiento.</p>
+                        <a href="/src/pages/servicios/tramites.html?service=licencia" class="text-green-600 text-sm font-medium hover:text-green-700">
+                            Solicitar →
+                        </a>
+                    </div>
+
+                    <!-- Certificado de Residencia -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-certificate text-purple-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Certificado de Residencia</h4>
+                        <p class="text-sm text-gray-600 mb-4">Obtén tu certificado de residencia para trámites diversos.</p>
+                        <a href="/src/pages/servicios/tramites.html?service=certificado" class="text-purple-600 text-sm font-medium hover:text-purple-700">
+                            Solicitar →
+                        </a>
+                    </div>
+
+                    <!-- Reclamos y Sugerencias -->
+                    <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-comments text-orange-600"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Reclamos y Sugerencias</h4>
+                        <p class="text-sm text-gray-600 mb-4">Reporta incidencias o envía sugerencias para mejorar nuestros servicios.</p>
+                        <a href="/src/pages/servicios/consultas.html" class="text-orange-600 text-sm font-medium hover:text-orange-700">
+                            Enviar →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Hours & Contact -->
+        <section class="py-16 bg-white" aria-labelledby="contact-title">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <!-- Service Hours -->
+                    <div data-aos="fade-right">
+                        <h3 id="contact-title" class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Horarios de Atención</h3>
+                        
+                        <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-building mr-3 text-blue-600"></i>
+                                Atención Presencial
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Lunes a Viernes</span>
+                                    <span class="font-semibold text-gray-800">8:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Sábados</span>
+                                    <span class="font-semibold text-gray-800">8:00 AM - 12:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Domingos</span>
+                                    <span class="font-semibold text-gray-800">Cerrado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-xl p-6">
+                            <h4 class="font-semibold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-globe mr-3 text-blue-600"></i>
+                                Servicios en Línea
+                            </h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Disponibilidad</span>
+                                    <span class="font-semibold text-green-600">24 horas / 7 días</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Soporte Técnico</span>
+                                    <span class="font-semibold text-gray-800">Lun-Vie: 8AM-6PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div data-aos="fade-left">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">¿Necesitas Ayuda?</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Línea de Atención</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Para consultas y soporte telefónico</p>
+                                    <a href="tel:+51987654321" class="text-blue-600 font-semibold hover:text-blue-700">
+                                        +51 987 654 321
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Correo Electrónico</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Para consultas escritas y documentación</p>
+                                    <a href="mailto:servicios@ivochote.gob.pe" class="text-green-600 font-semibold hover:text-green-700">
+                                        servicios@ivochote.gob.pe
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-xl">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Oficina Central</h4>
+                                    <p class="text-gray-600 text-sm mb-2">Visítanos en nuestras instalaciones</p>
+                                    <p class="text-gray-700">Plaza Principal S/N, Ivochote, Cusco</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <a href="/src/pages/contacto.html" 
+                               class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+                                <i class="fas fa-headset mr-3"></i>
+                                Contactar Soporte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeServicesPage();
+        });
+
+        function initializeServicesPage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize services functionality
+            initializeServiceAccessForm();
+            initializeServiceCategories();
+        }
+
+        function initializeServiceAccessForm() {
+            const serviceTypeSelect = document.getElementById('service-type');
+            const specificFieldsContainer = document.getElementById('service-specific-fields');
+            const accessForm = document.getElementById('service-access-form');
+
+            // Service type change handler
+            serviceTypeSelect.addEventListener('change', function() {
+                const selectedService = this.value;
+                updateServiceSpecificFields(selectedService, specificFieldsContainer);
+            });
+
+            // Form submission handler
+            accessForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const serviceType = serviceTypeSelect.value;
+                const documentNumber = document.getElementById('document-number').value;
+
+                if (!serviceType || !documentNumber) {
+                    AlertManager.show(
+                        'Por favor complete todos los campos requeridos',
+                        'warning',
+                        'Campos incompletos',
+                        3000
+                    );
+                    return;
+                }
+
+                // Redirect to specific service page
+                redirectToService(serviceType, documentNumber);
+            });
+        }
+
+        function updateServiceSpecificFields(serviceType, container) {
+            container.innerHTML = '';
+            
+            if (!serviceType) {
+                container.classList.add('hidden');
+                return;
+            }
+
+            container.classList.remove('hidden');
+
+            let specificFieldsHTML = '';
+
+            switch (serviceType) {
+                case 'pagos':
+                    specificFieldsHTML = `
+                        <div>
+                            <label for="tipo-pago" class="block text-sm font-medium text-gray-700 mb-2">
+                                Tipo de Pago
+                            </label>
+                            <select id="tipo-pago" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                <option value="">Seleccione tipo de pago</option>
+                                <option value="arbitrios">Arbitrios de Limpieza</option>
+                                <option value="predial">Impuesto Predial</option>
+                                <option value="licencias">Licencias y Permisos</option>
+                                <option value="multas">Multas Municipales</option>
+                            </select>
+                        </div>
+                    `;
+                    break;
+
+                case 'tramites':
+                    specificFieldsHTML = `
+                        <div>
+                            <label for="tipo-tramite" class="block text-sm font-medium text-gray-700 mb-2">
+                                Tipo de Trámite
+                            </label>
+                            <select id="tipo-tramite" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                <option value="">Seleccione tipo de trámite</option>
+                                <option value="licencia">Licencia de Funcionamiento</option>
+                                <option value="construccion">Permiso de Construcción</option>
+                                <option value="certificado">Certificado de Residencia</option>
+                                <option value="autorizacion">Autorización Especial</option>
+                            </select>
+                        </div>
+                    `;
+                    break;
+
+                case 'consultas':
+                    specificFieldsHTML = `
+                        <div>
+                            <label for="tipo-consulta" class="block text-sm font-medium text-gray-700 mb-2">
+                                Tipo de Consulta
+                            </label>
+                            <select id="tipo-consulta" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                <option value="">Seleccione tipo de consulta</option>
+                                <option value="informacion">Información General</option>
+                                <option value="reclamo">Reclamo o Queja</option>
+                                <option value="sugerencia">Sugerencia</option>
+                                <option value="seguimiento">Seguimiento de Trámite</option>
+                            </select>
+                        </div>
+                    `;
+                    break;
+
+                case 'reservas':
+                    specificFieldsHTML = `
+                        <div>
+                            <label for="espacio-reserva" class="block text-sm font-medium text-gray-700 mb-2">
+                                Espacio a Reservar
+                            </label>
+                            <select id="espacio-reserva" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                <option value="">Seleccione espacio</option>
+                                <option value="plaza">Plaza Principal</option>
+                                <option value="auditorio">Auditorio Municipal</option>
+                                <option value="cancha">Cancha Deportiva</option>
+                                <option value="parque">Parque Infantil</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="fecha-reserva" class="block text-sm font-medium text-gray-700 mb-2">
+                                Fecha Deseada
+                            </label>
+                            <input type="date" id="fecha-reserva" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                        </div>
+                    `;
+                    break;
+
+                case 'certificados':
+                    specificFieldsHTML = `
+                        <div>
+                            <label for="tipo-certificado" class="block text-sm font-medium text-gray-700 mb-2">
+                                Tipo de Certificado
+                            </label>
+                            <select id="tipo-certificado" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                <option value="">Seleccione certificado</option>
+                                <option value="residencia">Certificado de Residencia</option>
+                                <option value="solteria">Certificado de Soltería</option>
+                                <option value="vive">Certificado de Vivencia</option>
+                                <option value="no-adeudo">Certificado de No Adeudo</option>
+                            </select>
+                        </div>
+                    `;
+                    break;
+            }
+
+            container.innerHTML = specificFieldsHTML;
+        }
+
+        function redirectToService(serviceType, documentNumber) {
+            const baseUrls = {
+                'pagos': '/src/pages/servicios/pagos.html',
+                'tramites': '/src/pages/servicios/tramites.html',
+                'consultas': '/src/pages/servicios/consultas.html',
+                'reservas': '/src/pages/servicios/reservas.html',
+                'certificados': '/src/pages/servicios/certificados.html'
+            };
+
+            if (baseUrls[serviceType]) {
+                // Add document number as query parameter
+                const url = `${baseUrls[serviceType]}?documento=${encodeURIComponent(documentNumber)}`;
+                window.location.href = url;
+            } else {
+                AlertManager.show(
+                    'Servicio no disponible temporalmente',
+                    'error',
+                    'Error de acceso',
+                    3000
+                );
+            }
+        }
+
+        function initializeServiceCategories() {
+            // Add click tracking for service categories
+            const serviceCategories = document.querySelectorAll('.service-category');
+            
+            serviceCategories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const categoryName = this.querySelector('h3').textContent;
+                    
+                    // Track category click (in a real app, you might send this to analytics)
+                    console.log(`Categoría de servicio clickeada: ${categoryName}`);
+                    
+                    // You could add analytics tracking here
+                    // trackServiceCategoryClick(categoryName);
+                });
+            });
+        }
+
+        // Utility function to track service usage (for analytics)
+        function trackServiceCategoryClick(categoryName) {
+            // This is where you would integrate with your analytics service
+            // Example: Google Analytics, Matomo, etc.
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'service_category_click', {
+                    'event_category': 'Services',
+                    'event_label': categoryName
+                });
+            }
+        }
+    </script>
+</body>
+</html>

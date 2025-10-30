@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal de Transparencia - Municipalidad del Centro Poblado de Ivochote - Acceso a la información pública, rendición de cuentas y gestión municipal transparente">
+    <meta name="keywords" content="transparencia, ivochote, municipalidad, información pública, rendición de cuentas, ley 27806">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portal de Transparencia - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Acceso a la información pública y rendición de cuentas de la gestión municipal">
+    <meta property="og:image" content="/public/images/transparencia/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/transparencia">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Portal de Transparencia - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando portal de transparencia...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <img src="/public/images/transparencia/banner.jpg" 
+                 alt="Portal de Transparencia Municipal - Acceso a la información pública"
+                 class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Portal de Transparencia</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Acceso a la información pública, rendición de cuentas y gestión municipal transparente
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Portal de Transparencia</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Transparency Stats -->
+        <section class="py-12 bg-white" aria-labelledby="stats-title">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">500+</div>
+                        <p class="text-gray-700 font-medium">Documentos Publicados</p>
+                        <p class="text-gray-500 text-sm">Información actualizada</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-3xl md:text-4xl font-bold text-green-600 mb-2">98%</div>
+                        <p class="text-gray-700 font-medium">Solicitudes Atendidas</p>
+                        <p class="text-gray-500 text-sm">En plazo legal</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-600 mb-2">24/7</div>
+                        <p class="text-gray-700 font-medium">Acceso Disponible</p>
+                        <p class="text-gray-500 text-sm">Portal digital</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-3xl md:text-4xl font-bold text-orange-600 mb-2">100%</div>
+                        <p class="text-gray-700 font-medium">Cumplimiento Legal</p>
+                        <p class="text-gray-500 text-sm">Ley N° 27806</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transparency Categories -->
+        <section class="py-16 bg-white" aria-labelledby="categories-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="categories-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Información Pública Disponible</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        En cumplimiento con la Ley de Transparencia y Acceso a la Información Pública (Ley N° 27806)
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Organización -->
+                    <a href="/src/pages/transparencia/organizacion.html" 
+                       class="transparency-card group bg-white rounded-2xl p-8 border border-gray-200 hover:border-blue-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-200 transition-colors duration-300">
+                            <i class="fas fa-sitemap text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                            Organización Municipal
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Estructura orgánica, funciones específicas, autoridades, personal y organigrama institucional.
+                        </p>
+                        <div class="text-blue-600 font-semibold inline-flex items-center group-hover:text-blue-700 transition-colors duration-300">
+                            Ver información institucional
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Gestión Municipal -->
+                    <a href="/src/pages/transparencia/gestion.html" 
+                       class="transparency-card group bg-white rounded-2xl p-8 border border-gray-200 hover:border-green-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-200 transition-colors duration-300">
+                            <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors duration-300">
+                            Gestión Municipal
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Planes de desarrollo, proyectos ejecutados, metas cumplidas, indicadores y reportes de gestión.
+                        </p>
+                        <div class="text-green-600 font-semibold inline-flex items-center group-hover:text-green-700 transition-colors duration-300">
+                            Ver gestión municipal
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Finanzas Públicas -->
+                    <a href="/src/pages/transparencia/finanzas.html" 
+                       class="transparency-card group bg-white rounded-2xl p-8 border border-gray-200 hover:border-yellow-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-yellow-200 transition-colors duration-300">
+                            <i class="fas fa-money-bill-wave text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-yellow-600 transition-colors duration-300">
+                            Finanzas Públicas
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Presupuesto institucional, ejecución financiera, ingresos, gastos y estados financieros auditados.
+                        </p>
+                        <div class="text-yellow-600 font-semibold inline-flex items-center group-hover:text-yellow-700 transition-colors duration-300">
+                            Ver información financiera
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Contrataciones -->
+                    <a href="/src/pages/transparencia/contrataciones.html" 
+                       class="transparency-card group bg-white rounded-2xl p-8 border border-gray-200 hover:border-red-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-200 transition-colors duration-300">
+                            <i class="fas fa-file-contract text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-600 transition-colors duration-300">
+                            Contrataciones Públicas
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Procesos de selección, adjudicaciones, contratos celebrados y proveedores del Estado.
+                        </p>
+                        <div class="text-red-600 font-semibold inline-flex items-center group-hover:text-red-700 transition-colors duration-300">
+                            Ver contrataciones
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Participación Ciudadana -->
+                    <a href="/src/pages/transparencia/participacion.html" 
+                       class="transparency-card group bg-white rounded-2xl p-8 border border-gray-200 hover:border-purple-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-200 transition-colors duration-300">
+                            <i class="fas fa-users text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors duration-300">
+                            Participación Ciudadana
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Audiencias públicas, consultas ciudadanas, mecanismos de participación y rendición de cuentas.
+                        </p>
+                        <div class="text-purple-600 font-semibold inline-flex items-center group-hover:text-purple-700 transition-colors duration-300">
+                            Ver participación
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+
+                    <!-- Documentos Normativos -->
+                    <a href="/src/pages/transparencia/documentos.html" 
+                       class="transparency-card group bg-white rounded-2xl p-8 border border-gray-200 hover:border-indigo-300 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                       data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-200 transition-colors duration-300">
+                            <i class="fas fa-file-alt text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
+                            Documentos Normativos
+                        </h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Ordenanzas municipales, resoluciones de alcaldía, directivas y otros documentos oficiales.
+                        </p>
+                        <div class="text-indigo-600 font-semibold inline-flex items-center group-hover:text-indigo-700 transition-colors duration-300">
+                            Ver documentos
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="budget-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="budget-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Presupuesto y Ejecución Financiera</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Información detallada sobre los recursos públicos y su ejecución en beneficio de la comunidad
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden" data-aos="fade-up">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Budget Information -->
+                        <div class="p-8 lg:p-12">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i class="fas fa-chart-pie mr-3 text-blue-600"></i>
+                                Presupuesto Institucional 2025
+                            </h3>
+                            
+                            <div class="space-y-6 mb-8">
+                                <!-- Assigned Budget -->
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Presupuesto Asignado Anual</h4>
+                                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">S/ 5,250,000.00</div>
+                                        <p class="text-blue-700 text-sm">Aprobado por Ordenanza Municipal N° 028-2024</p>
+                                    </div>
+                                </div>
+
+                                <!-- Budget Execution -->
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Ejecución Presupuestal Acumulada</h4>
+                                    <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+                                        <div class="text-3xl md:text-4xl font-bold text-green-600 mb-2">S/ 2,150,000.00</div>
+                                        <div class="mt-4">
+                                            <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                                <span>Progreso de ejecución</span>
+                                                <span class="font-semibold">41%</span>
+                                            </div>
+                                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                                <div class="bg-green-600 h-3 rounded-full transition-all duration-1000" style="width: 41%"></div>
+                                            </div>
+                                            <p class="text-sm text-gray-500 mt-2">Al 30 de junio 2025 - Ejecución semestral</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                    <div class="text-lg font-bold text-blue-600">S/ 3,100,000.00</div>
+                                    <div class="text-gray-600">Por ejecutar</div>
+                                </div>
+                                <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                    <div class="text-lg font-bold text-green-600">59%</div>
+                                    <div class="text-gray-600">Disponible</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <a href="/src/pages/transparencia/finanzas.html" 
+                                   class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                                    <i class="fas fa-chart-bar mr-2"></i>
+                                    Ver detalles completos del presupuesto
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Budget Chart -->
+                        <div class="bg-blue-600 text-white p-8 lg:p-12">
+                            <h3 class="text-2xl font-bold mb-6">Distribución Presupuestal por Rubros</h3>
+                            
+                            <div class="h-64 mb-6">
+                                <canvas id="budgetChart"></canvas>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div class="flex items-center">
+                                    <span class="w-3 h-3 bg-blue-300 rounded-full mr-3 flex-shrink-0"></span>
+                                    <div>
+                                        <div class="font-semibold">Personal y Obligaciones Sociales</div>
+                                        <div class="text-blue-200">35% - S/ 1,837,500.00</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-3 h-3 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
+                                    <div>
+                                        <div class="font-semibold">Bienes y Servicios</div>
+                                        <div class="text-blue-200">25% - S/ 1,312,500.00</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-3 h-3 bg-blue-200 rounded-full mr-3 flex-shrink-0"></span>
+                                    <div>
+                                        <div class="font-semibold">Inversiones</div>
+                                        <div class="text-blue-200">30% - S/ 1,575,000.00</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-3 h-3 bg-blue-500 rounded-full mr-3 flex-shrink-0"></span>
+                                    <div>
+                                        <div class="font-semibold">Otros Gastos</div>
+                                        <div class="text-blue-200">10% - S/ 525,000.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Documents Section -->
+        <section class="py-16 bg-white" aria-labelledby="documents-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="documents-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Documentos de Interés Público</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Acceso a los principales documentos normativos, de gestión y financieros de la municipalidad
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-file-alt mr-2"></i>Documento
+                                    </th>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-tag mr-2"></i>Tipo
+                                    </th>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-calendar mr-2"></i>Fecha
+                                    </th>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-download mr-2"></i>Descarga
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <!-- Plan de Desarrollo -->
+                                <tr class="hover:bg-gray-50 transition-colors" data-aos="fade-up" data-aos-delay="100">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                                <i class="fas fa-map text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="font-semibold text-gray-900">Plan de Desarrollo Concertado 2023-2026</div>
+                                                <div class="text-sm text-gray-500">Documento rector del desarrollo local</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                            Planificación
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">15/01/2023</div>
+                                        <div class="text-xs text-gray-500">Aprobado</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <a href="/public/documents/plan-desarrollo-2023-2026.pdf" 
+                                           class="inline-flex items-center px-3 py-1 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg text-sm font-medium transition-colors"
+                                           download>
+                                            <i class="fas fa-file-pdf mr-2"></i>
+                                            PDF (2.4 MB)
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <!-- Ordenanza Municipal -->
+                                <tr class="hover:bg-gray-50 transition-colors" data-aos="fade-up" data-aos-delay="200">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                                <i class="fas fa-gavel text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="font-semibold text-gray-900">Ordenanza Municipal N° 025-2025-MDI</div>
+                                                <div class="text-sm text-gray-500">Regulación del comercio ambulatorio y establecimientos comerciales</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            Ordenanza
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">10/03/2025</div>
+                                        <div class="text-xs text-gray-500">Vigente</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <a href="/public/documents/ordenanza-025-2025.pdf" 
+                                           class="inline-flex items-center px-3 py-1 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg text-sm font-medium transition-colors"
+                                           download>
+                                            <i class="fas fa-file-pdf mr-2"></i>
+                                            PDF (1.8 MB)
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <!-- Informe de Gestión -->
+                                <tr class="hover:bg-gray-50 transition-colors" data-aos="fade-up" data-aos-delay="300">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                                <i class="fas fa-chart-bar text-purple-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="font-semibold text-gray-900">Informe de Gestión Anual 2024</div>
+                                                <div class="text-sm text-gray-500">Resultados y logros de la gestión municipal del año 2024</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                                            Informe
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">30/01/2025</div>
+                                        <div class="text-xs text-gray-500">Publicado</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <a href="/public/documents/informe-gestion-2024.pdf" 
+                                           class="inline-flex items-center px-3 py-1 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg text-sm font-medium transition-colors"
+                                           download>
+                                            <i class="fas fa-file-pdf mr-2"></i>
+                                            PDF (3.2 MB)
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <!-- Resolución de Alcaldía -->
+                                <tr class="hover:bg-gray-50 transition-colors" data-aos="fade-up" data-aos-delay="400">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                                                <i class="fas fa-file-signature text-orange-600"></i>
+                                            </div>
+                                            <div>
+                                                <div class="font-semibold text-gray-900">Resolución de Alcaldía N° 150-2025-MDI</div>
+                                                <div class="text-sm text-gray-500">Declaración de interés público el proyecto de agua potable</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                                            Resolución
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">05/05/2025</div>
+                                        <div class="text-xs text-gray-500">Ejecutoriada</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <a href="/public/documents/resolucion-150-2025.pdf" 
+                                           class="inline-flex items-center px-3 py-1 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg text-sm font-medium transition-colors"
+                                           download>
+                                            <i class="fas fa-file-pdf mr-2"></i>
+                                            PDF (1.1 MB)
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="px-6 py-4 bg-gray-50 border-t border-gray-200 text-center">
+                        <a href="/src/pages/transparencia/documentos.html" 
+                           class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-folder-open mr-3"></i>
+                            Ver todos los documentos públicos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Request Section -->
+        <section class="py-16 bg-blue-600 text-white" aria-labelledby="request-title">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h2 id="request-title" class="text-3xl md:text-4xl font-bold mb-6">Solicitud de Información Pública</h2>
+                    <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                        Si no encuentras la información que buscas en nuestro portal, puedes solicitarla formalmente 
+                        a través de nuestro sistema de acceso a la información pública.
+                    </p>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-bold mb-4">¿Qué información puedes solicitar?</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-300 text-xl mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Documentos específicos</h4>
+                                    <p class="text-blue-200 text-sm">Solicita documentos no publicados en el portal</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-300 text-xl mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Información detallada</h4>
+                                    <p class="text-blue-200 text-sm">Datos específicos de proyectos o gestiones</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-300 text-xl mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Estadísticas municipales</h4>
+                                    <p class="text-blue-200 text-sm">Datos numéricos y estadísticas oficiales</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-check-circle text-green-300 text-xl mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Informes específicos</h4>
+                                    <p class="text-blue-200 text-sm">Reportes de áreas municipales específicas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                        <a href="/src/pages/transparencia/solicitud.html" 
+                           class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+                            <i class="fas fa-file-alt mr-3"></i>
+                            Realizar Solicitud de Información
+                        </a>
+                        <a href="/src/pages/transparencia/preguntas-frecuentes.html" 
+                           class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center">
+                            <i class="fas fa-question-circle mr-3"></i>
+                            Preguntas Frecuentes
+                        </a>
+                    </div>
+
+                    <p class="text-blue-200 text-sm mt-6">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Tiempo máximo de respuesta: 7 días hábiles según Ley N° 27806
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Compliance Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Cumplimiento Normativo</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Nuestro portal de transparencia cumple con los estándares establecidos en la legislación peruana
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-balance-scale text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ley N° 27806</h3>
+                            <p class="text-gray-600">Ley de Transparencia y Acceso a la Información Pública</p>
+                        </div>
+
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-gavel text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ley N° 27972</h3>
+                            <p class="text-gray-600">Ley Orgánica de Municipalidades</p>
+                        </div>
+
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-shield-alt text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Decreto Supremo N° 072-2021-PCM</h3>
+                            <p class="text-gray-600">Reglamento del Sistema Nacional de Transparencia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeTransparencyPage();
+        });
+
+        function initializeTransparencyPage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize budget chart
+            initializeBudgetChart();
+            
+            // Initialize transparency cards interactions
+            initializeTransparencyCards();
+            
+            // Initialize document downloads tracking
+            initializeDocumentTracking();
+        }
+
+        function initializeBudgetChart() {
+            const ctx = document.getElementById('budgetChart');
+            if (!ctx) return;
+
+            const budgetChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Personal y Obligaciones Sociales', 'Bienes y Servicios', 'Inversiones', 'Otros Gastos'],
+                    datasets: [{
+                        data: [35, 25, 30, 10],
+                        backgroundColor: [
+                            '#93c5fd', // blue-300
+                            '#60a5fa', // blue-400
+                            '#bfdbfe', // blue-200
+                            '#3b82f6'  // blue-500
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 15
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = Math.round((value / total) * 100);
+                                    const amount = formatCurrency(value * 5250000 / 100);
+                                    return `${label}: ${percentage}% (${amount})`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%',
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+
+            // Add resize observer for better responsive behavior
+            const resizeObserver = new ResizeObserver(() => {
+                budgetChart.resize();
+            });
+            resizeObserver.observe(ctx.parentElement);
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('es-PE', {
+                style: 'currency',
+                currency: 'PEN',
+                minimumFractionDigits: 2
+            }).format(amount);
+        }
+
+        function initializeTransparencyCards() {
+            const transparencyCards = document.querySelectorAll('.transparency-card');
+            
+            transparencyCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const category = this.querySelector('h3').textContent;
+                    
+                    // Track category click for analytics
+                    trackTransparencyCategoryClick(category);
+                    
+                    // Add visual feedback
+                    this.style.transform = 'translateY(-8px)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-2px)';
+                    }, 150);
+                });
+
+                // Add keyboard navigation support
+                card.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        this.click();
+                    }
+                });
+            });
+        }
+
+        function initializeDocumentTracking() {
+            const downloadLinks = document.querySelectorAll('a[download]');
+            
+            downloadLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const documentName = this.closest('tr').querySelector('.font-semibold').textContent;
+                    const fileType = this.textContent.includes('PDF') ? 'PDF' : 'Unknown';
+                    const fileSize = this.textContent.match(/\(([^)]+)\)/)?.[1] || 'Unknown';
+                    
+                    trackDocumentDownload(documentName, fileType, fileSize);
+                });
+            });
+        }
+
+        function trackTransparencyCategoryClick(category) {
+            // In a real application, you would send this to your analytics service
+            console.log(`Categoría de transparencia clickeada: ${category}`);
+            
+            // Example with Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'transparency_category_click', {
+                    'event_category': 'Transparency',
+                    'event_label': category
+                });
+            }
+        }
+
+        function trackDocumentDownload(documentName, fileType, fileSize) {
+            // In a real application, you would send this to your analytics service
+            console.log(`Documento descargado: ${documentName} (${fileType}, ${fileSize})`);
+            
+            // Example with Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'document_download', {
+                    'event_category': 'Transparency',
+                    'event_label': documentName,
+                    'file_type': fileType,
+                    'file_size': fileSize
+                });
+            }
+        }
+
+        // Utility function to format file sizes
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+    </script>
+</body>
+</html>

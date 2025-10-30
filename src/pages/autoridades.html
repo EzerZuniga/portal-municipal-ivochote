@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce a las autoridades del Centro Poblado de Ivochote - Alcalde, regidores y equipo de gestión municipal">
+    <meta name="keywords" content="autoridades, municipalidad, ivochote, alcalde, regidores, gobierno local">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Autoridades - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Conoce al equipo de trabajo que lidera el desarrollo de nuestro centro poblado">
+    <meta property="og:image" content="/public/images/autoridades/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/autoridades">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Autoridades - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Nuestras Autoridades</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Conoce al equipo de trabajo comprometido con el desarrollo sostenible de nuestro centro poblado
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Autoridades</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Mayor Section -->
+        <section class="py-16 bg-white" aria-labelledby="mayor-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="mayor-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Alcalde Municipal</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Máxima autoridad ejecutiva del Centro Poblado de Ivochote</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 md:p-12 shadow-lg border border-blue-100" data-aos="fade-up">
+                    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
+                        <!-- Mayor Photo -->
+                        <div class="flex-shrink-0" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="relative">
+                                <img src="/public/images/autoridades/alcalde.jpg" 
+                                     alt="Alcalde Juan Pérez García - Municipalidad de Ivochote" 
+                                     class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-xl border-4 border-white">
+                                <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg">
+                                    <span class="font-semibold">Alcalde</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mayor Info -->
+                        <div class="flex-1 text-center lg:text-left">
+                            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                                <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 lg:mb-0">Juan Pérez García</h3>
+                                <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Periodo 2023-2026</span>
+                                </div>
+                            </div>
+
+                            <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+                                <p class="text-lg leading-relaxed mb-4">
+                                    El <strong class="text-blue-600">Alcalde Juan Pérez García</strong>, con amplia experiencia en gestión pública y desarrollo local, 
+                                    lidera nuestro municipio con transparencia, compromiso y visión de futuro.
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                    <div class="bg-white rounded-lg p-4 shadow-sm border">
+                                        <h4 class="font-semibold text-blue-600 mb-2">Principales Objetivos</h4>
+                                        <ul class="space-y-1 text-gray-600">
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check-circle text-green-500 mr-2 text-xs"></i>
+                                                Mejorar la infraestructura básica
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check-circle text-green-500 mr-2 text-xs"></i>
+                                                Promover el desarrollo económico local
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check-circle text-green-500 mr-2 text-xs"></i>
+                                                Fortalecer los servicios municipales
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white rounded-lg p-4 shadow-sm border">
+                                        <h4 class="font-semibold text-blue-600 mb-2">Compromisos</h4>
+                                        <ul class="space-y-1 text-gray-600">
+                                            <li class="flex items-center">
+                                                <i class="fas fa-shield-alt text-blue-500 mr-2 text-xs"></i>
+                                                Transparencia en la gestión
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-users text-blue-500 mr-2 text-xs"></i>
+                                                Participación ciudadana
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-leaf text-green-500 mr-2 text-xs"></i>
+                                                Desarrollo sostenible
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
+                                <a href="mailto:alcalde@ivochote.gob.pe" 
+                                   class="flex items-center text-blue-600 hover:text-blue-700 transition-colors group">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                        <i class="fas fa-envelope text-blue-600"></i>
+                                    </div>
+                                    <span>alcalde@ivochote.gob.pe</span>
+                                </a>
+                                <a href="tel:+51984123456" 
+                                   class="flex items-center text-gray-600 hover:text-gray-800 transition-colors group">
+                                    <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-3 group-hover:bg-gray-200 transition-colors">
+                                        <i class="fas fa-phone-alt text-gray-600"></i>
+                                    </div>
+                                    <span>+51 984 123 456</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Council Members Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="council-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="council-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Consejo Municipal</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Regidores que representan a la población en la gestión municipal</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Regidor 1 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="/public/images/autoridades/regidor1.jpg" 
+                                 alt="Regidora María López Mendoza - Educación y Cultura" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Educación</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">María López Mendoza</h3>
+                            <p class="text-gray-600 mb-3 font-medium">Regidora de Educación y Cultura</p>
+                            <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                                Promotora de programas educativos y culturales para el desarrollo integral de nuestra comunidad.
+                            </p>
+                            <div class="space-y-2 text-sm text-gray-500 mb-4">
+                                <p class="flex items-center">
+                                    <i class="fas fa-phone-alt mr-3 text-gray-400 w-4"></i>
+                                    <span>984 234 567</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <i class="fas fa-envelope mr-3 text-gray-400 w-4"></i>
+                                    <span>mlopez@ivochote.gob.pe</span>
+                                </p>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center group/btn"
+                                    onclick="ModalManager.show('María López Mendoza', document.getElementById('regidor1-details').innerHTML)">
+                                Ver Perfil Completo
+                                <i class="fas fa-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Regidor 2 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="/public/images/autoridades/regidor2.jpg" 
+                                 alt="Regidor Carlos Rojas Quispe - Obras Públicas" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Obras</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Carlos Rojas Quispe</h3>
+                            <p class="text-gray-600 mb-3 font-medium">Regidor de Obras Públicas</p>
+                            <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                                Especialista en infraestructura con experiencia en gestión de proyectos de desarrollo urbano.
+                            </p>
+                            <div class="space-y-2 text-sm text-gray-500 mb-4">
+                                <p class="flex items-center">
+                                    <i class="fas fa-phone-alt mr-3 text-gray-400 w-4"></i>
+                                    <span>984 345 678</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <i class="fas fa-envelope mr-3 text-gray-400 w-4"></i>
+                                    <span>crojas@ivochote.gob.pe</span>
+                                </p>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center group/btn"
+                                    onclick="ModalManager.show('Carlos Rojas Quispe', document.getElementById('regidor2-details').innerHTML)">
+                                Ver Perfil Completo
+                                <i class="fas fa-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Regidor 3 -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="/public/images/autoridades/regidor3.jpg" 
+                                 alt="Regidora Luisa Torres Huamán - Salud y Medio Ambiente" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Salud</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Luisa Torres Huamán</h3>
+                            <p class="text-gray-600 mb-3 font-medium">Regidora de Salud y Medio Ambiente</p>
+                            <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                                Comprometida con la salud pública y la conservación ambiental de nuestro territorio.
+                            </p>
+                            <div class="space-y-2 text-sm text-gray-500 mb-4">
+                                <p class="flex items-center">
+                                    <i class="fas fa-phone-alt mr-3 text-gray-400 w-4"></i>
+                                    <span>984 456 789</span>
+                                </p>
+                                <p class="flex items-center">
+                                    <i class="fas fa-envelope mr-3 text-gray-400 w-4"></i>
+                                    <span>ltorres@ivochote.gob.pe</span>
+                                </p>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center group/btn"
+                                    onclick="ModalManager.show('Luisa Torres Huamán', document.getElementById('regidor3-details').innerHTML)">
+                                Ver Perfil Completo
+                                <i class="fas fa-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Municipal Management Section -->
+        <section class="py-16 bg-white" aria-labelledby="management-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="management-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Equipo de Gestión Municipal</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Profesionales que trabajan día a día por el desarrollo de Ivochote</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Gerente Municipal -->
+                    <article class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 text-center shadow-lg border border-blue-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1" 
+                             data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <img src="/public/images/autoridades/gerente.jpg" 
+                                 alt="Ing. Manuel Soto - Gerente Municipal" 
+                                 class="w-full h-full object-cover rounded-full border-4 border-blue-600 shadow-lg">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Ing. Manuel Soto</h3>
+                        <p class="text-gray-600 mb-3 font-medium">Gerente Municipal</p>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                            Ingeniero civil con especialización en gestión pública y desarrollo urbano.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                                gerenciamunicipal@ivochote.gob.pe
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Subgerentes -->
+                    <article class="bg-white rounded-2xl p-6 text-center shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1" 
+                             data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <img src="/public/images/autoridades/subgerente1.jpg" 
+                                 alt="Econ. Rosa Vargas - Subgerente de Administración" 
+                                 class="w-full h-full object-cover rounded-full border-4 border-green-600 shadow-lg">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Econ. Rosa Vargas</h3>
+                        <p class="text-gray-600 mb-3 font-medium">Subgerente de Administración</p>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                            Economista especializada en finanzas públicas y gestión administrativa.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                                administracion@ivochote.gob.pe
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl p-6 text-center shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1" 
+                             data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <img src="/public/images/autoridades/subgerente2.jpg" 
+                                 alt="Arq. Javier Ruiz - Subgerente de Planeamiento" 
+                                 class="w-full h-full object-cover rounded-full border-4 border-purple-600 shadow-lg">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Arq. Javier Ruiz</h3>
+                        <p class="text-gray-600 mb-3 font-medium">Subgerente de Planeamiento</p>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                            Arquitecto urbanista con experiencia en planificación territorial y desarrollo sostenible.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                                planeamiento@ivochote.gob.pe
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-2xl p-6 text-center shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1" 
+                             data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <img src="/public/images/autoridades/subgerente3.jpg" 
+                                 alt="Abg. Patricia Castro - Subgerente Legal" 
+                                 class="w-full h-full object-cover rounded-full border-4 border-red-600 shadow-lg">
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Abg. Patricia Castro</h3>
+                        <p class="text-gray-600 mb-3 font-medium">Subgerente Legal</p>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                            Abogada especializada en derecho administrativo y municipal.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                                legal@ivochote.gob.pe
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Section -->
+        <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Necesitas contactar con nuestras autoridades?</h2>
+                    <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                        Estamos para servirte. Contáctanos para cualquier consulta, sugerencia o trámite municipal.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/src/pages/contacto.html" 
+                           class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            Formulario de Contacto
+                        </a>
+                        <a href="tel:+51984123456" 
+                           class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            Llamar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Modal Content Templates (Hidden) -->
+    <div style="display: none;">
+        <!-- Regidor 1 Details -->
+        <div id="regidor1-details">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <img src="/public/images/autoridades/regidor1.jpg" alt="María López Mendoza" class="w-24 h-24 rounded-full object-cover">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">María López Mendoza</h3>
+                        <p class="text-gray-600">Regidora de Educación y Cultura</p>
+                    </div>
+                </div>
+                <div class="prose prose-sm max-w-none text-gray-700">
+                    <p><strong>Formación Académica:</strong></p>
+                    <ul>
+                        <li>Licenciada en Educación - Universidad Nacional del Cusco</li>
+                        <li>Maestría en Gestión Cultural - Universidad San Marcos</li>
+                    </ul>
+                    <p><strong>Experiencia:</strong></p>
+                    <ul>
+                        <li>15 años en gestión educativa municipal</li>
+                        <li>Coordinadora de programas culturales comunitarios</li>
+                        <li>Promotora de bibliotecas municipales</li>
+                    </ul>
+                    <p><strong>Proyectos Destacados:</strong></p>
+                    <ul>
+                        <li>Programa "Leamos Juntos" de fomento a la lectura</li>
+                        <li>Festival Anual de Cultura y Tradiciones</li>
+                        <li>Mejoramiento de infraestructura educativa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regidor 2 Details -->
+        <div id="regidor2-details">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <img src="/public/images/autoridades/regidor2.jpg" alt="Carlos Rojas Quispe" class="w-24 h-24 rounded-full object-cover">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Carlos Rojas Quispe</h3>
+                        <p class="text-gray-600">Regidor de Obras Públicas</p>
+                    </div>
+                </div>
+                <div class="prose prose-sm max-w-none text-gray-700">
+                    <p><strong>Formación Académica:</strong></p>
+                    <ul>
+                        <li>Ingeniero Civil - Universidad Nacional de Ingeniería</li>
+                        <li>Especialización en Gestión de Proyectos</li>
+                    </ul>
+                    <p><strong>Experiencia:</strong></p>
+                    <ul>
+                        <li>12 años en supervisión de obras públicas</li>
+                        <li>Experto en infraestructura vial y sanitaria</li>
+                        <li>Gestión de proyectos de desarrollo urbano</li>
+                    </ul>
+                    <p><strong>Proyectos Destacados:</strong></p>
+                    <ul>
+                        <li>Mejoramiento de vías de acceso al centro poblado</li>
+                        <li>Sistema de agua potable y alcantarillado</li>
+                        <li>Construcción de espacios públicos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regidor 3 Details -->
+        <div id="regidor3-details">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <img src="/public/images/autoridades/regidor3.jpg" alt="Luisa Torres Huamán" class="w-24 h-24 rounded-full object-cover">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Luisa Torres Huamán</h3>
+                        <p class="text-gray-600">Regidora de Salud y Medio Ambiente</p>
+                    </div>
+                </div>
+                <div class="prose prose-sm max-w-none text-gray-700">
+                    <p><strong>Formación Académica:</strong></p>
+                    <ul>
+                        <li>Enfermera Profesional - Universidad Peruana Cayetano Heredia</li>
+                        <li>Diplomado en Salud Pública y Ambiental</li>
+                    </ul>
+                    <p><strong>Experiencia:</strong></p>
+                    <ul>
+                        <li>10 años en servicios de salud comunitaria</li>
+                        <li>Coordinadora de programas de prevención</li>
+                        <li>Promotora de prácticas ambientales sostenibles</li>
+                    </ul>
+                    <p><strong>Proyectos Destacados:</strong></p>
+                    <ul>
+                        <li>Campañas de vacunación y salud preventiva</li>
+                        <li>Programa de reciclaje y manejo de residuos</li>
+                        <li>Huertos familiares y agricultura sostenible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeAuthoritiesPage();
+        });
+
+        function initializeAuthoritiesPage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

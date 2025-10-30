@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acceso al sistema de gestión municipal - Municipalidad del Centro Poblado de Ivochote">
+    <meta name="keywords" content="login, acceso, municipalidad, ivochote, sistema, gestión">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Acceso al Sistema - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Sistema de gestión municipal para personal autorizado">
+    <meta property="og:image" content="/public/images/login/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/login">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Acceso al Sistema - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando sistema...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Login Section -->
+        <section class="min-h-screen flex items-center justify-center py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+                    <!-- Left Side - Illustration and Info -->
+                    <div class="lg:w-1/2 xl:w-2/5" data-aos="fade-right">
+                        <div class="max-w-lg mx-auto">
+                            <div class="bg-white rounded-2xl p-8 shadow-xl border border-blue-100">
+                                <img src="/public/images/login-illustration.svg" 
+                                     alt="Sistema de Gestión Municipal - Acceso seguro" 
+                                     class="w-full max-w-xs mx-auto mb-8">
+                                <div class="text-center">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                                        Sistema de Gestión Municipal
+                                    </h2>
+                                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                        Plataforma segura para la gestión administrativa, trámites digitales y servicios municipales del Centro Poblado de Ivochote.
+                                    </p>
+                                    
+                                    <!-- Features List -->
+                                    <div class="space-y-4 text-left">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-shield-alt text-green-600 text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-700">Acceso seguro y encriptado</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-bolt text-blue-600 text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-700">Gestión eficiente de trámites</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-chart-line text-purple-600 text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-700">Reportes en tiempo real</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Security Notice -->
+                            <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-exclamation-triangle text-yellow-600 mt-1"></i>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-yellow-800 font-medium mb-1">Acceso Restringido</p>
+                                        <p class="text-xs text-yellow-700">
+                                            Este sistema es de uso exclusivo para personal autorizado de la Municipalidad de Ivochote.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Login Form -->
+                    <div class="lg:w-1/2 xl:w-1/3" data-aos="fade-left" data-aos-delay="200">
+                        <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
+                            <!-- Form Header -->
+                            <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6 text-white">
+                                <div class="flex items-center justify-center space-x-4 mb-4">
+                                    <img src="/public/images/escudo-peru.png" 
+                                         alt="Escudo de la Municipalidad de Ivochote" 
+                                         class="w-12 h-12 object-contain">
+                                    <div class="text-center">
+                                        <h1 class="text-2xl font-bold">Iniciar Sesión</h1>
+                                        <p class="text-blue-100 text-sm">Sistema de Gestión Municipal</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Login Form -->
+                            <div class="p-8">
+                                <form id="login-form" class="space-y-6" novalidate>
+                                    <!-- Username Field -->
+                                    <div>
+                                        <label for="username" class="block text-sm font-medium text-gray-700 mb-2">
+                                            <i class="fas fa-user mr-2 text-gray-400"></i>
+                                            Usuario
+                                        </label>
+                                        <input type="text" 
+                                               id="username" 
+                                               name="username" 
+                                               required 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder-gray-400"
+                                               placeholder="Ingresa tu usuario institucional"
+                                               autocomplete="username">
+                                        <div class="text-red-500 text-sm mt-1 hidden" id="username-error"></div>
+                                    </div>
+
+                                    <!-- Password Field -->
+                                    <div>
+                                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                                            <i class="fas fa-lock mr-2 text-gray-400"></i>
+                                            Contraseña
+                                        </label>
+                                        <div class="relative">
+                                            <input type="password" 
+                                                   id="password" 
+                                                   name="password" 
+                                                   required 
+                                                   class="w-full px-4 py-3 pr-10 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder-gray-400"
+                                                   placeholder="Ingresa tu contraseña"
+                                                   autocomplete="current-password">
+                                            <button type="button" 
+                                                    id="toggle-password"
+                                                    class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="text-red-500 text-sm mt-1 hidden" id="password-error"></div>
+                                    </div>
+
+                                    <!-- Remember Me & Forgot Password -->
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <input id="remember-me" 
+                                                   name="remember-me" 
+                                                   type="checkbox" 
+                                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                            <label for="remember-me" class="ml-2 block text-sm text-gray-700">
+                                                Recordar sesión
+                                            </label>
+                                        </div>
+                                        <div class="text-sm">
+                                            <a href="/src/pages/recuperar-contrasena.html" 
+                                               class="font-medium text-blue-600 hover:text-blue-500 transition-colors">
+                                                ¿Olvidaste tu contraseña?
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <div>
+                                        <button type="submit" 
+                                                id="login-button"
+                                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-200 flex items-center justify-center">
+                                            <i class="fas fa-sign-in-alt mr-3"></i>
+                                            <span id="login-text">Ingresar al Sistema</span>
+                                            <div id="login-spinner" class="hidden ml-3">
+                                                <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </form>
+
+                                <!-- Divider -->
+                                <div class="mt-8">
+                                    <div class="relative">
+                                        <div class="absolute inset-0 flex items-center">
+                                            <div class="w-full border-t border-gray-300"></div>
+                                        </div>
+                                        <div class="relative flex justify-center text-sm">
+                                            <span class="px-2 bg-white text-gray-500">¿Primera vez en el sistema?</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Registration Link -->
+                                    <div class="mt-6 text-center">
+                                        <a href="/src/pages/solicitar-acceso.html" 
+                                           class="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-all duration-300 hover:shadow-md">
+                                            <i class="fas fa-user-plus mr-3 text-gray-400"></i>
+                                            Solicitar Acceso al Sistema
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Security Footer -->
+                            <div class="bg-gray-50 px-8 py-4 border-t border-gray-200">
+                                <div class="flex items-center justify-center space-x-2 text-xs text-gray-500">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Sistema protegido • Municipalidad de Ivochote © 2025</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="mt-6 grid grid-cols-2 gap-4">
+                            <a href="/src/pages/index.html" 
+                               class="text-center px-4 py-3 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 text-sm text-gray-700 hover:text-blue-600">
+                                <i class="fas fa-home block text-lg mb-1"></i>
+                                Volver al Inicio
+                            </a>
+                            <a href="/src/pages/contacto.html" 
+                               class="text-center px-4 py-3 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 text-sm text-gray-700 hover:text-blue-600">
+                                <i class="fas fa-envelope block text-lg mb-1"></i>
+                                Contactar Soporte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeLoginPage();
+        });
+
+        function initializeLoginPage() {
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize login form functionality
+            initializeLoginForm();
+        }
+
+        function initializeLoginForm() {
+            const form = document.getElementById('login-form');
+            const loginButton = document.getElementById('login-button');
+            const loginText = document.getElementById('login-text');
+            const loginSpinner = document.getElementById('login-spinner');
+            const togglePasswordBtn = document.getElementById('toggle-password');
+            const passwordInput = document.getElementById('password');
+
+            // Toggle password visibility
+            togglePasswordBtn.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+
+            // Form validation
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                if (validateLoginForm()) {
+                    // Show loading state
+                    loginText.textContent = 'Verificando...';
+                    loginSpinner.classList.remove('hidden');
+                    loginButton.disabled = true;
+
+                    // Simulate login process (replace with actual API call)
+                    setTimeout(() => {
+                        // Simulate successful login
+                        AlertManager.show(
+                            'Inicio de sesión exitoso. Redirigiendo al dashboard...',
+                            'success',
+                            'Bienvenido al sistema',
+                            3000
+                        );
+
+                        // Redirect to dashboard after success
+                        setTimeout(() => {
+                            window.location.href = '/admin/dashboard.html';
+                        }, 2000);
+                        
+                    }, 2000);
+                }
+            });
+
+            // Real-time validation
+            const inputs = form.querySelectorAll('input[required]');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+                
+                input.addEventListener('input', function() {
+                    clearError(this);
+                });
+            });
+
+            // Enter key submission
+            form.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    form.dispatchEvent(new Event('submit'));
+                }
+            });
+        }
+
+        function validateLoginForm() {
+            const form = document.getElementById('login-form');
+            const inputs = form.querySelectorAll('input[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        function validateField(field) {
+            const errorElement = document.getElementById(field.id + '-error');
+            let isValid = true;
+            let errorMessage = '';
+
+            // Clear previous error
+            clearError(field);
+
+            // Validation rules
+            if (field.required && !field.value.trim()) {
+                errorMessage = 'Este campo es obligatorio';
+                isValid = false;
+            } else if (field.id === 'username' && field.value.length < 3) {
+                errorMessage = 'El usuario debe tener al menos 3 caracteres';
+                isValid = false;
+            } else if (field.id === 'password' && field.value.length < 6) {
+                errorMessage = 'La contraseña debe tener al menos 6 caracteres';
+                isValid = false;
+            }
+
+            // Show error if any
+            if (!isValid && errorElement) {
+                errorElement.textContent = errorMessage;
+                errorElement.classList.remove('hidden');
+                field.classList.add('border-red-500');
+                field.classList.remove('border-gray-300');
+            }
+
+            return isValid;
+        }
+
+        function clearError(field) {
+            const errorElement = document.getElementById(field.id + '-error');
+            if (errorElement) {
+                errorElement.classList.add('hidden');
+                field.classList.remove('border-red-500');
+                field.classList.add('border-gray-300');
+            }
+        }
+
+        // Demo credentials for testing
+        function fillDemoCredentials() {
+            // This is just for development/demo purposes
+            // Remove in production
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                document.getElementById('username').value = 'admin.ivochote';
+                document.getElementById('password').value = 'demo123';
+                
+                // Add a demo notice
+                const demoNotice = document.createElement('div');
+                demoNotice.className = 'mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4 text-center';
+                demoNotice.innerHTML = `
+                    <p class="text-sm text-blue-800">
+                        <strong>Demo:</strong> Credenciales pre-cargadas para testing
+                    </p>
+                `;
+                document.querySelector('.lg\\:w-1\\/2').appendChild(demoNotice);
+            }
+        }
+
+        // Initialize demo credentials in development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            fillDemoCredentials();
+        }
+    </script>
+</body>
+</html>

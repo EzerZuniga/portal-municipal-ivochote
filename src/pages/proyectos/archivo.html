@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Archivo de Proyectos - Municipalidad del Centro Poblado de Ivochote - Historial completo de proyectos ejecutados, informes anuales y estadísticas de gestión">
+    <meta name="keywords" content="archivo proyectos, historial, ivochote, municipalidad, proyectos terminados, informes gestión">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Archivo de Proyectos - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Historial completo de proyectos ejecutados e informes de gestión anual">
+    <meta property="og:image" content="/public/images/proyectos/archivo-og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/proyectos/archivo">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Archivo de Proyectos - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando archivo de proyectos...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Archivo de Proyectos</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Historial completo de proyectos ejecutados, informes de gestión anual y estadísticas de desarrollo de Ivochote
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                            <a href="/src/pages/proyectos/index.html" class="hover:text-blue-600 transition-colors">Proyectos</a>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Archivo</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Archive Controls -->
+        <section class="py-8 bg-white shadow-sm" aria-labelledby="archive-controls-title">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div>
+                        <h2 id="archive-controls-title" class="text-xl font-semibold text-gray-800 mb-2">Filtrar Archivo</h2>
+                        <p class="text-gray-600 text-sm">Explora proyectos históricos por año, categoría o estado</p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <!-- Year Filter -->
+                        <div class="relative">
+                            <select id="year-filter" 
+                                    class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors bg-white w-full sm:w-48">
+                                <option value="all">Todos los años</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Category Filter -->
+                        <select id="category-filter" 
+                                class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors bg-white w-full sm:w-48">
+                            <option value="all">Todas las categorías</option>
+                            <option value="infraestructura">Infraestructura</option>
+                            <option value="social">Social</option>
+                            <option value="energia">Energía</option>
+                            <option value="recreacion">Recreación</option>
+                            <option value="agricola">Agrícola</option>
+                            <option value="salud">Salud</option>
+                            <option value="educacion">Educación</option>
+                        </select>
+                        
+                        <!-- Search -->
+                        <div class="relative">
+                            <input type="text" 
+                                   id="archive-search"
+                                   placeholder="Buscar en archivo..." 
+                                   class="pl-10 pr-4 py-3 w-full sm:w-64 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400">
+                            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Archive Statistics -->
+        <section class="py-12 bg-gradient-to-r from-blue-50 to-indigo-50" aria-labelledby="statistics-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-8" data-aos="fade-up">
+                    <h2 id="statistics-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Estadísticas del Archivo</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Resumen del impacto histórico de nuestros proyectos en el desarrollo de Ivochote
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-blue-100" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2" id="total-archived">25+</div>
+                        <p class="text-gray-700 font-medium">Proyectos Ejecutados</p>
+                        <p class="text-gray-500 text-sm mt-1">Desde 2021</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-green-100" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-3xl md:text-4xl font-bold text-green-600 mb-2" id="total-investment">S/ 5.2M</div>
+                        <p class="text-gray-700 font-medium">Inversión Total</p>
+                        <p class="text-gray-500 text-sm mt-1">En obras públicas</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-purple-100" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-600 mb-2" id="satisfaction-rate">92%</div>
+                        <p class="text-gray-700 font-medium">Satisfacción Ciudadana</p>
+                        <p class="text-gray-500 text-sm mt-1">Evaluación promedio</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-orange-100" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-3xl md:text-4xl font-bold text-orange-600 mb-2" id="benefited-families">1,200+</div>
+                        <p class="text-gray-700 font-medium">Familias Beneficiadas</p>
+                        <p class="text-gray-500 text-sm mt-1">Impacto directo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Archived Projects Section -->
+        <section class="py-16 bg-white" aria-labelledby="archived-projects-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="archived-projects-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Proyectos Archivados</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Historial completo de proyectos terminados que han transformado nuestra comunidad
+                    </p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="archived-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 - 2024 -->
+                    <article class="archived-project bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="100" data-year="2024" data-category="infraestructura">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/proyectos/proyecto-1.jpg" 
+                                 alt="Mejoramiento de Vías Urbanas - Proyecto terminado en 2024"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                <i class="fas fa-check-circle mr-1"></i> Terminado
+                            </div>
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
+                                <span class="text-green-600 text-sm font-medium">2024</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
+                                    Infraestructura
+                                </span>
+                                <span class="text-gray-500 text-sm flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>Jun 2024
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                Mejoramiento de Vías Urbanas
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-2 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                Sector: Calles principales
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Asfaltado de 2 km de vías principales en el centro poblado con sistema de drenaje integrado, 
+                                mejorando la transitabilidad y seguridad vial.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Inversión:</span>
+                                    <span class="font-semibold text-gray-800">S/ 2,100,000.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Duración:</span>
+                                    <span class="font-semibold text-gray-800">24 meses</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Evaluación:</span>
+                                    <span class="font-semibold text-green-600">95% Satisfacción</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a href="/src/pages/proyectos/detalle.html?id=1" 
+                                   class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Ver Detalles
+                                </a>
+                                <button class="text-gray-400 hover:text-gray-600 transition-colors"
+                                        onclick="shareArchivedProject(1, 'Mejoramiento de Vías Urbanas - 2024')">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 - 2023 -->
+                    <article class="archived-project bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="200" data-year="2023" data-category="energia">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/proyectos/proyecto-4.jpg" 
+                                 alt="Instalación de Alumbrado Público - Proyecto terminado en 2023"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                <i class="fas fa-check-circle mr-1"></i> Terminado
+                            </div>
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
+                                <span class="text-green-600 text-sm font-medium">2023</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs font-medium">
+                                    Energía
+                                </span>
+                                <span class="text-gray-500 text-sm flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>Mar 2023
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-indigo-600 transition-colors">
+                                Instalación de Alumbrado Público
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-2 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                Sector: Todo el centro poblado
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Instalación de 120 luminarias LED solares en calles y espacios públicos, 
+                                mejorando la seguridad nocturna y reduciendo el consumo energético.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Inversión:</span>
+                                    <span class="font-semibold text-gray-800">S/ 320,000.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Duración:</span>
+                                    <span class="font-semibold text-gray-800">6 meses</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Evaluación:</span>
+                                    <span class="font-semibold text-green-600">92% Satisfacción</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a href="/src/pages/proyectos/detalle.html?id=4" 
+                                   class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Ver Detalles
+                                </a>
+                                <button class="text-gray-400 hover:text-gray-600 transition-colors"
+                                        onclick="shareArchivedProject(4, 'Instalación de Alumbrado Público - 2023')">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 - 2022 -->
+                    <article class="archived-project bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="300" data-year="2022" data-category="salud">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/proyectos/proyecto-7.jpg" 
+                                 alt="Ampliación del Centro de Salud - Proyecto terminado en 2022"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                <i class="fas fa-check-circle mr-1"></i> Terminado
+                            </div>
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
+                                <span class="text-green-600 text-sm font-medium">2022</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">
+                                    Salud
+                                </span>
+                                <span class="text-gray-500 text-sm flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>Nov 2022
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-red-600 transition-colors">
+                                Ampliación del Centro de Salud
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-2 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                Sector: Centro Poblado
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Ampliación de la infraestructura del centro de salud con nuevos consultorios, 
+                                sala de emergencias y equipamiento médico moderno para 500 familias.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Inversión:</span>
+                                    <span class="font-semibold text-gray-800">S/ 850,000.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Duración:</span>
+                                    <span class="font-semibold text-gray-800">18 meses</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Evaluación:</span>
+                                    <span class="font-semibold text-green-600">90% Satisfacción</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a href="/src/pages/proyectos/detalle.html?id=7" 
+                                   class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Ver Detalles
+                                </a>
+                                <button class="text-gray-400 hover:text-gray-600 transition-colors"
+                                        onclick="shareArchivedProject(7, 'Ampliación del Centro de Salud - 2022')">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <button id="load-more-archived" 
+                            class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center">
+                        <i class="fas fa-sync-alt mr-3"></i>
+                        <span id="load-more-text">Cargar más proyectos archivados</span>
+                        <div id="load-more-spinner" class="hidden ml-3">
+                            <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Annual Reports Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="reports-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="reports-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Informes Anuales de Gestión</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Documentación oficial y reportes detallados de la ejecución de proyectos por año
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-calendar-alt mr-2"></i>Año
+                                    </th>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-file-alt mr-2"></i>Informe de Gestión
+                                    </th>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-chart-bar mr-2"></i>Inversión Total
+                                    </th>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-project-diagram mr-2"></i>Proyectos
+                                    </th>
+                                    <th scope="col" class="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                        <i class="fas fa-download mr-2"></i>Descargar
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <!-- 2024 Report -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                                                2024
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-sm font-medium text-gray-900">Informe Anual de Gestión 2024</div>
+                                        <div class="text-sm text-gray-500">Resumen ejecutivo de proyectos y resultados</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                                        S/ 1,850,000.00
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            8 proyectos ejecutados
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a href="/public/documents/informe-gestion-2024.pdf" 
+                                           class="text-red-600 hover:text-red-900 mr-4 inline-flex items-center transition-colors"
+                                           download>
+                                            <i class="fas fa-file-pdf mr-1"></i> PDF
+                                        </a>
+                                        <a href="/public/documents/informe-gestion-2024.xlsx" 
+                                           class="text-green-600 hover:text-green-900 inline-flex items-center transition-colors"
+                                           download>
+                                            <i class="fas fa-file-excel mr-1"></i> Excel
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+                                <!-- 2023 Report -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                                2023
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-sm font-medium text-gray-900">Informe Anual de Gestión 2023</div>
+                                        <div class="text-sm text-gray-500">Evaluación de proyectos y impacto comunitario</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                                        S/ 1,500,000.00
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            7 proyectos ejecutados
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a href="/public/documents/informe-gestion-2023.pdf" 
+                                           class="text-red-600 hover:text-red-900 mr-4 inline-flex items-center transition-colors"
+                                           download>
+                                            <i class="fas fa-file-pdf mr-1"></i> PDF
+                                        </a>
+                                        <a href="/public/documents/informe-gestion-2023.xlsx" 
+                                           class="text-green-600 hover:text-green-900 inline-flex items-center transition-colors"
+                                           download>
+                                            <i class="fas fa-file-excel mr-1"></i> Excel
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+                                <!-- 2022 Report -->
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                                                2022
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-sm font-medium text-gray-900">Informe Anual de Gestión 2022</div>
+                                        <div class="text-sm text-gray-500">Reporte de obras y desarrollo comunitario</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 font-semibold">
+                                        S/ 1,900,000.00
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            10 proyectos ejecutados
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a href="/public/documents/informe-gestion-2022.pdf" 
+                                           class="text-red-600 hover:text-red-900 mr-4 inline-flex items-center transition-colors"
+                                           download>
+                                            <i class="fas fa-file-pdf mr-1"></i> PDF
+                                        </a>
+                                        <a href="/public/documents/informe-gestion-2022.xlsx" 
+                                           class="text-green-600 hover:text-green-900 inline-flex items-center transition-colors"
+                                           download>
+                                            <i class="fas fa-file-excel mr-1"></i> Excel
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">¿Necesitas información específica?</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Si buscas información detallada sobre algún proyecto específico o documentación adicional, 
+                        nuestro equipo está disponible para ayudarte.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/src/pages/contacto.html" 
+                           class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            Solicitar Información
+                        </a>
+                        <a href="/src/pages/transparencia/documentos.html" 
+                           class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center">
+                            <i class="fas fa-file-alt mr-3"></i>
+                            Ver Documentos Técnicos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeArchivePage();
+        });
+
+        function initializeArchivePage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize archive functionality
+            initializeArchiveFilters();
+            initializeArchiveSearch();
+            initializeLoadMore();
+            updateArchiveStatistics();
+        }
+
+        function initializeArchiveFilters() {
+            // Year filter
+            document.getElementById('year-filter').addEventListener('change', filterArchivedProjects);
+            
+            // Category filter
+            document.getElementById('category-filter').addEventListener('change', filterArchivedProjects);
+        }
+
+        function initializeArchiveSearch() {
+            const searchInput = document.getElementById('archive-search');
+            
+            searchInput.addEventListener('input', Utils.debounce(function() {
+                filterArchivedProjects();
+            }, 300));
+        }
+
+        function filterArchivedProjects() {
+            const selectedYear = document.getElementById('year-filter').value;
+            const selectedCategory = document.getElementById('category-filter').value;
+            const searchTerm = document.getElementById('archive-search').value.toLowerCase();
+
+            const projectCards = document.querySelectorAll('.archived-project');
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                const year = card.getAttribute('data-year');
+                const category = card.getAttribute('data-category');
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                const yearMatch = selectedYear === 'all' || year === selectedYear;
+                const categoryMatch = selectedCategory === 'all' || category === selectedCategory;
+                const searchMatch = !searchTerm || title.includes(searchTerm) || description.includes(searchTerm);
+
+                if (yearMatch && categoryMatch && searchMatch) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Update load more button visibility
+            updateLoadMoreVisibility(visibleCount);
+        }
+
+        function initializeLoadMore() {
+            const loadMoreBtn = document.getElementById('load-more-archived');
+            const loadMoreText = document.getElementById('load-more-text');
+            const loadMoreSpinner = document.getElementById('load-more-spinner');
+            
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // Show loading state
+                    loadMoreText.textContent = 'Cargando...';
+                    loadMoreSpinner.classList.remove('hidden');
+                    this.disabled = true;
+
+                    // Simulate loading more archived projects
+                    setTimeout(() => {
+                        AlertManager.show(
+                            'Se han cargado 3 proyectos adicionales del archivo',
+                            'success',
+                            'Archivo actualizado',
+                            3000
+                        );
+                        
+                        // Reset button state
+                        loadMoreText.textContent = 'Cargar más proyectos archivados';
+                        loadMoreSpinner.classList.add('hidden');
+                        this.disabled = false;
+                    }, 1500);
+                });
+            }
+        }
+
+        function updateLoadMoreVisibility(visibleCount) {
+            const loadMoreBtn = document.getElementById('load-more-archived');
+            if (visibleCount === 0) {
+                loadMoreBtn.style.display = 'none';
+                // Show no results message
+                const grid = document.getElementById('archived-projects-grid');
+                if (!document.querySelector('.no-archive-results')) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'no-archive-results col-span-full text-center py-12';
+                    noResults.innerHTML = `
+                        <i class="fas fa-search text-gray-400 text-6xl mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">No se encontraron proyectos</h3>
+                        <p class="text-gray-600">Intenta con otros filtros o términos de búsqueda.</p>
+                    `;
+                    grid.appendChild(noResults);
+                }
+            } else {
+                loadMoreBtn.style.display = 'inline-flex';
+                const noResults = document.querySelector('.no-archive-results');
+                if (noResults) noResults.remove();
+            }
+        }
+
+        function updateArchiveStatistics() {
+            // Count projects by year for statistics
+            const totalProjects = document.querySelectorAll('.archived-project').length;
+            
+            // Update statistics display
+            document.getElementById('total-archived').textContent = `${totalProjects}+`;
+            
+            // In a real application, you would calculate these from actual data
+            const totalInvestment = '5.2M';
+            const satisfactionRate = '92%';
+            const benefitedFamilies = '1,200+';
+            
+            document.getElementById('total-investment').textContent = `S/ ${totalInvestment}`;
+            document.getElementById('satisfaction-rate').textContent = satisfactionRate;
+            document.getElementById('benefited-families').textContent = benefitedFamilies;
+        }
+
+        // Share archived project function
+        function shareArchivedProject(projectId, title) {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: 'Mira este proyecto archivado de la Municipalidad de Ivochote',
+                    url: `${window.location.origin}/src/pages/proyectos/detalle.html?id=${projectId}`
+                })
+                .then(() => console.log('Proyecto archivado compartido exitosamente'))
+                .catch((error) => console.log('Error al compartir:', error));
+            } else {
+                // Fallback: copy to clipboard
+                const url = `${window.location.origin}/src/pages/proyectos/detalle.html?id=${projectId}`;
+                Utils.copyToClipboard(url).then(() => {
+                    AlertManager.show(
+                        'Enlace copiado al portapapeles',
+                        'success',
+                        'Compartir proyecto archivado',
+                        3000
+                    );
+                });
+            }
+        }
+
+        // Make share function globally available
+        window.shareArchivedProject = shareArchivedProject;
+    </script>
+</body>
+</html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería multimedia de Ivochote - Fotos y videos que muestran la belleza y actividades de nuestro centro poblado">
+    <meta name="keywords" content="galería, fotos, videos, ivochote, turismo, eventos, cultura, naturaleza">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Galería Multimedia - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Descubre la belleza de Ivochote a través de nuestra galería de fotos y videos">
+    <meta property="og:image" content="/public/images/galeria/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/galeria">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Galería Multimedia - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Lightgallery CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery-bundle.min.css">
+    
+    <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando galería...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <img src="/public/images/galeria/banner.jpg" 
+                 alt="Galería multimedia de Ivochote - Paisajes y actividades del centro poblado" 
+                 class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Galería Multimedia</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Descubre la belleza, cultura y actividades de nuestro centro poblado a través de imágenes y videos
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Galería</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Gallery Section -->
+        <section class="py-16 bg-white" aria-labelledby="gallery-title">
+            <div class="container mx-auto px-4">
+                <!-- Header and Filters -->
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
+                    <div data-aos="fade-up">
+                        <h2 id="gallery-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Nuestra Galería</h2>
+                        <p class="text-lg text-gray-600">Momentos únicos capturados de la vida en Ivochote</p>
+                    </div>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="100">
+                        <button class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg active" data-filter="all">
+                            <i class="fas fa-th-large mr-2"></i>Todas
+                        </button>
+                        <button class="filter-btn px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg" data-filter="eventos">
+                            <i class="fas fa-calendar-alt mr-2"></i>Eventos
+                        </button>
+                        <button class="filter-btn px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg" data-filter="naturaleza">
+                            <i class="fas fa-mountain mr-2"></i>Naturaleza
+                        </button>
+                        <button class="filter-btn px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg" data-filter="proyectos">
+                            <i class="fas fa-hammer mr-2"></i>Proyectos
+                        </button>
+                        <button class="filter-btn px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg" data-filter="cultura">
+                            <i class="fas fa-music mr-2"></i>Cultura
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Photo Gallery Grid -->
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" data-aos="fade-up">
+                    <!-- Photo 1 - Eventos -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl" data-category="eventos">
+                        <a href="/public/images/galeria/foto1.jpg" class="lg-item" data-lg-size="1920-1280" data-download-url="/public/images/galeria/foto1.jpg" data-subhtml="<h4>Fiesta Patronal de Ivochote 2025</h4><p>Celebración tradicional que reúne a toda la comunidad en honor a nuestro santo patrón</p>">
+                            <img src="/public/images/galeria/foto1-thumb.jpg" 
+                                 alt="Fiesta Patronal de Ivochote 2025 - Celebración tradicional comunitaria"
+                                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="font-semibold text-lg mb-1">Fiesta Patronal 2025</h3>
+                                    <p class="text-sm text-blue-200">Eventos • 15 Fotos</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Eventos
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Photo 2 - Naturaleza -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl" data-category="naturaleza">
+                        <a href="/public/images/galeria/foto2.jpg" class="lg-item" data-lg-size="1920-1280" data-download-url="/public/images/galeria/foto2.jpg" data-subhtml="<h4>Catarata de Ivochote</h4><p>Impresionante caída de agua ubicada en las afueras del centro poblado, rodeada de vegetación tropical</p>">
+                            <img src="/public/images/galeria/foto2-thumb.jpg" 
+                                 alt="Catarata de Ivochote - Impresionante caída de agua natural"
+                                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="font-semibold text-lg mb-1">Catarata Natural</h3>
+                                    <p class="text-sm text-green-200">Naturaleza • 8 Fotos</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Naturaleza
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Photo 3 - Proyectos -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl" data-category="proyectos">
+                        <a href="/public/images/galeria/foto3.jpg" class="lg-item" data-lg-size="1920-1280" data-download-url="/public/images/galeria/foto3.jpg" data-subhtml="<h4>Inauguración del Centro de Salud</h4><p>Ceremonia de inauguración del nuevo centro de salud comunitario que beneficiará a más de 500 familias</p>">
+                            <img src="/public/images/galeria/foto3-thumb.jpg" 
+                                 alt="Inauguración del Centro de Salud Comunitario de Ivochote"
+                                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="font-semibold text-lg mb-1">Centro de Salud</h3>
+                                    <p class="text-sm text-orange-200">Proyectos • 12 Fotos</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-orange-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Proyectos
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Photo 4 - Cultura -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl" data-category="cultura">
+                        <a href="/public/images/galeria/foto4.jpg" class="lg-item" data-lg-size="1920-1280" data-download-url="/public/images/galeria/foto4.jpg" data-subhtml="<h4>Taller de Artesanías Tradicionales</h4><p>Jóvenes aprendiendo técnicas ancestrales de tejido y cerámica para preservar nuestra cultura</p>">
+                            <img src="/public/images/galeria/foto4-thumb.jpg" 
+                                 alt="Taller de Artesanías Tradicionales - Preservación cultural"
+                                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="font-semibold text-lg mb-1">Taller de Artesanías</h3>
+                                    <p class="text-sm text-purple-200">Cultura • 6 Fotos</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Cultura
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Photo 5 - Naturaleza -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl" data-category="naturaleza">
+                        <a href="/public/images/galeria/foto5.jpg" class="lg-item" data-lg-size="1920-1280" data-download-url="/public/images/galeria/foto5.jpg" data-subhtml="<h4>Vista Panorámica de Ivochote</h4><p>Hermosa vista desde el mirador natural que muestra todo el esplendor del centro poblado</p>">
+                            <img src="/public/images/galeria/foto5-thumb.jpg" 
+                                 alt="Vista Panorámica de Ivochote desde el mirador natural"
+                                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="font-semibold text-lg mb-1">Vista Panorámica</h3>
+                                    <p class="text-sm text-green-200">Naturaleza • 4 Fotos</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Naturaleza
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Photo 6 - Eventos -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl" data-category="eventos">
+                        <a href="/public/images/galeria/foto6.jpg" class="lg-item" data-lg-size="1920-1280" data-download-url="/public/images/galeria/foto6.jpg" data-subhtml="<h4>Campaña de Salud Comunitaria</h4><p>Jornada médica gratuita organizada por la municipalidad para atención primaria de salud</p>">
+                            <img src="/public/images/galeria/foto6-thumb.jpg" 
+                                 alt="Campaña de Salud Comunitaria - Atención médica gratuita"
+                                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="font-semibold text-lg mb-1">Campaña de Salud</h3>
+                                    <p class="text-sm text-blue-200">Eventos • 10 Fotos</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Eventos
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Photo 7 - Naturaleza -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl" data-category="naturaleza">
+                        <a href="/public/images/galeria/foto7.jpg" class="lg-item" data-lg-size="1920-1280" data-download-url="/public/images/galeria/foto7.jpg" data-subhtml="<h4>Río Ivochote</h4><p>Hermoso río que atraviesa nuestro territorio, fuente de vida y belleza natural</p>">
+                            <img src="/public/images/galeria/foto7-thumb.jpg" 
+                                 alt="Río Ivochote - Fuente de vida y belleza natural"
+                                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="font-semibold text-lg mb-1">Río Ivochote</h3>
+                                    <p class="text-sm text-green-200">Naturaleza • 7 Fotos</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Naturaleza
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Photo 8 - Cultura -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl" data-category="cultura">
+                        <a href="/public/images/galeria/foto8.jpg" class="lg-item" data-lg-size="1920-1280" data-download-url="/public/images/galeria/foto8.jpg" data-subhtml="<h4>Feria Agropecuaria Anual</h4><p>Exposición de productos agrícolas y ganaderos de nuestros productores locales</p>">
+                            <img src="/public/images/galeria/foto8-thumb.jpg" 
+                                 alt="Feria Agropecuaria Anual - Productos locales de Ivochote"
+                                 class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <div class="text-white">
+                                    <h3 class="font-semibold text-lg mb-1">Feria Agropecuaria</h3>
+                                    <p class="text-sm text-purple-200">Cultura • 15 Fotos</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-purple-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                Cultura
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <button id="load-more-btn" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center">
+                        <i class="fas fa-sync-alt mr-3"></i>
+                        <span id="load-more-text">Cargar más fotos</span>
+                        <div id="load-more-spinner" class="hidden ml-3">
+                            <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Videos Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="videos-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="videos-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Videos de Ivochote</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Conoce más sobre la vida, cultura y atractivos de nuestro centro poblado a través de estos videos
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Video 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up">
+                        <div class="relative pt-[56.25%] overflow-hidden rounded-t-2xl">
+                            <iframe class="absolute top-0 left-0 w-full h-full" 
+                                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                    title="Documental: Vida en Ivochote - Cultura y Tradiciones"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium mr-3">
+                                    <i class="fas fa-play mr-1"></i>Video
+                                </span>
+                                <span class="text-gray-500 text-sm">15:23 min</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Documental: Vida en Ivochote</h3>
+                            <p class="text-gray-600 mb-4">Un recorrido fascinante por las costumbres, tradiciones y vida cotidiana de nuestros pobladores.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span><i class="far fa-eye mr-1"></i> 2.4K vistas</span>
+                                <span>Publicado: 15 Ene 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative pt-[56.25%] overflow-hidden rounded-t-2xl">
+                            <iframe class="absolute top-0 left-0 w-full h-full" 
+                                    src="https://www.youtube.com/embed/9bZkp7q19f0" 
+                                    title="Atractivos Turísticos de Ivochote - Guía Completa"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-medium mr-3">
+                                    <i class="fas fa-play mr-1"></i>Video
+                                </span>
+                                <span class="text-gray-500 text-sm">22:45 min</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Atractivos Turísticos</h3>
+                            <p class="text-gray-600 mb-4">Recorrido completo por los principales lugares turísticos y sitios de interés en Ivochote.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span><i class="far fa-eye mr-1"></i> 3.1K vistas</span>
+                                <span>Publicado: 08 Feb 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Videos Button -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <a href="https://youtube.com/@municipalidadivochote" 
+                       target="_blank" 
+                       rel="noopener"
+                       class="inline-flex items-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fab fa-youtube mr-3 text-lg"></i>
+                        Ver más en nuestro canal
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-3xl md:text-4xl font-bold mb-2" data-counter="156">0</div>
+                        <p class="text-blue-200">Fotos en Galería</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-3xl md:text-4xl font-bold mb-2" data-counter="24">0</div>
+                        <p class="text-blue-200">Videos Publicados</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-3xl md:text-4xl font-bold mb-2" data-counter="8">0</div>
+                        <p class="text-blue-200">Categorías</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-3xl md:text-4xl font-bold mb-2" data-counter="12500">0</div>
+                        <p class="text-blue-200">Visualizaciones</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-zoom/2.7.1/lg-zoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lg-fullscreen/2.7.1/lg-fullscreen.min.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeGalleryPage();
+        });
+
+        function initializeGalleryPage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize gallery functionality
+            initializeGalleryFilter();
+            initializeLightGallery();
+            initializeLoadMore();
+            initializeCounters();
+        }
+
+        function initializeGalleryFilter() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+                    this.classList.add('active', 'bg-blue-600', 'text-white');
+                    this.classList.remove('bg-gray-200', 'text-gray-800');
+                    
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        }
+
+        function initializeLightGallery() {
+            const gallery = document.getElementById('gallery-grid');
+            if (gallery) {
+                lightGallery(gallery, {
+                    plugins: [lgZoom, lgFullscreen],
+                    speed: 500,
+                    download: true,
+                    counter: true,
+                    getCaptionFromTitleOrAlt: true,
+                    mobileSettings: {
+                        controls: true,
+                        showCloseIcon: true,
+                        download: true
+                    }
+                });
+            }
+        }
+
+        function initializeLoadMore() {
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const loadMoreText = document.getElementById('load-more-text');
+            const loadMoreSpinner = document.getElementById('load-more-spinner');
+            
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // Show loading state
+                    loadMoreText.textContent = 'Cargando...';
+                    loadMoreSpinner.classList.remove('hidden');
+                    this.disabled = true;
+
+                    // Simulate loading more content
+                    setTimeout(() => {
+                        AlertManager.show(
+                            'Se han cargado 8 fotos adicionales',
+                            'success',
+                            'Galería actualizada',
+                            3000
+                        );
+                        
+                        // Reset button state
+                        loadMoreText.textContent = 'Cargar más fotos';
+                        loadMoreSpinner.classList.add('hidden');
+                        this.disabled = false;
+                    }, 1500);
+                });
+            }
+        }
+
+        function initializeCounters() {
+            const counters = document.querySelectorAll('[data-counter]');
+            let animated = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        animateCounters();
+                    }
+                });
+            });
+
+            const statsSection = document.querySelector('.py-16.bg-gradient-to-r.from-blue-600');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = parseInt(counter.dataset.counter);
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        counter.textContent = Math.floor(current);
+                        
+                        if (current >= target) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        }
+                    }, 16);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

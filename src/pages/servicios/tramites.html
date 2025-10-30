@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trámites Municipales - Municipalidad del Centro Poblado de Ivochote - Sistema de trámites en línea y presenciales para la comunidad">
+    <meta name="keywords" content="trámites municipales, ivochote, municipalidad, licencias, permisos, servicios, trámites en línea">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Trámites Municipales - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Sistema de trámites en línea y presenciales para la comunidad de Ivochote">
+    <meta property="og:image" content="/public/images/servicios/tramites-og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/servicios/tramites">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Trámites Municipales - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando trámites...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Trámites Municipales</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Realiza tus trámites de manera rápida, sencilla y segura desde cualquier dispositivo
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                            <a href="/src/pages/servicios/index.html" class="hover:text-blue-600 transition-colors">Servicios</a>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Trámites Municipales</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Quick Stats -->
+        <section class="py-12 bg-white" aria-labelledby="stats-title">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">36+</div>
+                        <p class="text-gray-700 font-medium">Trámites Disponibles</p>
+                        <p class="text-gray-500 text-sm">Para la comunidad</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-3xl md:text-4xl font-bold text-green-600 mb-2">24</div>
+                        <p class="text-gray-700 font-medium">En Línea</p>
+                        <p class="text-gray-500 text-sm">Digitales 100%</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-600 mb-2">5</div>
+                        <p class="text-gray-700 font-medium">Días Promedio</p>
+                        <p class="text-gray-500 text-sm">Tiempo de respuesta</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-3xl md:text-4xl font-bold text-orange-600 mb-2">95%</div>
+                        <p class="text-gray-700 font-medium">Satisfacción</p>
+                        <p class="text-gray-500 text-sm">Usuarios satisfechos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="categories-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="categories-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Categorías de Trámites</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Selecciona la categoría del trámite que necesitas realizar
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Licencias y Permisos -->
+                    <a href="#licencias" 
+                       class="category-card bg-white rounded-2xl shadow-lg p-6 flex items-center transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group"
+                       data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors duration-300">
+                            <i class="fas fa-home text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Licencias y Permisos</h3>
+                            <p class="text-sm text-gray-600">12 trámites disponibles</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 ml-auto group-hover:text-blue-600 transition-colors duration-300"></i>
+                    </a>
+
+                    <!-- Trámites Tributarios -->
+                    <a href="#tributarios" 
+                       class="category-card bg-white rounded-2xl shadow-lg p-6 flex items-center transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group"
+                       data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-green-200 transition-colors duration-300">
+                            <i class="fas fa-file-invoice-dollar text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 group-hover:text-green-600 transition-colors duration-300">Trámites Tributarios</h3>
+                            <p class="text-sm text-gray-600">8 trámites disponibles</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 ml-auto group-hover:text-green-600 transition-colors duration-300"></i>
+                    </a>
+
+                    <!-- Urbanismo y Obras -->
+                    <a href="#urbanismo" 
+                       class="category-card bg-white rounded-2xl shadow-lg p-6 flex items-center transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group"
+                       data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-yellow-200 transition-colors duration-300">
+                            <i class="fas fa-hard-hat text-yellow-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 group-hover:text-yellow-600 transition-colors duration-300">Urbanismo y Obras</h3>
+                            <p class="text-sm text-gray-600">6 trámites disponibles</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 ml-auto group-hover:text-yellow-600 transition-colors duration-300"></i>
+                    </a>
+
+                    <!-- Otros Trámites -->
+                    <a href="#otros" 
+                       class="category-card bg-white rounded-2xl shadow-lg p-6 flex items-center transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group"
+                       data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mr-4 group-hover:bg-purple-200 transition-colors duration-300">
+                            <i class="fas fa-list-alt text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">Otros Trámites</h3>
+                            <p class="text-sm text-gray-600">10 trámites disponibles</p>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 ml-auto group-hover:text-purple-600 transition-colors duration-300"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="py-8 bg-white border-b border-gray-200" aria-labelledby="search-title">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div>
+                        <h2 id="search-title" class="text-xl font-semibold text-gray-800 mb-2">Buscar Trámites</h2>
+                        <p class="text-gray-600 text-sm">Encuentra rápidamente el trámite que necesitas</p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                        <!-- Search Input -->
+                        <div class="relative flex-1 lg:flex-none lg:w-80">
+                            <input type="text" 
+                                   id="tramite-search"
+                                   placeholder="Buscar trámite por nombre..." 
+                                   class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400">
+                            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                        
+                        <!-- Filter Select -->
+                        <div class="flex gap-4">
+                            <select id="modalidad-filter" 
+                                    class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors bg-white">
+                                <option value="all">Todas las modalidades</option>
+                                <option value="online">En línea</option>
+                                <option value="presencial">Presencial</option>
+                                <option value="mixto">Mixto</option>
+                            </select>
+                            
+                            <select id="categoria-filter" 
+                                    class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors bg-white">
+                                <option value="all">Todas las categorías</option>
+                                <option value="licencias">Licencias y Permisos</option>
+                                <option value="tributarios">Trámites Tributarios</option>
+                                <option value="urbanismo">Urbanismo y Obras</option>
+                                <option value="otros">Otros Trámites</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Procedures List Section -->
+        <section class="py-16 bg-white" aria-labelledby="procedures-title">
+            <div class="container mx-auto px-4">
+                <!-- Licencias y Permisos -->
+                <div id="licencias" class="mb-16 scroll-mt-20">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+                        <div data-aos="fade-up">
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Licencias y Permisos</h2>
+                            <p class="text-gray-600">Trámites relacionados con autorizaciones y permisos comerciales</p>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm text-gray-500" data-aos="fade-up" data-aos-delay="100">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">12 trámites</span>
+                            <span>•</span>
+                            <span>Actualizado hoy</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-tasks mr-2"></i>Trámite
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-file-alt mr-2"></i>Requisitos
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-money-bill-wave mr-2"></i>Costo
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-clock mr-2"></i>Duración
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-laptop mr-2"></i>Modalidad
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-cog mr-2"></i>Acciones
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <!-- Licencia de Funcionamiento -->
+                                    <tr class="tramite-row hover:bg-gray-50 transition-colors" 
+                                        data-category="licencias" 
+                                        data-modalidad="online"
+                                        data-aos="fade-up" data-aos-delay="100">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center">
+                                                <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                                    <i class="fas fa-store text-blue-600"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="font-semibold text-gray-900">Licencia de Funcionamiento</div>
+                                                    <div class="text-sm text-gray-500">Para establecimientos comerciales</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <button class="requisitos-btn inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
+                                                <i class="fas fa-list mr-1"></i>
+                                                5 requisitos
+                                            </button>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-gray-900 font-semibold">S/ 150.00</div>
+                                            <div class="text-xs text-gray-500">Anual</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-gray-900">10 días hábiles</div>
+                                            <div class="text-xs text-gray-500">Máximo</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                <i class="fas fa-laptop mr-1"></i>
+                                                En línea
+                                            </span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <button class="ver-detalles-btn text-blue-600 hover:text-blue-900 mr-4 inline-flex items-center transition-colors">
+                                                <i class="fas fa-eye mr-1"></i>
+                                                Ver detalles
+                                            </button>
+                                            <button class="iniciar-tramite-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors inline-flex items-center">
+                                                <i class="fas fa-play mr-1"></i>
+                                                Iniciar
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Permiso de Publicidad -->
+                                    <tr class="tramite-row hover:bg-gray-50 transition-colors" 
+                                        data-category="licencias" 
+                                        data-modalidad="mixto"
+                                        data-aos="fade-up" data-aos-delay="200">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center">
+                                                <div class="flex-shrink-0 w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                                                    <i class="fas fa-ad text-orange-600"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="font-semibold text-gray-900">Permiso de Publicidad Exterior</div>
+                                                    <div class="text-sm text-gray-500">Para vallas publicitarias y anuncios</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <button class="requisitos-btn inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 hover:bg-orange-200 transition-colors">
+                                                <i class="fas fa-list mr-1"></i>
+                                                7 requisitos
+                                            </button>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-gray-900 font-semibold">S/ 85.00</div>
+                                            <div class="text-xs text-gray-500">Semestral</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-gray-900">7 días hábiles</div>
+                                            <div class="text-xs text-gray-500">Máximo</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                                <i class="fas fa-sync-alt mr-1"></i>
+                                                Mixto
+                                            </span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <button class="ver-detalles-btn text-blue-600 hover:text-blue-900 mr-4 inline-flex items-center transition-colors">
+                                                <i class="fas fa-eye mr-1"></i>
+                                                Ver detalles
+                                            </button>
+                                            <button class="iniciar-tramite-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors inline-flex items-center">
+                                                <i class="fas fa-play mr-1"></i>
+                                                Iniciar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trámites Tributarios -->
+                <div id="tributarios" class="mb-16 scroll-mt-20">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+                        <div data-aos="fade-up">
+                            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Trámites Tributarios</h2>
+                            <p class="text-gray-600">Procedimientos relacionados con impuestos y contribuciones</p>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm text-gray-500" data-aos="fade-up" data-aos-delay="100">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full">8 trámites</span>
+                            <span>•</span>
+                            <span>Actualizado hoy</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden" data-aos="fade-up">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-tasks mr-2"></i>Trámite
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-file-alt mr-2"></i>Requisitos
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-money-bill-wave mr-2"></i>Costo
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-clock mr-2"></i>Duración
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-laptop mr-2"></i>Modalidad
+                                        </th>
+                                        <th scope="col" class="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                                            <i class="fas fa-cog mr-2"></i>Acciones
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <!-- Exoneración Tributaria -->
+                                    <tr class="tramite-row hover:bg-gray-50 transition-colors" 
+                                        data-category="tributarios" 
+                                        data-modalidad="online"
+                                        data-aos="fade-up" data-aos-delay="100">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center">
+                                                <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                                    <i class="fas fa-hand-holding-usd text-green-600"></i>
+                                                </div>
+                                                <div>
+                                                    <div class="font-semibold text-gray-900">Solicitud de Exoneración Tributaria</div>
+                                                    <div class="text-sm text-gray-500">Para casos especiales y vulnerables</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <button class="requisitos-btn inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 hover:bg-green-200 transition-colors">
+                                                <i class="fas fa-list mr-1"></i>
+                                                6 requisitos
+                                            </button>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-gray-900 font-semibold">Gratuito</div>
+                                            <div class="text-xs text-gray-500">Sin costo</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="text-gray-900">15 días hábiles</div>
+                                            <div class="text-xs text-gray-500">Evaluación</div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                <i class="fas fa-laptop mr-1"></i>
+                                                En línea
+                                            </span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <button class="ver-detalles-btn text-blue-600 hover:text-blue-900 mr-4 inline-flex items-center transition-colors">
+                                                <i class="fas fa-eye mr-1"></i>
+                                                Ver detalles
+                                            </button>
+                                            <button class="iniciar-tramite-btn bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors inline-flex items-center">
+                                                <i class="fas fa-play mr-1"></i>
+                                                Iniciar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="faq-title">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <h2 id="faq-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Preguntas Frecuentes</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Resolvemos tus dudas sobre el sistema de trámites municipales
+                        </p>
+                    </div>
+
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Cómo puedo realizar un trámite en línea?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <div class="text-gray-600 leading-relaxed space-y-3">
+                                    <p>Para realizar un trámite en línea, sigue estos pasos:</p>
+                                    <ol class="list-decimal list-inside space-y-2 ml-4">
+                                        <li><strong>Selecciona el trámite</strong> que deseas realizar de nuestra lista</li>
+                                        <li><strong>Haz clic en "Iniciar trámite"</strong> del procedimiento elegido</li>
+                                        <li><strong>Completa el formulario digital</strong> con tus datos personales</li>
+                                        <li><strong>Sube los documentos requeridos</strong> en formato PDF o imagen</li>
+                                        <li><strong>Realiza el pago en línea</strong> si el trámite tiene costo</li>
+                                        <li><strong>Recibirás un comprobante digital</strong> y seguimiento por email</li>
+                                    </ol>
+                                    <p class="text-sm text-blue-600 mt-3">
+                                        <i class="fas fa-info-circle mr-1"></i>
+                                        Todos los trámites en línea están disponibles las 24 horas del día.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Qué documentos necesito para los trámites?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <div class="text-gray-600 leading-relaxed">
+                                    <p>Los documentos requeridos varían según el trámite, pero generalmente incluyen:</p>
+                                    <ul class="list-disc list-inside space-y-2 ml-4 mt-2">
+                                        <li><strong>Documento de Identidad</strong> (DNI original y copia)</li>
+                                        <li><strong>Recibos de servicios</strong> (luz, agua, teléfono) no mayores a 3 meses</li>
+                                        <li><strong>Documentos específicos</strong> según el trámite (títulos de propiedad, planos, etc.)</li>
+                                        <li><strong>Formularios completados</strong> disponibles en nuestro portal</li>
+                                    </ul>
+                                    <p class="text-sm text-green-600 mt-3">
+                                        <i class="fas fa-lightbulb mr-1"></i>
+                                        Puedes ver los requisitos específicos haciendo clic en el botón "Ver detalles" de cada trámite.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                                                        <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Cuánto tiempo tardan en aprobar los trámites?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <div class="text-gray-600 leading-relaxed">
+                                    <p>Los tiempos de aprobación varían según el tipo de trámite:</p>
+                                    <ul class="list-disc list-inside space-y-2 ml-4 mt-2">
+                                        <li><strong>Trámites simples:</strong> 3-5 días hábiles (certificados, constancias)</li>
+                                        <li><strong>Licencias comerciales:</strong> 7-10 días hábiles</li>
+                                        <li><strong>Permisos de construcción:</strong> 15-20 días hábiles</li>
+                                        <li><strong>Trámites complejos:</strong> 20-30 días hábiles</li>
+                                    </ul>
+                                    <p class="text-sm text-purple-600 mt-3">
+                                        <i class="fas fa-clock mr-1"></i>
+                                        Puedes hacer seguimiento en tiempo real de tu trámite desde tu cuenta municipal.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Puedo hacer el seguimiento de mi trámite en línea?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <div class="text-gray-600 leading-relaxed">
+                                    <p><strong>Sí, absolutamente.</strong> Ofrecemos seguimiento en tiempo real para todos los trámites:</p>
+                                    <ul class="list-disc list-inside space-y-2 ml-4 mt-2">
+                                        <li><strong>Notificaciones por email</strong> en cada cambio de estado</li>
+                                        <li><strong>Portal de seguimiento</strong> con código único de trámite</li>
+                                        <li><strong>Consultas vía WhatsApp</strong> para actualizaciones rápidas</li>
+                                        <li><strong>Historial completo</strong> disponible en tu cuenta municipal</li>
+                                    </ul>
+                                    <p class="text-sm text-blue-600 mt-3">
+                                        <i class="fas fa-mobile-alt mr-1"></i>
+                                        También recibirás notificaciones SMS en tu celular.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Qué hago si tengo problemas con el sistema en línea?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <div class="text-gray-600 leading-relaxed">
+                                    <p>Si experimentas problemas técnicos, tenemos múltiples canales de soporte:</p>
+                                    <ul class="list-disc list-inside space-y-2 ml-4 mt-2">
+                                        <li><strong>Soporte técnico telefónico:</strong> +51 987 654 321 (Lun-Vie 8AM-6PM)</li>
+                                        <li><strong>Correo electrónico:</strong> soporte@ivochote.gob.pe</li>
+                                        <li><strong>Chat en línea:</strong> Disponible en horario de oficina</li>
+                                        <li><strong>Atención presencial:</strong> En nuestras oficinas municipales</li>
+                                    </ul>
+                                    <p class="text-sm text-green-600 mt-3">
+                                        <i class="fas fa-life-ring mr-1"></i>
+                                        También ofrecemos asesoría para el uso del sistema de forma gratuita.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">¿Necesitas Ayuda con tus Trámites?</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Nuestro equipo de asesores está disponible para guiarte en todo el proceso y resolver tus dudas
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="tel:+51987654321" 
+                           class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+                            <i class="fas fa-phone mr-3"></i>
+                            Llamar al Asesor
+                        </a>
+                        <a href="/src/pages/servicios/consultas.html" 
+                           class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center">
+                            <i class="fas fa-comments mr-3"></i>
+                            Consulta en Línea
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeTramitesPage();
+        });
+
+        function initializeTramitesPage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize tramites functionality
+            initializeSearchAndFilter();
+            initializeCategoryNavigation();
+            initializeProceduresActions();
+            initializeFAQAccordion();
+            handleHashNavigation();
+        }
+
+        function initializeSearchAndFilter() {
+            const searchInput = document.getElementById('tramite-search');
+            const modalityFilter = document.getElementById('modalidad-filter');
+            const categoryFilter = document.getElementById('categoria-filter');
+            const procedureRows = document.querySelectorAll('.tramite-row');
+
+            function filterProcedures() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const modalityValue = modalityFilter.value;
+                const categoryValue = categoryFilter.value;
+
+                procedureRows.forEach(row => {
+                    const procedureName = row.querySelector('.font-semibold').textContent.toLowerCase();
+                    const procedureDescription = row.querySelector('.text-sm').textContent.toLowerCase();
+                    const procedureCategory = row.getAttribute('data-category');
+                    const procedureModality = row.getAttribute('data-modalidad');
+
+                    const matchesSearch = !searchTerm || 
+                                         procedureName.includes(searchTerm) || 
+                                         procedureDescription.includes(searchTerm);
+                    
+                    const matchesModality = modalityValue === 'all' || procedureModality === modalityValue;
+                    const matchesCategory = categoryValue === 'all' || procedureCategory === categoryValue;
+
+                    if (matchesSearch && matchesModality && matchesCategory) {
+                        row.style.display = '';
+                        setTimeout(() => {
+                            row.style.opacity = '1';
+                        }, 50);
+                    } else {
+                        row.style.opacity = '0';
+                        setTimeout(() => {
+                            row.style.display = 'none';
+                        }, 300);
+                    }
+                });
+
+                // Show/hide category sections based on results
+                updateCategorySections();
+            }
+
+            // Event listeners
+            searchInput.addEventListener('input', Utils.debounce(filterProcedures, 300));
+            modalityFilter.addEventListener('change', filterProcedures);
+            categoryFilter.addEventListener('change', filterProcedures);
+        }
+
+        function updateCategorySections() {
+            const categories = ['licencias', 'tributarios', 'urbanismo', 'otros'];
+            
+            categories.forEach(category => {
+                const section = document.getElementById(category);
+                const visibleRows = section.querySelectorAll('.tramite-row[style=""]').length;
+                
+                if (visibleRows === 0) {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+        }
+
+        function initializeCategoryNavigation() {
+            const categoryCards = document.querySelectorAll('.category-card');
+            
+            categoryCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        // Add active class to clicked category
+                        categoryCards.forEach(c => c.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Scroll to section
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update URL hash without scrolling
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                });
+            });
+        }
+
+        function initializeProceduresActions() {
+            // Requirements buttons
+            document.querySelectorAll('.requisitos-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const procedureName = this.closest('tr').querySelector('.font-semibold').textContent;
+                    showRequirementsModal(procedureName);
+                });
+            });
+
+            // View details buttons
+            document.querySelectorAll('.ver-detalles-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const procedureRow = this.closest('tr');
+                    const procedureName = procedureRow.querySelector('.font-semibold').textContent;
+                    const procedureDescription = procedureRow.querySelector('.text-sm').textContent;
+                    showProcedureDetails(procedureName, procedureDescription, procedureRow);
+                });
+            });
+
+            // Start procedure buttons
+            document.querySelectorAll('.iniciar-tramite-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const procedureRow = this.closest('tr');
+                    const procedureName = procedureRow.querySelector('.font-semibold').textContent;
+                    startProcedure(procedureName);
+                });
+            });
+        }
+
+        function showRequirementsModal(procedureName) {
+            const requirements = {
+                'Licencia de Funcionamiento': [
+                    'DNI del solicitante (original y copia)',
+                    'Recibo de luz o agua no mayor a 3 meses',
+                    'Croquis de ubicación del establecimiento',
+                    'Plan de evacuación en caso de emergencia',
+                    'Pago de derechos municipales'
+                ],
+                'Permiso de Publicidad Exterior': [
+                    'DNI del propietario o representante legal',
+                    'Croquis de ubicación del anuncio',
+                    'Especificaciones técnicas del anuncio',
+                    'Certificado de seguridad estructural',
+                    'Autorización del propietario del inmueble',
+                    'Planos a escala del anuncio',
+                    'Pago de tasa municipal'
+                ],
+                'Solicitud de Exoneración Tributaria': [
+                    'DNI del solicitante',
+                    'Declaración jurada de ingresos',
+                    'Certificado de discapacidad (si aplica)',
+                    'Certificado de veteranía (si aplica)',
+                    'Recibos de servicios públicos',
+                    'Solicitud formal debidamente llenada'
+                ]
+            };
+
+            const procedureRequirements = requirements[procedureName] || [
+                'DNI del solicitante',
+                'Formulario de solicitud completo',
+                'Documentación específica del trámite'
+            ];
+
+            const modalContent = `
+                <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+                    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-hidden">
+                        <div class="bg-blue-600 px-6 py-4">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-xl font-bold text-white">Requisitos - ${procedureName}</h3>
+                                <button class="text-white hover:text-blue-200 transition-colors close-modal">
+                                    <i class="fas fa-times text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 overflow-y-auto max-h-96">
+                            <div class="space-y-4">
+                                ${procedureRequirements.map((req, index) => `
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mt-1 flex-shrink-0">
+                                            ${index + 1}
+                                        </div>
+                                        <p class="text-gray-700 leading-relaxed">${req}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            
+                            <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                                <p class="text-sm text-blue-700">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    <strong>Importante:</strong> Todos los documentos deben ser presentados en original y copia.
+                                    Los formatos digitales deben estar en PDF o imagen legible.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors close-modal">
+                                Entendido
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const modalContainer = document.createElement('div');
+            modalContainer.innerHTML = modalContent;
+            document.body.appendChild(modalContainer);
+
+            // Add event listeners to close buttons
+            modalContainer.querySelectorAll('.close-modal').forEach(button => {
+                button.addEventListener('click', () => {
+                    modalContainer.remove();
+                });
+            });
+
+            // Close modal on background click
+            modalContainer.addEventListener('click', (e) => {
+                if (e.target === modalContainer) {
+                    modalContainer.remove();
+                }
+            });
+        }
+
+        function showProcedureDetails(procedureName, procedureDescription, procedureRow) {
+            const modality = procedureRow.querySelector('.inline-flex').textContent.trim();
+            const cost = procedureRow.querySelector('td:nth-child(3) .font-semibold').textContent;
+            const duration = procedureRow.querySelector('td:nth-child(4) .text-gray-900').textContent;
+            const requirementsCount = procedureRow.querySelector('.requisitos-btn').textContent;
+
+            const modalContent = `
+                <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+                    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
+                        <div class="bg-blue-600 px-6 py-4">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-xl font-bold text-white">Detalles del Trámite</h3>
+                                <button class="text-white hover:text-blue-200 transition-colors close-modal">
+                                    <i class="fas fa-times text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6 overflow-y-auto">
+                            <div class="mb-6">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-2">${procedureName}</h4>
+                                <p class="text-gray-600">${procedureDescription}</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <h5 class="font-semibold text-gray-700 mb-2 flex items-center">
+                                        <i class="fas fa-money-bill-wave mr-2 text-green-600"></i>
+                                        Costo del Trámite
+                                    </h5>
+                                    <p class="text-2xl font-bold text-green-600">${cost}</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <h5 class="font-semibold text-gray-700 mb-2 flex items-center">
+                                        <i class="fas fa-clock mr-2 text-blue-600"></i>
+                                        Tiempo de Procesamiento
+                                    </h5>
+                                    <p class="text-2xl font-bold text-blue-600">${duration}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <h5 class="font-semibold text-gray-700 mb-2 flex items-center">
+                                        <i class="fas fa-laptop mr-2 text-purple-600"></i>
+                                        Modalidad
+                                    </h5>
+                                    <p class="text-lg font-medium text-gray-800">${modality}</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <h5 class="font-semibold text-gray-700 mb-2 flex items-center">
+                                        <i class="fas fa-file-alt mr-2 text-orange-600"></i>
+                                        Requisitos
+                                    </h5>
+                                    <p class="text-lg font-medium text-gray-800">${requirementsCount}</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-info-circle text-blue-500 text-xl"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h5 class="text-sm font-semibold text-blue-800">Información Importante</h5>
+                                        <div class="mt-1 text-sm text-blue-700">
+                                            <p>• El trámite puede realizarse completamente en línea</p>
+                                            <p>• Recibirás notificaciones por email en cada etapa</p>
+                                            <p>• Puedes hacer seguimiento en tiempo real</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="px-6 py-4 bg-gray-50 border-t border-gray-200 flex justify-between">
+                            <button class="px-6 py-3 border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg font-medium transition-colors close-modal">
+                                <i class="fas fa-arrow-left mr-2"></i>
+                                Volver
+                            </button>
+                            <button class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition-colors start-procedure">
+                                <i class="fas fa-play mr-2"></i>
+                                Iniciar Trámite
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const modalContainer = document.createElement('div');
+            modalContainer.innerHTML = modalContent;
+            document.body.appendChild(modalContainer);
+
+            // Close modal events
+            modalContainer.querySelectorAll('.close-modal').forEach(button => {
+                button.addEventListener('click', () => {
+                    modalContainer.remove();
+                });
+            });
+
+            // Start procedure button
+            modalContainer.querySelector('.start-procedure').addEventListener('click', () => {
+                modalContainer.remove();
+                startProcedure(procedureName);
+            });
+
+            // Close modal on background click
+            modalContainer.addEventListener('click', (e) => {
+                if (e.target === modalContainer) {
+                    modalContainer.remove();
+                }
+            });
+        }
+
+        function startProcedure(procedureName) {
+            // Check if user is logged in
+            const isLoggedIn = checkUserAuthentication();
+            
+            if (!isLoggedIn) {
+                AlertManager.show(
+                    `Para iniciar el trámite "${procedureName}", necesitas iniciar sesión en tu cuenta municipal.`,
+                    'warning',
+                    'Inicio de Sesión Requerido',
+                    5000
+                );
+                
+                // Redirect to login page with return URL
+                setTimeout(() => {
+                    window.location.href = `/src/pages/login.html?returnUrl=${encodeURIComponent(window.location.pathname)}&tramite=${encodeURIComponent(procedureName)}`;
+                }, 2000);
+                return;
+            }
+
+            // If user is logged in, proceed with the procedure
+            AlertManager.show(
+                `Iniciando trámite: ${procedureName}. Serás redirigido al formulario correspondiente.`,
+                'success',
+                'Iniciando Trámite',
+                3000
+            );
+
+            // Simulate redirection to procedure form
+            setTimeout(() => {
+                // In a real application, this would redirect to the specific procedure form
+                console.log(`Iniciando trámite: ${procedureName}`);
+                // window.location.href = `/src/pages/tramites/formulario.html?tipo=${encodeURIComponent(procedureName)}`;
+            }, 2000);
+        }
+
+        function checkUserAuthentication() {
+            // In a real application, this would check if the user has a valid session
+            // For demo purposes, we'll return false to show the login flow
+            return false;
+            
+            // Real implementation might look like:
+            // return localStorage.getItem('userToken') !== null;
+        }
+
+        function initializeFAQAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+                
+                question.addEventListener('click', () => {
+                    const isOpen = !answer.classList.contains('hidden');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('.faq-answer').classList.add('hidden');
+                            otherItem.querySelector('.faq-question i').classList.remove('rotate-180');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    answer.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                    
+                    // Smooth scroll to opened item
+                    if (!isOpen) {
+                        setTimeout(() => {
+                            item.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'nearest' 
+                            });
+                        }, 300);
+                    }
+                });
+            });
+        }
+
+        function handleHashNavigation() {
+            // Handle direct navigation to categories via URL hash
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 500);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

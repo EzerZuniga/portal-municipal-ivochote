@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con la Municipalidad de Ivochote - Consultas, sugerencias, reclamos e información de contacto">
+    <meta name="keywords" content="contacto, municipalidad, ivochote, consultas, reclamos, sugerencias, ubicación">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contacto - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Estamos aquí para atender tus consultas, sugerencias y reclamos. Contáctanos por múltiples canales.">
+    <meta property="og:image" content="/public/images/contacto/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/contacto">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Contacto - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Contáctanos</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Estamos aquí para atender tus consultas, sugerencias, reclamos y brindarte la información que necesites
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Contacto</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Contact Section -->
+        <section class="py-16 bg-white" aria-labelledby="contact-title">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                    <!-- Contact Form -->
+                    <div data-aos="fade-up">
+                        <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg border border-blue-100">
+                            <h2 id="contact-title" class="text-3xl font-bold text-gray-800 mb-2">Envíanos un mensaje</h2>
+                            <p class="text-gray-600 mb-6">Completa el formulario y te responderemos a la brevedad</p>
+                            
+                            <form id="contact-form" class="space-y-6" novalidate>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Nombres completos *
+                                        </label>
+                                        <input type="text" 
+                                               id="name" 
+                                               name="name" 
+                                               required 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder-gray-400"
+                                               placeholder="Ingresa tus nombres completos">
+                                        <div class="text-red-500 text-sm mt-1 hidden" id="name-error"></div>
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Correo electrónico *
+                                        </label>
+                                        <input type="email" 
+                                               id="email" 
+                                               name="email" 
+                                               required 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder-gray-400"
+                                               placeholder="ejemplo@correo.com">
+                                        <div class="text-red-500 text-sm mt-1 hidden" id="email-error"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Teléfono/Celular
+                                        </label>
+                                        <input type="tel" 
+                                               id="phone" 
+                                               name="phone" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder-gray-400"
+                                               placeholder="+51 999 999 999">
+                                        <div class="text-red-500 text-sm mt-1 hidden" id="phone-error"></div>
+                                    </div>
+                                    <div>
+                                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Asunto *
+                                        </label>
+                                        <select id="subject" 
+                                                name="subject" 
+                                                required
+                                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors bg-white">
+                                            <option value="">Seleccione un asunto</option>
+                                            <option value="consulta">Consulta general</option>
+                                            <option value="reclamo">Reclamo</option>
+                                            <option value="sugerencia">Sugerencia</option>
+                                            <option value="solicitud">Solicitud de información</option>
+                                            <option value="denuncia">Denuncia</option>
+                                            <option value="otros">Otros</option>
+                                        </select>
+                                        <div class="text-red-500 text-sm mt-1 hidden" id="subject-error"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Mensaje *
+                                    </label>
+                                    <textarea id="message" 
+                                              name="message" 
+                                              rows="6" 
+                                              required 
+                                              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors placeholder-gray-400 resize-none"
+                                              placeholder="Describe tu consulta, sugerencia o reclamo..."></textarea>
+                                    <div class="flex justify-between items-center mt-1">
+                                        <div class="text-red-500 text-sm hidden" id="message-error"></div>
+                                        <div class="text-gray-400 text-sm" id="message-counter">0/500 caracteres</div>
+                                    </div>
+                                </div>
+
+                                <!-- File Upload -->
+                                <div>
+                                    <label for="attachment" class="block text-sm font-medium text-gray-700 mb-2">
+                                        Adjuntar archivo (opcional)
+                                    </label>
+                                    <div class="flex items-center space-x-4">
+                                        <input type="file" 
+                                               id="attachment" 
+                                               name="attachment"
+                                               accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                                               class="hidden">
+                                        <button type="button" 
+                                                id="file-button"
+                                                class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">
+                                            <i class="fas fa-paperclip mr-2"></i>Seleccionar archivo
+                                        </button>
+                                        <span id="file-name" class="text-sm text-gray-500 truncate flex-1">Ningún archivo seleccionado</span>
+                                    </div>
+                                    <div class="text-gray-400 text-xs mt-1">
+                                        Formatos permitidos: PDF, DOC, JPG, PNG (Máx. 5MB)
+                                    </div>
+                                </div>
+
+                                <!-- Privacy Policy -->
+                                <div class="flex items-start space-x-3">
+                                    <input type="checkbox" 
+                                           id="privacy" 
+                                           name="privacy" 
+                                           required
+                                           class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                    <label for="privacy" class="text-sm text-gray-600">
+                                        Acepto la <a href="/src/pages/politica-privacidad.html" class="text-blue-600 hover:text-blue-700 underline">política de privacidad</a> 
+                                        y el tratamiento de mis datos personales *
+                                    </label>
+                                </div>
+                                <div class="text-red-500 text-sm mt-1 hidden" id="privacy-error"></div>
+
+                                <!-- Submit Button -->
+                                <div class="pt-4">
+                                    <button type="submit" 
+                                            id="submit-button"
+                                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-200 flex items-center justify-center">
+                                        <i class="fas fa-paper-plane mr-3"></i>
+                                        <span id="submit-text">Enviar mensaje</span>
+                                        <div id="submit-spinner" class="hidden ml-3">
+                                            <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="space-y-8">
+                            <div>
+                                <h2 class="text-3xl font-bold text-gray-800 mb-6">Información de contacto</h2>
+                                <p class="text-gray-600 mb-8">
+                                    Contáctanos a través de cualquiera de nuestros canales oficiales. Estamos comprometidos 
+                                    en brindarte la mejor atención y resolver tus inquietudes de manera eficiente.
+                                </p>
+                            </div>
+
+                            <!-- Contact Cards -->
+                            <div class="space-y-6">
+                                <!-- Address -->
+                                <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="flex-shrink-0">
+                                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                                                <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Dirección</h3>
+                                            <p class="text-gray-600 leading-relaxed">
+                                                Plaza Principal de Ivochote<br>
+                                                Distrito de Echarate, Provincia de La Convención<br>
+                                                Región Cusco, Perú
+                                            </p>
+                                            <button onclick="openDirections()" 
+                                                    class="mt-3 text-blue-600 hover:text-blue-700 font-medium text-sm inline-flex items-center">
+                                                <i class="fas fa-directions mr-2"></i>
+                                                Cómo llegar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phones -->
+                                <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="flex-shrink-0">
+                                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                                                <i class="fas fa-phone-alt text-green-600 text-xl"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Teléfonos</h3>
+                                            <div class="space-y-2">
+                                                <a href="tel:+51984123456" 
+                                                   class="block text-gray-600 hover:text-gray-800 transition-colors">
+                                                    <i class="fas fa-mobile-alt mr-3 text-gray-400"></i>
+                                                    +51 984 123 456
+                                                </a>
+                                                <a href="tel:+5184123456" 
+                                                   class="block text-gray-600 hover:text-gray-800 transition-colors">
+                                                    <i class="fas fa-phone mr-3 text-gray-400"></i>
+                                                    +51 84 123456 (Oficina)
+                                                </a>
+                                                <div class="text-sm text-gray-500 mt-2">
+                                                    <i class="fas fa-info-circle mr-2"></i>
+                                                    Atención las 24 horas para emergencias
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="flex-shrink-0">
+                                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                                                <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Correo electrónico</h3>
+                                            <div class="space-y-2">
+                                                <a href="mailto:contacto@ivochote.gob.pe" 
+                                                   class="block text-gray-600 hover:text-gray-800 transition-colors">
+                                                    contacto@ivochote.gob.pe
+                                                </a>
+                                                <a href="mailto:informes@ivochote.gob.pe" 
+                                                   class="block text-gray-600 hover:text-gray-800 transition-colors">
+                                                    informes@ivochote.gob.pe
+                                                </a>
+                                                <a href="mailto:alcalde@ivochote.gob.pe" 
+                                                   class="block text-gray-600 hover:text-gray-800 transition-colors">
+                                                    alcalde@ivochote.gob.pe
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Schedule -->
+                                <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="flex-shrink-0">
+                                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                                                <i class="fas fa-clock text-orange-600 text-xl"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Horario de atención</h3>
+                                            <div class="space-y-2 text-gray-600">
+                                                <div class="flex justify-between">
+                                                    <span>Lunes a Viernes:</span>
+                                                    <span class="font-medium">8:00 AM - 5:00 PM</span>
+                                                </div>
+                                                <div class="flex justify-between">
+                                                    <span>Sábados:</span>
+                                                    <span class="font-medium">9:00 AM - 1:00 PM</span>
+                                                </div>
+                                                <div class="text-sm text-gray-500 mt-2">
+                                                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                                                    Cerrado domingos y feriados
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Media -->
+                            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Síguenos en redes sociales</h3>
+                                <p class="text-gray-600 mb-4 text-sm">
+                                    Mantente informado sobre nuestras actividades, proyectos y noticias municipales.
+                                </p>
+                                <div class="flex space-x-3">
+                                    <a href="https://facebook.com/municipalidadivochote" 
+                                       target="_blank" 
+                                       rel="noopener"
+                                       class="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
+                                       aria-label="Facebook de la Municipalidad">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://twitter.com/muniivochote" 
+                                       target="_blank" 
+                                       rel="noopener"
+                                       class="w-12 h-12 bg-blue-400 hover:bg-blue-500 text-white rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
+                                       aria-label="Twitter de la Municipalidad">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="https://youtube.com/municipalidadivochote" 
+                                       target="_blank" 
+                                       rel="noopener"
+                                       class="w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
+                                       aria-label="YouTube de la Municipalidad">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                    <a href="https://instagram.com/muniivochote" 
+                                       target="_blank" 
+                                       rel="noopener"
+                                       class="w-12 h-12 bg-pink-600 hover:bg-pink-700 text-white rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
+                                       aria-label="Instagram de la Municipalidad">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="https://wa.me/51984123456" 
+                                       target="_blank" 
+                                       rel="noopener"
+                                       class="w-12 h-12 bg-green-500 hover:bg-green-600 text-white rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg"
+                                       aria-label="WhatsApp de la Municipalidad">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="map-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="map-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ubicación de nuestras oficinas</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Visítanos en nuestra sede principal ubicada en el corazón del Centro Poblado de Ivochote
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Map -->
+                    <div class="lg:col-span-2" data-aos="fade-right">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl h-96 lg:h-full">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15490.234567890123!2d-72.6551594!3d-12.8311528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915e6355f90d69c3%3A0xf0f4de775cd754c1!2sIvochote%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1721321000000!5m2!1ses!2spe" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Ubicación de la Municipalidad de Ivochote en el Centro Poblado de Ivochote, Cusco, Perú">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Location Info -->
+                    <div class="space-y-6" data-aos="fade-left">
+                        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Información de la sede</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-building text-blue-600 mt-1"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-700">Municipalidad de Ivochote</p>
+                                        <p class="text-gray-600 text-sm">Sede Principal</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-map-marker-alt text-red-500 mt-1"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-700">Dirección exacta</p>
+                                        <p class="text-gray-600 text-sm">Plaza Principal s/n, Ivochote</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-landmark text-green-500 mt-1"></i>
+                                    <div>
+                                        <p class="font-semibold text-gray-700">Referencia</p>
+                                        <p class="text-gray-600 text-sm">Frente a la plaza de armas, al costado de la iglesia</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                            <h4 class="text-lg font-bold text-blue-800 mb-3">¿Necesitas visitarnos?</h4>
+                            <p class="text-blue-600 mb-4 text-sm">
+                                Te recomendamos coordinar tu visita con anticipación para una mejor atención.
+                            </p>
+                            <button onclick="openDirections()" 
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors flex items-center justify-center">
+                                <i class="fas fa-directions mr-2"></i>
+                                Abrir en Google Maps
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Preguntas frecuentes</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Resolvemos las dudas más comunes de nuestros ciudadanos
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto space-y-4" data-aos="fade-up">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 transition-colors faq-button">
+                            <span class="font-semibold text-gray-800">¿Cuáles son los horarios de atención para trámites?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform faq-icon"></i>
+                        </button>
+                        <div class="px-6 pb-4 hidden faq-content">
+                            <p class="text-gray-600">
+                                Nuestro horario de atención para trámites es de lunes a viernes de 8:00 AM a 5:00 PM, 
+                                y los sábados de 9:00 AM a 1:00 PM. Te recomendamos verificar los requisitos específicos 
+                                de cada trámite en nuestra sección de servicios.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 transition-colors faq-button">
+                            <span class="font-semibold text-gray-800">¿Cómo puedo realizar un reclamo o sugerencia?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform faq-icon"></i>
+                        </button>
+                        <div class="px-6 pb-4 hidden faq-content">
+                            <p class="text-gray-600">
+                                Puedes realizar reclamos o sugerencias a través de nuestro formulario de contacto, 
+                                llamando a nuestros números telefónicos, o visitando nuestras oficinas. Todos los 
+                                reclamos son atendidos en un plazo máximo de 15 días hábiles.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-100 transition-colors faq-button">
+                            <span class="font-semibold text-gray-800">¿Ofrecen atención virtual o en línea?</span>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform faq-icon"></i>
+                        </button>
+                        <div class="px-6 pb-4 hidden faq-content">
+                            <p class="text-gray-600">
+                                Sí, contamos con atención virtual a través de nuestro portal web, donde puedes realizar 
+                                diversos trámites, consultas y pagos en línea. También ofrecemos asesoría por WhatsApp 
+                                y correo electrónico.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeContactPage();
+        });
+
+        function initializeContactPage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize contact form functionality
+            initializeContactForm();
+            initializeFAQ();
+            initializeFileUpload();
+        }
+
+        function initializeContactForm() {
+            const form = document.getElementById('contact-form');
+            const messageTextarea = document.getElementById('message');
+            const messageCounter = document.getElementById('message-counter');
+            const submitButton = document.getElementById('submit-button');
+            const submitText = document.getElementById('submit-text');
+            const submitSpinner = document.getElementById('submit-spinner');
+
+            // Message character counter
+            messageTextarea.addEventListener('input', function() {
+                const length = this.value.length;
+                messageCounter.textContent = `${length}/500 caracteres`;
+                
+                if (length > 500) {
+                    messageCounter.classList.add('text-red-500');
+                } else {
+                    messageCounter.classList.remove('text-red-500');
+                }
+            });
+
+            // Form validation
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                if (validateForm()) {
+                    // Show loading state
+                    submitText.textContent = 'Enviando...';
+                    submitSpinner.classList.remove('hidden');
+                    submitButton.disabled = true;
+
+                    // Simulate form submission (replace with actual API call)
+                    setTimeout(() => {
+                        AlertManager.show(
+                            'Tu mensaje ha sido enviado correctamente. Te contactaremos pronto.',
+                            'success',
+                            'Mensaje enviado',
+                            5000
+                        );
+                        
+                        // Reset form
+                        form.reset();
+                        messageCounter.textContent = '0/500 caracteres';
+                        document.getElementById('file-name').textContent = 'Ningún archivo seleccionado';
+                        
+                        // Reset button state
+                        submitText.textContent = 'Enviar mensaje';
+                        submitSpinner.classList.add('hidden');
+                        submitButton.disabled = false;
+                    }, 2000);
+                }
+            });
+
+            // Real-time validation
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+                
+                input.addEventListener('input', function() {
+                    clearError(this);
+                });
+            });
+        }
+
+        function validateForm() {
+            const form = document.getElementById('contact-form');
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        function validateField(field) {
+            const errorElement = document.getElementById(field.id + '-error');
+            let isValid = true;
+            let errorMessage = '';
+
+            // Clear previous error
+            clearError(field);
+
+            // Validation rules
+            if (field.required && !field.value.trim()) {
+                errorMessage = 'Este campo es obligatorio';
+                isValid = false;
+            } else if (field.type === 'email' && field.value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(field.value)) {
+                    errorMessage = 'Ingresa un correo electrónico válido';
+                    isValid = false;
+                }
+            } else if (field.id === 'phone' && field.value) {
+                const phoneRegex = /^[0-9+\-\s()]{9,15}$/;
+                if (!phoneRegex.test(field.value)) {
+                    errorMessage = 'Ingresa un número de teléfono válido';
+                    isValid = false;
+                }
+            } else if (field.id === 'message' && field.value.length > 500) {
+                errorMessage = 'El mensaje no puede exceder los 500 caracteres';
+                isValid = false;
+            }
+
+            // Show error if any
+            if (!isValid && errorElement) {
+                errorElement.textContent = errorMessage;
+                errorElement.classList.remove('hidden');
+                field.classList.add('border-red-500');
+                field.classList.remove('border-gray-300');
+            }
+
+            return isValid;
+        }
+
+        function clearError(field) {
+            const errorElement = document.getElementById(field.id + '-error');
+            if (errorElement) {
+                errorElement.classList.add('hidden');
+                field.classList.remove('border-red-500');
+                field.classList.add('border-gray-300');
+            }
+        }
+
+        function initializeFileUpload() {
+            const fileInput = document.getElementById('attachment');
+            const fileButton = document.getElementById('file-button');
+            const fileName = document.getElementById('file-name');
+
+            fileButton.addEventListener('click', () => {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const file = this.files[0];
+                    // Validate file size (5MB max)
+                    if (file.size > 5 * 1024 * 1024) {
+                        AlertManager.show(
+                            'El archivo es demasiado grande. El tamaño máximo permitido es 5MB.',
+                            'error',
+                            'Archivo muy grande',
+                            5000
+                        );
+                        this.value = '';
+                        fileName.textContent = 'Ningún archivo seleccionado';
+                    } else {
+                        fileName.textContent = file.name;
+                    }
+                } else {
+                    fileName.textContent = 'Ningún archivo seleccionado';
+                }
+            });
+        }
+
+        function initializeFAQ() {
+            const faqButtons = document.querySelectorAll('.faq-button');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.faq-icon');
+                    
+                    // Toggle content
+                    content.classList.toggle('hidden');
+                    
+                    // Rotate icon
+                    icon.classList.toggle('rotate-180');
+                    
+                    // Close other FAQs
+                    faqButtons.forEach(otherButton => {
+                        if (otherButton !== this) {
+                            const otherContent = otherButton.nextElementSibling;
+                            const otherIcon = otherButton.querySelector('.faq-icon');
+                            otherContent.classList.add('hidden');
+                            otherIcon.classList.remove('rotate-180');
+                        }
+                    });
+                });
+            });
+        }
+
+        function openDirections() {
+            window.open('https://www.google.com/maps/dir//Ivochote,+Peru/@-12.8311528,-72.6551594,15z/data=!4m2!4m1!3e0', '_blank');
+        }
+    </script>
+</body>
+</html>

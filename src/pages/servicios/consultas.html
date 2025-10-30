@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultas y Reclamos - Municipalidad del Centro Poblado de Ivochote - Sistema de atención al ciudadano para consultas, reclamos y sugerencias">
+    <meta name="keywords" content="consultas, reclamos, ivochote, municipalidad, atención al ciudadano, sugerencias, denuncias">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Consultas y Reclamos - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Sistema de atención al ciudadano para consultas, reclamos y sugerencias">
+    <meta property="og:image" content="/public/images/servicios/consultas-og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/servicios/consultas">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Consultas y Reclamos - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando sistema de consultas...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Consultas y Reclamos</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Tu voz es importante para nosotros. Estamos aquí para escucharte y ayudarte
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                            <a href="/src/pages/servicios/index.html" class="hover:text-blue-600 transition-colors">Servicios</a>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Consultas y Reclamos</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Contact Options -->
+        <section class="py-12 bg-white" aria-labelledby="contact-options-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="contact-options-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Múltiples Canales de Atención</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Elige la forma más conveniente para comunicarte con nosotros
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Online Form -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-laptop text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Formulario en Línea</h3>
+                        <p class="text-gray-600 mb-4">Completa nuestro formulario digital y recibe respuesta en 24-48 horas</p>
+                        <a href="#form-section" class="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center">
+                            Completar formulario
+                            <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-phone text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Atención Telefónica</h3>
+                        <p class="text-gray-600 mb-4">Llámanos directamente para consultas inmediatas y orientación</p>
+                        <a href="tel:+51987654321" class="text-green-600 font-semibold hover:text-green-700 inline-flex items-center">
+                            +51 987 654 321
+                            <i class="fas fa-phone ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- In Person -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-building text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Atención Presencial</h3>
+                        <p class="text-gray-600 mb-4">Visítanos en nuestras oficinas para atención personalizada</p>
+                        <a href="/src/pages/contacto.html" class="text-purple-600 font-semibold hover:text-purple-700 inline-flex items-center">
+                            Ver ubicación
+                            <i class="fas fa-map-marker-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultation Form Section -->
+        <section id="form-section" class="py-16 bg-gray-50" aria-labelledby="form-title">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Form Header -->
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <h2 id="form-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Formulario de Consulta</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad
+                        </p>
+                    </div>
+
+                    <!-- Consultation Form -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Form Steps Progress -->
+                        <div class="bg-blue-600 px-8 py-6">
+                            <div class="flex items-center justify-between max-w-2xl mx-auto">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-white text-blue-600 rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                                    <span class="ml-3 text-white font-medium">Información Personal</span>
+                                </div>
+                                <div class="flex-1 h-1 bg-blue-500 mx-4"></div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                                    <span class="ml-3 text-blue-200">Detalles de la Consulta</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form id="consulta-form" class="p-8" novalidate>
+                            <!-- Step 1: Personal Information -->
+                            <div id="step-1" class="form-step active">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                                    <i class="fas fa-user-circle mr-3 text-blue-600"></i>
+                                    Información Personal
+                                </h3>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                    <!-- Names -->
+                                    <div class="form-group">
+                                        <label for="nombres" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Nombres Completos *
+                                        </label>
+                                        <input type="text" 
+                                               id="nombres" 
+                                               name="nombres" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400"
+                                               placeholder="Ingresa tus nombres"
+                                               required>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- Last Names -->
+                                    <div class="form-group">
+                                        <label for="apellidos" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Apellidos Completos *
+                                        </label>
+                                        <input type="text" 
+                                               id="apellidos" 
+                                               name="apellidos" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400"
+                                               placeholder="Ingresa tus apellidos"
+                                               required>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="form-group">
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Correo Electrónico *
+                                        </label>
+                                        <input type="email" 
+                                               id="email" 
+                                               name="email" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400"
+                                               placeholder="ejemplo@correo.com"
+                                               required>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- Phone -->
+                                    <div class="form-group">
+                                        <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Teléfono / Celular
+                                        </label>
+                                        <input type="tel" 
+                                               id="telefono" 
+                                               name="telefono" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400"
+                                               placeholder="+51 987 654 321">
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- Document Type -->
+                                    <div class="form-group">
+                                        <label for="tipo-documento" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Tipo de Documento *
+                                        </label>
+                                        <select id="tipo-documento" 
+                                                name="tipo-documento" 
+                                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors"
+                                                required>
+                                            <option value="" disabled selected>Selecciona tu documento</option>
+                                            <option value="dni">DNI</option>
+                                            <option value="ce">Carnet de Extranjería</option>
+                                            <option value="pasaporte">Pasaporte</option>
+                                        </select>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- Document Number -->
+                                    <div class="form-group">
+                                        <label for="numero-documento" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Número de Documento *
+                                        </label>
+                                        <input type="text" 
+                                               id="numero-documento" 
+                                               name="numero-documento" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400"
+                                               placeholder="Ingresa tu número"
+                                               required>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Navigation Buttons -->
+                                <div class="flex justify-end">
+                                    <button type="button" 
+                                            class="next-step px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center">
+                                        Siguiente
+                                        <i class="fas fa-arrow-right ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Consultation Details -->
+                            <div id="step-2" class="form-step hidden">
+                                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                                    <i class="fas fa-edit mr-3 text-blue-600"></i>
+                                    Detalles de la Consulta
+                                </h3>
+
+                                <div class="space-y-6 mb-8">
+                                    <!-- Consultation Type -->
+                                    <div class="form-group">
+                                        <label for="tipo-consulta" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Tipo de Consulta *
+                                        </label>
+                                        <select id="tipo-consulta" 
+                                                name="tipo-consulta" 
+                                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors"
+                                                required>
+                                            <option value="" disabled selected>Selecciona el tipo de consulta</option>
+                                            <option value="consulta-general">Consulta General</option>
+                                            <option value="reclamo">Reclamo</option>
+                                            <option value="sugerencia">Sugerencia</option>
+                                            <option value="denuncia">Denuncia</option>
+                                            <option value="solicitud-informacion">Solicitud de Información</option>
+                                            <option value="queja">Queja</option>
+                                            <option value="otros">Otros</option>
+                                        </select>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- Department -->
+                                    <div class="form-group">
+                                        <label for="departamento" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Área o Departamento *
+                                        </label>
+                                        <select id="departamento" 
+                                                name="departamento" 
+                                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors"
+                                                required>
+                                            <option value="" disabled selected>Selecciona el área correspondiente</option>
+                                            <option value="administracion">Administración</option>
+                                            <option value="tramites-documentarios">Trámites Documentarios</option>
+                                            <option value="tesoreria">Tesorería</option>
+                                            <option value="obras-publicas">Obras Públicas</option>
+                                            <option value="servicios-publicos">Servicios Públicos</option>
+                                            <option value="seguridad-ciudadana">Seguridad Ciudadana</option>
+                                            <option value="desarrollo-social">Desarrollo Social</option>
+                                            <option value="medio-ambiente">Medio Ambiente</option>
+                                            <option value="otros">Otros</option>
+                                        </select>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- Subject -->
+                                    <div class="form-group">
+                                        <label for="asunto" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Asunto *
+                                        </label>
+                                        <input type="text" 
+                                               id="asunto" 
+                                               name="asunto" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400"
+                                               placeholder="Breve descripción del asunto"
+                                               required>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- Message -->
+                                    <div class="form-group">
+                                        <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Mensaje Detallado *
+                                        </label>
+                                        <textarea id="mensaje" 
+                                                  name="mensaje" 
+                                                  rows="6" 
+                                                  class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400"
+                                                  placeholder="Describe detalladamente tu consulta, reclamo o sugerencia..."
+                                                  required></textarea>
+                                        <div class="text-sm text-gray-500 mt-1">
+                                            <span id="char-count">0</span>/1000 caracteres
+                                        </div>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+
+                                    <!-- File Attachment -->
+                                    <div class="form-group">
+                                        <label for="archivo" class="block text-sm font-medium text-gray-700 mb-2">
+                                            Adjuntar Archivo (Opcional)
+                                        </label>
+                                        <div class="flex items-center space-x-4">
+                                            <input type="file" 
+                                                   id="archivo" 
+                                                   name="archivo" 
+                                                   class="flex-1 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 transition-colors"
+                                                   accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                                            <button type="button" 
+                                                    id="clear-file" 
+                                                    class="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors hidden">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <p class="text-xs text-gray-500 mt-1">
+                                            Formatos aceptados: PDF, JPG, PNG, DOC, DOCX (Máx. 5MB)
+                                        </p>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Privacy Policy -->
+                                <div class="bg-blue-50 rounded-xl p-4 mb-6">
+                                    <div class="flex items-start space-x-3">
+                                        <input type="checkbox" 
+                                               id="privacidad" 
+                                               name="privacidad" 
+                                               class="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1"
+                                               required>
+                                        <label for="privacidad" class="text-sm text-gray-700">
+                                            Acepto la <a href="/src/pages/transparencia/privacidad.html" class="text-blue-600 hover:text-blue-800 font-medium" target="_blank">Política de Privacidad</a> 
+                                            y autorizo el tratamiento de mis datos personales para los fines relacionados con esta consulta. *
+                                        </label>
+                                    </div>
+                                    <div class="error-message text-red-600 text-sm mt-1 ml-8 hidden"></div>
+                                </div>
+
+                                <!-- Navigation Buttons -->
+                                <div class="flex justify-between">
+                                    <button type="button" 
+                                            class="prev-step px-6 py-3 border border-gray-300 text-gray-700 hover:bg-gray-50 font-medium rounded-lg transition-colors flex items-center">
+                                        <i class="fas fa-arrow-left mr-2"></i>
+                                        Anterior
+                                    </button>
+                                    <button type="submit" 
+                                            class="submit-form px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center">
+                                        <i class="fas fa-paper-plane mr-2"></i>
+                                        Enviar Consulta
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-white" aria-labelledby="faq-title">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12" data-aos="fade-up">
+                        <h2 id="faq-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Preguntas Frecuentes</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Resolvemos las dudas más comunes sobre nuestro sistema de consultas y reclamos
+                        </p>
+                    </div>
+
+                    <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Cuánto tiempo tardan en responder mi consulta?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Nos comprometemos a responder todas las consultas en un plazo máximo de <strong>3 días hábiles</strong>. 
+                                    Los reclamos y denuncias pueden tomar hasta <strong>5 días hábiles</strong> dependiendo de la complejidad del caso. 
+                                    Recibirás una notificación por correo electrónico cuando tu caso sea atendido.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Puedo hacer seguimiento a mi consulta?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Sí, al enviar tu consulta recibirás un <strong>número de ticket único</strong> que podrás usar para hacer seguimiento. 
+                                    También puedes crear una cuenta en nuestro portal para ver el historial completo de tus consultas y su estado actual.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Qué tipo de archivos puedo adjuntar?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Aceptamos los siguientes formatos: <strong>PDF, JPG, JPEG, PNG, DOC, DOCX</strong>. 
+                                    El tamaño máximo por archivo es de <strong>5MB</strong>. Si necesitas enviar archivos más grandes o de otros formatos, 
+                                    contáctanos directamente por teléfono.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Cómo sé que mi consulta fue recibida correctamente?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Inmediatamente después de enviar tu consulta, recibirás un <strong>correo de confirmación automático</strong> 
+                                    con tu número de ticket y los detalles de tu consulta. Si no recibes este correo en 15 minutos, 
+                                    revisa tu carpeta de spam o contáctanos por teléfono.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg">
+                            <button class="faq-question w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                                <h3 class="text-lg font-semibold text-gray-800">
+                                    ¿Puedo enviar consultas anónimas?
+                                </h3>
+                                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                            </button>
+                            <div class="faq-answer px-6 pb-6 hidden">
+                                <p class="text-gray-600 leading-relaxed">
+                                    Para consultas generales y sugerencias sí aceptamos consultas anónimas. Sin embargo, para <strong>reclamos, denuncias y solicitudes formales</strong> 
+                                    requerimos tu información personal para poder dar seguimiento legal y proporcionarte una respuesta oficial.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="py-16 bg-gray-50" aria-labelledby="contact-info-title">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h2 id="contact-info-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">¿Necesitas Ayuda Inmediata?</h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                        Contáctanos directamente por estos medios para atención prioritaria
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-phone text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Línea de Atención</h3>
+                            <p class="text-gray-600 mb-4">Para consultas urgentes y orientación inmediata</p>
+                            <a href="tel:+51987654321" class="text-green-600 font-semibold text-lg hover:text-green-700">
+                                +51 987 654 321
+                            </a>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Correo Electrónico</h3>
+                            <p class="text-gray-600 mb-4">Para consultas detalladas y documentación</p>
+                            <a href="mailto:consultas@ivochote.gob.pe" class="text-blue-600 font-semibold text-lg hover:text-blue-700">
+                                consultas@ivochote.gob.pe
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeConsultasPage();
+        });
+
+        function initializeConsultasPage() {
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('scale-100');
+            backToTopBtn.classList.remove('scale-0');
+        } else {
+            backToTopBtn.classList.add('scale-0');
+            backToTopBtn.classList.remove('scale-100');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Loading Screen
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    }
+
+    // Initialize consultation form functionality
+    initializeConsultationForm();
+    initializeFAQAccordion();
+    initializeFileUpload();
+}
+
+function initializeConsultationForm() {
+    const form = document.getElementById('consulta-form');
+    const steps = document.querySelectorAll('.form-step');
+    const nextButtons = document.querySelectorAll('.next-step');
+    const prevButtons = document.querySelectorAll('.prev-step');
+    const charCount = document.getElementById('char-count');
+    const messageTextarea = document.getElementById('mensaje');
+
+    let currentStep = 0;
+
+    // Character counter for message
+    if (messageTextarea && charCount) {
+        messageTextarea.addEventListener('input', function() {
+            const length = this.value.length;
+            charCount.textContent = length;
+            
+            if (length > 1000) {
+                charCount.classList.add('text-red-600');
+                this.classList.add('border-red-600');
+            } else {
+                charCount.classList.remove('text-red-600');
+                this.classList.remove('border-red-600');
+            }
+        });
+    }
+
+    // Next step functionality
+    nextButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (validateStep(currentStep)) {
+                showStep(currentStep + 1);
+            }
+        });
+    });
+
+    // Previous step functionality
+    prevButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            showStep(currentStep - 1);
+        });
+    });
+
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (validateStep(currentStep) && validateForm()) {
+            submitConsultationForm();
+        }
+    });
+
+    function showStep(stepIndex) {
+        // Hide all steps
+        steps.forEach(step => {
+            step.classList.add('hidden');
+            step.classList.remove('active');
+        });
+
+        // Show current step
+        steps[stepIndex].classList.remove('hidden');
+        steps[stepIndex].classList.add('active');
+        
+        currentStep = stepIndex;
+
+        // Update progress indicator
+        updateProgressIndicator(stepIndex);
+    }
+
+    function updateProgressIndicator(stepIndex) {
+        const progressNumbers = document.querySelectorAll('.bg-white, .bg-blue-500');
+        const progressTexts = document.querySelectorAll('.text-white, .text-blue-200');
+        
+        progressNumbers.forEach((number, index) => {
+            if (index <= stepIndex) {
+                number.classList.remove('bg-blue-500', 'text-white');
+                number.classList.add('bg-white', 'text-blue-600');
+            } else {
+                number.classList.remove('bg-white', 'text-blue-600');
+                number.classList.add('bg-blue-500', 'text-white');
+            }
+        });
+
+        progressTexts.forEach((text, index) => {
+            if (index <= stepIndex) {
+                text.classList.remove('text-blue-200');
+                text.classList.add('text-white', 'font-medium');
+            } else {
+                text.classList.remove('text-white', 'font-medium');
+                text.classList.add('text-blue-200');
+            }
+        });
+    }
+
+    function validateStep(stepIndex) {
+        const currentStepElement = steps[stepIndex];
+        const inputs = currentStepElement.querySelectorAll('input[required], select[required], textarea[required]');
+        let isValid = true;
+
+        inputs.forEach(input => {
+            const errorElement = input.parentElement.querySelector('.error-message');
+            
+            if (!input.value.trim()) {
+                showError(input, 'Este campo es obligatorio');
+                isValid = false;
+            } else {
+                hideError(input);
+                
+                // Specific validations
+                if (input.type === 'email' && !isValidEmail(input.value)) {
+                    showError(input, 'Por favor ingresa un correo electrónico válido');
+                    isValid = false;
+                }
+                
+                if (input.id === 'numero-documento' && !isValidDocumentNumber(input.value)) {
+                    showError(input, 'Por favor ingresa un número de documento válido');
+                    isValid = false;
+                }
+            }
+        });
+
+        return isValid;
+    }
+
+    function validateForm() {
+        const privacyCheckbox = document.getElementById('privacidad');
+        const privacyError = document.querySelector('#privacidad').closest('.bg-blue-50').querySelector('.error-message');
+
+        if (!privacyCheckbox.checked) {
+            privacyError.textContent = 'Debes aceptar la política de privacidad';
+            privacyError.classList.remove('hidden');
+            
+            // Scroll to privacy section
+            privacyCheckbox.closest('.bg-blue-50').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+            
+            return false;
+        } else {
+            privacyError.classList.add('hidden');
+        }
+
+        return true;
+    }
+
+    function showError(input, message) {
+        const errorElement = input.parentElement.querySelector('.error-message');
+        errorElement.textContent = message;
+        errorElement.classList.remove('hidden');
+        input.classList.add('border-red-600', 'focus:border-red-600');
+    }
+
+    function hideError(input) {
+        const errorElement = input.parentElement.querySelector('.error-message');
+        errorElement.classList.add('hidden');
+        input.classList.remove('border-red-600', 'focus:border-red-600');
+    }
+
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function isValidDocumentNumber(docNumber) {
+        // Basic validation for document numbers (8 digits for DNI)
+        const docRegex = /^\d{8,12}$/;
+        return docRegex.test(docNumber.replace(/\D/g, ''));
+    }
+
+    function submitConsultationForm() {
+        const submitButton = form.querySelector('.submit-form');
+        const originalText = submitButton.innerHTML;
+        
+        // Show loading state
+        submitButton.disabled = true;
+        submitButton.innerHTML = `
+            <div class="flex items-center">
+                <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                Enviando...
+            </div>
+        `;
+
+        // Simulate API call
+        setTimeout(() => {
+            // Show success message
+            showSuccessMessage();
+            
+            // Reset form
+            form.reset();
+            showStep(0);
+            updateProgressIndicator(0);
+            
+            // Reset button
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalText;
+            
+            // Reset character count
+            if (charCount) {
+                charCount.textContent = '0';
+                charCount.classList.remove('text-red-600');
+            }
+        }, 2000);
+    }
+
+    function showSuccessMessage() {
+        AlertManager.show(
+            'Tu consulta ha sido enviada correctamente. Hemos enviado un correo de confirmación a tu dirección de email. Nos pondremos en contacto contigo en un plazo máximo de 3 días hábiles.',
+            'success',
+            'Consulta Enviada Exitosamente',
+            8000
+        );
+    }
+}
+
+function initializeFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('i');
+        
+        question.addEventListener('click', () => {
+            const isOpen = !answer.classList.contains('hidden');
+            
+            // Close all other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.faq-answer').classList.add('hidden');
+                    otherItem.querySelector('.faq-question i').classList.remove('rotate-180');
+                }
+            });
+            
+            // Toggle current item
+            answer.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+            
+            // Smooth scroll to opened item
+            if (!isOpen) {
+                setTimeout(() => {
+                    item.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+                }, 300);
+            }
+        });
+    });
+}
+
+function initializeFileUpload() {
+    const fileInput = document.getElementById('archivo');
+    const clearButton = document.getElementById('clear-file');
+    
+    if (fileInput && clearButton) {
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                const file = this.files[0];
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                const allowedTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                
+                // Validate file type
+                if (!allowedTypes.includes(file.type)) {
+                    AlertManager.show(
+                        'Tipo de archivo no permitido. Solo se aceptan PDF, JPG, PNG, DOC y DOCX.',
+                        'error',
+                        'Error de Archivo',
+                        5000
+                    );
+                    this.value = '';
+                    clearButton.classList.add('hidden');
+                    return;
+                }
+                
+                // Validate file size
+                if (file.size > maxSize) {
+                    AlertManager.show(
+                        'El archivo es demasiado grande. El tamaño máximo permitido es 5MB.',
+                        'error',
+                        'Archivo Demasiado Grande',
+                        5000
+                    );
+                    this.value = '';
+                    clearButton.classList.add('hidden');
+                    return;
+                }
+                
+                clearButton.classList.remove('hidden');
+            } else {
+                clearButton.classList.add('hidden');
+            }
+        });
+        
+        clearButton.addEventListener('click', function() {
+            fileInput.value = '';
+            this.classList.add('hidden');
+        });
+    }
+}
+
+// Make functions globally available for the inline script
+window.initializeConsultasPage = initializeConsultasPage;
+window.initializeConsultationForm = initializeConsultationForm;
+window.initializeFAQAccordion = initializeFAQAccordion;
+window.initializeFileUpload = initializeFileUpload;
+    </script>
+</body>
+</html>    

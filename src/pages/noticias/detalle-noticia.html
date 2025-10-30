@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalle de noticia - Municipalidad del Centro Poblado de Ivochote">
+    <meta name="keywords" content="noticias, ivochote, municipalidad, detalle noticia">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Detalle de Noticia - Municipalidad de Ivochote">
+    <meta property="og:description" content="Información detallada sobre las actividades y anuncios de la municipalidad">
+    <meta property="og:image" content="/public/images/noticias/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/noticias/detalle-noticia">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="es_PE">
+    
+    <title id="page-title">Detalle de Noticia - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Lightgallery CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery-bundle.min.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando noticia...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                            <a href="/src/pages/noticias/index.html" class="hover:text-blue-600 transition-colors">Noticias</a>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium" id="breadcrumb-title">Detalle de Noticia</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Article Content -->
+        <article class="py-12 bg-white" aria-labelledby="article-title">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <!-- Article Header -->
+                <header class="mb-8 text-center" data-aos="fade-up">
+                    <div class="mb-4">
+                        <span id="article-category" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-semibold">
+                            Cargando...
+                        </span>
+                    </div>
+                    <h1 id="article-title" class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                        Cargando título...
+                    </h1>
+                    <div class="flex flex-wrap justify-center items-center gap-6 text-gray-600">
+                        <div class="flex items-center">
+                            <i class="far fa-calendar-alt mr-3 text-blue-500"></i>
+                            <time id="article-date" datetime="">Cargando fecha...</time>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="far fa-clock mr-3 text-blue-500"></i>
+                            <span id="reading-time">5 min de lectura</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="far fa-eye mr-3 text-blue-500"></i>
+                            <span id="view-count">1,245 vistas</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Featured Image -->
+                <div class="mb-8 rounded-2xl overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <img id="featured-image" 
+                         src="" 
+                         alt="" 
+                         class="w-full h-64 md:h-96 object-cover"
+                         loading="eager">
+                </div>
+
+                <!-- Article Content -->
+                <div class="prose prose-lg max-w-none" data-aos="fade-up" data-aos-delay="200">
+                    <div id="article-content" class="space-y-6">
+                        <!-- Content will be loaded dynamically -->
+                        <div class="text-center py-12">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+                            <p class="text-gray-500 mt-4">Cargando contenido...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Metadata -->
+                <div class="mt-12 pt-8 border-t border-gray-200" data-aos="fade-up">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user-edit text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Publicado por</p>
+                                    <p class="font-semibold text-gray-800" id="article-author">Departamento de Comunicaciones</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-gray-500">Actualizado:</span>
+                            <time id="article-updated" class="text-sm text-gray-700" datetime=""></time>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Share Section -->
+                <div class="mt-12 bg-gray-50 rounded-2xl p-8" data-aos="fade-up">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-share-alt mr-3 text-blue-600"></i>
+                        Compartir esta noticia
+                    </h3>
+                    <p class="text-gray-600 mb-6">Ayuda a difundir esta información importante con tu comunidad</p>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="shareOnFacebook()" 
+                                class="flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-all duration-300 transform hover:scale-105">
+                            <i class="fab fa-facebook-f mr-3"></i>
+                            Facebook
+                        </button>
+                        <button onclick="shareOnTwitter()" 
+                                class="flex items-center px-6 py-3 bg-blue-400 hover:bg-blue-500 text-white rounded-xl transition-all duration-300 transform hover:scale-105">
+                            <i class="fab fa-twitter mr-3"></i>
+                            Twitter
+                        </button>
+                        <button onclick="shareOnWhatsApp()" 
+                                class="flex items-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl transition-all duration-300 transform hover:scale-105">
+                            <i class="fab fa-whatsapp mr-3"></i>
+                            WhatsApp
+                        </button>
+                        <button onclick="copyArticleLink()" 
+                                class="flex items-center px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white rounded-xl transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-link mr-3"></i>
+                            Copiar enlace
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gallery Section -->
+                <div id="gallery-section" class="mt-12 hidden" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-images mr-3 text-blue-600"></i>
+                        Galería de imágenes
+                    </h3>
+                    <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Gallery items will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Related Documents -->
+                <div id="documents-section" class="mt-12 hidden" data-aos="fade-up">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-file-alt mr-3 text-blue-600"></i>
+                        Documentos relacionados
+                    </h3>
+                    <div id="documents-container" class="space-y-4">
+                        <!-- Documents will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Related News Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="related-news-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="related-news-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Noticias Relacionadas</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Descubre más información relevante sobre temas similares
+                    </p>
+                </div>
+
+                <div id="related-news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
+                    <!-- Related news will be loaded dynamically -->
+                    <div class="text-center col-span-full py-12">
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+                        <p class="text-gray-500 mt-4">Cargando noticias relacionadas...</p>
+                    </div>
+                </div>
+
+                <!-- Back to News Button -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <a href="/src/pages/noticias/index.html" 
+                       class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-arrow-left mr-3"></i>
+                        Volver a todas las noticias
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeArticlePage();
+        });
+
+        function initializeArticlePage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Load article data
+            loadArticleData();
+        }
+
+        function loadArticleData() {
+            // Get article ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id') || '1';
+
+            // Simulate API call (replace with actual API)
+            setTimeout(() => {
+                const article = getArticleById(articleId);
+                if (article) {
+                    displayArticle(article);
+                    loadRelatedNews(articleId);
+                } else {
+                    showError('No se pudo cargar la noticia solicitada');
+                }
+            }, 1000);
+        }
+
+        function getArticleById(id) {
+            // Mock data - replace with actual API call
+            const articles = {
+                '1': {
+                    id: '1',
+                    title: 'Municipalidad de Ivochote inaugura nuevo sistema de agua potable que beneficiará a 200 familias',
+                    category: 'Obras Públicas',
+                    date: '2025-07-25',
+                    updated: '2025-07-25',
+                    featuredImage: '/public/images/noticias/destacada.jpg',
+                    content: `
+                        <p class="lead text-xl text-gray-700 font-semibold mb-6">
+                            El alcalde Juan Pérez inauguró oficialmente el nuevo sistema de agua potable, 
+                            una obra emblemática que representa una inversión de S/ 1.2 millones y que 
+                            garantizará el acceso a agua limpia y segura para más de 200 familias del centro poblado.
+                        </p>
+
+                        <p>En una ceremonia cargada de emoción y esperanza, la comunidad de Ivochote celebró 
+                        la culminación de este proyecto que marca un hito histórico en el desarrollo de 
+                        nuestra localidad. El sistema incluye:</p>
+
+                        <ul class="my-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Planta de tratamiento de agua moderna
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Red de distribución de 5 kilómetros
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Sistema de bombeo automatizado
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                Tanques de almacenamiento con capacidad para 50,000 litros
+                            </li>
+                        </ul>
+
+                        <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Impacto en la comunidad</h3>
+
+                        <p>Doña María Quispe, vecina del sector Alto Ivochote, compartió su testimonio:</p>
+
+                        <blockquote class="border-l-4 border-blue-600 pl-4 my-6 italic text-gray-700">
+                            "Por fin tendremos agua las 24 horas del día. Antes teníamos que caminar 
+                            más de un kilómetro para conseguir agua potable. Esto cambiará 
+                            completamente nuestra calidad de vida."
+                        </blockquote>
+
+                        <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Próximos pasos</h3>
+
+                        <p>La municipalidad ya está trabajando en la segunda fase del proyecto, 
+                        que incluirá la ampliación de la red hacia las zonas más alejadas del 
+                        centro poblado y la implementación de un sistema de monitoreo en tiempo real.</p>
+
+                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 mt-8">
+                            <h4 class="font-bold text-blue-800 mb-2">📊 Datos del proyecto</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                                <div>
+                                    <strong>Inversión:</strong><br>
+                                    S/ 1,200,000
+                                </div>
+                                <div>
+                                    <strong>Familias beneficiadas:</strong><br>
+                                    200 familias
+                                </div>
+                                <div>
+                                    <strong>Tiempo de ejecución:</strong><br>
+                                    18 meses
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    gallery: [
+                        '/public/images/noticias/galeria-1-1.jpg',
+                        '/public/images/noticias/galeria-1-2.jpg',
+                        '/public/images/noticias/galeria-1-3.jpg'
+                    ],
+                    documents: [
+                        {
+                            name: 'Memoria descriptiva del proyecto',
+                            type: 'PDF',
+                            size: '2.4 MB',
+                            url: '/public/documents/memoria-proyecto-agua.pdf'
+                        },
+                        {
+                            name: 'Cronograma de implementación',
+                            type: 'PDF',
+                            size: '1.1 MB',
+                            url: '/public/documents/cronograma-proyecto-agua.pdf'
+                        }
+                    ],
+                    author: 'Departamento de Comunicaciones',
+                    views: 1245,
+                    readingTime: 5
+                }
+                // Add more articles as needed
+            };
+
+            return articles[id];
+        }
+
+        function displayArticle(article) {
+            // Update page title
+            document.title = `${article.title} - Municipalidad de Ivochote`;
+            document.getElementById('page-title').textContent = article.title;
+            document.getElementById('breadcrumb-title').textContent = article.title.substring(0, 30) + '...';
+
+            // Update article header
+            document.getElementById('article-category').textContent = article.category;
+            document.getElementById('article-title').textContent = article.title;
+            document.getElementById('article-date').textContent = formatDate(article.date);
+            document.getElementById('article-date').setAttribute('datetime', article.date);
+            document.getElementById('article-updated').textContent = formatDate(article.updated);
+            document.getElementById('article-updated').setAttribute('datetime', article.updated);
+            document.getElementById('reading-time').textContent = `${article.readingTime} min de lectura`;
+            document.getElementById('view-count').textContent = `${article.views.toLocaleString()} vistas`;
+            document.getElementById('article-author').textContent = article.author;
+
+            // Update featured image
+            const featuredImage = document.getElementById('featured-image');
+            featuredImage.src = article.featuredImage;
+            featuredImage.alt = article.title;
+
+            // Update content
+            document.getElementById('article-content').innerHTML = article.content;
+
+            // Update gallery if exists
+            if (article.gallery && article.gallery.length > 0) {
+                const gallerySection = document.getElementById('gallery-section');
+                const galleryContainer = document.getElementById('gallery-container');
+                
+                gallerySection.classList.remove('hidden');
+                galleryContainer.innerHTML = '';
+
+                article.gallery.forEach((image, index) => {
+                    const galleryItem = document.createElement('a');
+                    galleryItem.href = image;
+                    galleryItem.className = 'gallery-item block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105';
+                    galleryItem.setAttribute('data-lg-size', '1920-1280');
+                    galleryItem.innerHTML = `
+                        <img src="${image}" alt="${article.title} - Imagen ${index + 1}" class="w-full h-48 object-cover">
+                    `;
+                    galleryContainer.appendChild(galleryItem);
+                });
+
+                // Initialize lightgallery
+                if (typeof lightGallery !== 'undefined') {
+                    lightGallery(document.getElementById('gallery-container'), {
+                        selector: '.gallery-item',
+                        download: false,
+                        counter: true
+                    });
+                }
+            }
+
+            // Update documents if exists
+            if (article.documents && article.documents.length > 0) {
+                const documentsSection = document.getElementById('documents-section');
+                const documentsContainer = document.getElementById('documents-container');
+                
+                documentsSection.classList.remove('hidden');
+                documentsContainer.innerHTML = '';
+
+                article.documents.forEach(doc => {
+                    const docElement = document.createElement('a');
+                    docElement.href = doc.url;
+                    docElement.className = 'flex items-center justify-between p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-300';
+                    docElement.target = '_blank';
+                    docElement.innerHTML = `
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-file-pdf text-red-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">${doc.name}</h4>
+                                <p class="text-sm text-gray-500">${doc.type} • ${doc.size}</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-download text-gray-400 hover:text-blue-600 transition-colors"></i>
+                    `;
+                    documentsContainer.appendChild(docElement);
+                });
+            }
+        }
+
+        function loadRelatedNews(currentArticleId) {
+            // Mock related news data
+            const relatedNews = [
+                {
+                    id: '2',
+                    title: 'Avance al 75% en construcción de parque infantil comunitario',
+                    category: 'Obras Públicas',
+                    date: '2025-07-24',
+                    image: '/public/images/noticias/news-1.jpg',
+                    excerpt: 'La obra que beneficiará a más de 300 niños del centro poblado registra un avance significativo.'
+                },
+                {
+                    id: '3',
+                    title: 'Campaña de vacunación gratuita este fin de semana en posta médica',
+                    category: 'Social',
+                    date: '2025-07-22',
+                    image: '/public/images/noticias/news-2.jpg',
+                    excerpt: 'Jornada especial de vacunación contra influenza y neumococo para toda la población.'
+                },
+                {
+                    id: '4',
+                    title: 'Nuevos horarios y rutas para recolección de residuos sólidos',
+                    category: 'Servicios',
+                    date: '2025-07-20',
+                    image: '/public/images/noticias/news-3.jpg',
+                    excerpt: 'Optimización del servicio de limpieza pública en todo el centro poblado.'
+                }
+            ];
+
+            const container = document.getElementById('related-news-container');
+            container.innerHTML = '';
+
+            relatedNews.forEach(news => {
+                if (news.id !== currentArticleId) {
+                    const newsElement = document.createElement('article');
+                    newsElement.className = 'bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group';
+                    newsElement.innerHTML = `
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${news.image}" alt="${news.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 ${
+                                news.category === 'Obras Públicas' ? 'bg-blue-600' :
+                                news.category === 'Social' ? 'bg-green-600' :
+                                news.category === 'Servicios' ? 'bg-yellow-600' :
+                                'bg-purple-600'
+                            } text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                ${news.category}
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <time class="text-gray-500 text-sm flex items-center mb-2">
+                                <i class="far fa-calendar mr-2"></i>${formatDate(news.date)}
+                            </time>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                ${news.title}
+                            </h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                ${news.excerpt}
+                            </p>
+                            <a href="/src/pages/noticias/detalle-noticia.html?id=${news.id}" 
+                               class="text-blue-600 font-semibold hover:text-blue-700 transition-colors inline-flex items-center group/link">
+                                Leer más
+                                <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    `;
+                    container.appendChild(newsElement);
+                }
+            });
+        }
+
+        // Utility functions
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('es-PE', options);
+        }
+
+        function showError(message) {
+            AlertManager.show(message, 'error', 'Error al cargar', 5000);
+        }
+
+        // Share functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.getElementById('article-title').textContent);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`, '_blank');
+        }
+
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.getElementById('article-title').textContent);
+            window.open(`https://twitter.com/intent/tweet?text=${title}&url=${url}`, '_blank');
+        }
+
+        function shareOnWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.getElementById('article-title').textContent);
+            window.open(`https://wa.me/?text=${title}%20${url}`, '_blank');
+        }
+
+        function copyArticleLink() {
+            const url = window.location.href;
+            Utils.copyToClipboard(url).then(() => {
+                AlertManager.show('Enlace copiado al portapapeles', 'success', 'Compartir', 3000);
+            });
+        }
+
+        // Make share functions globally available
+        window.shareOnFacebook = shareOnFacebook;
+        window.shareOnTwitter = shareOnTwitter;
+        window.shareOnWhatsApp = shareOnWhatsApp;
+        window.copyArticleLink = copyArticleLink;
+    </script>
+</body>
+</html>

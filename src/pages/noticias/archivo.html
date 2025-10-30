@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Archivo de Noticias - Municipalidad del Centro Poblado de Ivochote - Historial completo de noticias y anuncios">
+    <meta name="keywords" content="archivo noticias, historial, ivochote, municipalidad, noticias anteriores">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Archivo de Noticias - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Accede al historial completo de noticias y anuncios de la municipalidad">
+    <meta property="og:image" content="/public/images/noticias/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/noticias/archivo">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Archivo de Noticias - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando archivo de noticias...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Archivo de Noticias</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Historial completo de noticias, anuncios y comunicados oficiales de la Municipalidad de Ivochote
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                            <a href="/src/pages/noticias/index.html" class="hover:text-blue-600 transition-colors">Noticias</a>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Archivo</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Archive Section -->
+        <section class="py-16 bg-white" aria-labelledby="archive-title">
+            <div class="container mx-auto px-4">
+                <!-- Header and Filters -->
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
+                    <div data-aos="fade-up">
+                        <h2 id="archive-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Archivo Histórico</h2>
+                        <p class="text-lg text-gray-600">Explora nuestro historial completo de noticias organizado por año y categoría</p>
+                    </div>
+                    
+                    <!-- Archive Controls -->
+                    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Year Filter -->
+                        <div class="relative">
+                            <select id="year-filter" 
+                                    class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors bg-white w-full sm:w-48">
+                                <option value="all">Todos los años</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Month Filter -->
+                        <div class="relative">
+                            <select id="month-filter" 
+                                    class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors bg-white w-full sm:w-48">
+                                <option value="all">Todos los meses</option>
+                                <option value="1">Enero</option>
+                                <option value="2">Febrero</option>
+                                <option value="3">Marzo</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Mayo</option>
+                                <option value="6">Junio</option>
+                                <option value="7">Julio</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Septiembre</option>
+                                <option value="10">Octubre</option>
+                                <option value="11">Noviembre</option>
+                                <option value="12">Diciembre</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Archive Statistics -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12" data-aos="fade-up">
+                    <div class="bg-blue-50 rounded-2xl p-6 text-center border border-blue-100">
+                        <div class="text-2xl md:text-3xl font-bold text-blue-600 mb-2" id="total-news">156</div>
+                        <p class="text-blue-700 text-sm font-medium">Noticias Totales</p>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 text-center border border-green-100">
+                        <div class="text-2xl md:text-3xl font-bold text-green-600 mb-2" id="this-year">48</div>
+                        <p class="text-green-700 text-sm font-medium">Este Año</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-2xl p-6 text-center border border-purple-100">
+                        <div class="text-2xl md:text-3xl font-bold text-purple-600 mb-2" id="categories">8</div>
+                        <p class="text-purple-700 text-sm font-medium">Categorías</p>
+                    </div>
+                    <div class="bg-orange-50 rounded-2xl p-6 text-center border border-orange-100">
+                        <div class="text-2xl md:text-3xl font-bold text-orange-600 mb-2" id="total-views">25.4K</div>
+                        <p class="text-orange-700 text-sm font-medium">Visualizaciones</p>
+                    </div>
+                </div>
+
+                <!-- Archive Content -->
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <!-- Sidebar - Categories and Years -->
+                    <div class="lg:col-span-1" data-aos="fade-right">
+                        <!-- Categories -->
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-tags mr-3 text-blue-600"></i>
+                                Categorías
+                            </h3>
+                            <div class="space-y-2">
+                                <button class="category-filter w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-600 flex items-center justify-between active" data-category="all">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-th-large mr-3 text-blue-500"></i>
+                                        Todas las categorías
+                                    </span>
+                                    <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium">156</span>
+                                </button>
+                                <button class="category-filter w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-600 flex items-center justify-between" data-category="obras">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-hammer mr-3 text-blue-500"></i>
+                                        Obras Públicas
+                                    </span>
+                                    <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium">42</span>
+                                </button>
+                                <button class="category-filter w-full text-left px-3 py-2 rounded-lg hover:bg-green-50 transition-colors text-gray-700 hover:text-green-600 flex items-center justify-between" data-category="social">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-hands-helping mr-3 text-green-500"></i>
+                                        Social
+                                    </span>
+                                    <span class="bg-green-100 text-green-600 px-2 py-1 rounded-full text-xs font-medium">38</span>
+                                </button>
+                                <button class="category-filter w-full text-left px-3 py-2 rounded-lg hover:bg-yellow-50 transition-colors text-gray-700 hover:text-yellow-600 flex items-center justify-between" data-category="servicios">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-concierge-bell mr-3 text-yellow-500"></i>
+                                        Servicios
+                                    </span>
+                                    <span class="bg-yellow-100 text-yellow-600 px-2 py-1 rounded-full text-xs font-medium">35</span>
+                                </button>
+                                <button class="category-filter w-full text-left px-3 py-2 rounded-lg hover:bg-purple-50 transition-colors text-gray-700 hover:text-purple-600 flex items-center justify-between" data-category="cultura">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-music mr-3 text-purple-500"></i>
+                                        Cultura
+                                    </span>
+                                    <span class="bg-purple-100 text-purple-600 px-2 py-1 rounded-full text-xs font-medium">21</span>
+                                </button>
+                                <button class="category-filter w-full text-left px-3 py-2 rounded-lg hover:bg-red-50 transition-colors text-gray-700 hover:text-red-600 flex items-center justify-between" data-category="seguridad">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-shield-alt mr-3 text-red-500"></i>
+                                        Seguridad
+                                    </span>
+                                    <span class="bg-red-100 text-red-600 px-2 py-1 rounded-full text-xs font-medium">12</span>
+                                </button>
+                                <button class="category-filter w-full text-left px-3 py-2 rounded-lg hover:bg-indigo-50 transition-colors text-gray-700 hover:text-indigo-600 flex items-center justify-between" data-category="educacion">
+                                    <span class="flex items-center">
+                                        <i class="fas fa-graduation-cap mr-3 text-indigo-500"></i>
+                                        Educación
+                                    </span>
+                                    <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full text-xs font-medium">8</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Archive by Year -->
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-calendar-alt mr-3 text-blue-600"></i>
+                                Archivo por Año
+                            </h3>
+                            <div class="space-y-2">
+                                <button class="year-archive w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-600 flex items-center justify-between active" data-year="all">
+                                    <span>Todos los años</span>
+                                    <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium">156</span>
+                                </button>
+                                <button class="year-archive w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-600 flex items-center justify-between" data-year="2025">
+                                    <span>2025</span>
+                                    <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium">48</span>
+                                </button>
+                                <button class="year-archive w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-600 flex items-center justify-between" data-year="2024">
+                                    <span>2024</span>
+                                    <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium">52</span>
+                                </button>
+                                <button class="year-archive w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-600 flex items-center justify-between" data-year="2023">
+                                    <span>2023</span>
+                                    <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium">36</span>
+                                </button>
+                                <button class="year-archive w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-gray-700 hover:text-blue-600 flex items-center justify-between" data-year="2022">
+                                    <span>2022</span>
+                                    <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs font-medium">20</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Archive Content -->
+                    <div class="lg:col-span-3" data-aos="fade-left">
+                        <!-- Search in Archive -->
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-6">
+                            <div class="flex flex-col sm:flex-row gap-4 items-center">
+                                <div class="relative flex-1">
+                                    <input type="text" 
+                                           id="archive-search"
+                                           placeholder="Buscar en el archivo de noticias..." 
+                                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors placeholder-gray-400">
+                                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                </div>
+                                <button id="clear-filters" 
+                                        class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                                    <i class="fas fa-times mr-2"></i>
+                                    Limpiar filtros
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Archive Results -->
+                        <div id="archive-results">
+                            <!-- Results will be loaded dynamically -->
+                            <div class="text-center py-12">
+                                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+                                <p class="text-gray-500 mt-4">Cargando archivo de noticias...</p>
+                            </div>
+                        </div>
+
+                        <!-- Load More -->
+                        <div class="text-center mt-8">
+                            <button id="load-more-archive" 
+                                    class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center">
+                                <i class="fas fa-sync-alt mr-3"></i>
+                                <span id="load-more-text">Cargar más noticias</span>
+                                <div id="load-more-spinner" class="hidden ml-3">
+                                    <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">No Te Pierdas Nada</h2>
+                    <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                        Suscríbete a nuestro boletín y recibe las noticias más importantes directamente en tu correo
+                    </p>
+                    <form id="archive-newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input type="email" 
+                               placeholder="Tu correo electrónico" 
+                               class="flex-1 px-6 py-4 rounded-lg text-gray-800 focus:outline-none focus:ring-4 focus:ring-white/30 placeholder-gray-500"
+                               required
+                               aria-label="Correo electrónico para suscripción al boletín">
+                        <button type="submit" 
+                                class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-3"></i>
+                            Suscribirse
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeArchivePage();
+        });
+
+        function initializeArchivePage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize archive functionality
+            initializeArchiveFilters();
+            initializeArchiveSearch();
+            initializeLoadMore();
+            loadArchiveData();
+        }
+
+        function initializeArchiveFilters() {
+            // Category filters
+            const categoryFilters = document.querySelectorAll('.category-filter');
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // Remove active class from all category filters
+                    categoryFilters.forEach(f => f.classList.remove('active', 'bg-blue-50', 'text-blue-600'));
+                    
+                    // Add active class to clicked filter
+                    this.classList.add('active', 'bg-blue-50', 'text-blue-600');
+                    
+                    // Filter archive
+                    filterArchive();
+                });
+            });
+
+            // Year archive
+            const yearArchives = document.querySelectorAll('.year-archive');
+            yearArchives.forEach(archive => {
+                archive.addEventListener('click', function() {
+                    // Remove active class from all year archives
+                    yearArchives.forEach(a => a.classList.remove('active', 'bg-blue-50', 'text-blue-600'));
+                    
+                    // Add active class to clicked archive
+                    this.classList.add('active', 'bg-blue-50', 'text-blue-600');
+                    
+                    // Update year filter select
+                    const year = this.getAttribute('data-year');
+                    document.getElementById('year-filter').value = year;
+                    
+                    // Filter archive
+                    filterArchive();
+                });
+            });
+
+            // Year and month select filters
+            document.getElementById('year-filter').addEventListener('change', filterArchive);
+            document.getElementById('month-filter').addEventListener('change', filterArchive);
+
+            // Clear filters button
+            document.getElementById('clear-filters').addEventListener('click', function() {
+                // Reset all filters
+                document.getElementById('year-filter').value = 'all';
+                document.getElementById('month-filter').value = 'all';
+                document.getElementById('archive-search').value = '';
+                
+                // Reset category and year archive buttons
+                categoryFilters.forEach(f => {
+                    f.classList.remove('active', 'bg-blue-50', 'text-blue-600');
+                    if (f.getAttribute('data-category') === 'all') {
+                        f.classList.add('active', 'bg-blue-50', 'text-blue-600');
+                    }
+                });
+                
+                yearArchives.forEach(a => {
+                    a.classList.remove('active', 'bg-blue-50', 'text-blue-600');
+                    if (a.getAttribute('data-year') === 'all') {
+                        a.classList.add('active', 'bg-blue-50', 'text-blue-600');
+                    }
+                });
+                
+                // Reload archive
+                filterArchive();
+            });
+        }
+
+        function initializeArchiveSearch() {
+            const searchInput = document.getElementById('archive-search');
+            
+            searchInput.addEventListener('input', Utils.debounce(function() {
+                filterArchive();
+            }, 300));
+        }
+
+        function initializeLoadMore() {
+            const loadMoreBtn = document.getElementById('load-more-archive');
+            const loadMoreText = document.getElementById('load-more-text');
+            const loadMoreSpinner = document.getElementById('load-more-spinner');
+            
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // Show loading state
+                    loadMoreText.textContent = 'Cargando...';
+                    loadMoreSpinner.classList.remove('hidden');
+                    this.disabled = true;
+
+                    // Simulate loading more news
+                    setTimeout(() => {
+                        AlertManager.show(
+                            'Se han cargado 10 noticias adicionales del archivo',
+                            'success',
+                            'Archivo actualizado',
+                            3000
+                        );
+                        
+                        // Reset button state
+                        loadMoreText.textContent = 'Cargar más noticias';
+                        loadMoreSpinner.classList.add('hidden');
+                        this.disabled = false;
+                    }, 1500);
+                });
+            }
+        }
+
+        function loadArchiveData() {
+            // Simulate API call to load archive data
+            setTimeout(() => {
+                const archiveData = generateArchiveData();
+                displayArchiveResults(archiveData);
+            }, 1000);
+        }
+
+        function generateArchiveData() {
+            // Mock archive data - in real application, this would come from an API
+            return [
+                {
+                    id: '1',
+                    title: 'Inauguración del nuevo sistema de agua potable',
+                    category: 'Obras Públicas',
+                    date: '2025-07-25',
+                    excerpt: 'El alcalde Juan Pérez inauguró oficialmente el nuevo sistema de agua potable que beneficiará a 200 familias.',
+                    image: '/public/images/noticias/destacada.jpg',
+                    views: 1245
+                },
+                {
+                    id: '2',
+                    title: 'Avance al 75% en construcción de parque infantil',
+                    category: 'Obras Públicas',
+                    date: '2025-07-24',
+                    excerpt: 'La obra que beneficiará a más de 300 niños del centro poblado registra un avance significativo.',
+                    image: '/public/images/noticias/news-1.jpg',
+                    views: 892
+                },
+                {
+                    id: '3',
+                    title: 'Campaña de vacunación gratuita este fin de semana',
+                    category: 'Social',
+                    date: '2025-07-22',
+                    excerpt: 'Jornada especial de vacunación contra influenza y neumococo para toda la población.',
+                    image: '/public/images/noticias/news-2.jpg',
+                    views: 756
+                },
+                // Add more mock data as needed...
+            ];
+        }
+
+        function displayArchiveResults(news) {
+            const container = document.getElementById('archive-results');
+            
+            if (news.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fas fa-inbox text-gray-400 text-6xl mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">No se encontraron noticias</h3>
+                        <p class="text-gray-600">Intenta ajustar los filtros o realizar una búsqueda diferente.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            news.forEach(item => {
+                const date = new Date(item.date);
+                const formattedDate = date.toLocaleDateString('es-PE', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                const categoryColors = {
+                    'Obras Públicas': 'bg-blue-600',
+                    'Social': 'bg-green-600',
+                    'Servicios': 'bg-yellow-600',
+                    'Cultura': 'bg-purple-600',
+                    'Seguridad': 'bg-red-600',
+                    'Educación': 'bg-indigo-600'
+                };
+
+                html += `
+                    <article class="archive-news-item bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group mb-6" 
+                             data-category="${item.category.toLowerCase().replace(' ', '-')}" 
+                             data-year="${date.getFullYear()}" 
+                             data-month="${date.getMonth() + 1}">
+                        <div class="md:flex">
+                            <div class="md:w-1/3 h-48 md:h-auto">
+                                <img src="${item.image}" 
+                                     alt="${item.title}" 
+                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 md:w-2/3">
+                                <div class="flex items-center mb-3 flex-wrap gap-2">
+                                    <span class="${categoryColors[item.category]} text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                        ${item.category}
+                                    </span>
+                                    <time class="text-gray-500 text-sm flex items-center">
+                                        <i class="far fa-calendar mr-2"></i>${formattedDate}
+                                    </time>
+                                    <span class="text-gray-500 text-sm flex items-center">
+                                        <i class="far fa-eye mr-2"></i>${item.views.toLocaleString()} vistas
+                                    </span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                    ${item.title}
+                                </h3>
+                                <p class="text-gray-600 mb-4 leading-relaxed">
+                                    ${item.excerpt}
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <a href="/src/pages/noticias/detalle-noticia.html?id=${item.id}" 
+                                       class="text-blue-600 font-semibold hover:text-blue-700 transition-colors inline-flex items-center group/link">
+                                        Leer noticia completa
+                                        <i class="fas fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i>
+                                    </a>
+                                    <button class="text-gray-400 hover:text-gray-600 transition-colors"
+                                            onclick="shareNews(${item.id}, '${item.title}')">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function filterArchive() {
+            const selectedCategory = document.querySelector('.category-filter.active').getAttribute('data-category');
+            const selectedYear = document.getElementById('year-filter').value;
+            const selectedMonth = document.getElementById('month-filter').value;
+            const searchTerm = document.getElementById('archive-search').value.toLowerCase();
+
+            const newsItems = document.querySelectorAll('.archive-news-item');
+            let visibleCount = 0;
+
+            newsItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                const year = item.getAttribute('data-year');
+                const month = item.getAttribute('data-month');
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                const excerpt = item.querySelector('p').textContent.toLowerCase();
+
+                const categoryMatch = selectedCategory === 'all' || category === selectedCategory;
+                const yearMatch = selectedYear === 'all' || year === selectedYear;
+                const monthMatch = selectedMonth === 'all' || month === selectedMonth;
+                const searchMatch = !searchTerm || title.includes(searchTerm) || excerpt.includes(searchTerm);
+
+                if (categoryMatch && yearMatch && monthMatch && searchMatch) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Update results count
+            if (visibleCount === 0) {
+                document.getElementById('archive-results').innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fas fa-search text-gray-400 text-6xl mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">No se encontraron resultados</h3>
+                        <p class="text-gray-600 mb-4">Prueba con otros filtros o términos de búsqueda.</p>
+                        <button id="clear-filters-now" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                            Limpiar todos los filtros
+                        </button>
+                    </div>
+                `;
+                
+                document.getElementById('clear-filters-now').addEventListener('click', function() {
+                    document.getElementById('clear-filters').click();
+                });
+            }
+        }
+
+        // Newsletter form
+        document.getElementById('archive-newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            AlertManager.show(
+                `¡Gracias por suscribirte! Te hemos añadido a nuestra lista de correos.`,
+                'success',
+                'Suscripción exitosa',
+                5000
+            );
+            
+            this.reset();
+        });
+
+        // Share function
+        function shareNews(newsId, title) {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: 'Mira esta noticia del archivo de la Municipalidad de Ivochote',
+                    url: `${window.location.origin}/src/pages/noticias/detalle-noticia.html?id=${newsId}`
+                });
+            } else {
+                const url = `${window.location.origin}/src/pages/noticias/detalle-noticia.html?id=${newsId}`;
+                Utils.copyToClipboard(url).then(() => {
+                    AlertManager.show(
+                        'Enlace copiado al portapapeles',
+                        'success',
+                        'Compartir noticia',
+                        3000
+                    );
+                });
+            }
+        }
+
+        // Make share function globally available
+        window.shareNews = shareNews;
+    </script>
+</body>
+</html>

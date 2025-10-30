@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos y Obras - Municipalidad del Centro Poblado de Ivochote - Conoce las obras en ejecución, planificadas y terminadas para el desarrollo de nuestra comunidad">
+    <meta name="keywords" content="proyectos, obras, ivochote, municipalidad, infraestructura, desarrollo, inversión">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Proyectos y Obras - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Conoce las obras y proyectos que estamos ejecutando para el desarrollo integral de Ivochote">
+    <meta property="og:image" content="/public/images/proyectos/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/proyectos">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Proyectos y Obras - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando proyectos...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <div class="absolute inset-0 bg-pattern opacity-10 z-10"></div>
+            <img src="/public/images/proyectos/banner.jpg" 
+                 alt="Proyectos y Obras de la Municipalidad de Ivochote - Desarrollo e infraestructura para la comunidad"
+                 class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Nuestros Proyectos</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Conoce las obras y proyectos que estamos ejecutando para el desarrollo integral y sostenible de Ivochote
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Proyectos</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Projects Filter Section -->
+        <section class="py-8 bg-white shadow-sm" aria-labelledby="filter-title">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                    <div>
+                        <h2 id="filter-title" class="text-xl font-semibold text-gray-800 mb-2">Filtrar Proyectos</h2>
+                        <p class="text-gray-600 text-sm">Encuentra proyectos por estado, categoría o sector</p>
+                    </div>
+                    
+                    <!-- Filter Controls -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <!-- Status Filter -->
+                        <div class="flex flex-wrap gap-2">
+                            <button class="project-filter px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg active" data-status="all">
+                                <i class="fas fa-th-large mr-2"></i>Todos
+                            </button>
+                            <button class="project-filter px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg" data-status="ejecucion">
+                                <i class="fas fa-play-circle mr-2"></i>En ejecución
+                            </button>
+                            <button class="project-filter px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg" data-status="planificado">
+                                <i class="fas fa-calendar-alt mr-2"></i>Planificados
+                            </button>
+                            <button class="project-filter px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg" data-status="terminado">
+                                <i class="fas fa-check-circle mr-2"></i>Terminados
+                            </button>
+                        </div>
+                        
+                        <!-- Category Filter -->
+                        <select id="category-filter" 
+                                class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500 transition-colors bg-white text-sm">
+                            <option value="all">Todas las categorías</option>
+                            <option value="infraestructura">Infraestructura</option>
+                            <option value="social">Social</option>
+                            <option value="energia">Energía</option>
+                            <option value="recreacion">Recreación</option>
+                            <option value="agricola">Agrícola</option>
+                            <option value="salud">Salud</option>
+                            <option value="educacion">Educación</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Statistics -->
+        <section class="py-12 bg-gradient-to-r from-blue-50 to-indigo-50">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600 mb-2" id="total-projects">25+</div>
+                        <p class="text-gray-700 font-medium">Proyectos Totales</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-3xl md:text-4xl font-bold text-green-600 mb-2" id="active-projects">8</div>
+                        <p class="text-gray-700 font-medium">En Ejecución</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-3xl md:text-4xl font-bold text-orange-600 mb-2">S/ 8.5M</div>
+                        <p class="text-gray-700 font-medium">Inversión Total</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="text-3xl md:text-4xl font-bold text-purple-600 mb-2">1,500+</div>
+                        <p class="text-gray-700 font-medium">Familias Beneficiadas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="py-16 bg-white" aria-labelledby="projects-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="projects-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestros Proyectos</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Descubre las obras que transforman nuestra comunidad y mejoran la calidad de vida en Ivochote
+                    </p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 - En Ejecución -->
+                    <article class="project-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="100" data-status="ejecucion" data-category="infraestructura">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/proyectos/proyecto1.jpg" 
+                                 alt="Mejoramiento de la red de agua potable en Ivochote - Obra en ejecución"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                <i class="fas fa-play-circle mr-1"></i> En Ejecución
+                            </div>
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
+                                <span class="text-blue-600 text-sm font-medium">75% Completado</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
+                                    Infraestructura
+                                </span>
+                                <span class="text-gray-500 text-sm flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>Jul 2025
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+                                Mejoramiento de la red de agua potable
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-2 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                Sector: Centro Poblado de Ivochote
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Ampliación y mejoramiento del sistema de agua potable para garantizar el acceso a agua limpia 
+                                y segura para 150 familias del centro poblado.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Inversión:</span>
+                                    <span class="font-semibold text-gray-800">S/ 1,250,000.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Duración:</span>
+                                    <span class="font-semibold text-gray-800">18 meses</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Beneficiarios:</span>
+                                    <span class="font-semibold text-gray-800">150 familias</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a href="/src/pages/proyectos/detalle.html?id=1" 
+                                   class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Ver Detalles
+                                </a>
+                                <button class="text-gray-400 hover:text-gray-600 transition-colors"
+                                        onclick="shareProject(1, 'Mejoramiento de la red de agua potable')">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 - Planificado -->
+                    <article class="project-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="200" data-status="planificado" data-category="social">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/proyectos/proyecto2.jpg" 
+                                 alt="Construcción de centro comunitario en Ivochote - Proyecto planificado"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                <i class="fas fa-calendar-alt mr-1"></i> Planificado
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-medium">
+                                    Social
+                                </span>
+                                <span class="text-gray-500 text-sm flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>Oct 2025
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-purple-600 transition-colors">
+                                Construcción de centro comunitario
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-2 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                Sector: Zona urbana de Ivochote
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Nuevo espacio multifuncional para actividades comunitarias, talleres de capacitación, 
+                                reuniones vecinales y eventos culturales de la comunidad.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Inversión:</span>
+                                    <span class="font-semibold text-gray-800">S/ 850,000.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Duración:</span>
+                                    <span class="font-semibold text-gray-800">12 meses</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Capacidad:</span>
+                                    <span class="font-semibold text-gray-800">200 personas</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a href="/src/pages/proyectos/detalle.html?id=2" 
+                                   class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Ver Detalles
+                                </a>
+                                <button class="text-gray-400 hover:text-gray-600 transition-colors"
+                                        onclick="shareProject(2, 'Construcción de centro comunitario')">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 - Terminado -->
+                    <article class="project-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" 
+                             data-aos="fade-up" data-aos-delay="300" data-status="terminado" data-category="infraestructura">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/proyectos/proyecto3.jpg" 
+                                 alt="Mejoramiento de vías urbanas en Ivochote - Proyecto terminado"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                                <i class="fas fa-check-circle mr-1"></i> Terminado
+                            </div>
+                            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
+                                <span class="text-green-600 text-sm font-medium">100% Completado</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
+                                    Infraestructura
+                                </span>
+                                <span class="text-gray-500 text-sm flex items-center">
+                                    <i class="far fa-calendar mr-2"></i>Jun 2025
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-green-600 transition-colors">
+                                Mejoramiento de vías urbanas
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-2 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                Sector: Calles principales
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Pavimentación de 2 km de vías urbanas con sistema de drenaje pluvial integrado, 
+                                mejorando la transitabilidad y seguridad vial en el centro poblado.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Inversión:</span>
+                                    <span class="font-semibold text-gray-800">S/ 2,100,000.00</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Duración:</span>
+                                    <span class="font-semibold text-gray-800">24 meses</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-600">Longitud:</span>
+                                    <span class="font-semibold text-gray-800">2,000 metros</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center">
+                                <a href="/src/pages/proyectos/detalle.html?id=3" 
+                                   class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Ver Detalles
+                                </a>
+                                <button class="text-gray-400 hover:text-gray-600 transition-colors"
+                                        onclick="shareProject(3, 'Mejoramiento de vías urbanas')">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <button id="load-more-projects" 
+                            class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center">
+                        <i class="fas fa-sync-alt mr-3"></i>
+                        <span id="load-more-text">Cargar más proyectos</span>
+                        <div id="load-more-spinner" class="hidden ml-3">
+                            <div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Impact Section -->
+        <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Impacto de Nuestros Proyectos</h2>
+                    <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                        Transformando Ivochote a través de obras que mejoran la calidad de vida de nuestra comunidad
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white/10 rounded-2xl p-8 text-center backdrop-blur-sm transition-all duration-300 hover:bg-white/20" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-home text-white text-2xl"></i>
+                        </div>
+                        <div class="text-3xl md:text-4xl font-bold mb-2">25+</div>
+                        <p class="text-blue-100">Proyectos Ejecutados</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-8 text-center backdrop-blur-sm transition-all duration-300 hover:bg-white/20" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-money-bill-wave text-white text-2xl"></i>
+                        </div>
+                        <div class="text-3xl md:text-4xl font-bold mb-2">S/ 8.5M</div>
+                        <p class="text-blue-100">Invertidos en Obras</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-8 text-center backdrop-blur-sm transition-all duration-300 hover:bg-white/20" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <div class="text-3xl md:text-4xl font-bold mb-2">1,500+</div>
+                        <p class="text-blue-100">Familias Beneficiadas</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-8 text-center backdrop-blur-sm transition-all duration-300 hover:bg-white/20" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hard-hat text-white text-2xl"></i>
+                        </div>
+                        <div class="text-3xl md:text-4xl font-bold mb-2">120+</div>
+                        <p class="text-blue-100">Empleos Generados</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">¿Tienes alguna pregunta sobre nuestros proyectos?</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Estamos aquí para brindarte información detallada sobre cualquiera de nuestras obras y proyectos en desarrollo
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/src/pages/contacto.html" 
+                           class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            Contactar al Área de Proyectos
+                        </a>
+                        <a href="/src/pages/transparencia/documentos.html" 
+                           class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center">
+                            <i class="fas fa-file-alt mr-3"></i>
+                            Ver Documentos Técnicos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeProjectsPage();
+        });
+
+        function initializeProjectsPage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            // Initialize projects functionality
+            initializeProjectFilters();
+            initializeLoadMore();
+            updateProjectStatistics();
+        }
+
+        function initializeProjectFilters() {
+            // Status filters
+            const statusFilters = document.querySelectorAll('.project-filter');
+            statusFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // Remove active class from all status filters
+                    statusFilters.forEach(f => f.classList.remove('active', 'bg-blue-600', 'text-white'));
+                    
+                    // Add active class to clicked filter
+                    this.classList.add('active', 'bg-blue-600', 'text-white');
+                    this.classList.remove('bg-gray-200', 'text-gray-800');
+                    
+                    // Filter projects
+                    filterProjects();
+                });
+            });
+
+            // Category filter
+            document.getElementById('category-filter').addEventListener('change', filterProjects);
+        }
+
+        function filterProjects() {
+            const selectedStatus = document.querySelector('.project-filter.active').getAttribute('data-status');
+            const selectedCategory = document.getElementById('category-filter').value;
+
+            const projectCards = document.querySelectorAll('.project-card');
+            let visibleCount = 0;
+
+            projectCards.forEach(card => {
+                const status = card.getAttribute('data-status');
+                const category = card.getAttribute('data-category');
+
+                const statusMatch = selectedStatus === 'all' || status === selectedStatus;
+                const categoryMatch = selectedCategory === 'all' || category === selectedCategory;
+
+                if (statusMatch && categoryMatch) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+
+            // Update statistics
+            updateVisibleProjectsCount(visibleCount);
+        }
+
+        function updateProjectStatistics() {
+            // Count projects by status
+            const totalProjects = document.querySelectorAll('.project-card').length;
+            const activeProjects = document.querySelectorAll('.project-card[data-status="ejecucion"]').length;
+            
+            document.getElementById('total-projects').textContent = `${totalProjects}+`;
+            document.getElementById('active-projects').textContent = activeProjects;
+        }
+
+        function updateVisibleProjectsCount(count) {
+            const loadMoreBtn = document.getElementById('load-more-projects');
+            if (count === 0) {
+                loadMoreBtn.style.display = 'none';
+                // Show no results message
+                const grid = document.getElementById('projects-grid');
+                if (!document.querySelector('.no-results')) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'no-results col-span-full text-center py-12';
+                    noResults.innerHTML = `
+                        <i class="fas fa-search text-gray-400 text-6xl mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">No se encontraron proyectos</h3>
+                        <p class="text-gray-600">Intenta con otros filtros o categorías.</p>
+                    `;
+                    grid.appendChild(noResults);
+                }
+            } else {
+                loadMoreBtn.style.display = 'inline-flex';
+                const noResults = document.querySelector('.no-results');
+                if (noResults) noResults.remove();
+            }
+        }
+
+        function initializeLoadMore() {
+            const loadMoreBtn = document.getElementById('load-more-projects');
+            const loadMoreText = document.getElementById('load-more-text');
+            const loadMoreSpinner = document.getElementById('load-more-spinner');
+            
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // Show loading state
+                    loadMoreText.textContent = 'Cargando...';
+                    loadMoreSpinner.classList.remove('hidden');
+                    this.disabled = true;
+
+                    // Simulate loading more projects
+                    setTimeout(() => {
+                        AlertManager.show(
+                            'Se han cargado 3 proyectos adicionales',
+                            'success',
+                            'Proyectos actualizados',
+                            3000
+                        );
+                        
+                        // Reset button state
+                        loadMoreText.textContent = 'Cargar más proyectos';
+                        loadMoreSpinner.classList.add('hidden');
+                        this.disabled = false;
+                    }, 1500);
+                });
+            }
+        }
+
+        // Share project function
+        function shareProject(projectId, title) {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: 'Mira este proyecto de la Municipalidad de Ivochote',
+                    url: `${window.location.origin}/src/pages/proyectos/detalle.html?id=${projectId}`
+                })
+                .then(() => console.log('Proyecto compartido exitosamente'))
+                .catch((error) => console.log('Error al compartir:', error));
+            } else {
+                // Fallback: copy to clipboard
+                const url = `${window.location.origin}/src/pages/proyectos/detalle.html?id=${projectId}`;
+                Utils.copyToClipboard(url).then(() => {
+                    AlertManager.show(
+                        'Enlace copiado al portapapeles',
+                        'success',
+                        'Compartir proyecto',
+                        3000
+                    );
+                });
+            }
+        }
+
+        // Make share function globally available
+        window.shareProject = shareProject;
+    </script>
+</body>
+</html>

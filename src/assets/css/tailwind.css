@@ -1,0 +1,1242 @@
+/* ==========================================================================
+   tailwind.css - Configuración y Utilidades de Tailwind CSS
+   Componentes personalizados y utilidades específicas del portal municipal
+   ========================================================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Custom Base Styles
+   ========================================================================== */
+
+@layer base {
+  /* Mejoras en la tipografía base */
+  html {
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  }
+
+  /* Estilos específicos para elementos de formulario */
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+
+  /* Mejoras en focus para accesibilidad */
+  button:focus-visible,
+  a:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600;
+  }
+
+  /* Estilos para selección de texto */
+  ::selection {
+    @apply bg-blue-100 text-blue-900;
+  }
+
+  /* Scroll behavior mejorado */
+  html {
+    scroll-padding-top: 5rem;
+  }
+}
+
+/* ==========================================================================
+   Custom Components
+   ========================================================================== */
+
+@layer components {
+  /* ==========================================================================
+     Botones Personalizados
+     ========================================================================== */
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
+  .btn-xl {
+    @apply px-8 py-4 text-lg;
+  }
+
+  /* Variantes de botones */
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-500 border border-gray-300;
+  }
+
+  .btn-success {
+    @apply bg-green-600 text-white hover:bg-green-700 focus:ring-green-500 shadow-sm hover:shadow-md;
+  }
+
+  .btn-warning {
+    @apply bg-yellow-600 text-white hover:bg-yellow-700 focus:ring-yellow-500 shadow-sm hover:shadow-md;
+  }
+
+  .btn-error {
+    @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-sm hover:shadow-md;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500;
+  }
+
+  .btn-link {
+    @apply bg-transparent text-blue-600 hover:text-blue-700 hover:underline focus:ring-blue-500 p-0;
+  }
+
+  /* ==========================================================================
+     Cards Personalizadas
+     ========================================================================== */
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md hover:-translate-y-0.5;
+  }
+
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-200 bg-gray-50;
+  }
+
+  .card-body {
+    @apply px-6 py-4;
+  }
+
+  .card-footer {
+    @apply px-6 py-4 border-t border-gray-200 bg-gray-50;
+  }
+
+  /* Variantes de cards */
+  .card-primary {
+    @apply border-blue-200 bg-blue-50;
+  }
+
+  .card-success {
+    @apply border-green-200 bg-green-50;
+  }
+
+  .card-warning {
+    @apply border-yellow-200 bg-yellow-50;
+  }
+
+  .card-error {
+    @apply border-red-200 bg-red-50;
+  }
+
+  /* ==========================================================================
+     Formularios Personalizados
+     ========================================================================== */
+
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700;
+  }
+
+  .form-label-required::after {
+    content: " *";
+    @apply text-red-500;
+  }
+
+  .form-input {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+  }
+
+  .form-input-error {
+    @apply border-red-300 focus:ring-red-500 focus:border-red-500;
+  }
+
+  .form-input-success {
+    @apply border-green-300 focus:ring-green-500 focus:border-green-500;
+  }
+
+  .form-select {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200;
+  }
+
+  .form-textarea {
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-vertical;
+  }
+
+  .form-checkbox {
+    @apply w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500;
+  }
+
+  .form-radio {
+    @apply w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 mt-1;
+  }
+
+  .form-help {
+    @apply text-sm text-gray-500 mt-1;
+  }
+
+  /* ==========================================================================
+     Badges y Tags Personalizados
+     ========================================================================== */
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-sm {
+    @apply px-2 py-0.5 text-xs;
+  }
+
+  .badge-lg {
+    @apply px-3 py-1 text-sm;
+  }
+
+  /* Variantes de badges */
+  .badge-primary {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .badge-secondary {
+    @apply bg-gray-100 text-gray-800;
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-error {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .badge-info {
+    @apply bg-cyan-100 text-cyan-800;
+  }
+
+  .badge-purple {
+    @apply bg-purple-100 text-purple-800;
+  }
+
+  .badge-pink {
+    @apply bg-pink-100 text-pink-800;
+  }
+
+  /* ==========================================================================
+     Alertas Personalizadas
+     ========================================================================== */
+
+  .alert {
+    @apply p-4 rounded-lg border;
+  }
+
+  .alert-with-icon {
+    @apply flex items-start gap-3;
+  }
+
+  .alert-icon {
+    @apply flex-shrink-0 w-5 h-5 mt-0.5;
+  }
+
+  .alert-content {
+    @apply flex-1;
+  }
+
+  .alert-title {
+    @apply text-sm font-medium;
+  }
+
+  .alert-description {
+    @apply mt-1 text-sm;
+  }
+
+  /* Variantes de alertas */
+  .alert-info {
+    @apply bg-blue-50 border-blue-200 text-blue-800;
+  }
+
+  .alert-success {
+    @apply bg-green-50 border-green-200 text-green-800;
+  }
+
+  .alert-warning {
+    @apply bg-yellow-50 border-yellow-200 text-yellow-800;
+  }
+
+  .alert-error {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+
+  /* ==========================================================================
+     Navigation Components
+     ========================================================================== */
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200;
+  }
+
+  .nav-item-active {
+    @apply bg-blue-100 text-blue-700;
+  }
+
+  .nav-item-inactive {
+    @apply text-gray-700 hover:bg-gray-100 hover:text-gray-900;
+  }
+
+  .nav-item-icon {
+    @apply w-5 h-5;
+  }
+
+  /* ==========================================================================
+     Table Components
+     ========================================================================== */
+
+  .table-container {
+    @apply overflow-hidden border border-gray-200 rounded-lg shadow-sm;
+  }
+
+  .table {
+    @apply min-w-full divide-y divide-gray-200;
+  }
+
+  .table-header {
+    @apply bg-gray-50;
+  }
+
+  .table-header-cell {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+
+  .table-body {
+    @apply bg-white divide-y divide-gray-200;
+  }
+
+  .table-row {
+    @apply transition-colors duration-150;
+  }
+
+  .table-row:hover {
+    @apply bg-gray-50;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+  }
+
+  .table-cell-muted {
+    @apply text-gray-500;
+  }
+
+  /* ==========================================================================
+     Modal Components
+     ========================================================================== */
+
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50;
+  }
+
+  .modal-container {
+    @apply bg-white rounded-2xl shadow-xl max-w-md w-full max-h-[90vh] overflow-hidden;
+  }
+
+  .modal-lg {
+    @apply max-w-2xl;
+  }
+
+  .modal-xl {
+    @apply max-w-4xl;
+  }
+
+  .modal-header {
+    @apply px-6 py-4 border-b border-gray-200 bg-gray-50 flex items-center justify-between;
+  }
+
+  .modal-title {
+    @apply text-lg font-semibold text-gray-900;
+  }
+
+  .modal-close {
+    @apply p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200;
+  }
+
+  .modal-body {
+    @apply px-6 py-4 overflow-y-auto;
+  }
+
+  .modal-footer {
+    @apply px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-end gap-3;
+  }
+
+  /* ==========================================================================
+     Loading Components
+     ========================================================================== */
+
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+  }
+
+  .loading-spinner-sm {
+    @apply w-4 h-4;
+  }
+
+  .loading-spinner-md {
+    @apply w-6 h-6;
+  }
+
+  .loading-spinner-lg {
+    @apply w-8 h-8;
+  }
+
+  .loading-dots {
+    @apply flex space-x-1;
+  }
+
+  .loading-dot {
+    @apply w-2 h-2 bg-gray-400 rounded-full animate-bounce;
+  }
+
+  .loading-dot:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .loading-dot:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  /* ==========================================================================
+     Avatar Components
+     ========================================================================== */
+
+  .avatar {
+    @apply inline-block rounded-full overflow-hidden bg-gray-100;
+  }
+
+  .avatar-sm {
+    @apply w-8 h-8;
+  }
+
+  .avatar-md {
+    @apply w-12 h-12;
+  }
+
+  .avatar-lg {
+    @apply w-16 h-16;
+  }
+
+  .avatar-xl {
+    @apply w-20 h-20;
+  }
+
+  .avatar-placeholder {
+    @apply flex items-center justify-center bg-gray-300 text-gray-600 font-medium;
+  }
+
+  /* ==========================================================================
+     Progress Components
+     ========================================================================== */
+
+  .progress-container {
+    @apply w-full bg-gray-200 rounded-full overflow-hidden;
+  }
+
+  .progress-bar {
+    @apply h-2 rounded-full transition-all duration-300;
+  }
+
+  .progress-bar-primary {
+    @apply bg-blue-600;
+  }
+
+  .progress-bar-success {
+    @apply bg-green-600;
+  }
+
+  .progress-bar-warning {
+    @apply bg-yellow-600;
+  }
+
+  .progress-bar-error {
+    @apply bg-red-600;
+  }
+
+  /* ==========================================================================
+     Tooltip Components
+     ========================================================================== */
+
+  .tooltip {
+    @apply absolute z-50 px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 invisible transition-opacity duration-200;
+  }
+
+  .tooltip-arrow {
+    @apply absolute w-2 h-2 bg-gray-900 transform rotate-45;
+  }
+
+  .tooltip-top {
+    @apply bottom-full left-1/2 transform -translate-x-1/2 mb-2;
+  }
+
+  .tooltip-top .tooltip-arrow {
+    @apply top-full left-1/2 transform -translate-x-1/2 -mt-1;
+  }
+
+  .tooltip-bottom {
+    @apply top-full left-1/2 transform -translate-x-1/2 mt-2;
+  }
+
+  .tooltip-bottom .tooltip-arrow {
+    @apply bottom-full left-1/2 transform -translate-x-1/2 -mb-1;
+  }
+
+  .tooltip-visible {
+    @apply opacity-100 visible;
+  }
+
+  /* ==========================================================================
+     Municipal Specific Components
+     ========================================================================== */
+
+  /* Hero Section Municipal */
+  .hero-municipal {
+    @apply relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 text-white overflow-hidden;
+  }
+
+  .hero-municipal::before {
+    content: "";
+    @apply absolute inset-0 bg-pattern opacity-10;
+  }
+
+  /* Service Card Municipal */
+  .service-card {
+    @apply card card-hover p-6 text-center group;
+  }
+
+  .service-card-icon {
+    @apply w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors duration-300;
+  }
+
+  .service-card-title {
+    @apply text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300;
+  }
+
+  .service-card-description {
+    @apply text-gray-600 leading-relaxed;
+  }
+
+  /* News Card Municipal */
+  .news-card {
+    @apply card card-hover overflow-hidden group;
+  }
+
+  .news-card-image {
+    @apply w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500;
+  }
+
+  .news-card-content {
+    @apply p-6;
+  }
+
+  .news-card-category {
+    @apply badge badge-primary mb-3;
+  }
+
+  .news-card-title {
+    @apply text-lg font-semibold text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300;
+  }
+
+  .news-card-excerpt {
+    @apply text-gray-600 text-sm leading-relaxed line-clamp-3;
+  }
+
+  .news-card-meta {
+    @apply flex items-center justify-between text-sm text-gray-500 mt-4;
+  }
+
+  /* Document Card Municipal */
+  .document-card {
+    @apply card card-hover p-6;
+  }
+
+  .document-card-header {
+    @apply flex items-start justify-between mb-4;
+  }
+
+  .document-card-icon {
+    @apply w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600;
+  }
+
+  .document-card-title {
+    @apply text-lg font-semibold text-gray-800 mb-1;
+  }
+
+  .document-card-description {
+    @apply text-gray-600 text-sm leading-relaxed;
+  }
+
+  .document-card-meta {
+    @apply flex flex-wrap gap-2 mt-4;
+  }
+
+  /* Transparency Card Municipal */
+  .transparency-card {
+    @apply card card-hover p-8 text-center group;
+  }
+
+  .transparency-card-icon {
+    @apply w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors duration-300;
+  }
+
+  .transparency-card-title {
+    @apply text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300;
+  }
+
+  .transparency-card-description {
+    @apply text-gray-600 leading-relaxed mb-4;
+  }
+
+  /* Payment Step Municipal */
+  .payment-step {
+    @apply text-center relative;
+  }
+
+  .payment-step-number {
+    @apply w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-blue-600 font-bold text-2xl;
+  }
+
+  .payment-step-title {
+    @apply text-xl font-bold text-gray-800 mb-3;
+  }
+
+  .payment-step-description {
+    @apply text-gray-600 leading-relaxed;
+  }
+
+  .payment-step-connector {
+    @apply absolute top-1/2 left-full w-full h-1 bg-gray-200 hidden md:block -translate-y-1/2;
+  }
+
+  /* FAQ Item Municipal */
+  .faq-item {
+    @apply border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+
+  .faq-question {
+    @apply w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6;
+  }
+
+  /* Breadcrumb Municipal */
+  .breadcrumb {
+    @apply flex items-center space-x-2 text-sm text-gray-600;
+  }
+
+  .breadcrumb-item {
+    @apply flex items-center;
+  }
+
+  .breadcrumb-link {
+    @apply hover:text-blue-600 transition-colors flex items-center;
+  }
+
+  .breadcrumb-separator {
+    @apply text-gray-400 mx-2 text-xs;
+  }
+
+  .breadcrumb-current {
+    @apply text-gray-500 font-medium;
+  }
+}
+
+/* ==========================================================================
+   Custom Utilities
+   ========================================================================== */
+
+@layer utilities {
+  /* ==========================================================================
+     Text Utilities
+     ========================================================================== */
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  .line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+
+  /* ==========================================================================
+     Scroll Utilities
+     ========================================================================== */
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ==========================================================================
+     Animation Utilities
+     ========================================================================== */
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.6s ease-out;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-right {
+    animation: fadeInRight 0.6s ease-out;
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.3s ease-out;
+  }
+
+  @keyframes slideInUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-down {
+    animation: slideInDown 0.3s ease-out;
+  }
+
+  @keyframes slideInDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* ==========================================================================
+     Filter Utilities
+     ========================================================================== */
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+
+  .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+  }
+
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+  }
+
+  .backdrop-saturate-150 {
+    backdrop-filter: saturate(150%);
+  }
+
+  /* ==========================================================================
+     Gradient Utilities
+     ========================================================================== */
+
+  .bg-gradient-municipal {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  }
+
+  .bg-gradient-transparency {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  }
+
+  .bg-gradient-services {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  }
+
+  .bg-gradient-news {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  }
+
+  .bg-gradient-tourism {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  }
+
+  /* ==========================================================================
+     Pattern Utilities
+     ========================================================================== */
+
+  .bg-pattern {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 0
+    );
+    background-size: 20px 20px;
+  }
+
+  .bg-pattern-dots {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 0
+    );
+    background-size: 8px 8px;
+  }
+
+  .bg-pattern-grid {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* ==========================================================================
+     Clip-path Utilities
+     ========================================================================== */
+
+  .clip-wave {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .clip-wave-reverse {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  .clip-diagonal-reverse {
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  }
+
+  /* ==========================================================================
+     Transform Utilities
+     ========================================================================== */
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* ==========================================================================
+     Interactive Utilities
+     ========================================================================== */
+
+  .hover-lift {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  .hover-scale {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  /* ==========================================================================
+     Print Utilities
+     ========================================================================== */
+
+  @media print {
+    .print-break-before {
+      page-break-before: always;
+    }
+
+    .print-break-after {
+      page-break-after: always;
+    }
+
+    .print-break-inside-avoid {
+      page-break-inside: avoid;
+    }
+
+    .print-hidden {
+      display: none !important;
+    }
+
+    .print-black {
+      color: black !important;
+    }
+  }
+
+  /* ==========================================================================
+     Municipal Specific Utilities
+     ========================================================================== */
+
+  .municipal-shadow {
+    box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.1),
+      0 2px 4px -1px rgba(30, 64, 175, 0.06);
+  }
+
+  .municipal-border {
+    border: 1px solid #e5e7eb;
+  }
+
+  .municipal-gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
+  }
+
+  .municipal-section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  .municipal-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ==========================================================================
+     Responsive Text Sizes
+     ========================================================================== */
+
+  .text-responsive {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .text-responsive-lg {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .text-responsive-xl {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  /* ==========================================================================
+     Aspect Ratio Utilities
+     ========================================================================== */
+
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-landscape {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* ==========================================================================
+     Container Query Utilities (Experimental)
+     ========================================================================== */
+
+  @supports (container-type: inline-size) {
+    .container-query {
+      container-type: inline-size;
+    }
+
+    @container (min-width: 640px) {
+      .cq\:flex-row {
+        flex-direction: row;
+      }
+
+      .cq\:text-lg {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-break-avoid {
+    page-break-inside: avoid;
+  }
+
+  .print-break-before {
+    page-break-before: always;
+  }
+
+  .print-break-after {
+    page-break-after: always;
+  }
+
+  .print-full-width {
+    width: 100% !important;
+  }
+
+  .print-text-black {
+    color: black !important;
+  }
+
+  .print-bg-white {
+    background: white !important;
+  }
+
+  .print-shadow-none {
+    box-shadow: none !important;
+  }
+
+  .print-border {
+    border: 1px solid #e5e7eb !important;
+  }
+}
+
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+  .high-contrast-border {
+    border: 2px solid currentColor;
+  }
+
+  .high-contrast-text {
+    color: black;
+  }
+
+  .high-contrast-bg {
+    background: white;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .motion-reduce\:transform-none {
+    transform: none !important;
+  }
+}

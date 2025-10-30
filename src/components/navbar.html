@@ -1,0 +1,100 @@
+<header class="fixed w-full top-0 z-40 transition-all duration-300" id="header" role="banner">
+    <!-- Top Bar -->
+    <div class="bg-red-600 text-white py-2 text-sm" aria-label="Barra superior de información">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <span class="flex items-center">
+                        <i class="fas fa-flag mr-2" aria-hidden="true"></i>
+                        Gobierno del Perú
+                    </span>
+                    <span class="hidden md:block" aria-hidden="true">|</span>
+                    <span class="hidden md:block">Centro Poblado de Ivochote</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/src/pages/transparencia/index.html" class="hover:text-red-200 transition-colors">
+                        <i class="fas fa-eye mr-1" aria-hidden="true"></i>
+                        Portal de Transparencia
+                    </a>
+                    <a href="/src/pages/contacto.html" class="hover:text-red-200 transition-colors">
+                        <i class="fas fa-envelope mr-1" aria-hidden="true"></i>
+                        Contacto
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Navigation -->
+    <nav class="bg-white shadow-lg transition-all duration-300" id="navbar" aria-label="Navegación principal">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="/src/pages/index.html" class="flex items-center space-x-4">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo de la Municipalidad de Ivochote" class="w-12 h-12 object-contain" loading="eager">
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">Municipalidad de Ivochote</h1>
+                        <p class="text-sm text-gray-600">Centro Poblado - Cusco</p>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-6" role="menubar">
+                    <a href="/src/pages/index.html" class="nav-link active" role="menuitem">Inicio</a>
+                    <a href="/src/pages/autoridades.html" class="nav-link" role="menuitem">Autoridades</a>
+                    <div class="relative group" role="none">
+                        <a href="/src/pages/servicios/index.html" class="nav-link" role="menuitem" aria-haspopup="true">
+                            Servicios
+                            <i class="fas fa-chevron-down ml-1" aria-hidden="true"></i>
+                        </a>
+                        <div class="absolute top-full left-0 bg-white shadow-xl rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" role="menu">
+                            <a href="/src/pages/servicios/tramites.html" class="block px-4 py-2 hover:bg-gray-50" role="menuitem">Trámites</a>
+                            <a href="/src/pages/servicios/pagos.html" class="block px-4 py-2 hover:bg-gray-50" role="menuitem">Pagos</a>
+                            <a href="/src/pages/servicios/consultas.html" class="block px-4 py-2 hover:bg-gray-50" role="menuitem">Consultas</a>
+                        </div>
+                    </div>
+                    <a href="/src/pages/proyectos/index.html" class="nav-link" role="menuitem">Proyectos</a>
+                    <a href="/src/pages/noticias/index.html" class="nav-link" role="menuitem">Noticias</a>
+                    <a href="/src/pages/transparencia/index.html" class="nav-link" role="menuitem">Transparencia</a>
+                    <a href="/src/pages/turismo.html" class="nav-link" role="menuitem">Turismo</a>
+                    <a href="/src/pages/galeria.html" class="nav-link" role="menuitem">Galería</a>
+                    <a href="/src/pages/login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors" role="menuitem">
+                        <i class="fas fa-sign-in-alt mr-1" aria-hidden="true"></i>
+                        Acceso
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2" id="mobile-menu-btn" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 hidden" id="mobile-menu-overlay" aria-hidden="true">
+        <div class="fixed right-0 top-0 bottom-0 w-64 bg-white shadow-lg transform transition-transform duration-300" id="mobile-menu" role="menu" aria-labelledby="mobile-menu-btn">
+            <div class="p-4 border-b">
+                <button class="float-right text-gray-600 hover:text-gray-800" id="mobile-menu-close" aria-label="Cerrar menú móvil">
+                    <i class="fas fa-times text-xl" aria-hidden="true"></i>
+                </button>
+                <div class="clear-both"></div>
+            </div>
+            <div class="py-4 px-4 space-y-2">
+                <a href="/src/pages/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">
+                    <i class="fas fa-home mr-2" aria-hidden="true"></i>Inicio
+                </a>
+                <a href="/src/pages/autoridades.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">
+                    <i class="fas fa-users mr-2" aria-hidden="true"></i>Autoridades
+                </a>
+                <a href="/src/pages/servicios/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Servicios</a>
+                <a href="/src/pages/proyectos/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Proyectos</a>
+                <a href="/src/pages/noticias/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Noticias</a>
+                <a href="/src/pages/transparencia/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Transparencia</a>
+                <a href="/src/pages/turismo.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Turismo</a>
+                <a href="/src/pages/galeria.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Galería</a>
+                <a href="/src/pages/login.html" class="block py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" role="menuitem">Acceso</a>
+            </div>
+        </div>
+    </div>
+</header>

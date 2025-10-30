@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turismo en Ivochote - Descubre los atractivos naturales, culturales y gastronómicos del Centro Poblado de Ivochote">
+    <meta name="keywords" content="turismo, ivochote, cusco, peru, naturaleza, cultura, gastronomía, atractivos turísticos">
+    <meta name="author" content="Municipalidad de Ivochote">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Turismo - Municipalidad del Centro Poblado de Ivochote">
+    <meta property="og:description" content="Descubre los atractivos naturales y culturales de nuestro centro poblado">
+    <meta property="og:image" content="/public/images/turismo/og-image.jpg">
+    <meta property="og:url" content="https://municipalidad-ivochote.gob.pe/turismo">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <title>Turismo - Municipalidad del Centro Poblado de Ivochote</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+    <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="stylesheet" href="/src/assets/css/layout.css">
+    <link rel="stylesheet" href="/src/assets/css/components.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="theme-color" content="#1e40af">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center z-50 transition-opacity duration-500">
+        <div class="text-center text-white">
+            <div class="relative mb-8">
+                <div class="w-24 h-24 mx-auto mb-4 relative">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo del Perú" class="w-full h-full object-contain animate-pulse" loading="eager">
+                    <div class="absolute inset-0 bg-white/20 rounded-full animate-ping"></div>
+                </div>
+                <h2 class="text-2xl font-bold mb-2">Municipalidad de Ivochote</h2>
+                <p class="text-blue-200">Cargando información turística...</p>
+            </div>
+            <div class="flex justify-center space-x-1">
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-3 h-3 bg-white rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="relative py-20 bg-blue-600 text-white overflow-hidden" aria-labelledby="page-title">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-600/60 z-10"></div>
+            <img src="/public/images/turismo/banner.jpg" 
+                 alt="Turismo en Ivochote - Paisajes naturales y culturales del centro poblado" 
+                 class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <h1 id="page-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Turismo en Ivochote</h1>
+                    <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                        Descubre la magia de nuestros paisajes, la riqueza de nuestra cultura y el sabor de nuestra tradición
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Wave Divider -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" aria-hidden="true">
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4 border-b border-gray-200" aria-label="Migas de pan">
+            <div class="container mx-auto px-4">
+                <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                    <li>
+                        <a href="/src/pages/index.html" class="hover:text-blue-600 transition-colors flex items-center">
+                            <i class="fas fa-home mr-2" aria-hidden="true"></i>
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-chevron-right text-gray-400 mx-2 text-xs" aria-hidden="true"></i>
+                        <span class="text-gray-500 font-medium">Turismo</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Tourism Intro -->
+        <section class="py-16 bg-white" aria-labelledby="welcome-title">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center mb-12" data-aos="fade-up">
+                    <h2 id="welcome-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Bienvenido a Ivochote</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Nuestro centro poblado, enclavado en el corazón de la provincia de La Convención, 
+                        ofrece una combinación única de paisajes naturales impresionantes, cultura viva 
+                        y tradiciones ancestrales que te sorprenderán en cada rincón.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Nature Card -->
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-mountain text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Naturaleza Viva</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Descubre nuestros impresionantes paisajes naturales, cascadas cristalinas, 
+                            bosques nublados y una biodiversidad única en la región.
+                        </p>
+                    </div>
+
+                    <!-- Gastronomy Card -->
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-utensils text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Gastronomía Auténtica</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Prueba nuestra deliciosa comida tradicional preparada con ingredientes 
+                            locales frescos y recetas que han pasado de generación en generación.
+                        </p>
+                    </div>
+
+                    <!-- Culture Card -->
+                    <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 h-20 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-music text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Cultura Ancestral</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Conoce nuestras tradiciones milenarias, fiestas patronales coloridas, 
+                            artesanías ancestrales y la calidez de nuestra gente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attractions Section -->
+        <section class="py-16 bg-gray-50" aria-labelledby="attractions-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="attractions-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Atractivos Turísticos</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Lugares mágicos que no te puedes perder en tu visita a Ivochote
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Catarata de Ivochote -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/turismo/atractivo1.jpg" 
+                                 alt="Catarata de Ivochote - Impresionante caída de agua natural"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Naturaleza
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Catarata de Ivochote</h3>
+                            <p class="text-gray-600 text-sm mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                A 3 km del centro poblado
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Impresionante caída de agua de 25 metros de altura rodeada de vegetación 
+                                exuberante y un ambiente de paz y tranquilidad.
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    2-3 horas
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="fas fa-walking mr-2"></i>
+                                    Dificultad: Media
+                                </span>
+                            </div>
+                            <button class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors font-medium"
+                                    onclick="ModalManager.show('Catarata de Ivochote', document.getElementById('catarata-details').innerHTML)">
+                                Ver detalles completos
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Mirador Natural -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/turismo/atractivo2.jpg" 
+                                 alt="Mirador Natural - Vista panorámica del valle de Ivochote"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Mirador
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Mirador Natural</h3>
+                            <p class="text-gray-600 text-sm mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                Cerro San Cristóbal
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Vista panorámica espectacular de todo el valle y la cordillera de los Andes. 
+                                Ideal para fotografía y observación de aves endémicas.
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    1-2 horas
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="fas fa-walking mr-2"></i>
+                                    Dificultad: Baja
+                                </span>
+                            </div>
+                            <button class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors font-medium"
+                                    onclick="ModalManager.show('Mirador Natural', document.getElementById('mirador-details').innerHTML)">
+                                Ver detalles completos
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Plaza Principal -->
+                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="/public/images/turismo/atractivo3.jpg" 
+                                 alt="Plaza Principal de Ivochote - Corazón de la comunidad"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Cultural
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Plaza Principal</h3>
+                            <p class="text-gray-600 text-sm mb-3 flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                                Centro del poblado
+                            </p>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                Corazón de la comunidad con arquitectura tradicional, jardines bien cuidados 
+                                y un ambiente acogedor que refleja la identidad de Ivochote.
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-500">
+                                <span class="flex items-center">
+                                    <i class="fas fa-clock mr-2"></i>
+                                    30-60 min
+                                </span>
+                                <span class="flex items-center">
+                                    <i class="fas fa-wheelchair mr-2"></i>
+                                    Accesible
+                                </span>
+                            </div>
+                            <button class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors font-medium"
+                                    onclick="ModalManager.show('Plaza Principal', document.getElementById('plaza-details').innerHTML)">
+                                Ver detalles completos
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- View All Button -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <a href="/src/pages/turismo/atractivos.html" 
+                       class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-map-marked-alt mr-3"></i>
+                        Ver todos los atractivos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gastronomy Section -->
+        <section class="py-16 bg-white" aria-labelledby="gastronomy-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="gastronomy-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Gastronomía Local</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Sabores tradicionales que cuentan la historia de nuestro pueblo
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Gastronomy Image -->
+                    <div data-aos="fade-right">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="/public/images/turismo/comida.jpg" 
+                                 alt="Gastronomía tradicional de Ivochote - Platos típicos y ingredientes locales"
+                                 class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Gastronomy Content -->
+                    <div data-aos="fade-left">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Platos típicos de Ivochote</h3>
+                        <div class="space-y-6">
+                            <!-- Pachamanca -->
+                            <div class="flex items-start space-x-4 p-4 bg-orange-50 rounded-xl border border-orange-200">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-fire text-orange-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Pachamanca Tradicional</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Carnes de cerdo, pollo y res, papas, humitas y habas cocidas bajo tierra 
+                                        con piedras calientes al estilo ancestral. Un festín para los sentidos.
+                                    </p>
+                                    <div class="mt-2 flex items-center text-sm text-orange-600">
+                                        <i class="fas fa-star mr-1"></i>
+                                        <span>Especialidad de la zona</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Trucha Frita -->
+                            <div class="flex items-start space-x-4 p-4 bg-blue-50 rounded-xl border border-blue-200">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-fish text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Trucha Frita del Río</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Pescado fresco de río acompañado de yuca sancochada, plátano frito 
+                                        y salsa criolla. Capturado directamente de nuestras aguas cristalinas.
+                                    </p>
+                                    <div class="mt-2 flex items-center text-sm text-blue-600">
+                                        <i class="fas fa-utensils mr-1"></i>
+                                        <span>Disponible todo el año</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Caldo de Gallina -->
+                            <div class="flex items-start space-x-4 p-4 bg-green-50 rounded-xl border border-green-200">
+                                <div class="flex-shrink-0 mt-1">
+                                    <i class="fas fa-utensil-spoon text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Caldo de Gallina Criolla</h4>
+                                    <p class="text-gray-600 leading-relaxed">
+                                        Reconfortante sopa preparada con gallina de corral, hierbas aromáticas 
+                                        locales y papas nativas. Ideal para reponer energías después del trekking.
+                                    </p>
+                                    <div class="mt-2 flex items-center text-sm text-green-600">
+                                        <i class="fas fa-heart mr-1"></i>
+                                        <span>Reconfortante y nutritivo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Restaurants Link -->
+                        <div class="mt-8">
+                            <a href="/src/pages/turismo/restaurantes.html" 
+                               class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg transition-colors group">
+                                <i class="fas fa-arrow-right mr-3 group-hover:translate-x-1 transition-transform"></i>
+                                Descubre nuestros restaurantes recomendados
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Get Here Section -->
+        <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50" aria-labelledby="transport-title">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 id="transport-title" class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">¿Cómo llegar a Ivochote?</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Planifica tu viaje con nuestras rutas y recomendaciones
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- Bus Option -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" data-aos="fade-up">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-bus text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">En bus desde Cusco</h3>
+                        </div>
+                        <ol class="space-y-4">
+                            <li class="flex items-start space-x-3">
+                                <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mt-1 flex-shrink-0">1</span>
+                                <div>
+                                    <p class="font-medium text-gray-800">Tomar bus Cusco - Quillabamba</p>
+                                    <p class="text-sm text-gray-600">Duración: 6 horas • Empresas: Transportes Señor de Huanca</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mt-1 flex-shrink-0">2</span>
+                                <div>
+                                    <p class="font-medium text-gray-800">En Quillabamba, tomar combi a Ivochote</p>
+                                    <p class="text-sm text-gray-600">Duración: 2 horas • Salidas frecuentes desde el terminal</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mt-1 flex-shrink-0">3</span>
+                                <div>
+                                    <p class="font-medium text-gray-800">Llegada a Ivochote</p>
+                                    <p class="text-sm text-gray-600">Tiempo total aproximado: 8 horas</p>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                            <p class="text-sm text-blue-800 flex items-center">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                <strong>Consejo:</strong> Salir temprano de Cusco para aprovechar mejor el día
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Car Option -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-car text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">En auto particular</h3>
+                        </div>
+                        <ol class="space-y-4">
+                            <li class="flex items-start space-x-3">
+                                <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mt-1 flex-shrink-0">1</span>
+                                <div>
+                                    <p class="font-medium text-gray-800">Ruta Cusco - Limatambo - Quillabamba</p>
+                                    <p class="text-sm text-gray-600">Carretera asfaltada • 180 km aproximadamente</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mt-1 flex-shrink-0">2</span>
+                                <div>
+                                    <p class="font-medium text-gray-800">Desde Quillabamba tomar desvío a Ivochote</p>
+                                    <p class="text-sm text-gray-600">Camino afirmado • 50 km adicionales</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-bold mt-1 flex-shrink-0">3</span>
+                                <div>
+                                    <p class="font-medium text-gray-800">Llegada a destino</p>
+                                    <p class="text-sm text-gray-600">Distancia total: ~230 km desde Cusco</p>
+                                </div>
+                            </li>
+                        </ol>
+                        <div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                            <p class="text-sm text-green-800 flex items-center">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>
+                                <strong>Recomendación:</strong> Vehículo alto o 4x4 en época de lluvias
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="mt-12 max-w-4xl mx-auto" data-aos="fade-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                            Recomendaciones para visitantes
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-calendar-alt text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Mejor época:</strong> Abril a Noviembre (temporada seca)</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-tshirt text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Ropa:</strong> Abrigadora para noches, protección solar para el día</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-hiking text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Guías:</strong> Contratar guías locales para excursiones</span>
+                                </li>
+                            </ul>
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-hands-helping text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Respeto:</strong> A las costumbres y tradiciones locales</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-money-bill-wave text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Efectivo:</strong> Llevar suficiente, pocos lugares aceptan tarjetas</span>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <i class="fas fa-camera text-blue-500 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Fotos:</strong> Preguntar antes de fotografiar a personas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 transform scale-0 flex items-center justify-center z-30"
+            aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Modal Content Templates (Hidden) -->
+    <div style="display: none;">
+        <!-- Catarata Details -->
+        <div id="catarata-details">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <img src="/public/images/turismo/atractivo1.jpg" alt="Catarata de Ivochote" class="w-24 h-24 rounded-xl object-cover">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Catarata de Ivochote</h3>
+                        <p class="text-gray-600">Atractivo Natural</p>
+                    </div>
+                </div>
+                <div class="prose max-w-none text-gray-700">
+                    <p><strong>Descripción Completa:</strong></p>
+                    <p>La Catarata de Ivochote es una de las maravillas naturales más impresionantes de la región. 
+                    Con una caída de agua de 25 metros de altura, se encuentra rodeada de vegetación exuberante 
+                    y un microclima único que alberga diversas especies de flora y fauna.</p>
+                    
+                    <p><strong>Recomendaciones:</strong></p>
+                    <ul>
+                        <li>Llevar calzado antideslizante para el trekking</li>
+                        <li>Protector solar y repelente de insectos</li>
+                        <li>Ropa de baño y toalla</li>
+                        <li>Agua y snacks energéticos</li>
+                    </ul>
+                    
+                    <p><strong>Mejor época para visitar:</strong> Mayo a Octubre</p>
+                    <p><strong>Horario recomendado:</strong> 8:00 AM - 3:00 PM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mirador Details -->
+        <div id="mirador-details">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <img src="/public/images/turismo/atractivo2.jpg" alt="Mirador Natural" class="w-24 h-24 rounded-xl object-cover">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Mirador Natural</h3>
+                        <p class="text-gray-600">Vista Panorámica</p>
+                    </div>
+                </div>
+                <div class="prose max-w-none text-gray-700">
+                    <p><strong>Descripción Completa:</strong></p>
+                    <p>El Mirador Natural en el Cerro San Cristóbal ofrece una de las vistas más espectaculares 
+                    del valle de Ivochote y la cordillera de los Andes. Desde aquí se pueden apreciar los 
+                    diferentes ecosistemas de la región y, en días despejados, los picos nevados más lejanos.</p>
+                    
+                    <p><strong>Actividades:</strong></p>
+                    <ul>
+                        <li>Fotografía de paisajes</li>
+                        <li>Observación de aves</li>
+                        <li>Picnic con vista panorámica</li>
+                        <li>Meditación y relajación</li>
+                    </ul>
+                    
+                    <p><strong>Mejor horario:</strong> Amanecer y atardecer</p>
+                    <p><strong>Acceso:</strong> Sendero bien marcado, apto para todas las edades</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plaza Details -->
+        <div id="plaza-details">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <img src="/public/images/turismo/atractivo3.jpg" alt="Plaza Principal" class="w-24 h-24 rounded-xl object-cover">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Plaza Principal</h3>
+                        <p class="text-gray-600">Centro Cultural</p>
+                    </div>
+                </div>
+                <div class="prose max-w-none text-gray-700">
+                    <p><strong>Descripción Completa:</strong></p>
+                    <p>La Plaza Principal de Ivochote es el corazón de la comunidad, donde convergen la historia, 
+                    la cultura y la vida social del poblado. Rodeada de arquitectura tradicional y jardines 
+                    cuidadosamente mantenidos, es el lugar perfecto para entender la esencia de Ivochote.</p>
+                    
+                    <p><strong>Puntos de interés:</strong></p>
+                    <ul>
+                        <li>Iglesia colonial San Pedro</li>
+                        <li>Murales que cuentan la historia local</li>
+                        <li>Árboles nativos centenarios</li>
+                        <li>Puesto de información turística</li>
+                    </ul>
+                    
+                    <p><strong>Eventos especiales:</strong> Fiestas patronales, ferias artesanales, conciertos</p>
+                    <p><strong>Servicios cercanos:</strong> Restaurantes, hospedajes, artesanías</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="/src/assets/js/main.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Component Loader
+        async function loadComponent(containerId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error cargando ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when DOM is ready
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header-container', '/src/components/navbar.html');
+            await loadComponent('footer-container', '/src/components/footer.html');
+            
+            // Initialize page-specific functionality
+            initializeTourismPage();
+        });
+
+        function initializeTourismPage() {
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('scale-100');
+                    backToTopBtn.classList.remove('scale-0');
+                } else {
+                    backToTopBtn.classList.add('scale-0');
+                    backToTopBtn.classList.remove('scale-100');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Loading Screen
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

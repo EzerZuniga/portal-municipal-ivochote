@@ -1,0 +1,85 @@
+<section class="relative h-screen overflow-hidden mt-24" aria-labelledby="hero-title">
+    <div class="swiper hero-swiper h-full">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
+                <img src="/public/images/banners/hero-bg.jpg" alt="Vista panorámica de Ivochote" class="w-full h-full object-cover" loading="eager">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <h2 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6">
+                            Bienvenidos a <span class="text-yellow-400">Ivochote</span>
+                        </h2>
+                        <p class="text-xl md:text-2xl mb-8">
+                            Trabajando juntos por el desarrollo sostenible de nuestro centro poblado
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="/src/pages/servicios/index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                                <i class="fas fa-concierge-bell mr-2" aria-hidden="true"></i>
+                                Servicios Municipales
+                            </a>
+                            <a href="/src/pages/transparencia/index.html" class="border-2 border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                                <i class="fas fa-eye mr-2" aria-hidden="true"></i>
+                                Transparencia
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="swiper-slide relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-600/50"></div>
+                <img src="/public/images/banners/hero-bg-2.jpg" alt="Proyectos de infraestructura en Ivochote" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <h2 class="text-5xl md:text-7xl font-bold mb-6">
+                            Nuevos <span class="text-green-400">Proyectos</span>
+                        </h2>
+                        <p class="text-xl md:text-2xl mb-8">
+                            Infraestructura moderna para mejorar la calidad de vida
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="/src/pages/proyectos/index.html" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                                <i class="fas fa-hammer mr-2" aria-hidden="true"></i>
+                                Ver Proyectos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="swiper-slide relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-green-900/70 to-green-600/50"></div>
+                <img src="/public/images/banners/hero-bg-3.jpg" alt="Atractivos turísticos de Ivochote" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white max-w-4xl px-4">
+                        <h2 class="text-5xl md:text-7xl font-bold mb-6">
+                            Descubre <span class="text-orange-400">Ivochote</span>
+                        </h2>
+                        <p class="text-xl md:text-2xl mb-8">
+                            Riqueza cultural y natural en el corazón del Cusco
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="/src/pages/turismo.html" class="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                                <i class="fas fa-mountain mr-2" aria-hidden="true"></i>
+                                Explorar Turismo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="swiper-pagination" aria-label="Navegación del carrusel"></div>
+        <div class="swiper-button-next text-white" aria-label="Siguiente diapositiva"></div>
+        <div class="swiper-button-prev text-white" aria-label="Diapositiva anterior"></div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce" aria-hidden="true">
+        <i class="fas fa-chevron-down text-2xl"></i>
+    </div>
+</section>
