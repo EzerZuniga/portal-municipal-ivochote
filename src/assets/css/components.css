@@ -1,21 +1,56 @@
-/* Component Styles */
+/* Component Styles - Professional Design */
+
+/* Service Cards with diagonal stripe effect */
+.service-card-stripe {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card-stripe:hover {
+  transform: translateY(-8px);
+}
+
+/* Smooth diagonal animation */
+@keyframes diagonalSlide {
+  from {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+/* News Cards with enhanced hover effects */
 .news-card {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .news-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.35);
 }
 
+.news-card img {
+  transition: transform 0.6s ease;
+}
+
+.news-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Modal Styles */
 .modal-overlay {
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
   transition: transform 0.3s ease;
 }
 
+/* Alert Styles */
 .alert-item {
   transition: all 0.3s ease;
 }
@@ -24,29 +59,54 @@
   transform: translateX(-4px);
 }
 
-/* Quick Access Cards */
+/* Quick Access Cards - Enhanced professional style */
 .quick-card {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .quick-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Service Cards */
+.quick-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.quick-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Service Cards - Professional gradient hover */
 .service-card {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15);
 }
 
-/* Authority Cards */
+/* Authority Cards - Enhanced professional presentation */
 .authority-card {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.authority-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
 }
 
 .authority-card:hover {

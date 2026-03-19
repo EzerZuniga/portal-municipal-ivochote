@@ -1,99 +1,120 @@
-<header class="fixed w-full top-0 z-40 transition-all duration-300" id="header" role="banner">
-    <!-- Top Bar -->
-    <div class="bg-red-600 text-white py-2 text-sm" aria-label="Barra superior de información">
+<header class="fixed w-full top-0 z-50 transition-all duration-300" id="header" role="banner">
+    <!-- Top Government Bar - Estilo gob.pe -->
+    <div class="bg-white border-b border-gray-200 py-2" aria-label="Barra superior gubernamental">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-4">
-                    <span class="flex items-center">
-                        <i class="fas fa-flag mr-2" aria-hidden="true"></i>
-                        Gobierno del Perú
-                    </span>
-                    <span class="hidden md:block" aria-hidden="true">|</span>
-                    <span class="hidden md:block">Centro Poblado de Ivochote</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="/src/pages/transparencia/index.html" class="hover:text-red-200 transition-colors">
-                        <i class="fas fa-eye mr-1" aria-hidden="true"></i>
-                        Portal de Transparencia
+                    <a href="#" class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-red-600 mr-2" aria-hidden="true"></i>
+                        <span class="text-sm text-gray-700 hidden md:inline">Plaza Principal, Ivochote, Cusco, Perú</span>
+                        <span class="text-sm text-gray-700 md:hidden">Ivochote, Cusco</span>
                     </a>
-                    <a href="/src/pages/contacto.html" class="hover:text-red-200 transition-colors">
-                        <i class="fas fa-envelope mr-1" aria-hidden="true"></i>
-                        Contacto
+                </div>
+                <div class="flex items-center space-x-3">
+                    <a href="https://www.gob.pe" target="_blank" rel="noopener" class="flex items-center hover:opacity-80 transition-opacity">
+                        <img src="https://cdn.www.gob.pe/themes/custom/portalv2/images/logo_gob.svg" alt="gob.pe" class="h-5">
+                    </a>
+                    <a href="/src/pages/transparencia/index.html" class="flex items-center hover:opacity-80 transition-opacity">
+                        <img src="https://cdn.www.gob.pe/portal-transparencia-std/img/logo-portal-transparencia.svg" alt="Portal de Transparencia" class="h-5">
                     </a>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Main Navigation -->
-    <nav class="bg-white shadow-lg transition-all duration-300" id="navbar" aria-label="Navegación principal">
+    <!-- Social Media Bar -->
+    <div class="bg-gradient-to-r from-red-700 to-red-800 py-2 hidden md:block">
         <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <a href="/src/pages/index.html" class="flex items-center space-x-4">
-                    <img src="/public/images/escudo-peru.png" alt="Escudo de la Municipalidad de Ivochote" class="w-12 h-12 object-contain" loading="eager">
-                    <div>
-                        <h1 class="text-xl font-bold text-gray-800">Municipalidad de Ivochote</h1>
-                        <p class="text-sm text-gray-600">Centro Poblado - Cusco</p>
+            <div class="flex justify-end items-center space-x-4">
+                <a href="#" class="text-white hover:text-red-200 transition-colors" aria-label="TikTok">
+                    <i class="fab fa-tiktok text-lg"></i>
+                </a>
+                <a href="#" class="text-white hover:text-red-200 transition-colors" aria-label="Facebook">
+                    <i class="fab fa-facebook text-lg"></i>
+                </a>
+                <a href="#" class="text-white hover:text-red-200 transition-colors" aria-label="Instagram">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <a href="#" class="text-white hover:text-red-200 transition-colors" aria-label="YouTube">
+                    <i class="fab fa-youtube text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Navigation - Estilo Cusco -->
+    <nav class="bg-white shadow-md" id="navbar" aria-label="Navegación principal">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <!-- Logo -->
+                <a href="/src/pages/index.html" class="flex items-center space-x-3 group">
+                    <img src="/public/images/escudo-peru.png" alt="Escudo de la Municipalidad de Ivochote" class="h-16 w-16 object-contain transition-transform group-hover:scale-105" loading="eager">
+                    <div class="flex items-center space-x-3">
+                        <div class="hidden lg:block border-l border-gray-300 h-12 mx-2"></div>
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800 tracking-tight" style="font-family: 'Poppins', sans-serif;">IVOCHOTE</div>
+                        </div>
                     </div>
                 </a>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-6" role="menubar">
-                    <a href="/src/pages/index.html" class="nav-link active" role="menuitem">Inicio</a>
-                    <a href="/src/pages/autoridades.html" class="nav-link" role="menuitem">Autoridades</a>
-                    <div class="relative group" role="none">
-                        <a href="/src/pages/servicios/index.html" class="nav-link" role="menuitem" aria-haspopup="true">
-                            Servicios
-                            <i class="fas fa-chevron-down ml-1" aria-hidden="true"></i>
-                        </a>
-                        <div class="absolute top-full left-0 bg-white shadow-xl rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200" role="menu">
-                            <a href="/src/pages/servicios/tramites.html" class="block px-4 py-2 hover:bg-gray-50" role="menuitem">Trámites</a>
-                            <a href="/src/pages/servicios/pagos.html" class="block px-4 py-2 hover:bg-gray-50" role="menuitem">Pagos</a>
-                            <a href="/src/pages/servicios/consultas.html" class="block px-4 py-2 hover:bg-gray-50" role="menuitem">Consultas</a>
-                        </div>
-                    </div>
-                    <a href="/src/pages/proyectos/index.html" class="nav-link" role="menuitem">Proyectos</a>
-                    <a href="/src/pages/noticias/index.html" class="nav-link" role="menuitem">Noticias</a>
-                    <a href="/src/pages/transparencia/index.html" class="nav-link" role="menuitem">Transparencia</a>
-                    <a href="/src/pages/turismo.html" class="nav-link" role="menuitem">Turismo</a>
-                    <a href="/src/pages/galeria.html" class="nav-link" role="menuitem">Galería</a>
-                    <a href="/src/pages/login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors" role="menuitem">
-                        <i class="fas fa-sign-in-alt mr-1" aria-hidden="true"></i>
-                        Acceso
-                    </a>
+                <div class="hidden lg:flex items-center space-x-1" role="menubar">
+                    <a href="/src/pages/index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-red-700 hover:bg-red-50 rounded transition-colors uppercase tracking-wide" role="menuitem">Institución</a>
+                    <a href="/src/pages/servicios/index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-red-700 hover:bg-red-50 rounded transition-colors uppercase tracking-wide" role="menuitem">Gobierno Digital</a>
+                    <a href="/src/pages/transparencia/index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-red-700 hover:bg-red-50 rounded transition-colors uppercase tracking-wide" role="menuitem">Transparencia Institucional</a>
+                    <a href="/src/pages/noticias/index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-red-700 hover:bg-red-50 rounded transition-colors uppercase tracking-wide" role="menuitem">Comunicación</a>
+                    <a href="/src/pages/proyectos/index.html" class="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-red-700 hover:bg-red-50 rounded transition-colors uppercase tracking-wide" role="menuitem">Convocatorias</a>
+                    <button class="ml-2 p-2 text-gray-600 hover:text-red-700 transition-colors" aria-label="Buscar">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden p-2" id="mobile-menu-btn" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
-                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                <button class="lg:hidden p-2 text-gray-700 hover:text-red-700" id="mobile-menu-btn" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </nav>
     
-    <!-- Mobile Menu -->
+    <!-- Mobile Menu - Responsive -->
     <div class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 hidden" id="mobile-menu-overlay" aria-hidden="true">
-        <div class="fixed right-0 top-0 bottom-0 w-64 bg-white shadow-lg transform transition-transform duration-300" id="mobile-menu" role="menu" aria-labelledby="mobile-menu-btn">
-            <div class="p-4 border-b">
-                <button class="float-right text-gray-600 hover:text-gray-800" id="mobile-menu-close" aria-label="Cerrar menú móvil">
-                    <i class="fas fa-times text-xl" aria-hidden="true"></i>
+        <div class="fixed right-0 top-0 bottom-0 w-80 max-w-full bg-white shadow-2xl transform transition-transform duration-300 overflow-y-auto" id="mobile-menu" role="menu" aria-labelledby="mobile-menu-btn">
+            <div class="p-4 border-b bg-gradient-to-r from-red-700 to-red-800 text-white">
+                <button class="float-right text-white hover:text-red-200" id="mobile-menu-close" aria-label="Cerrar menú móvil">
+                    <i class="fas fa-times text-2xl" aria-hidden="true"></i>
                 </button>
-                <div class="clear-both"></div>
+                <h2 class="text-lg font-bold">MENÚ</h2>
             </div>
-            <div class="py-4 px-4 space-y-2">
-                <a href="/src/pages/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">
-                    <i class="fas fa-home mr-2" aria-hidden="true"></i>Inicio
+            <div class="py-4 px-4 space-y-1">
+                <a href="/src/pages/index.html" class="block py-3 px-4 text-sm font-semibold text-gray-700 hover:bg-red-50 hover:text-red-700 rounded transition-colors uppercase" role="menuitem">
+                    <i class="fas fa-home mr-3 w-5" aria-hidden="true"></i>Institución
                 </a>
-                <a href="/src/pages/autoridades.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">
-                    <i class="fas fa-users mr-2" aria-hidden="true"></i>Autoridades
+                <a href="/src/pages/servicios/index.html" class="block py-3 px-4 text-sm font-semibold text-gray-700 hover:bg-red-50 hover:text-red-700 rounded transition-colors uppercase" role="menuitem">
+                    <i class="fas fa-laptop mr-3 w-5" aria-hidden="true"></i>Gobierno Digital
                 </a>
-                <a href="/src/pages/servicios/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Servicios</a>
-                <a href="/src/pages/proyectos/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Proyectos</a>
-                <a href="/src/pages/noticias/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Noticias</a>
-                <a href="/src/pages/transparencia/index.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Transparencia</a>
-                <a href="/src/pages/turismo.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Turismo</a>
-                <a href="/src/pages/galeria.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors" role="menuitem">Galería</a>
-                <a href="/src/pages/login.html" class="block py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors" role="menuitem">Acceso</a>
+                <a href="/src/pages/transparencia/index.html" class="block py-3 px-4 text-sm font-semibold text-gray-700 hover:bg-red-50 hover:text-red-700 rounded transition-colors uppercase" role="menuitem">
+                    <i class="fas fa-eye mr-3 w-5" aria-hidden="true"></i>Transparencia
+                </a>
+                <a href="/src/pages/noticias/index.html" class="block py-3 px-4 text-sm font-semibold text-gray-700 hover:bg-red-50 hover:text-red-700 rounded transition-colors uppercase" role="menuitem">
+                    <i class="fas fa-newspaper mr-3 w-5" aria-hidden="true"></i>Comunicación
+                </a>
+                <a href="/src/pages/proyectos/index.html" class="block py-3 px-4 text-sm font-semibold text-gray-700 hover:bg-red-50 hover:text-red-700 rounded transition-colors uppercase" role="menuitem">
+                    <i class="fas fa-briefcase mr-3 w-5" aria-hidden="true"></i>Convocatorias
+                </a>
+                <div class="border-t my-3"></div>
+                <a href="/src/pages/autoridades.html" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors" role="menuitem">
+                    <i class="fas fa-users mr-3 w-5" aria-hidden="true"></i>Autoridades
+                </a>
+                <a href="/src/pages/turismo.html" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors" role="menuitem">
+                    <i class="fas fa-mountain mr-3 w-5" aria-hidden="true"></i>Turismo
+                </a>
+                <a href="/src/pages/galeria.html" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors" role="menuitem">
+                    <i class="fas fa-images mr-3 w-5" aria-hidden="true"></i>Galería
+                </a>
+                <a href="/src/pages/contacto.html" class="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors" role="menuitem">
+                    <i class="fas fa-envelope mr-3 w-5" aria-hidden="true"></i>Contacto
+                </a>
             </div>
         </div>
     </div>
