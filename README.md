@@ -1,116 +1,108 @@
-Sitio Web Oficial - Municipalidad del Centro Poblado de Ivochote
-https://img.shields.io/badge/estado-en%2520desarrollo-blue.svg
-https://img.shields.io/badge/licencia-MIT-green.svg
-https://img.shields.io/badge/tecnolog%C3%ADas-HTML5%2520%7C%2520CSS3%2520%7C%2520JavaScript-yellow.svg
-https://img.shields.io/badge/deploy-Netlify-success.svg
+# Megantoni Municipal API
 
-Descripción del Proyecto
-Este repositorio contiene el sitio web oficial de la Municipalidad del Centro Poblado de Ivochote, desarrollado con el objetivo de fortalecer la comunicación digital entre la municipalidad y la comunidad. La plataforma busca difundir información relevante sobre noticias, obras públicas, servicios municipales, actividades culturales y recursos turísticos de la zona.
+API REST para la gestión de trámites municipales del distrito de Megantoni, construida con **Laravel 11**.
 
-Características Principales
-Diseño Responsive - Adaptado para dispositivos móviles, tablets y computadoras
+## Tecnologías
 
-Modo Oscuro - Alternativa visual para mejor experiencia de usuario
+| Componente     | Tecnología              |
+| -------------- | ----------------------- |
+| Framework      | Laravel 11              |
+| Autenticación  | Laravel Sanctum         |
+| Base de datos  | MySQL 8.0               |
+| Caché / Colas  | Redis 7                 |
+| Almacenamiento | MinIO (compatible S3)   |
+| Contenedores   | Docker / Docker Compose |
 
-Navegación Intuitiva - Menús claros y estructura accesible
+## Estructura del Proyecto
 
-Formularios Validados - Verificación en tiempo real para datos seguros
+```
+app/
+├── Http/
+│   ├── Controllers/      # AuthController, TramiteController, DocumentoController, UserController
+│   ├── Requests/         # Validación y DTOs (StoreTramiteRequest, UpdateStatusRequest, UploadDocumentoRequest)
+│   └── Middleware/       # RoleMiddleware, CompressResponse
+├── Services/             # TramiteService, DocumentoService, NotificacionService, AuditService
+├── Models/               # User, Tramite, Documento, AuditLog, Procedimiento
+├── Jobs/                 # ProcessDocumentJob, SendNotificacionJob, ComprimirArchivoJob
+├── Enums/                # TramiteStatus, UserRole
+├── Notifications/        # TramiteStatusChanged, TramiteAprobado
+└── Policies/             # TramitePolicy, DocumentoPolicy (RBAC)
+database/
+├── migrations/           # 5 migraciones ordenadas
+└── seeders/              # UserSeeder, ProcedimientoSeeder
+routes/
+├── api.php               # Todos los endpoints REST
+└── console.php
+config/
+├── database.php          # MySQL + Redis
+├── queue.php             # Redis driver
+├── filesystems.php       # Local + MinIO
+└── sanctum.php
+```
 
-Galerías Interactivas - Exhibición del patrimonio cultural y natural
+## Roles y Permisos
 
-Slider de Noticias - Destacados informativos actualizados
+| Rol         | Permisos                                      |
+| ----------- | --------------------------------------------- |
+| CIUDADANO   | Crear trámites, ver propios, subir documentos |
+| FUNCIONARIO | Ver todos los trámites, cambiar estado        |
+| ADMIN       | Acceso total                                  |
 
-Mapa Interactivo de Obras - Visualización georreferenciada de proyectos
+## Estados del Trámite
 
-Optimización SEO - Mejor posicionamiento en motores de búsqueda
+```
+PENDING → IN_REVIEW → APPROVED
+                    ↘ REJECTED
+```
 
-Accesibilidad Web (WCAG) - Diseño inclusivo para todos los usuarios
+## Instalación
 
-Despliegue en Netlify - Implementación continua y hosting optimizado
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/EzerZuniga/Megantoni-Municipal-Api.git
+cd Megantoni-Municipal-Api
 
-Estructura del Proyecto
-text
-municipalidad-ivochote/
-├── index.html                # Página principal
-├── autoridades.html          # Información de las autoridades locales
-├── obras.html                # Obras en ejecución y concluidas
-├── servicios.html            # Servicios brindados por la municipalidad
-├── turismo.html              # Atractivos turísticos del centro poblado
-├── noticias.html             # Noticias, comunicados y eventos
-├── contacto.html             # Formulario de contacto con validación
-│
-├── css/
-│   ├── style.css             # Estilos principales
-│   ├── responsive.css        # Estilos para diseño adaptable
-│   └── darkmode.css          # Estilos para el modo oscuro
-│
-├── js/
-│   ├── main.js               # Funciones generales y configuración
-│   ├── validar-formulario.js # Validación de formularios
-│   └── slider.js             # Funcionalidad del carrusel de noticias
-│
-├── assets/
-│   ├── img/                  # Banco de imágenes (obras, turismo, etc.)
-│   ├── icons/                # Iconografía utilizada en el sitio
-│   └── videos/               # Videos institucionales o promocionales
-│
-├── docs/
-│   └── reglamentos.pdf       # Reglamentos y documentos normativos
-│
-├── netlify.toml              # Configuración para despliegue en Netlify
-└── README.md                 # Documentación del proyecto
-Tecnologías Utilizadas
-HTML5 - Estructura semántica del sitio
+# 2. Levantar contenedores
+docker-compose up -d
 
-CSS3 (Responsive + Dark Mode) - Estilos modernos y adaptables
+# 3. Instalar dependencias
+composer install
 
-JavaScript (ES6+) - Interactividad, validaciones y efectos dinámicos
+# 4. Configurar entorno
+cp .env .env.local
+php artisan key:generate
 
-Netlify - Hosting y despliegue continuo (CI/CD)
+# 5. Migrar y sembrar base de datos
+php artisan migrate --seed
+```
 
-Instalación y Uso
-Clonar el repositorio:
+## Endpoints Principales
 
-bash
-git clone https://github.com/usuario/municipalidad-ivochote.git
-Abrir el archivo index.html en un navegador web.
+| Método | Ruta                          | Descripción                    | Auth              |
+| ------ | ----------------------------- | ------------------------------ | ----------------- |
+| POST   | /api/auth/register            | Registro de usuario            | Público           |
+| POST   | /api/auth/login               | Inicio de sesión               | Público           |
+| POST   | /api/auth/logout              | Cierre de sesión               | Sanctum           |
+| GET    | /api/auth/me                  | Perfil del usuario autenticado | Sanctum           |
+| GET    | /api/tramites                 | Listar trámites                | Sanctum           |
+| POST   | /api/tramites                 | Crear trámite                  | Sanctum           |
+| GET    | /api/tramites/{id}            | Ver trámite                    | Sanctum           |
+| DELETE | /api/tramites/{id}            | Eliminar trámite               | Admin             |
+| PATCH  | /api/tramites/{id}/status     | Cambiar estado                 | Funcionario/Admin |
+| GET    | /api/tramites/{id}/documentos | Listar documentos              | Sanctum           |
+| POST   | /api/tramites/{id}/documentos | Subir documento (PDF/IMG)      | Sanctum           |
+| GET    | /api/documentos/{id}/download | Descargar documento            | Sanctum           |
+| DELETE | /api/documentos/{id}          | Eliminar documento             | Sanctum           |
+| GET    | /api/users                    | Listar usuarios                | Admin             |
 
-(Opcional) Usar la extensión Live Server en VSCode para un entorno de desarrollo dinámico.
+## Variables de Entorno Requeridas
 
-Impacto del Proyecto
-Este portal busca ser una plataforma oficial de información y servicios, con el fin de:
+```env
+DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD
+REDIS_HOST, REDIS_PORT
+MINIO_KEY, MINIO_SECRET, MINIO_BUCKET, MINIO_ENDPOINT
+```
 
-Difundir noticias y comunicados oficiales
+## Licencia
 
-Transparentar las obras públicas y proyectos en ejecución
-
-Promover el turismo y la identidad cultural de Ivochote
-
-Facilitar el acceso a servicios municipales
-
-Servir como un canal directo de comunicación con los ciudadanos
-
-Documentación
-Dentro de la carpeta /docs se encuentran:
-
-Reglamentos municipales
-
-Normativas locales
-
-Documentación complementaria
-
-Equipo de Desarrollo
-Este proyecto está impulsado por la Municipalidad del Centro Poblado de Ivochote, con el apoyo de desarrolladores locales comprometidos con la innovación digital y la mejora de los servicios en línea.
-
-Contacto
-Dirección: Municipalidad del Centro Poblado de Ivochote - Cusco, Perú
-
-Teléfono: (colocar número oficial)
-
-Correo: (colocar correo institucional)
-
-Web: ivochote.pe (ejemplo, pendiente de dominio oficial)
-
-Licencia
-Este proyecto está bajo la licencia MIT, lo que permite su uso, modificación y distribución con fines educativos e institucionales.
-
+Municipalidad Distrital de Megantoni — Uso institucional.

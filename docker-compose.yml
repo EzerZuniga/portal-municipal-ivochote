@@ -1,0 +1,68 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: megantoni_app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+      - redis
+      - minio
+    volumes:
+      - .:/var/www/html
+      - ./storage:/var/www/html/storage
+    environment:
+      APP_ENV: local
+      APP_KEY: ""
+      DB_HOST: mysql
+      DB_DATABASE: megantoni_municipal
+      DB_USERNAME: megantoni
+      DB_PASSWORD: secret
+      REDIS_HOST: redis
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_KEY: megantoni_access_key
+      MINIO_SECRET: megantoni_secret_key
+
+  mysql:
+    image: mysql:8.0
+    container_name: megantoni_mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: megantoni_municipal
+      MYSQL_USER: megantoni
+      MYSQL_PASSWORD: secret
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:7-alpine
+    container_name: megantoni_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  minio:
+    image: minio/minio:latest
+    container_name: megantoni_minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: megantoni_access_key
+      MINIO_ROOT_PASSWORD: megantoni_secret_key
+    volumes:
+      - minio_data:/data
+
+volumes:
+  mysql_data:
+  minio_data:
