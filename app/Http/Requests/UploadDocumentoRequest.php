@@ -14,8 +14,8 @@ class UploadDocumentoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'archivo'     => 'required|file|mimes:pdf,jpg,jpeg,png|max:10240',
-            'nombre'      => 'required|string|max:255',
+            'archivo' => 'required|file|mimes:pdf,jpg,jpeg,png|max:10240',
+            'nombre' => 'required|string|max:255',
             'descripcion' => 'nullable|string|max:500',
         ];
     }
@@ -24,8 +24,8 @@ class UploadDocumentoRequest extends FormRequest
     {
         return [
             'archivo.required' => 'El archivo es obligatorio.',
-            'archivo.mimes'    => 'El archivo debe ser PDF, JPG o PNG.',
-            'archivo.max'      => 'El archivo no debe superar los 10 MB.',
+            'archivo.mimes' => 'El archivo debe ser PDF, JPG o PNG.',
+            'archivo.max' => 'El archivo no debe superar los 10 MB.',
         ];
     }
 }

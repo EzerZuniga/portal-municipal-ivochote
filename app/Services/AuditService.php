@@ -13,11 +13,11 @@ class AuditService
     {
         // ip() y userAgent() devuelven null fuera del contexto HTTP (e.g. jobs de cola)
         return AuditLog::create([
-            'action'     => $action,
+            'action' => $action,
             'model_type' => get_class($model),
-            'model_id'   => $model->getKey(),
-            'user_id'    => $user?->id,
-            'metadata'   => $metadata,
+            'model_id' => $model->getKey(),
+            'user_id' => $user?->id,
+            'metadata' => $metadata,
             'ip_address' => Request::ip(),
             'user_agent' => Request::userAgent(),
         ]);

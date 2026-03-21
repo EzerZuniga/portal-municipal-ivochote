@@ -25,7 +25,7 @@ class Tramite extends Model
     protected function casts(): array
     {
         return [
-            'status'            => TramiteStatus::class,
+            'status' => TramiteStatus::class,
             'datos_adicionales' => 'array',
         ];
     }

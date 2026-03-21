@@ -18,7 +18,7 @@ class UpdateStatusRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'status'      => ['required', Rule::enum(TramiteStatus::class)],
+            'status' => ['required', Rule::enum(TramiteStatus::class)],
             'observacion' => 'nullable|string|max:500',
         ];
     }
@@ -27,7 +27,7 @@ class UpdateStatusRequest extends FormRequest
     {
         return [
             'status.required' => 'El estado es obligatorio.',
-            'status.enum'     => 'El estado proporcionado no es válido.',
+            'status.enum' => 'El estado proporcionado no es válido.',
         ];
     }
 }

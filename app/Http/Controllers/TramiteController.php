@@ -30,7 +30,7 @@ class TramiteController extends Controller
 
         return response()->json([
             'message' => 'Trámite creado correctamente.',
-            'data'    => $tramite,
+            'data' => $tramite,
         ], 201);
     }
 
@@ -49,7 +49,7 @@ class TramiteController extends Controller
 
         return response()->json([
             'message' => 'Estado del trámite actualizado.',
-            'data'    => $tramite,
+            'data' => $tramite,
         ]);
     }
 

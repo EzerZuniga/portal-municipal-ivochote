@@ -10,7 +10,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class TramiteService
 {
     public function __construct(
-        private readonly AuditService        $auditService,
+        private readonly AuditService $auditService,
         private readonly NotificacionService $notificacionService
     ) {}
 
@@ -30,7 +30,7 @@ class TramiteService
         $tramite = Tramite::create([
             ...$data,
             'ciudadano_id' => $user->id,
-            'status'       => TramiteStatus::PENDING,
+            'status' => TramiteStatus::PENDING,
         ]);
 
         $this->auditService->log('tramite.created', $tramite, $user);

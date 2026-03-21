@@ -12,7 +12,7 @@ class CompressResponse
     {
         $response = $next($request);
 
-        if (!$this->shouldCompress($request, $response)) {
+        if (! $this->shouldCompress($request, $response)) {
             return $response;
         }
 

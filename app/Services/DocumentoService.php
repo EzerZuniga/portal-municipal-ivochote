@@ -16,15 +16,15 @@ class DocumentoService
 
     public function upload(UploadedFile $file, Tramite $tramite, array $data): Documento
     {
-        $path = $file->store('tramite-' . $tramite->id, $this->disk);
+        $path = $file->store('tramite-'.$tramite->id, $this->disk);
 
         $documento = Documento::create([
-            'tramite_id'  => $tramite->id,
-            'nombre'      => $data['nombre'],
+            'tramite_id' => $tramite->id,
+            'nombre' => $data['nombre'],
             'descripcion' => $data['descripcion'] ?? null,
-            'ruta'        => $path,
-            'mime_type'   => $file->getMimeType(),
-            'tamano'      => $file->getSize(),
+            'ruta' => $path,
+            'mime_type' => $file->getMimeType(),
+            'tamano' => $file->getSize(),
         ]);
 
         ProcessDocumentJob::dispatch($documento);
@@ -35,7 +35,7 @@ class DocumentoService
 
     public function download(Documento $documento): StreamedResponse
     {
-        if (!Storage::disk($this->disk)->exists($documento->ruta)) {
+        if (! Storage::disk($this->disk)->exists($documento->ruta)) {
             abort(404, 'El documento no fue encontrado.');
         }
 

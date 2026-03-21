@@ -15,17 +15,18 @@ class SendNotificacionJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public int $tries   = 3;
+    public int $tries = 3;
+
     public int $backoff = 60;
 
     /**
      * @param  class-string<Notification>  $notificationClass
-     * @param  array<string, mixed>        $notificationData
+     * @param  array<string, mixed>  $notificationData
      */
     public function __construct(
-        private readonly User  $user,
+        private readonly User $user,
         private readonly string $notificationClass,
-        private readonly array  $notificationData = []
+        private readonly array $notificationData = []
     ) {}
 
     public function handle(): void
@@ -36,7 +37,7 @@ class SendNotificacionJob implements ShouldQueue
         $this->user->notify($notification);
 
         Log::info('Notificación enviada', [
-            'user_id'      => $this->user->id,
+            'user_id' => $this->user->id,
             'notification' => $this->notificationClass,
         ]);
     }
@@ -45,7 +46,7 @@ class SendNotificacionJob implements ShouldQueue
     {
         Log::error('Error al enviar notificación', [
             'user_id' => $this->user->id,
-            'error'   => $exception->getMessage(),
+            'error' => $exception->getMessage(),
         ]);
     }
 }

@@ -15,7 +15,8 @@ class ComprimirArchivoJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public int $tries   = 3;
+    public int $tries = 3;
+
     public int $timeout = 120;
 
     public function __construct(private readonly Documento $documento) {}
@@ -24,21 +25,22 @@ class ComprimirArchivoJob implements ShouldQueue
     {
         $ruta = $this->documento->ruta;
 
-        if (!Storage::disk('local')->exists($ruta)) {
+        if (! Storage::disk('local')->exists($ruta)) {
             Log::warning('Archivo no encontrado para comprimir', ['ruta' => $ruta]);
+
             return;
         }
 
-        $contenido  = Storage::disk('local')->get($ruta);
+        $contenido = Storage::disk('local')->get($ruta);
         $comprimido = gzencode($contenido, 6);
-        $rutaGz     = $ruta . '.gz';
+        $rutaGz = $ruta.'.gz';
 
         Storage::disk('local')->put($rutaGz, $comprimido);
 
         Log::info('Archivo comprimido', [
-            'original'   => strlen($contenido),
+            'original' => strlen($contenido),
             'comprimido' => strlen($comprimido),
-            'ruta_gz'    => $rutaGz,
+            'ruta_gz' => $rutaGz,
         ]);
     }
 
@@ -46,7 +48,7 @@ class ComprimirArchivoJob implements ShouldQueue
     {
         Log::error('Error al comprimir archivo', [
             'documento_id' => $this->documento->id,
-            'error'        => $exception->getMessage(),
+            'error' => $exception->getMessage(),
         ]);
     }
 }

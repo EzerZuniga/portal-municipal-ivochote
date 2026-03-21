@@ -14,7 +14,8 @@ class ProcessDocumentJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public int $tries   = 3;
+    public int $tries = 3;
+
     public int $timeout = 60;
 
     public function __construct(private readonly Documento $documento) {}
@@ -30,7 +31,7 @@ class ProcessDocumentJob implements ShouldQueue
     {
         Log::error('Error al procesar documento', [
             'documento_id' => $this->documento->id,
-            'error'        => $exception->getMessage(),
+            'error' => $exception->getMessage(),
         ]);
     }
 }

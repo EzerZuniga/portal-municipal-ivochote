@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      * Registro de policies por modelo.
      */
     protected array $policies = [
-        Tramite::class   => TramitePolicy::class,
+        Tramite::class => TramitePolicy::class,
         Documento::class => DocumentoPolicy::class,
     ];
 

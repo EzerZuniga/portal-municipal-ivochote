@@ -30,55 +30,8 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password'          => 'hashed',
-            'role'              => UserRole::class,
-        ];
-    }
-
-    public function tramites(): HasMany
-    {
-        return $this->hasMany(Tramite::class, 'ciudadano_id');
-    }
-
-    public function auditLogs(): HasMany
-    {
-        return $this->hasMany(AuditLog::class);
-    }
-
-    public function isCiudadano(): bool
-    {
-        return $this->role === UserRole::CIUDADANO;
-    }
-
-    public function isFuncionario(): bool
-    {
-        return $this->role === UserRole::FUNCIONARIO;
-    }
-
-    public function isAdmin(): bool
-    {
-        return $this->role === UserRole::ADMIN;
-    }
-}
-
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'role',
-    ];
-
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password'          => 'hashed',
-            'role'              => UserRole::class,
+            'password' => 'hashed',
+            'role' => UserRole::class,
         ];
     }
 

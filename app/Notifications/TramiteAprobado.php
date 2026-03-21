@@ -21,11 +21,11 @@ class TramiteAprobado extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('¡Tu trámite #' . $this->tramite->id . ' ha sido aprobado!')
-            ->greeting('¡Felicitaciones, ' . $notifiable->name . '!')
+            ->subject('¡Tu trámite #'.$this->tramite->id.' ha sido aprobado!')
+            ->greeting('¡Felicitaciones, '.$notifiable->name.'!')
             ->line('Nos complace informarte que tu trámite ha sido aprobado.')
-            ->line('Procedimiento: ' . $this->tramite->procedimiento->nombre)
-            ->action('Ver detalles', url('/tramites/' . $this->tramite->id))
+            ->line('Procedimiento: '.$this->tramite->procedimiento->nombre)
+            ->action('Ver detalles', url('/tramites/'.$this->tramite->id))
             ->line('Gracias por confiar en la Municipalidad de Megantoni.');
     }
 
@@ -33,7 +33,7 @@ class TramiteAprobado extends Notification
     {
         return [
             'tramite_id' => $this->tramite->id,
-            'message'    => '¡Tu trámite ha sido aprobado!',
+            'message' => '¡Tu trámite ha sido aprobado!',
         ];
     }
 }

@@ -32,7 +32,7 @@ class DocumentoController extends Controller
 
         return response()->json([
             'message' => 'Documento subido correctamente.',
-            'data'    => $documento,
+            'data' => $documento,
         ], 201);
     }
 

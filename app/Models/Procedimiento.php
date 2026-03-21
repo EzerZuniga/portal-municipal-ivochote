@@ -24,8 +24,8 @@ class Procedimiento extends Model
     {
         return [
             'requisitos' => 'array',
-            'costo'      => 'decimal:2',
-            'activo'     => 'boolean',
+            'costo' => 'decimal:2',
+            'activo' => 'boolean',
         ];
     }
 
