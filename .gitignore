@@ -9,7 +9,6 @@
 /.env
 /.env.*
 !/.env.example
-!/.env.docker
 /auth.json
 
 # Build outputs
@@ -31,6 +30,7 @@
 !/storage/framework/testing/.gitkeep
 /storage/framework/views/*
 !/storage/framework/views/.gitkeep
+/database/*.sqlite
 
 # Test and analysis artifacts
 /.phpunit.result.cache

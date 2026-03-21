@@ -11,7 +11,7 @@ API REST para la gestión de trámites municipales del distrito de Megantoni, co
 | Base de datos  | MySQL 8.0               |
 | Caché / Colas  | Redis 7                 |
 | Almacenamiento | MinIO (compatible S3)   |
-| Contenedores   | Docker / Docker Compose |
+| Ejecución      | Local (PHP + Composer)  |
 
 ## Estructura del Proyecto
 
@@ -62,18 +62,21 @@ PENDING → IN_REVIEW → APPROVED
 git clone https://github.com/EzerZuniga/Megantoni-Municipal-Api.git
 cd Megantoni-Municipal-Api
 
-# 2. Levantar contenedores
-docker-compose up -d
-
-# 3. Instalar dependencias
+# 2. Instalar dependencias
 composer install
 
-# 4. Configurar entorno
-cp .env .env.local
+# 3. Configurar entorno
+cp .env.example .env
 php artisan key:generate
+
+# 4. Configurar servicios locales (MySQL, Redis, MinIO)
+# Editar .env según tu entorno
 
 # 5. Migrar y sembrar base de datos
 php artisan migrate --seed
+
+# 6. Iniciar servidor de desarrollo
+php artisan serve
 ```
 
 ## Endpoints Principales
@@ -102,6 +105,12 @@ DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD
 REDIS_HOST, REDIS_PORT
 MINIO_KEY, MINIO_SECRET, MINIO_BUCKET, MINIO_ENDPOINT
 ```
+
+## Seguridad
+
+- Nunca subir `.env` ni credenciales reales al repositorio.
+- Define `SEED_ADMIN_PASSWORD`, `SEED_FUNCIONARIO_PASSWORD` y `SEED_CIUDADANO_PASSWORD` en tu `.env` para controlar contraseñas de usuarios de prueba.
+- Si no defines esas variables, el seeder genera contraseñas aleatorias (más seguro, pero no predecible).
 
 ## Licencia
 
